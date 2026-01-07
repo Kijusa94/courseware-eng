@@ -1,0 +1,159 @@
+# Guía de configuración de Latex
+
+El siguiente documento tiene por objetivo documentar el proceso de instalacion de los software Strawberry Perl, Miktex y Visual Studio Code, para la elaboración de documentos en el editor de texto LATEX en un ordenador.
+
+[TOC]
+
+## Requerimientos
+- Sistema operativo Windows 11 o MacOS.
+
+## Instalación de Strawberry Perl.
+
+Buscar en el navegador web de preferencia el software "Strawberry Perl". Acceder al primer enlace.
+
+![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/01.png)
+
+Descargar el paquete MSI para el proceso de instalación en sistemas operativos Windows. En caso de los sistemas operativos macOS, puede instalar el software mediante el gestor de paquetes "homebrew".
+
+![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/02.png)
+
+Ejecute el archivo descargado. En la interfaz emergente, presione "Si", luego "Siguiente".
+
+![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/03.png)
+
+Habilite la casilla del acuerdo de licencia, y presione "Siguiente".
+
+![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/05.png)
+
+En la siguiente ventana, indique la ruta de instalación del programa. Se sugiere dejar la ruta por defecto.
+
+![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/06.png)
+
+Presione Ïnstalar".
+
+![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/07.png)
+
+Finalmente, puede presionar sobre la opción "Finalizar". Ha instalado satisfactoriamente, Strawberry Perl. El software no requiere configuración adicional.
+
+![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/09.png)
+
+## Instalación de Miktex.
+
+Buscar en el navegador web de preferencia el software ''Miktex''. Acceder al primer enlace y dirigirse a la pestaña de ''Descargas''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/01.png)
+
+Escoger el archivo de instalación según corresponda al sistema operativo que usted maneje. Una vez descargado, ejecutelo e inicie el proceso de instalación.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/02.png)
+
+Acepte el acuerdo de licencia. Presione ''Siguiente''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/04.png)
+
+Indique si la instalación se realizará para un único usuario o para cualquier usuario del ordenador. Se recomienda dejar el valor por defecto.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/05.png)
+
+Indique la ruta de instalación. Se Sugiere dejar la ruta de instalación por defecto. Presione ''Siguiente''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/06.png)
+
+En la siguiente ventana indique las preferencias de configuración. Se sugiere dejar las opciones por defecto. Presione ''Siguiente''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/07.png)
+
+Presione sobre el boton de ''Iniciar'' para empezar el proceso de instalación.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/08.png)
+
+Una vez finalice la barra de progreso, presione sobre ''Siguiente''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/10.png)
+
+En la siguiente ventana, deje marcada la opción y presione ''Siguiente''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/11.png)
+
+Puede cerrar la ventana presionando sobre la opcion ''Cerrar''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/12.png)
+
+Dirijase al navegador de Windows, y ejecute la aplicación Miktex. En la ventana de la aplicación presione sobre la opción ''Switch to MIKTeX administrator mode'', esto le otorgará permisos de administrador para realizar la instalación de los paquetes de LATEX.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/13.png)
+
+Al reiniciar la aplicación, dirijase al menú de ''Updates'', busque por nuevas actualizaciónes presionando sobre la opción ''Check for updates''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/14.png)
+
+Una vez cargados los paquetes desactualizados, puede proceder a actualizarlos/instalarlos presionando sobre el botón ''Update Now''.
+
+![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/15.png)
+
+Ha finalizado satisfactoriamente el proceso de instalación y configuración de MIKTeX. No se requiere configuraci[on adicional.
+
+## Instalación de Visual Studio Code.
+Buscar en el navegador web de preferencia el software "Visual Studio Code". Acceder al primer enlace, y busque la opción de "Descargar".
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/01.png)
+
+Descargue la versión de Visual Studio Code segun corresponda con su sistema operativo. En el caso de Windows, se descargará un archivo de instalación ejecutable.
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/02.png)
+
+Ejecute el archivo descargado. Acepte el acuerdo de licencia y presione ''Siguiente''.
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/03.png)
+
+Indique la ruta de instalación del programa, se sugiere dejar la ruta por defecto.
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/04.png)
+
+En la Siguiente ventana indique el nombre del acceso rapido. Se sugiere dejar la opción por defecto. Presione ''Siguiente'' para continuar.
+ 
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/05.png)
+
+Seleccione las preferencias segun sea de su interes, se sugiere dejar la configuración por defecto. Presione ''Siguiente''.
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/06.png)
+
+Inicie el proceso de instalación con la opción ''Instalar''.
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/07.png)
+
+Una vez finalice la instalación, puede proceder a cerrar la ventana de instalación. A continuación, proceda a abrir la aplicación. En la ventana de la aplicación, presione sobre la opción resaltada en la imagen para dirijirse al gestor de extensiones.
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/08.png)
+
+En la barra de busqueda, ingrese ''latex workshop'' para filtrar el paquete de latex. Presione sobre la extensión ''Latex Workshop¿¿ del autor James Yu. y presione sobre el botón instalar.
+
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/09.png)
+
+Ha instalado satisfactoriamente VSCode con Latex. FELICIDADES! Puede empezar su proyecto de latex. 
+
+**NOTA: Cuando realice su primera compilación, será necesario instalar los paquetes adicionales que sugiere el entorno de VSCODE**
+
+## Recomendaciones para VSCode-Latex.
+Para ajustar la ventana de edición de codigo y la presentación de su PDF, puede presionar sobre la opción de la parte superior derecha ''Dividir Editor'' (Split Editor). Puede presionar sobre el archivo PDF de su proyecto para que este se despliegue en esta nueva ventana. Recuerde que el archivo se abre en la ventana activa, por lo que se sugiere editar en la parte central, y visualizar el PDF en la parte derecha, tal y como lo muetra la siguiente imagen.
+    
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/10.png)
+
+Para revisar el proceso de compilación, puede acceder al terminal desde la parte inferior de la ventana. Podrá visualizar mensajes de información, advertencia y errores de compilación. Recuerde que las advertencias, no son errores, por lo que su proyecto compilará.
+    
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/11.png)
+
+Para ajustar el despliegue de código en la interfaz, acceda al menu ''Preferencias/Editor'' y busque la opción ''Wrap lines''.
+    
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/12.png)
+
+Habilite la opción configurandola como ''no''.
+    
+![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/13.png)
+
+## Recomendaciones para codigo Latex.
+Para la edición de tablas, se sugiere usar la pagina web ''Latex Table Generator'', y guardar los archivos para editar en caso de que se requiera. 
+    
+Se sugiere crear un archivo de texto (con extensión *.tex) por cada capítulo que requiera su documento. Recuerde que debe incluir el archivo en el archivo main.tex con el comando ''include''.
+    
+Para ajustar configuraciones de paquetes, o añadir nuevos paquetes a su proyecto, utilice el archivo settings.tex.

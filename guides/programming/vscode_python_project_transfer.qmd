@@ -1,0 +1,77 @@
+# Workflow de transferencia de proyectos Python
+
+Sigue estos pasos para exportar e importar las dependencias de un proyecto entre diferentes ordenadores utilizando un entorno virtual.
+
+[TOC]
+
+---
+
+## 1. Ordenador de origen
+
+### Activar el entorno virtual
+
+Es indispensable activar el entorno para capturar únicamente los paquetes del proyecto y no los del sistema global.
+
+```bash
+# Windows
+.\env\Scripts\activate
+
+# Linux/macOS
+source env/bin/activate
+
+```
+
+### Exportar dependencias
+
+Genera el archivo `requirements.txt` que contiene la lista de librerías y sus versiones exactas.
+
+```bash
+pip freeze > requirements.txt
+
+```
+
+### Transferencia de archivos
+
+Copia el código fuente y el archivo `requirements.txt`.
+**Nota:** Excluye la carpeta del entorno virtual (`env/` o `venv/`), ya que los binarios no son compatibles entre diferentes máquinas.
+
+---
+
+## 2. Ordenador de destino
+
+### Crear un nuevo entorno
+
+Crea un entorno limpio en la raíz del proyecto para evitar conflictos de versiones.
+
+```bash
+# Windows/Linux/macOS
+python -m venv env
+
+```
+
+### Activar e instalar
+
+Activa el nuevo entorno e importa las dependencias desde el archivo generado.
+
+```bash
+# Activar (Windows)
+.\env\Scripts\activate
+
+# Activar (Linux/macOS)
+source env/bin/activate
+
+# Instalación masiva
+pip install -r requirements.txt
+
+```
+
+---
+
+## 3. Verificación
+
+Para confirmar que el entorno se ha replicado correctamente antes de iniciar las pruebas:
+
+```bash
+pip list
+
+```

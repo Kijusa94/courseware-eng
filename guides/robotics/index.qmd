@@ -1,0 +1,16 @@
+---
+title: "Guías de Robótica"
+---
+
+Esta es la página principal de aspectos básicos de Róbotica con ROS2.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+## 📚  Basics - Instalación de ROS2.
+[Ver Guía &rarr;](ros2_basics_install.qmd){.btn .btn-secondary role="button"}
+:::
+
+::::
+
+---

@@ -1,0 +1,307 @@
+---
+title: Programación  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Fundación Uinversitaria de Popayán
+---
+
+# Funciones 
+
+## ¿Qué son las funciones?
+
+Son fragmentos o bloques de código que realizan una tarea específica.
+
+
+* Permiten ejecutar las mismas tareas más de una vez sin repetir código.
+* Pueden recibir diferentes parámetros/valores (Recursividad).
+
+::: {.callout-note}
+**Partes de una función:**
+1. Definición (sentencias).
+2. Llamado (ejecución).
+:::
+
+## Estructura Básica
+Utilizamos la palabra reservada ``def``.
+
+```{python}
+#| echo: true
+def Factorial(num):
+    resultado = 1
+    for i in range(num):
+        resultado *= i + 1 
+    return resultado # Parámetro de salida
+
+# Llamado de la función
+print(Factorial(3))
+
+```
+
+## Contexto (Scope) {.smaller}
+
+El alcance de las variables depende de dónde se declaren.
+
+* **Variables Globales:** Manipulables en todo el programa.
+* **Variables Locales:** Accesibles solo dentro del bloque/función.
+
+```{python}
+#| echo: true
+var_global = 7
+
+def funcionContexto(parametro):
+    var_local = 100
+    print(f'Local: {var_local} - Global: {var_global}')
+
+funcionContexto('test')
+# print(var_local) # Esto generaría un ERROR
+
+```
+
+## Modificando Globales
+
+Para editar una variable global dentro de una función, usamos la palabra clave `global`.
+
+```{python}
+#| echo: true
+variable = 10
+
+def cambiar_global():
+    global variable
+    variable = 20
+
+cambiar_global()
+print(f"Nuevo valor: {variable}")
+
+```
+
+## Ejemplo: Permutaciones
+
+Calculamos  usando funciones para no repetir la lógica del factorial.
+
+```{python}
+#| echo: true
+def Factorial(num):
+    res = 1
+    for i in range(num): res *= i + 1 
+    return res
+
+N = 5
+r = 2
+resultado = Factorial(N) / Factorial(N-r)
+print(f"Permutación {N}P{r} = {resultado}")
+
+```
+
+# Cadenas de Texto y Codificación 
+
+## Manipulación de Strings
+
+Podemos concatenar y organizar cadenas extensas.
+
+```{python}
+#| echo: true
+# Concatenación
+c1 = "Hola "
+c2 = "Mundo"
+print(c1 + c2)
+
+# Multilínea con comilla triple
+texto = '''Esto es un texto
+que respeta los saltos
+de línea.'''
+print(texto)
+
+```
+
+## Slicing (Rebanado)
+
+Podemos extraer trozos de la cadena usando índices `[inicio:fin]`.
+
+```{python}
+#| echo: true
+cadena = "Programación en Python"
+
+print(cadena[0:12])  # 'Programación'
+print(cadena[-6:])   # 'Python'
+print(len(cadena))   # Longitud total
+
+```
+
+## Métodos de Strings
+
+Las cadenas son objetos que tienen funciones asociadas (métodos).
+
+```{python}
+#| echo: true
+texto = "curso de python"
+
+print(texto.upper())          # Mayúsculas
+print(texto.title())          # Título
+print(texto.replace('o', '0'))# Reemplazo
+print(texto.split())          # Convertir a lista
+
+```
+
+> Podemos encadenar métodos: `texto.lower().find('python')`
+
+## Codificación de Caracteres
+
+* **ASCII:** Estándar original (128 caracteres). Limitado.
+* **Unicode (UTF-8):** Universal, uniforme y único. Permite todos los idiomas y emojis.
+
+Funciones de conversión:
+
+```{python}
+#| echo: true
+print(ord('@'))  # Caracter a Código (ASCII/Unicode)
+print(chr(64))   # Código a Caracter
+
+```
+
+## Ejemplo: Cifrado César
+
+Desplazamiento de caracteres usando su valor numérico.
+
+```{python}
+#| echo: true
+mensaje = "HOLA"
+cifrado = ""
+desp = 1
+
+for letra in mensaje:
+    cifrado += chr(ord(letra) + desp)
+
+print(f"Original: {mensaje} -> Cifrado: {cifrado}")
+
+```
+
+# Módulos y Paquetes 
+
+## ¿Qué es un módulo?
+
+Archivos que agrupan funciones relacionadas para no "reinventar la rueda".
+
+Ejemplo con librería matemática:
+
+```{python}
+#| echo: true
+import math
+
+print(math.cos(math.pi))
+
+```
+
+## Instalación de Paquetes
+
+Si el módulo no está instalado, usamos gestores de paquetes en la terminal:
+
+::: {.callout-tip}
+**Comandos de instalación**
+
+* Anaconda: `conda install nombre_del_modulo`
+* Python estándar: `pip install nombre_del_modulo`
+* Listar paquetes: `pip list`
+:::
+
+## Estructura de Proyectos
+
+Se recomienda organizar los archivos en paquetes (carpetas con `__init__.py` o namespace).
+
+```text
+src/
+    principal.py
+    paquete_datos/
+        transacciones.py
+    paquete_visualizacion/
+        graficas.py
+assets/
+    images/
+        logo.png
+    language/
+        es.json
+
+```
+
+# Manejo de Archivos 
+
+## Apertura de Archivos
+
+Usamos la función `open(ruta, modo)`.
+
+| Modo | Descripción | Puntero |
+| --- | --- | --- |
+| `r` | Solo lectura | Inicio |
+| `w` | Escritura (Sobreescribe) | Inicio |
+| `a` | Añadido (Append) | Final |
+| `r+` | Lectura y Escritura | Inicio |
+
+## Lectura
+
+Existen varios métodos para extraer información.
+
+```{python}
+#| echo: true
+#| eval: false
+
+# Creamos un archivo de prueba
+f = open('test.txt', 'w')
+f.write("Línea 1\nLínea 2")
+f.close()
+
+# Lectura
+archivo = open('test.txt', 'r')
+contenido = archivo.read() # Lee todo
+print(contenido)
+archivo.close()
+
+```
+
+## Lectura Línea a Línea
+
+Para archivos grandes o procesamiento secuencial.
+
+```{python}
+#| echo: true
+#| eval: false
+
+archivo = open('test.txt', 'r')
+# readline() lee una sola linea y mueve el puntero
+print(archivo.readline().strip()) 
+archivo.close()
+
+```
+
+## Buenas Prácticas (With)
+
+La estructura `with` maneja el contexto y cierra el archivo automáticamente, incluso si hay errores.
+
+```{python}
+#| echo: true
+#| eval: false
+
+with open('test.txt', 'r') as archivo:
+    for linea in archivo:
+        print(f">> {linea.strip()}")
+        
+# Aquí el archivo ya está cerrado
+
+```
+
+## Punteros (Seek & Tell)
+
+Control manual de la posición en el archivo.
+
+* `tell()`: Nos dice dónde está el puntero.
+* `seek(byte)`: Mueve el puntero a una posición específica.
+
+```{python}
+#| echo: true
+#| eval: false
+
+with open('test.txt', 'r') as f:
+    f.read() # Leemos todo
+    print(f"Posición final: {f.tell()}")
+    f.seek(0) # Volvemos al inicio
+    print(f"Posición tras seek: {f.tell()}")
+
+```

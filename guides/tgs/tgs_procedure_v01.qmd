@@ -1,0 +1,81 @@
+#  Procedimiento de Trabajos de grado
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant EST as Estudiante
+    participant DIR as Director
+    participant CTG as Coordinación TG
+    participant EVL as Evaluador TG
+    participant COM as Comité Curricular
+
+    Note over EST, COM: Anteproyecto
+
+    Note over EST: Generar idea 
+
+    EST ->> CTG: Busca asignación de Director con la Coordinación de TG
+    CTG ->> COM: Solicita asignación
+    Note over COM: Revisa <br/> carga academica
+    COM -->> CTG: Asigna Director
+    CTG -->> DIR: Notifica la Dirección del TG
+    DIR -->> EST: Programa reunión
+
+    loop 1 Periodo academico
+        EST ->> DIR: Envía borrador 
+        DIR -->> EST: Envía correcciones y feedback
+    end
+    Note over EST,DIR: Visto bueno del Director
+
+    DIR ->> CTG: Envía correo con anteproyecto
+    CTG ->> COM: Envía para asignación
+    COM -->> CTG: Asigna evaluadores
+    CTG ->> EVL: Envía correo
+
+    Note over EVL: Evalua el anteproyecto
+
+    EVL -->> CTG: Notifica Concepto
+    CTG -->> DIR: Notifica Concepto
+    DIR -->> EST: Notifica Concepto
+    CTG -->> EST: Notifica Pago de opción de grado
+
+    Note over EST: Envía <br/> recibo de pago <br/> Admisiones
+
+    Note over EST, COM: Trabajo de grado
+
+    loop Min. 6 Meses - Max. 1 año
+        EST ->> DIR: Envía borrador 
+        DIR -->> EST: Envía correcciones y feedback
+    end
+    Note over EST,DIR: Visto bueno del Director
+
+    DIR ->> CTG: Envía correo <br/> con Trabajo de grado
+    CTG ->> EVL: Envía correo
+
+    Note over EVL: Evalua el Trabajo de grado
+
+    EVL -->> CTG: Notifica Concepto
+    CTG -->> DIR: Notifica Concepto
+    DIR -->> EST: Notifica Concepto
+
+    Note over CTG: Programa Sustentación <br/> segun Calendario
+
+    Note over EST, COM: Sustentación
+
+    loop Preparación sustentación
+        EST ->> DIR: Envía borrador
+        DIR -->> EST: Envía correcciones y feedback
+    end
+
+    Note over EST,DIR: Visto bueno del Director
+
+    rect rgb(240, 240, 240)
+        CTG ->> DIR: Programa sustentación
+        CTG ->> EVL: Programa sustentación
+        DIR -->> CTG: Establece horario
+        EVL -->> CTG: Establece horario
+    end
+
+    Note over EST: Elaborar y publicar pieza <br/> gráfica "Invitación"
+
+    Note over EST, COM: Sustentación en fecha y lugar indicado por Coordinación
+```

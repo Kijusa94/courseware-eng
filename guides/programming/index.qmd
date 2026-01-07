@@ -1,0 +1,32 @@
+---
+title: "Guías de Programación"
+---
+
+Esta es la página principal de Guías para configurar entornos de programación en Python.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Comandos útiles.
+[Ver Guía &rarr;](vscode_utils_commands.qmd){.btn .btn-secondary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Shorcuts para VSCode.
+
+[Ver Guía &rarr;](vscode_shorcuts.qmd){.btn .btn-secondary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Transferir un entorno de Python.
+[Ver Guía &rarr;](vscode_python_project_transfer.qmd){.btn .btn-secondary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Instalación de Python.
+[Ver Guía &rarr;](vscode_python_install.qmd){.btn .btn-secondary role="button"}
+:::
+
+::::
+
+---

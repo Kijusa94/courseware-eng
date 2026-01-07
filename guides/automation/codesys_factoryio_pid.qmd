@@ -1,0 +1,87 @@
+# Controlador PID con Codesys y FactoryIO
+
+El siguiente tutorial muestra como configurar un controlador PID para una planta de nivel usando Codesys y Factory IO.
+
+[TOC]
+
+## Configuración Codesys
+
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/01.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/02.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/03.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/04.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/05.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/06.png)
+
+```
+VAR_GLOBAL
+	Max_ControlSignal:INT:=10;
+	Min_ControlSignal:INT:=0;
+	Reset_PID:BOOL;
+	SetPoint:REAL;
+	Kp:REAL:=10;
+	Ki:REAL:=1;
+	Kd:REAL:=0;
+END_VAR
+```
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/07.png)
+```
+VAR_GLOBAL
+	FIO_Feedback:REAL;
+	FIO_ControlOutput:REAL;
+	FIO_DischargeValve:REAL;
+END_VAR
+```
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/08.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/09.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/10.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/11.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/12.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/13.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/14.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/15.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/16.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/17.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/18.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/19.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/20.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/21.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/22.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/23.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/24.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/25.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/26.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/27.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/28.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/29.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/30.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/31.png)
+
+## Configuración Factory IO
+
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/32.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/33.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/34.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/35.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/36.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/37.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/38.png)
+
+## Simulación del controlador PID
+
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/39.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/40.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/41.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/42.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/43.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/44.png)
+![codesys_factorio_pid](../automation/assets/images/codesys_factoryio_pid/45.png)
+
+## Sintonización
+
+Proximamente...
+
+
+
+
+

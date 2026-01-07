@@ -1,0 +1,194 @@
+# Codesys con Factory IO y OPC UA.
+Esta guía muestra el paso a paso para conectar el simulador de codesys con Factory IO de Siemens, mediante OPC UA.
+
+[TOC]
+
+## Configuración de proyecto en Codesys
+
+Inicie CODESYS, se desplegará un cuadro de dialogo como el siguiente. Marque la opción que considere apropiada. Presione ``Continuar``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/01.png)
+
+Esta es la ventana principal de Codesys. Presione sobre la opción ``New Project``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/02.png)
+
+Seleccione ``Standar project`` de la lista de plantillas, escoja una ruta para su proyecto y establezca un nombre. Presione ``Ok``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/03.png)
+
+En la ventana de ``Proyecto Estándar (Standard Project)``, selecciona el Dispositivo ``CODESYS Control Win V3 x64 (CODESYS)`` y ``Ladder Logic Diagram (LD)`` para el PLC_PRG. Haz clic en ``OK``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/04.png)
+
+La interfaz del proyecto debería ser la siguiente.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/05.png)
+
+Haz **clic derecho** en `Application` y selecciona `Add Object > Global variable List...`.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/06.png)
+
+En la ventana desplegada, deje **GLV** como el nombre de la lista, haz clic en `Add`.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/07.png)
+
+Abra el archivo presionando doble click izquierdo, verá la siguiente interfaz en donde podrá crear las varíables globales del proyecto.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/08.png)
+
+Las variables pueden codificarse o añadirse de forma tabular, presione sobre la opción indicada en rojo, y agregue las varibles indicadas en la imagen. Estas corresponden a las variables utilizadas en el escenario de prueba de esta guía. Estas variables se usarán para **intercambiar datos** entre **Factory I/O** y **CODESYS** a través de **OPC UA** (estos son los puntos de E/S).
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/09.png)
+
+Dirijase a la ventana de ``PLC_PRG``, y mediante los elementos del lado derecho de código ladder, cree  el código indicado en la imagen. Paa editar la dirección de los contactos, presione sobre los ``...`` de cada contacto.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/10.png)
+
+Al presionar sobre ``...`` se despliega la siguiente ventana, en ella podrá seleccionar la variable global (``GVL``) del programa.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/11.png)
+
+Configure todos los contactos para representar la siguiente lógica.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/12.png)
+
+Haz **clic derecho** en el icono `CODESYS Control Win PLC` (`Systray`) y selecciona `Start PLC` (esta opción la encuentra en los servicios de segundo plano que se estan ejecutando en Windows 11).
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/13.png)
+
+Al arrancar el PLC, se abrirá la siguiente ventana, presione ``Ok``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/14.png)
+
+Presione **doble click** sobre ``Device`` en el arbol de proyecto, para desplegar la siguiente interfaz, en ella, se podrá ver la conexión con el dispositivo simulado. Puede verificar la conexión preionando sobre la opción ``Scan Network``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/15.png)
+
+En ``Scan Network`` spodrá visualizar todas las conexiones con los dispositivos en la misma red. Seleccione el correspondiente al PLC emulado por su ordenador, y presione ``Ok``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/16.png)
+
+Para que la conexión con **Factory IO** pueda llevarse a cabo, es necesario ajustar los permisos de conexión. Dirijase a la opción indicada en la siguiente imagen.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/17.png)
+
+Al tratar de acceder a esta configuración, es posible que Codesys requiera las credenciales de acceso al PLC. Si es la primera vez que accede, debe otorgar un nombre de usuario y una contraseña. **No debe extraviar esta constraseña, debio a que es necesaria para acceder a las configuraciones del PLC para este proyecto**. Deberá ingresar estas credenciales dos veces, una vez para crearlas, y otra para acceder a la configuración del paso anterior.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/18.png)
+
+En la ventana de Politicas de Seguridad, debe marcar las opciones como se indica en la siguiente imagen. Presione ``Ok``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/19.png)
+
+Ahora, se deberá habilitar los permisos de lectura y escritura para la comunicación con OPC UA. Dirijase a la pestaña ``Acess Rights`` y busque la opción ``OPCUAServer``. Garantice que la configuración es como la que se muetra en la imagen.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/20.png)
+
+Presione **click derecho** sobre ``Application`` y cree un nuevo objeto de tipo ``Symbol Configuration...``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/21.png)
+
+Configure la ventana tal y como se indica en la imagen.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/22.png)
+
+Prresione **doble click izquierdo** sobre el objeto creado. Se abrirá la ventana siguiente. En ella, presione sobre la opción ```Build``
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/23.png)
+
+Ahora, marque las casillas de las variables.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/24.png)
+
+Ahora, puede proceder a compilar y cargar al código a su PLC. Presione sobre la opción ``Ònline`` y luego ``Login``. Puede encontrar un acceso rapido en la barra superior.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/24_02.png)
+
+Si el PLC ya está corriendo con una configuración, saldrá la siguiente ventana emergente, presione sobre ``Yes``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/25.png)
+
+Su codigo ha compilado y se ha cargado al PLC. A continuación, presione sobre el boton de ``Start``, o en el menu ``Debug → Start``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/26.png)
+
+## Configuración de Factory IO con OPC UA.
+
+Abra Factory IO. En la pestaña de Scenes, seleccione la primera escena ``1 - From A to B``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/27.png)
+
+Agregue los siguientes elementos al escenario:
+- Un poste para posicionar una caja de terminales.
+- Una caja de conexiones.
+- Dos botones: Uno verde para START y otro rojo para STOP.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/28.png)
+
+Dirijase a la pestaña de ``Drivers``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/29.png)
+
+Configure el driver como ``OPC Client DA/UA``
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/30.png)
+
+Inicialmente, marcará que hay un error. Dirijase a la pestaña de ``CONFIGURATION``.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/31.png)
+
+Presione sobre el botón de ``BROWSE SERVERS`` y seleccione el servidor de su PLC emulado.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/32.png)
+
+Agregue los filtros indicados en la siguiente imagen, para que Factory IO identifique facilmente estas variables del PLC y los disponga en su interfaz. Presione ``←`` para volver al menu anterior.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/33.png)
+
+Observará que el error se ha ido, y que su PLC tiene las entradas y salidas asignadas para realizar las conexiones.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/34.png)
+
+Regrese al escenario y ejecute la simulación. 
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/35.png)
+
+Al presionar sobre el botón de START, observara que el motor del CONVEYO se enciende, desplazando la caja.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/36.png)
+
+Si presiona el botón de STOP, el motor del CONVEYOR se detendrá.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/37.png)
+
+De forma simultanea, podrá observar en Codesys, la activación y desactivación de los contactos.
+
+![codesys_factorio_opcua](../automation/assets/images/codesys_factoryio_opcua/38.png)
+
+### Troubleshooting
+Si `BROWSE SERVERS` falla, intenta escribir `opc.tcp://localhost:4840` en el campo de entrada `OPC Server` y presiona **Enter** para conectarte.
+
+Establece **"FIO"** como el filtro de contenedor (`contain filter`) (ver imagen a continuación), esto recuperará los nodos que contienen **"FIO"** (la Lista de Variables Globales definida en CODESYS). Luego, haz clic en `BROWSE`. 
+
+---
+
+Si un **Servidor de Descubrimiento Local (LDS)** se está ejecutando en tu sistema, es posible que necesites **desactivarlo** para conectar **Factory I/O** al **Servidor OPC UA de CODESYS**.
+
+Por defecto, **CODESYS** utiliza el puerto **4840** para la comunicación OPC UA. Sin embargo, este mismo puerto también es utilizado por los **Servidores de Descubrimiento Local OPC UA (LDS)**. Como resultado, cuando **Factory I/O** intenta conectarse a **CODESYS** a través del puerto **4840**, puede que en su lugar se conecte al servicio **LDS** que se ejecuta en tu ordenador. Dado que el LDS no es un servidor OPC UA, la conexión fallará.
+
+Para resolver este problema, **deshabilita** o **desinstala** el servicio LDS en tu sistema:
+
+**Abre el Administrador de Servicios:**
+
+`Start > Control Panel > System and Security > Administrative Tools > Services`
+
+**Localiza** el servicio llamado **“OPC UA Local Discovery Server”**.
+
+Haz **clic derecho** en el servicio y selecciona `Stop`. Además, debes establecer el tipo de inicio (`Startup type`) en **Manual** (`Properties`) para que este problema no vuelva a ocurrir cuando reinicies tu equipo.
+
+**Confirma** el cambio haciendo clic en `OK`.
+
+---
+
+**En codigo ladder no es necesario indicar la conexion entre las variables externas (OPC UA) y las variables de programa.**

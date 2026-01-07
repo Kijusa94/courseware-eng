@@ -1,0 +1,161 @@
+# Configuración de VSCode con Python
+
+La siguiente es una guía para configurar python en Visual Studio Code.
+
+[TOC]
+
+## Instalación de Python en Windows
+Busque en su navegador de preferencia ``Python``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/01.png)
+
+Dirijase a la pestaña de ``Descargas`` o ``Downloads``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/02.png)
+
+Descargue el instalador de la última versión estable que esté disponible.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/03.png)
+
+Ejecute el archivo de instalación y siga los pasos. Es indispensable que seleccione la casilla ``Add python.exe to PATH`` para que en las ventanas de terminal (Powershell o cmd) se pueda ejecutar código python. 
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/05.png)
+
+Presione sobre la opción ``Disable path length limit`` y otorgue los permisos. Finalmente, cierre la ventana. Ha finalizado la instalación de python en Windows.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/06.png)
+
+## Instalación de Visual Studio Code
+Busque en su navegador de preferencia ``Visual Studio Code``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/07.png)
+
+Dirijase a la pestaña de ``Descargas`` o ``Downloads`` y descargue el instalador. Una vez finalizada la descarga, ejecute el archivo.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/08.png)
+
+Se desplegará la siguiente ventana, marque ``Acepte el acuerdo de licencia`` y presione en ``Siguiente``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/09.png)
+
+En la siguiente ventana se indica el lugar de instalación. Se sugiere no modificar la ruta. Presione ``Siguiente``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/10.png)
+
+Presione ``Siguiente``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/11.png)
+
+Marque las casillas como se indica en la siguiente imagen.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/12.png)
+
+Presione ``Install`` para iniciar el proceso de instalación.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/13.png)
+
+Una vez ha finalizada la instalación, presione ``Finish``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/14.png)
+
+## Configuración VSCode
+
+En la primera ejecución, usted verá la siguiente ventana de inicio en donde podrá ajustar el estilo de visaulización dentro del entorno.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/15.png)
+
+Dirijase a la pestaña de ``Estensiones`` y busque ``Python``. Presione sobre el boton de ``Instalar``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/16.png)
+
+## Probar configuración.
+
+Los siguientes pasos se realizarán para comprobar el correcto funcionamiento en la configuración de VSCode con Python.
+
+Primero, cree una nueva carpeta en una ruta conocida. Para este tutorial, se crea una carpeta nueva en ``Documents`` con el nombre ``Python_Projects``, en donde se almacenaran los proyectos relacionados a python. Dentor de ella, se crea una segunda carpeta con el nombre ``hello_world``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/18.png)
+
+En la ventana de inicio de VSCode, presione ``Abrir carpeta``, en la ventana emergente, dirijase a la ruta creada en el paso anterior.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/20.png)
+
+En la ventana que se despliega, presione sobre ``Si, confío en los autores``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/21.png)
+
+En la herarquía de proyecto, encontrará los archivos de esa carpeta. Presione sobre ``Nuevo archivo``, y asignele el nombre ``main.py``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/22.png)
+
+Presione click sobre el archivo, se desplagará el editor de código en la parte central. Esciba en el la siguiente instrucción.
+
+```python
+print("Hello World")
+```
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/23.png)
+
+**Antes de ejecutar el codigo**, se creará un entorno de python para aislar la instalación de dependencias de paquetes. Dirijase a la parte superior del entorno y busque la opción ``Show and run commands``. 
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/25.png)
+
+Busque la opción ``Python: Create Environment``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/26.png)
+
+Seleccione la opción ``Venv``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/27.png)
+
+Seleccione la versión de python que tenga instalada en ese momento.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/28.png)
+
+Se creará una carpeta con el entorno de python ``.venv``. Ahora podemos proceder a ejecutar el código con este entorno.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/29.png)
+
+Dirijase a la parte superior nuevamente, y busque la opción ``Show and run commands``, luego ``Python: Select Interpreter``
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/30.png)
+
+Seleccione la opcíón correspondiente al entorno que está en esta carpeta.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/31.png)
+
+Finalmente, puede presionar sobre el botón ``Run Python File`` ubicado en la parte superior derecha. Se abrirá un terminal que muestra la ejecución del código, el interprete y el resultado de su codigo.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/33.png)
+
+Si presenta un error en el terminal como el que se muestra a continuación, dirijase a la sección de [Troubleshooting](#troubleshooting).
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/34.png)
+
+## Troubleshooting
+
+Es probable que el terminal que ejecute por defecto VSCode sea Powershell. Este limita la activación automática del entorno creado en la carpeta. Para corregir eso, se puede cambiar de terminal a cmd o cambiar las ``policies`` de powershell:
+
+### Cambiar Policies de Powershell
+En el terminal de Powershell ingrese el siguiente comando. Esto habilitará la ejecución de la activación del entorno. **Tenga presente que esto deberá hacerlo cada vez que inicie una nueva sesión de windows.**
+
+```bash
+Set-ExecutionPolicy Bypass
+```
+
+Puede cerrar y volver a abrir el terminal de Powershell y este ejecutará por defecto su entorno ``venv``, esto lo observa con el prefijo (.venv) en la linea de comando.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/35.png)
+
+### Cambiar el terminal de VScode.
+Dirijase a ``File → Preferences → Settings``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/36.png)
+
+En la pestaña de busqueda escriba ``Default Profile``, y en las opciones emergentes, busque ``Terminal › Integrated › Default Profile: Windows`` y cambiela a ``Command Prompt``.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/37.png)
+
+Puede cerrar la pestaña de ``Settings``, y verificar el funcionamiento del terminal.
+
+![VSCode_Python](../programming/assets/images/vscode_python_install/38.png)

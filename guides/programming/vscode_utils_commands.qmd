@@ -1,0 +1,31 @@
+# Comandos útiles en VSCode.
+
+
+## Comandos
+
+Crear un entorno nuevo mediante comandos.
+
+```bash
+# Windows/Linux/macOS
+python -m venv env
+
+```
+
+Para imprimir la estructura del proyecto. Lo almacena en un archivo ``.txt``
+
+```bash
+tree /f /a | findstr /v ".png" > structure.txt
+```
+
+Para instalar los paquetes indicados en un archivo ``requirements.txt`` una vez creado el entorno.
+
+```bash
+pip install -r requirements.txt
+```
+
+Genera el archivo `requirements.txt` que contiene la lista de librerías y sus versiones exactas.
+
+```bash
+pip freeze > requirements.txt
+
+```

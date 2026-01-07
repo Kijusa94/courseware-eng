@@ -1,0 +1,62 @@
+## 🚀 Atajos de Teclado Esenciales en VS Code
+
+### 1. Edición de Texto y Líneas (Core Editing)
+
+| Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
+| :--- | :--- | :--- |
+| **Mover Línea Arriba/Abajo** | `Alt + ↑` / `Alt + ↓` | Mueve la línea actual (o las líneas seleccionadas) sin necesidad de cortar y pegar. |
+| **Duplicar Línea Arriba/Abajo** | `Shift + Alt + ↑` / `Shift + Alt + ↓` | Copia la línea actual e inserta la copia inmediatamente arriba o abajo. |
+| **Cortar/Copiar Línea Completa** | `Ctrl + X` (Cortar) o `Ctrl + C` (Copiar) | Si no seleccionas nada, el atajo aplica la acción a la **línea actual completa**. |
+| **Borrar Línea Completa** | `Ctrl + Shift + K` | La forma más rápida de eliminar la línea donde está el cursor. |
+| **Comentar/Descomentar** | `Ctrl + /` | Conmuta entre comentar y descomentar la línea o el bloque seleccionado. **¡Uno de los más usados!** |
+| **Indentar/Desindetar** | `Ctrl + ]` / `Ctrl + [` | Mueve el bloque de código seleccionado hacia la derecha o izquierda. |
+| **Formatear Documento** | `Shift + Alt + F` | Aplica el formato automático (según las reglas configuradas) a todo el documento. |
+
+---
+
+### 2. Multi-Cursor y Selección (Selección Inteligente)
+
+| Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
+| :--- | :--- | :--- |
+| **Seleccionar Siguiente Ocurrencia** | `Ctrl + D` | **Selecciona la palabra actual**. Púlsalo de nuevo para seleccionar la siguiente ocurrencia de esa palabra. |
+| **Seleccionar TODAS las Ocurrencias** | `Ctrl + Shift + L` | Selecciona **TODAS** las veces que aparece la palabra actualmente seleccionada. Ideal para renombrar una variable en todo el archivo. |
+| **Multi-Cursor (Columnas)** | `Alt + Clic izquierdo` | Coloca cursores individuales donde hagas clic. |
+| **Añadir Cursor Arriba/Abajo** | `Ctrl + Alt + ↑` / `Ctrl + Alt + ↓` | Añade un cursor en la línea inmediatamente superior o inferior. Útil para bloques de texto paralelos. |
+| **Selección por Nivel** | `Shift + Alt + →` / `Shift + Alt + ←` | Expande o contrae la selección de forma inteligente basada en la estructura del código (llaves, paréntesis, etc.). |
+
+---
+
+### 3. Buscar y Reemplazar
+
+| Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
+| :--- | :--- | :--- |
+| **Buscar en Archivo** | `Ctrl + F` | Abre el widget de Búsqueda en el archivo actual. |
+| **Reemplazar en Archivo** | `Ctrl + H` | Abre el widget de Buscar y **Reemplazar** en el archivo actual. |
+| **Buscar en Múltiples Archivos** | `Ctrl + Shift + F` | Abre la búsqueda global en el panel lateral. |
+| **Reemplazar en Múltiples Archivos** | `Ctrl + Shift + H` | Abre la función de **Reemplazar** globalmente en tu proyecto. |
+
+---
+
+### 4. Navegación y Vistas (Paneles y Archivos)
+
+| Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
+| :--- | :--- | :--- |
+| **Paleta de Comandos** | `Ctrl + Shift + P` | **¡El atajo más importante!** Permite buscar y ejecutar cualquier comando de VS Code. |
+| **Ir a Archivo** | `Ctrl + P` | Busca y abre rápidamente cualquier archivo del proyecto. |
+| **Alternar Barra Lateral (Explorer)** | `Ctrl + B` | Oculta/muestra el panel lateral (Explorador, Control de Código Fuente, etc.). |
+| **Cambiar de Pestaña** | `Ctrl + Tab` | Navega entre las pestañas abiertas. |
+| **Cerrar Pestaña** | `Ctrl + W` | Cierra la pestaña activa. |
+| **Ir a la Definición** | `F12` | Navega al código fuente que define la función o variable en la que estás. |
+| **Volver/Adelantar Posición** | `Alt + ←` / `Alt + →` | Salta a la posición anterior o siguiente del cursor que visitaste. |
+
+---
+
+### 5. Depuración (Debugging)
+
+| Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
+| :--- | :--- | :--- |
+| **Iniciar/Detener Depuración** | `F5` | Comienza la sesión de depuración o continúa si está en pausa. |
+| **Añadir/Quitar Punto de Interrupción** | `F9` | Coloca un *breakpoint* en la línea actual. |
+| **Paso Siguiente (Step Over)** | `F10` | Ejecuta la línea actual y pasa a la siguiente, **sin entrar** en llamadas a funciones. |
+| **Entrar en Función (Step Into)** | `F11` | Entra en la definición de la función llamada en la línea actual. |
+| **Salir de Función (Step Out)** | `Shift + F11` | Continúa la ejecución hasta el final de la función actual y vuelve a la llamada. |

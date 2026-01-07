@@ -1,0 +1,302 @@
+---
+title: Programación  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Fundación Uinversitaria de Popayán
+---
+
+# Introducción 
+
+## Objetivos del Curso
+
+> "Pasar de ser usuarios de las herramientas a ser **Desarrolladores** de estas."
+
+* **Automatizar** tareas sencillas y repetitivas.
+* **Crear o adecuar** programas existentes:
+    * Páginas web
+    * Aplicaciones móviles
+    * Aplicaciones industriales
+
+## ¿Qué es un programa?
+
+Una serie de pasos que utilizan unos elementos de entrada para obtener unas salidas deseadas (como una receta de cocina).
+
+::: {.callout-important}
+Los computadores no entienden el lenguaje natural. Debemos explicar cada paso detalladamente.
+:::
+
+## ¿Por qué Python?
+
+1.  **Open Source:** No hay que pagar para usarlo.
+2.  **Multiplataforma:** Funciona en MacOS, Windows y Linux.
+3.  **Legibilidad:** Muy parecido a leer y escribir en inglés.
+4.  **Ecosistema:** Fácil de instalar y con muchas librerías.
+
+## Aplicaciones de Python
+
+:::: {.columns}
+
+::: {.column width="50%"}
+* **IA:** Keras, Tensorflow
+* **Big Data:** Pydoop
+* **Data Science:** Pandas, Numpy
+:::
+
+::: {.column width="50%"}
+* **Testing:** Pytest, Robot
+* **Web:** Django, FastAPI
+* **Scraping:** Selenium, Urllib
+:::
+
+::::
+
+# Sintaxis Básica 
+
+## Palabras Reservadas
+
+Son instrucciones predefinidas que el intérprete reconoce inmediatamente.
+
+```{python}
+#| echo: true
+# Ejemplos de keywords
+import keyword
+print(keyword.kwlist[:10]) # Imprimimos las primeras 10
+# ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class']
+```
+
+::: {.fragment} 
+Nota: Estas palabras se resaltan automáticamente en el editor (ej. import, if, else). 
+:::
+
+## Comentarios
+El código debe ser legible para humanos.
+
+```{python}
+#| echo: true
+# Esto es un comentario de una sola líne
+"""
+Esto es un comentario 
+de múltiples líneas.
+Útil para documentación extensa.
+"""
+
+import math # Importamos una librería
+```
+
+## Definición de Variables
+Python es de Tipado Dinámico (el tipo de dato se define en la ejecución) pero Fuertemente Tipado (no mezcla tipos incompatibles sin conversión).
+
+
+```{python}
+#| echo: true
+# Asignación simple
+a = 5
+nombre = 'Hola Mundo'
+
+# Tipado dinámico en acción
+mi_variable = 23
+print(mi_variable)
+
+mi_variable = "Ahora soy texto"
+print(mi_variable)
+```
+
+## Reglas de Nombramiento
+
+```{python}
+#| echo: true
+#| error: true
+# Ejemplos
+_valido = 10
+miVariable3 = 20
+
+# Esto lanzará error:
+3MiVariable = 30
+```
+
+::: {.incremental}
+- Deben empezar por letra o guión bajo _.
+- NO pueden empezar por número.
+- Case Sensitive: MiVariable es diferente de mivariable.
+- No se permiten espacios. 
+:::
+
+## Constantes
+En Python no existen constantes "reales", pero por convención usamos MAYÚSCULAS.
+
+```{python}
+#| echo: true
+GRAVEDAD = 9.8
+PI = 3.1416
+MU = 2.21
+```
+
+## Tipos Numéricos y Lógicos
+```{python}
+#| echo: true
+# Enteros y Flotantes
+numero = 23
+decimal = 3.0
+complejo = 2 + 1j
+
+# Lógicos (Booleanos)
+es_verdadero = True
+es_falso = False
+
+print(type(complejo))
+print(type(es_verdadero))
+```
+
+## Tipos Secuenciales (Listas y Tuplas) {.smaller}
+Almacenan múltiples valores.
+
+::: {.columns}
+::: {.column}
+**Heterogenes y mutables**
+```{python}
+#| echo: true
+lista = ["hola", 3, True]
+lista[0] = "chao" # Se puede cambiar
+```
+::: 
+::: {.column}
+**Heterogeneas e inmutables**
+```{python}
+#| echo: true
+#| error: true
+tupla = ("manzana", "pera")
+tupla[0] = "uva" #-> Error
+```
+:::
+:::
+
+## Diccionarios
+Almacenan datos en pares ``Clave : Valor``.
+```{python}
+#| echo: true
+diccionario = {
+    "1": "hola", 
+    "2": "mundo", 
+    "w": "lista"
+}
+
+print(diccionario["w"])
+```
+
+## Herramientas y Conversión
+Inspección de Variables
+Funciones útiles para saber qué tenemos en memoria:
+
+- ``type(x)``: Devuelve el tipo de dato.
+- ``dir(x)``: Muestra atributos y funciones disponibles.
+- ``help(x)``: Muestra la documentación oficial.
+
+```{python}
+#| echo: true
+texto = "Python"
+print(type(texto))
+# print(dir(texto)) # Descomentar para ver métodos
+```
+
+## Conversión de Tipos (Casting)
+Podemos transformar datos si cumplen las condiciones.
+
+```{python}
+#| echo: true
+#| error: true
+numero = 3
+cadena = "245"
+
+suma = numero + cadena # Error
+suma = numero + int(cadena) # Correcto
+print(f"La suma es: {suma}")
+```
+
+# Operaciones con variables y datos 
+
+## Entrada y Salida de Datos (Input)
+La función ``input()`` siempre devuelve un string (texto). La función ``print()`` muestra en el terminal los datos.
+
+```{python}
+#| echo: true
+#| eval: false # Nota: Este código no se ejecuta en la diapositiva para no bloquearla
+edad = input("Ingrese su edad: ")
+edad_num = int(edad)
+print(f"El próximo año tendrás {edad_num + 1}")
+```
+
+## Operaciones 
+Aritmética Básica. Python respeta la precedencia matemática.
+```{python}
+#| echo: true
+n1 = 3
+n2 = 2
+
+print(f"Suma: {n1 + n2}")
+print(f"Potencia: {n1 ** n2}")
+print(f"Módulo (Residuo): {n1 % n2}")
+print(f"División: {n1 / n2}")
+```
+
+## Operaciones Lógicas
+Comparaciones que resultan en True o False.
+
+```{python}
+#| echo: true
+print(3 < 5)   # True
+print(3 == 5)  # False (Igualdad)
+print(3 != 5)  # True (Diferencia)
+
+# Conectores lógicos
+b1 = True
+b2 = False
+print(b1 and b2) # False
+print(b1 or b2)  # True
+```
+
+# Manejo de Errores 
+
+## Tipos de Errores {.smaller}
+> "De los errores se aprende. Sea paciente y lea los mensajes."
+
+- Errores de Sintaxis: Mal escrito (falta paréntesis, dos puntos).
+- Errores de Ejecución (Runtime): Operaciones imposibles.
+
+```Python
+#| echo: true
+#| error: true
+#EJEMPLO 1: ERROR DE ESCRITURA - FALTA UN PARENTESIS
+print("hola mundo"
+
+#EJEMPLO 2:ERROR DE ESCRITURA - FALTAN PARENTESIS
+print "hola mundo"
+
+#EJEMPLO 3: ERROR DE ESCRITURA - La instrucción print es en minuscula
+Print("hola mundo")
+```
+
+## Tipos de Errores {.smaller}
+```Python
+#EJEMPLO 4: ERROR DE ESCRITURA - LAS VARIABLES NUMERICAS NO PUEDEN INICIAR CON CERO
+numero = 034
+
+#EJEMPLO 5: ERROR DE ESCRITURA - NO HAY OPERACION ENTRE VALORES.
+"hola mundo" 34 34.5
+
+#EJEMPLO 6: ERROR DE ESCRITURA - IDENTACIÖN. En Python los espacios al inicio iportan
+print("hola")
+    print("mundo")
+
+#EJEMPLO 7: ERROR DE EJECUCION - CALCULOS NO POSIBLES
+3/0
+
+#EJEMPLO 8: ERROR DE EJECUCION - OPERACION ENTRE DIFERENTES TIPOS DE DATOS
+a = "hola" + 2
+
+#EJEMPLO 9: ERROR DE EJECUCION - ACCEDER A COSAS QUE NO EXISTEN
+archivo = open("error.txt", "r")
+
+#EJEMPLO 10: ERROR DE EJECUCION - ACCESO A VALORES NO DEFINIDOS
+a = [1,2,3,4]
+b = a[6]
+```

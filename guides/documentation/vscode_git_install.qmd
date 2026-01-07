@@ -1,0 +1,28 @@
+# Instalación de Git en VSCode
+
+[TOC]
+
+## Instalar Git
+
+![vscode_git_install](../documentation/assets/images/vscode_git_install/01.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/02.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/03.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/04.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/05.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/06.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/07.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/08.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/09.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/10.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/11.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/12.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/13.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/14.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/15.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/16.png)
+![vscode_git_install](../documentation/assets/images/vscode_git_install/17.png)
+
+## Setting up
+
+## Workflow
+

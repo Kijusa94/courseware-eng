@@ -1,0 +1,44 @@
+---
+title: "Mi Documentación"
+---
+
+Esta es la página principal del proyecto. Aquí centralizamos todo el conocimiento y los recursos visuales disponibles.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+
+## 📚 Guías de Usuario
+Consulta nuestra documentación detallada para aprender a instalar, configurar y utilizar las herramientas.
+
+- Pasos claros y concisos.
+- Ejemplos de código.
+- Solución de problemas comunes.
+
+[Ir a las Guías &rarr;](guides/index.qmd){.btn .btn-primary role="button"}
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+## 📊 Presentaciones
+Material visual utilizado en nuestras demos y reuniones. Perfecto para tener una visión general rápida.
+
+- Diapositivas interactivas.
+- Formato RevealJS.
+- Accesible desde cualquier navegador.
+
+[Ir a las Presentaciones &rarr;](slides/index.qmd){.btn .btn-secondary role="button"}
+
+:::
+
+::::
+
+---
+
+### 🚀 Acceso Rápido
+
+::: {.callout-note}
+## Novedades
+El repositorio se actualizará con nuevas caracteristicas.
+:::

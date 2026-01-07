@@ -1,0 +1,156 @@
+#  Procedimiento de Trabajos de grado
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant EST as Estudiante
+    participant DIR as Director
+    participant CTG as Coordinación TG
+    participant EVL as Evaluador TG
+    participant COM as Comité Curricular
+
+    Note over EST, COM: Anteproyecto
+
+    Note over EST: Generar idea 
+
+    alt Asignado por Comité
+        EST ->> CTG: Busca asignación de Director con la Coordinación de TG
+        CTG ->> COM: Solicita asignación
+        Note over COM: Revisa <br/> carga academica
+        COM -->> CTG: Asigna Director
+        CTG -->> DIR: Notifica la Dirección del TG
+    else Asignado por Director
+        EST ->> DIR: Busca asignación de Director
+    end
+    DIR -->> EST: Programa reunión
+        
+    loop 1 Periodo academico
+        EST ->> DIR: Envía borrador 
+        DIR -->> EST: Envía correcciones y feedback
+    end
+    Note over EST,DIR: Visto bueno del Director
+
+    DIR ->> CTG: Envía correo con anteproyecto
+    CTG ->> COM: Envía para asignación
+    COM -->> CTG: Asigna evaluadores
+    CTG ->> EVL: Envía correo
+
+    Note over EVL: Evalua el anteproyecto
+
+    loop Hasta que haya concepto 'Aprobado sin modificaciones'
+        alt
+            EVL -->> CTG: Notifica Concepto <br/> 'Rechazado'
+            CTG -->> DIR: Notifica Concepto <br/> 'Rechazado'
+            DIR -->> EST: Notifica Concepto <br/> 'Rechazado'
+            break
+                Note over EST: Debe generar <br/> una nueva propuesta
+            end
+
+        else Max. 2 revisiones por parte del evaluador, sino 'Rechazado'
+            EVL -->> CTG: Notifica Concepto <br/> 'Segunda revisión'
+            CTG -->> DIR: Notifica Concepto <br/> 'Segunda revisión'
+            DIR -->> EST: Notifica Concepto <br/> 'Segunda revisión'
+            loop
+                EST ->> DIR: Envía borrador 
+                DIR -->> EST: Envía correcciones y feedback
+            end
+            DIR ->> CTG: Envía correo con correcciones
+            CTG ->> EVL: Envía correo con correcciones            
+            EVL -->> CTG: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            CTG -->> DIR: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            DIR -->> EST: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+
+        else Las modificaciones deben presentarse en el Documento Final de TG
+            EVL -->> CTG: Notifica Concepto <br/> 'Aprobado con modificaciones'
+            CTG -->> DIR: Notifica Concepto <br/> 'Aprobado con modificaciones'
+            DIR -->> EST: Notifica Concepto <br/> 'Aprobado con modificaciones'
+            Note over EST: Realiza correcciones <br/> sobre Documento Final
+
+        else No se requieren modificaciones
+            EVL -->> CTG: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            CTG -->> DIR: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            DIR -->> EST: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+
+        end
+    end 
+    
+    CTG -->> EST: Notifica Pago de opción de grado
+
+    Note over EST: Envía <br/> recibo de pago <br/> Admisiones
+
+    Note over EST, COM: Documento Final de Trabajo de grado
+
+    loop Min. 6 Meses - Max. 1 año
+        EST ->> DIR: Envía borrador 
+        DIR -->> EST: Envía correcciones y feedback
+    end
+    Note over EST,DIR: Visto bueno del Director
+
+    DIR ->> CTG: Envía correo <br/> con Trabajo de grado
+    CTG ->> EVL: Envía correo
+
+    Note over EVL: Evalua el Trabajo de grado
+
+    loop Hasta que haya concepto 'Aprobado sin modificaciones'
+        alt
+            EVL -->> CTG: Notifica Concepto <br/> 'Rechazado'
+            CTG -->> DIR: Notifica Concepto <br/> 'Rechazado'
+            DIR -->> EST: Notifica Concepto <br/> 'Rechazado'
+            break
+                Note over EST: Debe generar <br/> una nueva propuesta
+            end
+
+        else Max. 2 revisiones por parte del evaluador, sino 'Rechazado'
+            EVL -->> CTG: Notifica Concepto <br/> 'Segunda revisión'
+            CTG -->> DIR: Notifica Concepto <br/> 'Segunda revisión'
+            DIR -->> EST: Notifica Concepto <br/> 'Segunda revisión'
+            loop
+                EST ->> DIR: Envía borrador 
+                DIR -->> EST: Envía correcciones y feedback
+            end
+            DIR ->> CTG: Envía correo con correcciones
+            CTG ->> EVL: Envía correo con correcciones            
+            EVL -->> CTG: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            CTG -->> DIR: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            DIR -->> EST: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+
+        else Las modificaciones deben presentarse en el Documento Final de TG
+            EVL -->> CTG: Notifica Concepto <br/> 'Aprobado con modificaciones'
+            CTG -->> DIR: Notifica Concepto <br/> 'Aprobado con modificaciones'
+            DIR -->> EST: Notifica Concepto <br/> 'Aprobado con modificaciones'
+            Note over EST: Realiza correcciones <br/> sobre Documento Final
+
+        else No se requieren modificaciones
+            EVL -->> CTG: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            CTG -->> DIR: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+            DIR -->> EST: Notifica Concepto <br/> 'Aprobado sin modificaciones'
+
+        end
+    end 
+    
+    par Actividades simultaneas
+        Note over EST: Prepara Sustentación
+    and
+        Note over CTG: Programa Sustentación <br/> segun Calendario
+    end 
+
+    Note over EST, COM: Sustentación
+
+    loop Prepara Sustentación
+        EST ->> DIR: Envía borrador
+        DIR -->> EST: Envía correcciones y feedback
+    end
+
+    Note over EST,DIR: Visto bueno del Director
+
+    rect rgb(240, 240, 240)
+        CTG ->> DIR: Programa sustentación
+        CTG ->> EVL: Programa sustentación
+        DIR -->> CTG: Establece horario
+        EVL -->> CTG: Establece horario
+    end
+
+    Note over EST: Elaborar y publicar pieza <br/> gráfica "Invitación"
+
+    Note over EST, COM: Sustentación en fecha y lugar indicado por Coordinación
+```

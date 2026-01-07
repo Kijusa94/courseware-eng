@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Mi Documentación"
+  description: "Sitio con guías y slides"
+  
+  # Barra superior (Menú principal)
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: guides/index.qmd
+        text: "Ir a Guías"
+      - href: slides/index.qmd
+        text: "Ir a Presentaciones"             
+
+  # Barra lateral
+  sidebar:
+    id: guias-sidebar
+    title: "Contenido"
+    style: "docked"  
+    search: true     
+    contents:
+      - section: "Material de Apoyo"
+        contents:
+          - "guides"
+          - "slides"
+  
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme: cosmo     
+    toc: true        
+
+embed-resources: true

@@ -1,0 +1,248 @@
+# Guía de configuración de Markdown.
+
+El siguiente documento tiene por objetivo documentar el proceso de instalación y configuración de las extensiones necesarias en Visual Studio Code para la elaboración de guías de laboratorio y documentos técnicos utilizando el lenguaje de marcado ligero Markdown.
+
+[TOC]
+
+## Requerimientos
+- Tener instalado Visual Studio Code.
+- Conexión a internet para descarga de paquetes.
+
+## Acceso al gestor de extensiones
+Para iniciar, abra Visual Studio Code y diríjase al menú lateral izquierdo. Presione sobre el icono de "Extensiones" (o use el atajo `Ctrl + Shift + X`).
+
+![Markdown](../documentation/assets/images/vscode_md_setup/01.png)
+
+## Instalación de Markdown All in One
+Esta herramienta es fundamental para la productividad. Permite generar índices automáticos (TOC), utilizar atajos de teclado para negritas/cursivas y formatear listas de manera inteligente.
+
+En la barra de búsqueda del gestor de extensiones, escriba: `Markdown All in One`. Seleccione la extensión creada por **Yu Zhang** y presione el botón "Instalar".
+
+![Markdown](../documentation/assets/images/vscode_md_setup/02.png)
+
+### Elementos básicos de edición
+A continuación, se describen los comandos esenciales para estructurar sus documentos usando Markdown. La extensión *Markdown All in One* facilita estas tareas mediante atajos.
+
+#### A. Títulos y Subtítulos
+Para crear la estructura jerárquica del documento se utiliza el símbolo numeral `#`.
+
+```markdown
+* `# Título Principal` (Nivel 1: Usar solo una vez para el título del Laboratorio).
+* `## Título Secundario` (Nivel 2: Objetivos, Materiales, Resultados).
+* `### Título Terciario` (Nivel 3: Sub-secciones específicas).
+```
+
+**Ejemplo:**
+
+```markdown
+# Laboratorio 1: Automatización
+## 1. Objetivos
+## 2. Marco Teórico
+### 2.1 Conceptos básicos
+```
+
+#### B. Formato de Texto
+Puede dar énfasis al texto utilizando asteriscos:
+
+```markdown
+Negrita: Se usa doble asterisco **Texto**. (Atajo: Ctrl + B).
+Cursiva: Se usa un asterisco simple *Texto*. (Atajo: Ctrl + I).
+```
+
+#### C. Listas y Numeración
+Para listar materiales o pasos de un procedimiento:
+
+- Listas no ordenadas (Viñetas): Use un guion - o un asterisco * seguido de un espacio.
+- Listas ordenadas (Numeración): Use el número seguido de un punto 1. seguido de un espacio.
+
+```markdown
+Ejemplo:
+**Materiales:**
+- Sensor ultrasónico.
+- Cableado UTP.
+
+**Procedimiento:**
+1. Conectar el sensor.
+2. Verificar el voltaje.
+```
+
+#### D. Insertar Imágenes
+Para agregar evidencias o esquemas, asegúrese de guardar la imagen en su carpeta assets y use la siguiente sintaxis:
+
+```markdown
+![Texto alternativo](ruta/a/la/imagen.png)
+```
+
+Tip: Si empieza a escribir ./assets, VS Code le sugerirá automáticamente las imágenes disponibles en su carpeta.
+
+#### E. Insertar Tablas
+Las tablas se dibujan usando barras verticales | y guiones -.
+
+- La primera fila son los encabezados.
+- La segunda fila define la alineación.
+
+```markdown
+| Variable | Valor | Unidad |
+|----------|-------|--------|
+| Voltaje  | 5     | V      |
+| Corriente| 20    | mA     |
+```
+
+#### F. Tabla de Contenidos (TOC)
+Gracias a la extensión Markdown All in One, no es necesario crear el índice manualmente. Puede usar el comando [TOC] para agregar la tabla de contenido de forma automática, o en su defecto, puede seguir los siguientes pasos.
+
+1. Ubique el cursor donde desea el índice (usualmente al inicio, después del título).
+2. Abra la paleta de comandos (Ctrl + Shift + P).
+3. Escriba y seleccione: Markdown All in One: Create Table of Contents.
+4. El índice se generará y actualizará automáticamente al guardar el archivo.
+
+#### G. Agregar código
+Para agregar codigo a un archivo .md utilice tres comillas invertidas (`) para la apertura de código, y tres de cierre. Indique después de las comillas de apertura el lenguaje de programación utilizado, esto agregará los colores de sintaxis segun corresponda con palabras reservadas, variables, operadores, etc. El siguiente ejemplo muestra un codigo en .md para agregar un diagrama en mermaid.
+
+**Ejemplo de código:**
+
+![Markdown](../documentation/assets/images/vscode_md_setup/04.png)
+
+**Resultado:**
+```
+graph TD;
+    A[Inicio] --> B{¿Lectura Correcta?};
+    B -- Si --> C[Registrar Dato];
+    B -- No --> D[Calibrar Sensor];
+    D --> B;
+```
+## Instalación de Markdown Preview Enhanced
+Si bien VS Code trae un previsualizador básico, esta extensión permite una vista previa mucho más potente, compatible con ecuaciones matemáticas y estilos visuales profesionales.
+
+En el buscador, escriba: Markdown Preview Enhanced. Seleccione la extensión creada por Yiyi Wang y presione "Instalar".
+
+Para visualizar su documento mientras lo edita, presione clic derecho sobre el archivo .md y seleccione Markdown Preview Enhanced: Open Preview to the Side. Verá el código a la izquierda y el documento renderizado a la derecha. El acceso rápido a esta opción es `Ctrl + k V` (Después de `Ctrl+K`, presione `V`).
+
+![Markdown](../documentation/assets/images/vscode_md_setup/03.png)
+
+## Instalación de Markdown Preview Mermaid Support
+Esta extensión permite visualizar diagramas de ingeniería (flujo, Gantt, secuencia) directamente en el documento mediante código.
+
+Busque la extensión Markdown Preview Mermaid Support creada por Matt Bierner. Presione "Instalar".
+
+Para crear un diagrama, utilice un bloque de código especificando el lenguaje mermaid.
+```
+graph TD;
+    A[Inicio] --> B{¿Lectura Correcta?};
+    B -- Si --> C[Registrar Dato];
+    B -- No --> D[Calibrar Sensor];
+    D --> B;
+```
+
+![Markdown](../documentation/assets/images/vscode_md_setup/04.png)
+
+
+```mermaid
+graph TD;
+    A[Inicio] --> B{¿Lectura Correcta?};
+    B -- Si --> C[Registrar Dato];
+    B -- No --> D[Calibrar Sensor];
+    D --> B;
+```
+
+## Instalación de Markdown PDF
+Para entregar sus documentos o proyectos, necesitará exportar su trabajo a un formato portátil (PDF).
+
+Busque Markdown PDF creada por yzane y proceda a instalarla.
+
+**Nota: La primera vez que use esta extensión, es posible que tarde unos minutos mientras descarga los componentes necesarios para la conversión.**
+
+Para generar el PDF, haga clic derecho en cualquier parte del editor de texto y seleccione la opción Markdown PDF: Export (pdf). El archivo se creará automáticamente en la carpeta de su proyecto.
+
+![Markdown](../documentation/assets/images/vscode_md_setup/05.png)
+
+
+## Estructura de Proyecto y Buenas Prácticas
+Para garantizar que sus proyectos sean portables (que funcionen en cualquier computador) y escalables, se debe mantener un orden estricto en los directorios. A continuación, se presenta el estándar sugerido para la entrega de laboratorios.
+
+### Jerarquía de Carpetas
+No guarde todas las imágenes y archivos en un solo lugar desordenado. Cree una carpeta raíz para su proyecto y utilice subcarpetas para organizar los recursos.
+
+**Estructura sugerida:**
+```text
+Proyecto_Ingeniería_Lab_1/
+├── assets/                 <-- Carpeta para recursos externos
+│   ├── images/             <-- Guarde aquí TODAS las capturas y diagramas
+│   └── docs/               <-- Hojas de datos (datasheets) o anexos
+├── src/                    <-- (Opcional) Códigos fuente (Python, Matlab, C++)
+├── informe_laboratorio.md  <-- Su archivo de documentación principal
+└── informe_laboratorio.pdf <-- El archivo final exportado
+```
+### Convención de Nombres
+En entornos de ingeniería y programación, nunca utilice espacios en blanco ni caracteres especiales (tildes, ñ) en los nombres de archivos o carpetas.
+
+- ❌ Incorrecto: mi imagen de prueba.png, diseño_final.md
+- ✅ Correcto: mi_imagen_prueba.png, diseno_final.md
+
+Utilice **snake_case** (palabras separadas por guion bajo) o **kebab-case** (separadas por guion medio).
+
+### Rutas Relativas
+Al insertar imágenes en su Markdown, siempre utilice rutas relativas y nunca rutas absolutas. Esto asegura que si envía la carpeta comprimida a otra persona, las imágenes se seguirán viendo.
+
+- ❌ Ruta Absoluta (Mala práctica): 
+    `C:/Users/user/Documentos/Lab1/assets/images/foto1.png `
+    Esto fallará si se abre en otro computador.
+
+- ✅ Ruta Relativa (Buena práctica): 
+    `./assets/images/foto1.png `
+    El punto ``.`` indica "la carpeta actual donde está este archivo". Utilice ``..`` para indicar que es una carpeta padre al directorio actual.
+
+### Gestión de Imágenes
+Para evitar confusiones en informes largos, se sugiere numerar las imágenes coincidiendo con la sección a la que pertenecen o el orden de aparición:
+
+**Ejemplo:**
+```
+- 01_montaje_experimental.png
+- 02_resultado_osciloscopio.png
+- 03_diagrama_flujo.png
+```
+**Otro Ejemplo;**
+```
+- metodologia01.png
+- metodologia02.png
+- metodologia03.png
+```
+
+## PowerToys
+Para evitar renombrar archivo por archivo, utilizaremos **PowerRename**, una utilidad incluida en la suite de Microsoft PowerToys.
+
+### Instalación
+Busque en el navegador web o en la Microsoft Store (Tienda de Windows) la aplicación "Microsoft PowerToys".
+
+![Markdown](../documentation/assets/images/vscode_md_setup/06.png)
+
+Proceda a instalar la aplicación. Una vez instalada, asegúrese de que se esté ejecutando en segundo plano (puede verificarlo en la barra de tareas, cerca del reloj).
+
+![Markdown](../documentation/assets/images/vscode_md_setup/07.png)
+
+### Uso de PowerRename para gestión de imágenes
+Esta herramienta se integra directamente en el explorador de archivos de Windows. Para renombrar un lote de imágenes siguiendo las buenas prácticas (sin espacios, con numeración):
+
+1.  Diríjase a su carpeta `assets/images`.
+2.  Seleccione **todas** las imágenes que desea renombrar.
+3.  Presione clic derecho y seleccione la opción **PowerRename** (icono del lápiz con dos cuadrados).
+
+![Markdown](../documentation/assets/images/vscode_md_setup/08.png)
+
+4.  Se abrirá una ventana emergente. Configure los siguientes campos para limpiar los nombres:
+    * **Search for (Buscar):** Ingrese parte del nombre original que quiera eliminar o use `.*` (y active la casilla "Use Regular Expressions") para seleccionar todo el nombre.
+    * **Replace with (Reemplazar con):** Escriba el nuevo nombre base seguido de la numeración automática.
+    
+    **Ejemplo práctico:**
+    Si escribe `lab_${increment=1;padding=2;start=1}`, el programa renombrará los archivos automáticamente a:
+    * `lab_01.jpg`
+    * `lab_02.jpg`
+    * `lab_03.jpg`
+
+![Markdown](../documentation/assets/images/vscode_md_setup/09.png)
+
+5.  Verifique en la columna "Renamed" (Renombrado) que el resultado sea el esperado y presione el botón **Apply**. Puede presionar sobre los íconos de información para revisar las expresiones regulares, así como en los demas controles para configurar el nombre de sus archivos o carpetas.
+
+![Markdown](../documentation/assets/images/vscode_md_setup/10.png)
+
+Siguiendo estas prácticas, sus repositorios de laboratorio se verán profesionales y serán fáciles de revisar.

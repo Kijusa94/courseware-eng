@@ -1,0 +1,278 @@
+---
+title: Programación  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Fundación Uinversitaria de Popayán
+---
+
+
+# Flujo Condicional 
+
+## Flujo de Trabajo Secuencial
+
+Por defecto, Python ejecuta las instrucciones una detrás de otra.
+
+```{python}
+#| echo: true
+numero1 = 10
+numero2 = 20
+resultado = numero1 + numero2
+print(f"El resultado es: {resultado}")
+
+```
+
+Sin embargo, a menudo necesitamos afectar la ejecución dependiendo de condiciones específicas.
+
+## Estructura If / Elif / Else
+
+El flujo condicional permite tomar decisiones.
+
+```python
+if (condicion):
+    Sentencia1
+elif (otra_condicion):
+    Sentencia2
+else:
+    SentenciaSiNo
+
+```
+
+::: {.callout-important}
+
+## ¡SEA ORDENADO!
+
+La indentación (espacios o tabulaciones al inicio de la línea) es **indispensable** en Python para definir qué código pertenece al bloque.
+:::
+
+## Ejemplo de Condicional Simple
+
+Evaluamos si un número es mayor o igual a otro.
+
+```{python}
+#| echo: true
+numero1 = 10
+numero2 = 20
+
+if (numero1 >= numero2):
+    print("El primer número es mayor o igual que el segundo")
+else:
+    print("El primer número es menor que el segundo")
+
+```
+
+## Condicionales Anidados
+
+Podemos preguntar por múltiples condiciones utilizando `elif`.
+
+```{python}
+#| echo: true
+if (numero1 > numero2):
+    print("El primer numero es mayor que el segundo")
+elif (numero1 < numero2):
+    print("El primer numero es menor que el segundo")
+else:
+    print("Los numeros son iguales")
+
+```
+
+## Ejercicio: Calificaciones
+
+Lógica para clasificar una nota ingresada por usuario.
+
+```{python}
+#| echo: true
+#| eval: false 
+nota = float(input("Ingrese la nota del estudiante: "))
+
+if (nota > 0 and nota < 1):
+    print("Es mejor cancelar")
+elif (nota >= 1 and nota < 2):
+    print("A ponerse las pilas")
+elif (nota >= 2 and nota < 3):
+    print("Lo subo con la siguiente nota")
+elif (nota >= 3 and nota < 4):
+    print("De 3 pa' arriba es lujo")
+elif (nota >= 4 and nota <= 5):
+    print("Uyyy! Para la beca")
+else:
+    print("Ingresó un valor no válido")
+
+```
+
+# Ciclos y Bucles 
+
+## Tipos de Ciclos
+
+Requerimos repetir instrucciones una cierta cantidad de veces o hasta cumplir una condición.
+
+1. **Ciclo ``while``**: Se ejecuta mientras una condición sea verdadera.
+2. **Ciclo ``for``**: Se ejecuta una cantidad definida de veces (iterando sobre una secuencia).
+
+## El Ciclo While
+
+Ejemplo: Cuenta regresiva hasta cero.
+
+```{python}
+#| echo: true
+a = 5
+while a > 0:                                
+    print("El valor de 'a' es: " + str(a))
+    a -= 1  # Equivalente a: a = a - 1
+print("Se terminan las iteraciones")
+
+```
+
+::: {.callout-warning}
+Si no se es cuidadoso con la condición de parada, el programa entrará en un **bucle infinito**.
+:::
+
+## El Ciclo For (Strings)
+
+Descomponer una palabra en sus letras.
+
+```{python}
+#| echo: true
+cadena = "Python"
+
+for letra in cadena:
+    print(letra)
+
+```
+
+## El Ciclo For (Listas y Range)
+
+Podemos iterar listas o rangos numéricos.
+
+```{python}
+#| echo: true
+lista = ["Pedro", "Pablo", "Carlos", "Jhon", "Yamil"]
+
+# range(inicio, fin, paso)
+for idx in range(0, len(lista), 2):
+    print(f"Índice {idx}: {lista[idx]}")
+
+```
+
+## Control de Ciclos: Break
+
+`break` corta la ejecución del ciclo inmediatamente.
+
+```{python}
+#| echo: true
+cadena = "palabras"
+
+for letra in cadena:
+    if letra == 'b':
+        print("Encontré la letra b, saliendo...")
+        break
+    print(letra)
+
+```
+
+## Control de Ciclos: Continue
+
+`continue` salta la iteración actual y pasa a la siguiente.
+
+```{python}
+#| echo: true
+lista = ["Pedro", "Pablo", "Carlos"]
+
+for i in range(0, len(lista)):
+    if i == 1: # Saltamos a Pablo (índice 1)
+        continue
+    print(lista[i])
+
+```
+
+## Ejercicios de Ciclos
+
+**1. Números no divisibles entre 3 (del 0 al 9):**
+
+```{python}
+#| echo: true
+for i in range(0, 10):
+    if (i % 3 != 0):
+        print(i, end=" ") # end=" " imprime en la misma linea
+
+```
+
+**2. Suma de pares de 2 a 10:**
+
+```{python}
+#| echo: true
+suma = 0
+for numero in range(2, 11, 2):
+    suma += numero
+print(f"\nLa suma total es: {suma}")
+
+```
+
+# Manejo de Errores 
+
+## ¿Por qué manejar errores?
+
+No siempre queremos que el programa se detenga abruptamente ("crashee") cuando ocurre un error de ejecución.
+
+Es mejor **tratar** el error y dar una respuesta controlada o una solución alternativa.
+
+## El bloque Try / Except
+
+Intentamos ejecutar un código (`try`), y si falla, capturamos el error (`except`).
+
+```{python}
+#| echo: true
+#| eval: false
+try:
+    valor = int(input("Ingrese número para factorial: "))
+    # ... calculo ...
+    print("Cálculo exitoso")
+except Exception as e:
+    print("Ha ingresado un valor no válido.")
+    print(f"Error técnico: {e}")
+
+```
+
+## Tipos Específicos de Errores
+
+Podemos reaccionar diferente según el error (`ArithmeticError`, `ValueError`, etc).
+
+```{python}
+#| echo: true
+#| eval: false
+try:
+    factorial = 1
+    valor = int(input("Ingrese entero: "))
+    for i in range(1, valor + 1):
+        factorial *= i
+    print("Factorial:", factorial)
+    
+except ArithmeticError:
+    print("Error matemático ocurrió")
+except ValueError:
+    print("Debe ingresar un NÚMERO entero, no letras.")
+except Exception as e:
+    print(f"Error desconocido: {e}")
+
+```
+
+## Finally
+
+El bloque `finally` se ejecuta **siempre**, haya error o no. Es vital para cerrar conexiones a bases de datos o archivos.
+
+```{python}
+#| echo: true
+#| eval: false
+try:
+    valor = int(input("Número: "))
+    resultado = 10 / valor
+except ZeroDivisionError:
+    print("No se puede dividir por cero.")
+    resultado = 0
+finally:
+    print("Esta línea se imprime siempre (cerrando procesos...)")
+
+```
+
+```
+
+```

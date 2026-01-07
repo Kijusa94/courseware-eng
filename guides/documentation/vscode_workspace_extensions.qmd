@@ -1,0 +1,92 @@
+# Workspace migration tutorial
+
+[TOC]
+
+## Crear carpeta y archivo JSON
+
+1. Abre la Paleta de Comandos (Ctrl + Shift + P en Windows/Linux o Cmd + Shift + P en Mac).
+
+![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/01.png)
+
+2. Escribe y selecciona: Extensions: Configure Recommended Extensions (Workspace Folder) (En español: Extensiones: Configurar extensiones recomendadas).
+
+![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/02.png)
+
+3. ¡Listo! VSCode creará automáticamente la carpeta .vscode y el archivo extensions.json con la estructura correcta y lo abrirá en el editor.
+
+
+## Agregar extensiones de forma automática al JSON
+
+Abre tu terminal integrada en VSCode y ejecuta:
+
+```
+code --list-extensions >> extensions.txt
+```
+
+Esto creará un archivo de texto nuevo, en donde encontrará todas las extensiones instaladas en su Workspace. Ahora, verás que la lista no es JSON válido (faltan comillas y comas). Arreglémoslo:
+
+1. Selecciona la lista de extensiones.
+
+2. Presiona Ctrl + H (Buscar y Reemplazar).
+
+3. Activa el botón de Expresiones Regulares (el icono .*).
+
+4. Buscar: ``(.*)`` Debe incluir los parentesis
+
+5. Reemplazar con: ``"$1",``
+
+6. Haz clic en "Reemplazar todo".
+
+![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/03.png)
+
+7. Copia toda la lista con este nuevo formato.
+
+![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/04.png)
+
+8. Pega la lista dentro de los corchetes [] y ajuste la identación.
+
+![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/05.png)
+
+Ahora tienes una lista JSON válida con todas tus extensiones. Solo asegúrate de borrar la última coma del último elemento si el linter se queja.
+
+## Agregar extensiones de forma manual al JSON
+Una vez creado el archivo, no necesitas escribir los IDs de memoria.
+
+1. Abre el panel de Extensiones en la barra lateral izquierda.
+2. Busca la extensión que quieres agregar (o ve a la lista de "Instaladas").
+3. Haz clic en el icono de engranaje ⚙️ de la extensión.
+
+4. Selecciona Add to Workspace Recommendations (Añadir a recomendaciones del área de trabajo).
+
+![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/06.png)
+
+El truco: Esto inyectará automáticamente el ID correcto en tu archivo extensions.json sin que tengas que copiar y pegar nada.
+
+![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/05.png)
+
+## Importar extensiones recomendadas
+
+### Desde el panel de Extensiones (La forma visual)
+Esta es la forma estándar de ver qué pide el proyecto:
+
+1. Abre el panel de Extensiones en la barra izquierda (o presiona Ctrl + Shift + X).
+
+2. En la barra de búsqueda del panel, escribe @recommended.
+
+3. Verás una sección llamada "Workspace Recommendations" (Recomendaciones del área de trabajo).
+
+4. Junto al título de esa sección, aparecerá un icono de una nube con una flecha hacia abajo ☁️⬇️.
+
+5. Si haces clic ahí, instalará todas de golpe.
+
+!!! Nota
+    Puedes ir una por una haciendo clic en el botón de instalar de cada lista.
+
+### Desde la Paleta de Comandos (La forma rápida)
+Si no quieres escribir en el buscador:
+
+1. Abre la Paleta de Comandos (Ctrl + Shift + P / F1).
+
+2. Escribe y selecciona: "Extensions: Show Recommended Extensions" (Extensiones: Mostrar extensiones recomendadas).
+
+3. Esto te llevará a la misma pantalla del paso anterior, donde podrás ver la lista y el botón de instalar todo.

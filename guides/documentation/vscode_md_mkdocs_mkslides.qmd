@@ -1,0 +1,64 @@
+# Paquetes de base para documentación
+
+[TOC]
+
+# Instalar MKDocs
+To install MkDocs, run the following command from the command line:
+
+```bash
+pip install mkdocs mkdocs-material mkdocs-mermaid2-plugin
+```
+
+Getting started is super easy. To create a new project, run the following command from the command line:
+
+```bash
+mkdocs new my-project
+cd my-project
+```
+
+---
+
+# Instalar Quarto
+
+Acceda al terminal en la parte inferior izquierda de la interfaz de Visual Studio Code.
+
+![quarto](../documentation/assets/images/vscode_md_mkdocs_mkslides/01.png)
+
+To install Quarto, run the following command from the command line:
+
+```
+pip install quarto-cli
+```
+
+![quarto](../documentation/assets/images/vscode_md_mkdocs_mkslides/02.png)
+
+Dirijase a la pestaña de extensiones, en la barra de busqueda ingrese ``quarto``, e instale la extensión del autor ``Quarto``
+
+![quarto](../documentation/assets/images/vscode_md_mkdocs_mkslides/03.png)
+
+---
+
+# Instalar MKSlides
+Ejecute el comando 
+
+```bash
+pip install mkslides
+```
+
+## Para modelos 3D en Quarto
+
+Ve a https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js.
+
+Presiona Ctrl + S y guarda el archivo como ``model-viewer.min.js`` dentro de una carpeta dentro del proyecto. Para este caso, la carpeta ``assets``. 
+
+Ahora, en tu .qmd, enlaza el archivo localmente.
+
+```HTML
+<script type="module" src="assets/model-viewer.min.js"></script>
+
+<model-viewer 
+  src="assets/mi-pieza.glb" 
+  camera-controls 
+  style="width: 100%; height: 500px;">
+</model-viewer>
+```

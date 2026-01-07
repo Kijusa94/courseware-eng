@@ -1,0 +1,35 @@
+# Instalación de Codesys
+
+## Instalación en Windows 11
+
+![codesys_install](../automation/assets/images/codesys_install/01.png)
+
+![codesys_install](../automation/assets/images/codesys_install/02.png)
+
+![codesys_install](../automation/assets/images/codesys_install/03.png)
+
+![codesys_install](../automation/assets/images/codesys_install/04.png)
+
+![codesys_install](../automation/assets/images/codesys_install/05.png)
+
+![codesys_install](../automation/assets/images/codesys_install/06.png)
+
+![codesys_install](../automation/assets/images/codesys_install/07.png)
+
+![codesys_install](../automation/assets/images/codesys_install/08.png)
+
+![codesys_install](../automation/assets/images/codesys_install/09.png)
+
+![codesys_install](../automation/assets/images/codesys_install/10.png)
+
+![codesys_install](../automation/assets/images/codesys_install/11.png)
+
+![codesys_install](../automation/assets/images/codesys_install/12.png)
+
+![codesys_install](../automation/assets/images/codesys_install/13.png)
+
+![codesys_install](../automation/assets/images/codesys_install/14.png)
+
+![codesys_install](../automation/assets/images/codesys_install/15.png)
+
+![codesys_install](../automation/assets/images/codesys_install/16.png)

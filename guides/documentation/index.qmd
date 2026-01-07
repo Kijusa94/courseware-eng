@@ -1,0 +1,38 @@
+---
+title: "Guías de Docs by Code"
+---
+
+Esta es la página principal de Guías para configurar entornos para la documentación mediante código.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Configuración de extensiones en VSCode.
+[Ver Guía &rarr;](vscode_workspace_extensions.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Instalación de Latex.
+
+[Ver Guía &rarr;](vscode_latex_setup.qmd){.btn .btn-secondary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Instalación de MKDocs.
+
+[Ver Guía &rarr;](vscode_md_mkdocs_mkslides.qmd){.btn .btn-secondary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Instalación de Markdown en VSCode.
+[Ver Guía &rarr;](vscode_md_setup.qmd){.btn .btn-secondary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Instalación de Git.
+[Ver Guía &rarr;](vscode_git_install.qmd){.btn .btn-secondary role="button"}
+:::
+
+::::
+
+---

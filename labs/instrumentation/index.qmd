@@ -1,0 +1,14 @@
+---
+title: "Prácticas de Laboratorio y Simulación de Instrumentación Industrial."
+---
+
+Esta es la página principal de Prácticas de Laboratorio y Simulación de Instrumentación Industrial.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Configuración de extensiones en VSCode.
+[Ver Guía &rarr;](instrumentation_dc_circuits.qmd){.btn .btn-primary role="button"}
+:::
+
+::::

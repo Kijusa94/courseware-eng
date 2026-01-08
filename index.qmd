@@ -28,7 +28,7 @@ Material visual utilizado en nuestras demos y reuniones. Perfecto para tener una
 - Formato RevealJS.
 - Accesible desde cualquier navegador.
 
-[Ir a las Presentaciones &rarr;](slides/index.qmd){.btn .btn-secondary role="button"}
+[Ir a las Presentaciones &rarr;](slides/index.qmd){.btn .btn-primary role="button"}
 
 :::
 
@@ -36,9 +36,7 @@ Material visual utilizado en nuestras demos y reuniones. Perfecto para tener una
 
 ---
 
-### 🚀 Acceso Rápido
-
 ::: {.callout-note}
 ## Novedades
-El repositorio se actualizará con nuevas caracteristicas.
+El repositorio se actualizará con nuevas guías, presentaciones y prácticas de laboratorio y simulación.
 :::

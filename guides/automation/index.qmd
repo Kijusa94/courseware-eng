@@ -14,23 +14,23 @@ Esta es la página principal de Guías para el curso de Automatización Industri
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Configuración de Codesys con MODBUS TCP/IP.
-[Ver Guía &rarr;](codesys_modbus.qmd){.btn .btn-secondary role="button"}
+[Ver Guía &rarr;](codesys_modbus.qmd){.btn .btn-primary role="button"}
 :::
 
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Configuración de un controlador PID en Codesys y Factory IO.
-[Ver Guía &rarr;](codesys_install.qmd){.btn .btn-secondary role="button"}
+[Ver Guía &rarr;](codesys_install.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Instalación de Codesys.
-[Ver Guía &rarr;](codesys_install.qmd){.btn .btn-secondary role="button"}
+[Ver Guía &rarr;](codesys_install.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Instalación de Factory IO.
-[Ver Guía &rarr;](factoryio_install.qmd){.btn .btn-secondary role="button"}
+[Ver Guía &rarr;](factoryio_install.qmd){.btn .btn-primary role="button"}
 :::
 
 ::::

@@ -14,17 +14,17 @@ Esta es la página principal del proyecto. Aquí centralizamos todo el conocimie
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📊 Flujo de Programa
-[Ver Presentación &rarr;](slides/programming_02_flow.qmd){.btn .btn-secondary role="button"}
+[Ver Presentación &rarr;](slides/programming_02_flow.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📊 Funciones
-[Ver Presentación &rarr;](slides/programming_03_funcs.qmd){.btn .btn-secondary role="button"}
+[Ver Presentación &rarr;](slides/programming_03_funcs.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📊 Manejo de datos con Pandas
-[Ver Presentación &rarr;](slides/programming_04_pandas.qmd){.btn .btn-secondary role="button"}
+[Ver Presentación &rarr;](slides/programming_04_pandas.qmd){.btn .btn-primary role="button"}
 :::
 
 ::::

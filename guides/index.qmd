@@ -15,19 +15,19 @@ Consulta nuestra documentación detallada para aprender a instalar, configurar y
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Guías de Documentación por Código.
 Consulta nuestra documentación detallada para aprender a instalar, configurar y utilizar herramientas para documentación técnica usando código.
-[Ir a las Guías &rarr;](documentation/index.qmd){.btn .btn-secondary role="button"}
+[Ir a las Guías &rarr;](documentation/index.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Guías de Programación en Python.
 Consulta nuestra documentación detallada para aprender a programar con Python y VSCode.
-[Ir a las Guías &rarr;](programming/index.qmd){.btn .btn-secondary role="button"}
+[Ir a las Guías &rarr;](programming/index.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Guías de Robótica.
 Consulta nuestra documentación detallada para aprender algunos fundamentos sobre robotica con ROS2.
-[Ir a las Guías &rarr;](robotics/index.qmd){.btn .btn-secondary role="button"}
+[Ir a las Guías &rarr;](robotics/index.qmd){.btn .btn-primary role="button"}
 :::
 
 ::::

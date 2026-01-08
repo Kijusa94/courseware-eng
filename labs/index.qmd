@@ -1,0 +1,15 @@
+---
+title: "Índice de Prácticas de Laboratorio y Simulación."
+---
+
+Esta es la página principal de Prácticas de Laboratorio y Simulación. Encontrará listadas las asignaturas, seleccione una para continuar.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Guías de Instrumentación Industrial
+Consulta nuestra documentación detallada para aprender a instalar, configurar y utilizar las herramientas del curso de Automatización Industrial.
+[Ir a las Guías &rarr;](automation/index.qmd){.btn .btn-primary role="button"}
+:::
+
+::::

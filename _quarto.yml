@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  #pre-render: utils/export_all_diagrams.py
+  #post-render: utils/export_all_diagrams.py --clean
 
 website:
   title: "Mi Documentación"
@@ -15,6 +17,8 @@ website:
         text: "Ir a Guías"
       - href: slides/index.qmd
         text: "Ir a Presentaciones"             
+      - href: labs/index.qmd
+        text: "Ir a Prácticas"             
 
   # Barra lateral
   sidebar:
@@ -27,6 +31,7 @@ website:
         contents:
           - "guides"
           - "slides"
+          - "labs"
   
 execute:
   freeze: auto

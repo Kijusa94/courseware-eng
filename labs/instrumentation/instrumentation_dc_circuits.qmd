@@ -1,0 +1,252 @@
+```{python}
+#| echo: false
+%run assets/scripts/instrumentation_dc_circuits.py
+```
+
+# Practica de Circuitos DC
+
+## Introducción
+La comprensión y aplicación de los fundamentos de la electricidad de corriente continua (DC) son esenciales para la formación del ingeniero industrial, particularmente en el campo de la instrumentación y automatización. Si bien la disciplina se centra en la optimización de procesos y la gestión de sistemas productivos, la base tecnológica de estos sistemas es inherentemente eléctrica y electrónica. El conocimiento de los principios que rigen el comportamiento de la energía eléctrica no es un mero requisito curricular, sino una necesidad operativa y estratégica.
+
+La ingeniería industrial se apoya en sistemas de control y medición que dependen directamente de circuitos eléctricos. Sensores de temperatura, presión, flujo o nivel, así como actuadores como motores, relés y válvulas solenoides, funcionan con señales eléctricas y responden a comandos que viajan a través de circuitos. Ignorar estos fundamentos implica una limitación significativa en la capacidad de un ingeniero para diagnosticar fallas, diseñar soluciones de control, seleccionar componentes adecuados y garantizar la fiabilidad del equipo. La eficiencia y la seguridad de un proceso automatizado están directamente ligadas al correcto funcionamiento de su infraestructura eléctrica.
+
+Esta práctica de laboratorio se enfoca en la validación de la Ley de Ohm y las Leyes de Kirchhoff a través de la experimentación controlada.  La Ley de Ohm establece la relación fundamental entre el voltaje, la corriente y la resistencia, que es la base para el análisis de cualquier circuito. V=I⋅R
+
+Las Leyes de Kirchhoff, por su parte, permiten analizar sistemas más complejos, describiendo cómo se distribuyen la corriente y el voltaje en nodos y mallas. La Ley de Corrientes de Kirchhoff (LKC) afirma que la suma de las corrientes que entran en un nodo es igual a la suma de las que salen ∑Ientrada=∑Isalida. Pro su parte. La Ley de Voltajes de Kirchhoff (LKV) establece que la suma algebraica de los voltajes en una malla cerrada es cero ∑Vmalla=0.
+
+En el ámbito industrial, los circuitos en serie y en paralelo tienen aplicaciones directas. Los circuitos en serie se utilizan para la interconexión de sensores de seguridad, donde la interrupción de un único componente desactiva el circuito completo, garantizando la detención de una máquina. Los circuitos en paralelo son comunes en la distribución de energía a múltiples cargas, como motores o luminarias, asegurando que cada carga reciba el mismo voltaje nominal de la fuente. La comprensión de estas configuraciones es indispensable para el diseño de sistemas de control eficientes y robustos, donde la capacidad de un ingeniero para resolver problemas eléctricos impacta directamente en la productividad y la seguridad de la operación.
+
+Para esta actividad, se utilizará un entorno de simulación que replica el comportamiento de los componentes físicos. Este enfoque presenta varias ventajas: permite la manipulación de variables sin riesgo, facilita la visualización de fenómenos eléctricos que no son visibles a simple vista y, lo más importante, promueve la experimentación y el aprendizaje por descubrimiento. El objetivo no es solo replicar valores teóricos, sino desarrollar un entendimiento intuitivo de cómo las interacciones entre voltaje, corriente y resistencia influyen en el comportamiento de un sistema.
+
+## Objetivos
+
+### Objetivo General
+
+Aplicar los conceptos teóricos de la electricidad DC para analizar y validar el comportamiento de circuitos básicos en configuraciones en serie y paralelo.
+
+### Objetivos Específicos
+
+- Comprender y aplicar la Ley de Ohm para calcular las variables eléctricas (V, I, R) en un circuito simple.
+- Identificar las características distintivas de los circuitos en serie y paralelo.
+- Verificar experimentalmente las Leyes de Kirchhoff de voltaje y corriente.
+- Utilizar un simulador de circuitos para construir, medir y analizar circuitos eléctricos de manera segura y eficiente.
+
+## Fundamentos Teóricos
+
+### Ley de Ohm
+
+La corriente continua es el flujo unidireccional de carga eléctrica a través de un conductor. A diferencia de la corriente alterna (AC), la polaridad de un circuito DC no se invierte. Las fuentes de energía DC, como baterías y fuentes de alimentación reguladas, ofrecen estabilidad y predictibilidad, características esenciales para la alimentación de sensores y microcontroladores en sistemas de automatización industrial.
+Para comprender el flujo de la corriente continua, es fundamental definir tres conceptos interdependientes. El voltaje (V) es la fuerza impulsora, la diferencia de potencial que empuja las cargas. La corriente (I) es el resultado directo de este empuje, representando el flujo de esas cargas a través del conductor. Sin embargo, este flujo enfrenta una oposición natural, conocida como resistencia (R), que limita la cantidad de corriente que puede fluir para un voltaje dado.
+
+- Voltaje (V): Es la diferencia de potencial eléctrico entre dos puntos. Se mide en voltios (V).
+- Corriente (I): Es el flujo de carga eléctrica por unidad de tiempo a través de un punto en un circuito. Se mide en amperios (A).
+- Resistencia (R): Es la oposición al flujo de la corriente eléctrica. Se mide en ohmios $ \Omega $.
+
+La relación entre voltaje, corriente y resistencia no es arbitraria; está descrita por una ley fundamental que rige el comportamiento de los circuitos: la Ley de Ohm. Esta ley establece que la corriente en un circuito es directamente proporcional al voltaje aplicado e inversamente proporcional a la resistencia del circuito, un principio que es la piedra angular del análisis de cualquier sistema eléctrico.
+
+$$
+V = I R
+$$
+
+El concepto de potencia eléctrica es tan importante como la Ley de Ohm, ya que cuantifica la tasa a la que la energía eléctrica es transferida o consumida en un circuito. En el contexto de la ingeniería industrial, la potencia es una métrica crucial para el dimensionamiento de equipos, la evaluación de la eficiencia energética y la determinación de los costos operativos. Un motor, una resistencia de calentamiento o una lámpara consumen potencia para realizar un trabajo.
+
+La potencia (P) se define como el producto del voltaje (V) y la corriente (I). La unidad de medida de la potencia es el vatio (W). A partir de la Ley de Ohm, la fórmula de potencia se puede expresar de otras dos formas, lo que permite su cálculo incluso si no se conocen el voltaje o la corriente, siempre que se conozcan dos de las tres variables (V, I, R):
+
+$$
+P = I V \qquad P=I^2R \qquad P=V2/R
+$$
+
+### Instrumento de medición
+
+La medición de voltaje se realiza en paralelo con el componente o la fuente, ya que el voltímetro mide la diferencia de potencial entre dos puntos. En contraste, la medición de corriente requiere que el amperímetro se conecte en serie dentro del circuito, interrumpiendo el flujo de electrones para poder contar la cantidad de carga que pasa a través de él.
+
+::: {.column-screen-inset}
+:::{layout-ncol=3 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### Medir Voltaje
+
+```{python}
+#| echo: false
+dc_circuit_volt_measure()
+```
+
+### Medir Corriente
+```{python}
+#| echo: false
+dc_circuit_ampt_measure()
+```
+
+### Medir Resistencia
+```{python}
+#| echo: false
+dc_circuit_resis_measure()
+```
+:::
+
+:::
+
+### Ley de Kirchhoff
+
+Si bien la Ley de Ohm es suficiente para circuitos simples, los sistemas industriales a menudo contienen múltiples componentes y ramificaciones. Para abordar esta complejidad, se utilizan las Leyes de Kirchhoff, que extienden la aplicación de la Ley de Ohm para analizar circuitos con múltiples mallas y nodos, garantizando el cumplimiento de los principios de conservación de carga y energía.
+
+- Ley de Corrientes de Kirchhoff (LKC): Afirma que la suma algebraica de las corrientes que entran y salen de un nodo es igual a cero
+- Ley de Voltajes de Kirchhoff (LKV): Establece que la suma algebraica de las caídas de voltaje en cualquier malla cerrada de un circuito es igual a cero
+
+Las Leyes de Kirchhoff y la Ley de Ohm se aplican de manera específica a las dos configuraciones básicas de un circuito: en serie y en paralelo. La comprensión de estas configuraciones es vital, ya que determinan cómo la corriente y el voltaje se distribuyen a lo largo del sistema y cómo se interconectan los componentes para lograr la funcionalidad deseada en aplicaciones industriales
+
+:::{layout-nrow=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### Circuitos en serie
+
+```{python}
+#| echo: false
+dc_circuits_series()
+```
+
+### 
+$$
+V_{TOTAL} = V_1 + V_2 + V_3 + \dots + V_n 
+$$
+$$
+I_{TOTAL} = I_1 = I_2 = I_3 = \dots = I_n
+$$
+$$
+R_{TOTAL} = R_1 + R_2 + R_3 + \dots + R_n
+$$
+
+:::
+
+
+:::{layout-nrow=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+### Circuitos en paralelo
+```{python}
+#| echo: false
+dc_circuits_parallel()
+```
+
+### 
+$$
+V_{TOTAL} = V_1 = V_2 = V_3 = \dots = V_n \\
+$$
+$$
+I_{TOTAL} = I_1 + I_2 + I_3 + \dots + I_n \\
+$$
+$$
+R_{TOTAL} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots + \frac{1}{R_n}}
+$$
+
+:::
+El estado físico de un circuito afecta directamente su comportamiento. Un circuito cerrado es un camino continuo por el que la corriente puede fluir libremente desde la fuente hasta la carga y de regreso. Es la condición normal de operación de un sistema eléctrico. En contraste, un circuito abierto es un circuito interrumpido o incompleto. En esta condición, el flujo de corriente es nulo, ya que el camino se ha roto. Sin embargo, el voltaje de la fuente puede seguir presente a través de la interrupción, ya que no se necesita un flujo de corriente para que exista una diferencia de potencial. Comprender estas condiciones es crucial para la resolución de problemas y el diagnóstico de fallas en sistemas industriales.
+
+## Consultas preliminares
+Realice la lectura de las siguientes secciones del libro “Lessons in Industrial Instrumentation”, Tony R. Kuphaldt:
+
+| Concepto                            | Página |
+|-------------------------------------|--------|
+| Electrical voltage                  |    292 |
+| Electrical current                  |    298 |
+| Electron versus conventional flow   |    301 |
+| Electrical sources and loads        |    306 |
+| Electrical power                    |    312 |
+| Electrical resistance and Ohm’s Law |    313 |
+| Series versus parallel circuits     |    316 |
+| Kirchhoff’s Laws                    |    320 |
+
+## Materiales
+- Simulador Tinkercad Circuits
+
+## Procedimiento
+### Ley de Ohm y Medición de Potencia
+#### Montaje y Medición:
+- Abra el simulador Tinkercad Circuits.
+- Arrastre una fuente de alimentación DC y configúrela a 9V.
+- Arrastre una resistencia de 1 kΩ y un multímetro.
+- Conecte el circuito en serie: terminal positivo de la fuente, resistencia, multímetro (en modo Amperímetro) y de regreso al terminal negativo de la fuente.
+- Inicie la simulación. Anote la corriente medida.
+
+#### Cálculo de Potencia:
+- Detenga la simulación.
+- Use un segundo multímetro o reconfigure el existente en modo Voltímetro. Conéctelo en paralelo a la resistencia para medir el voltaje sobre ella.
+- Con los valores de voltaje y corriente medidos, calcule la potencia disipada por la resistencia usando la fórmula P = VI. Anote el resultado
+
+### Circutos en Serie y en Paralelo
+#### Circuitos en Serie
+- Monte un circuito en serie con la fuente de 9V y tres resistencias: 220Ω, 330Ω y 470Ω.
+- Mida el voltaje a través de cada resistencia y verifique que su suma sea igual al voltaje de la fuente.
+
+#### Circtuios en Paralelo
+- Monte un circuito en paralelo con la misma fuente y resistencias.
+- Mida el voltaje en cada una y verifique que es el mismo.
+- Mida la corriente total de la fuente y la corriente en cada rama. Verifique que la suma de las corrientes de rama sea igual a la corriente total.
+
+### Uso del potenciometro y analisis de fallas
+#### Potenciometro
+- Reemplace la resistencia de 1 kΩ del primer circuito por un potenciómetro.
+- Configure el potenciómetro a su valor máximo y mida la corriente. Anote la lectura.
+- Ajuste el potenciómetro a su valor mínimo y observe el cambio en la corriente.
+- Explique cómo el potenciómetro permite controlar la corriente en el circuito.
+#### Simulación de Falla (Circuito Abierto):
+- En su circuito en serie, desconecte una de las resistencias. Esto simula un circuito abierto.
+- Mida el voltaje en los terminales de la resistencia que se desconectó.
+- Mida la corriente en el circuito. Anote los resultados y sus observaciones.
+#### Simulación de Falla (Cortocircuito):
+- En su circuito en paralelo, reemplace una de las resistencias con un cable de conexión (resistencia cercana a 0 Ohms. Esto simula un cortocircuito.
+- Mida la corriente que fluye a través de este cable.
+- Mida la corriente total de la fuente. Tenga cuidado, ya que un cortocircuito puede generar corrientes muy altas. Anote sus observaciones.
+
+### Variación del Voltaje y su Influencia
+- Regrese al circuito simple con la resistencia de 1 kΩ y de 10kΩ.
+- Mida la corriente con la fuente a 9V, 6V y 3V.
+- Anote los valores de corriente y expliquen la relación que observan
+
+## Calculos y resultados
+Utilicen las siguientes tablas para organizar los datos obtenidos durante el procedimiento. Calculen los valores teóricos antes de realizar las mediciones en el simulador y luego compárenlos con los datos experimentales.
+
+Complete la siguiente tabla con los valores de corriente calculados teóricamente y los medidos en la primera parte del laboratorio.
+
+| Voltaje de la fuente | Resistencia | Corriente Teórica | Corriente medida | Potencia |
+|----------------------|-------------|-------------------|------------------|----------|
+| 9V                   | 470         |                   |                  |          |
+| 9V                   | 1k          |                   |                  |          |
+| 9V                   | 2.2k        |                   |                  |          |
+
+Registre los voltajes medidos en cada resistencia y la corriente total del circuito. Verifique que la suma de los voltajes en las resistencias sea igual al voltaje de la fuente.
+
+| Medida      | Voltaje teórico | Voltaje medido | Corriente Teórica | Corriente medida |
+|-------------|-----------------|----------------|-------------------|------------------|
+| V en R1 220 |                 |                |                   |                  |
+| V en R2 330 |                 |                |                   |                  |
+| V en R3 470 |                 |                |                   |                  |
+
+Registre los voltajes y corrientes medidos. Verifique que los voltajes sean los mismos en todas las resistencias y que la suma de las corrientes de rama sea igual a la corriente total de la fuente.
+
+| Medida      | Voltaje teórico | Voltaje medido | Corriente Teórica | Corriente medida |
+|-------------|-----------------|----------------|-------------------|------------------|
+| V en R1 220 |                 |                |                   |                  |
+| V en R2 330 |                 |                |                   |                  |
+| V en R3 470 |                 |                |                   |                  |
+| I total     |                 |                |                   |                  |
+
+Registre las mediciones realizadas al cambiar el valor del potenciómetro y la fuente de voltaje.
+
+| Potenciómetro de R=         | Resistencia medida | Voltaje medido | Corriente medida |
+|-----------------------------|--------------------|----------------|------------------|
+| Potenciómetro en Rmax       |                    |                |                  |
+| Potenciómetro en Rmin       |                    |                |                  |
+| Potenciómetro en Raleatorio |                    |                |                  |
+
+
+| Parámetro            | Corriente medida con 1kΩ | Corriente con 10kΩ |
+|----------------------|--------------------------|--------------------|
+| Voltaje de fuente 9V |                          |                    |
+| Voltaje de fuente 6V |                          |                    |
+| Voltaje de fuente 3V |                          |                    |
+
+## Preguntas complementarias
+
+Una vez completadas las mediciones y el análisis de resultados, reflexione sobre las siguientes preguntas. Las respuestas deben ser concisas y basadas en sus observaciones y conocimientos teóricos.
+
+- Comparación de Circuitos: Basado en la práctica, describan las diferencias fundamentales en el comportamiento de la corriente y el voltaje en los circuitos en serie versus los circuitos en paralelo. Utilicen los datos de sus tablas para justificar su respuesta.
+- Análisis de Fallas: Si la resistencia de 330Ω en su circuito en serie sufriera una interrupción (circuito abierto), ¿qué lecturas de voltaje y corriente esperaría en el resto de los componentes? ¿Qué pasaría si la misma falla ocurriera en el circuito en paralelo? Explique el razonamiento en cada caso.
+- Aplicación de Leyes de Kirchhoff: ¿Cómo se evidenciaron las Leyes de Kirchhoff de Voltaje y Corriente en los resultados de sus mediciones en los circuitos en serie y en paralelo? ¿Por qué es esencial la comprensión de estas leyes para el diagnóstico de sistemas eléctricos industriales?
+- Eficiencia y Potencia: Considere los circuitos en serie y en paralelo que montaron. Si cada resistencia representa una carga (por ejemplo, una luz o un motor), ¿cuál de las dos configuraciones es más eficiente para alimentar múltiples cargas con el mismo voltaje? Justifique su respuesta utilizando el concepto de potencia eléctrica.

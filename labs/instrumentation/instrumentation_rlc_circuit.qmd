@@ -1,0 +1,180 @@
+# Practica de Circuitos DC
+
+## Introducción
+En el ámbito de la ingeniería industrial, el conocimiento de los circuitos eléctricos va más allá del análisis estático de la corriente continua. El estudio de los componentes que almacenan energía, como los capacitores e inductores, es fundamental para comprender el comportamiento dinámico y transitorio de los sistemas de control y los instrumentos de medición. Esta guía de laboratorio tiene como objetivo analizar la respuesta de estos elementos en circuitos de corriente continua (DC), un paso crucial para abordar la complejidad inherente a la corriente alterna (AC) y su impacto en la eficiencia y la seguridad industrial.
+
+La importancia de este tema para el ingeniero industrial se manifiesta en diversas áreas críticas. En primer lugar, la capacidad de los capacitores para almacenar y liberar energía es la base de los sistemas de alimentación ininterrumpida (UPS) y los filtros de ruido, los cuales son esenciales para proteger equipos sensibles en entornos de fabricación donde las fluctuaciones de voltaje son comunes. El ingeniero debe ser capaz de seleccionar y dimensionar estos componentes para garantizar la integridad de los datos y el funcionamiento continuo de la maquinaria automatizada.
+
+En segundo lugar, el análisis de la respuesta transitoria en circuitos RC (resistor-capacitor) y RL (resistor-inductor) es directamente aplicable al diseño de sistemas de temporización. Los procesos industriales, desde el ciclo de un robot de soldadura hasta el control de un horno de secado, dependen de la precisión de los intervalos de tiempo. Comprender cómo la constante de tiempo (τ=RC o τ=L/R) afecta la velocidad de carga y descarga de un capacitor o inductor permite diseñar circuitos que controlan estas secuencias temporales con exactitud.
+
+La combinación de los tres componentes en un circuito RLC introduce el fenómeno de la oscilación y la respuesta amortiguada, lo cual es vital en la ingeniería de control. Estos circuitos se utilizan para modelar sistemas mecánicos y de control de procesos donde una perturbación inicial provoca una oscilación que debe ser atenuada rápidamente para que el sistema retorne a su estado de equilibrio. La capacidad de un ingeniero para identificar si un sistema es subamortiguado, sobreamortiguado o críticamente amortiguado es determinante para garantizar la estabilidad y el rendimiento óptimo de un controlador, ya sea un brazo robótico o una válvula de flujo en un sistema de tuberías.
+
+Además, el conocimiento de estos circuitos es indispensable para la optimización energética. Los inductores se utilizan en los convertidores de potencia para mejorar la eficiencia al almacenar energía magnética, mientras que los capacitores en bancos de compensación ayudan a corregir el factor de potencia en las instalaciones industriales, reduciendo los costos de energía y las penalizaciones de la compañía eléctrica. Un ingeniero industrial con conocimientos en estos temas puede implementar soluciones que no solo mejoran el rendimiento de la producción, sino que también contribuyen a la sostenibilidad económica y ambiental de la empresa.
+
+## Objetivos
+### Objetivo general
+
+Comprender la respuesta transitoria de los circuitos RC, RL y RLC en corriente continua (DC), validando experimentalmente las constantes de tiempo y el comportamiento de sus componentes, así como la equivalencia de los arreglos en serie y en paralelo de capacitores e inductores.
+
+### Objetivos específicos
+- Construir y simular circuitos RC y RL en el simulador Falstad.
+- Medir y graficar la carga y descarga de capacitores, así como el crecimiento y decrecimiento de corriente en inductores.
+- Comprobar las ecuaciones de capacitancia e inductancia equivalente en arreglos en serie y en paralelo.
+- Observar la respuesta oscilatoria y amortiguada de un circuito RLC en DC.
+
+## Fundamentos Teóricos
+El análisis de circuitos que contienen capacitores e inductores requiere una comprensión de los principios básicos de la electricidad, así como del comportamiento dinámico de estos componentes. A continuación, se detallan los conceptos clave para esta práctica.
+
+Las Leyes de Ohm y de Kirchhoff constituyen la base del análisis de cualquier circuito. Para un circuito de corriente continua (DC), estas leyes describen el flujo y la distribución de la energía.
+
+Ley de Ohm: La relación fundamental entre voltaje ($V$), corriente ($I$) y resistencia ($R$) se expresa:
+
+$$
+V = I R
+$$
+
+Ley de Corriente de Kirchhoff (LCK): En cualquier nodo de un circuito, la suma de las corrientes que entran es igual a la suma de las corrientes que salen. Este principio se basa en la conservación de la carga eléctrica. Matemáticamente:
+
+$$
+\sum I_{fuente} = \sum I_{cargas}
+$$
+
+Ley de Voltaje de Kirchhoff (LVK): La suma algebraica de los voltajes en una trayectoria cerrada (malla) de un circuito es cero. Este principio se basa en la conservación de la energía. Matemáticamente:
+
+$$
+\sum V_{fuente} = \sum V_{cargas}
+$$
+
+### Capacitor
+Un capacitor es un componente electrónico pasivo que almacena energía en un campo eléctrico. Se compone de dos placas conductoras separadas por un material aislante o dieléctrico. Su capacidad para almacenar carga es proporcional al voltaje a traves de sus terminales, siendo la constante de proporcionalidad la capacitancia $C$ medida en Faradios.
+$$
+C = \frac{Q}{V}
+$$
+
+En un circuito DC, un capacitor actúa como un circuito abierto una vez que está completamente cargado, bloqueando el flujo de corriente. El voltaje en un capacitor no puede cambiar de forma instantánea.
+
+Así como la resistencia, los capacitores pueden conectarse en Serie o en Paralelo. La capacitancia equivalente en conexiones en serie Ceq es la inversa de la suma de las inversas de las capacitancias individuales. La fórmula es:
+
+$$
+\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}
+$$
+
+La capacitancia equivalente de capacitores en paralelo es la suma de las capacitancias individuales:
+
+$$
+C_{eq} = C_1 + C_2 + C_3 + \dots + C_n
+$$
+
+### Inductores
+Un inductor es un componente pasivo que almacena energía en un campo magnético. Consiste en una bobina de alambre que se opone a los cambios en la corriente que la atraviesa. Esta propiedad, conocida como inductancia se mide en Henrios (H). 
+
+El voltaje a través de un inductor es directamente proporcional a la tasa de cambio de la corriente. Esto se describe por la relación
+
+$$
+V_L = L \frac{\delta I}{\delta t}
+$$
+
+En DC, una vez que la corriente se estabiliza $ \frac{\delta I}{\delta t} = 0 $ por lo que el inductor se comporta como un cortocircuito.
+
+Así como la resistencia, los inductores pueden conectarse en Serie o en Paralelo. La inductancia equivalente de inductores en serie es la suma de las inductancias individuales:
+
+$$
+L_{eq} = L_1 + L_2 + L_3 + \dots + L_n
+$$
+
+La inductancia equivalente de inductores en paralelo es la inversa de la suma de las inversas de las inductancias individuales:
+
+$$
+L_{eq} = \frac{1}{\frac{1}{L_1} + \frac{1}{L_2} + \frac{1}{L_3} + \dots + \frac{1}{L_n}}
+$$
+
+### Circuitos Transitorios en DC: RC, RL, y RLC
+Un circuito transitorio es aquel en el que el voltaje y la corriente cambian con el tiempo después de un evento de conmutación, como el encendido o apagado de una fuente de energía.
+
+- **CIRCUITO RC:** La carga y descarga de un capacitor en un circuito RC siguen una curva exponencial. La velocidad de este proceso está determinada por la constante de tiempo  que se calcula como $ \tau = R C $. Despues de un periodo de $ 5 \tau $ el capacitor se considera completamente cargado o descargado.
+
+- **Circuitos RL:** El crecimiento y decrecimiento de la corriente en un inductor en un circuito RL también sigue una curva exponencial. La constante de tiempo para un circuito RL es $ \tau = \frac  {L}{R} $.
+
+- **Circuitos RLC:** Un circuito RLC en DC exhibe un comportamiento transitorio que puede ser oscilatorio o no oscilatorio. La naturaleza de la respuesta depende de los valores de R, L y C, que determinan el tipo de amortiguamiento.
+  - Respuesta Subamortiguada: Ocurre cuando la resistencia es baja, resultando en un comportamiento oscilatorio que se desvanece con el tiempo.
+  - Respuesta Críticamente Amortiguada: El sistema vuelve a su estado de equilibrio de la forma más rápida posible sin oscilar.
+  - Respuesta Sobreamortiguada: El sistema retorna a su estado de equilibrio de manera lenta y sin oscilaciones, debido a una alta resistencia.
+
+## Consultas preliminares
+Realice la lectura de las siguientes secciones del libro “Lessons in Industrial Instrumentation”, Tony R. Kuphaldt:
+
+| Tema                                              | Página |
+|---------------------------------------------------|--------|
+| Resistencia eléctrica y Ley de Ohm                |    313 |
+| Circuitos en serie frente a circuitos en paralelo |    316 |
+| Leyes de Kirchhoff                                |    320 |
+| Capacitores (Condensadores)                       |    346 |
+| Inductores (Bobinas)                              |    350 |
+
+## Materiales
+Simulador Falstad: [Link](https://www.falstad.com/circuit/circuitjs.html)
+
+## Procedimiento
+Para esta práctica, utilizaremos los ejemplos predefinidos en el simulador Falstad. Esto nos permitirá centrarnos en el análisis del comportamiento del circuito, en lugar de en la construcción.
+
+### Parte 1: Análisis del Circuito RC en DC
+- Abra el simulador Falstad y cargue el ejemplo “Circuitos/Basicos/Capacitor”.
+- Observe el comportamiento del voltaje en el capacitor y de la corriente total a medida que el capacitor se carga.
+  - ¿Cuál es el valor del voltaje inicial en el capacitor?
+  - ¿Cuál es la corriente inicial?
+  - ¿Qué sucede con estos valores a medida que transcurre el tiempo?
+- Identifique el valor de la resistencia y del capacitor.
+- Calcule teóricamente la constante de tiempo .
+- En la simulación, active la opción de "Gráficos de Onda" para visualizar el voltaje en el capacitor o la corriente. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. Este tiempo corresponde a la constante de tiempo experimental. ¿Coincide el valor experimental de  con el valor teórico? ¿A qué porcentaje de su valor final se considera el capacitor cargado en un tiempo igual a cinco constantes de tiempo?
+- Duplique el valor de la resistencia y observe cómo cambia el tiempo de carga del capacitor. ¿La constante de tiempo aumenta o disminuye? Explique por qué.
+- Restaure el valor de la resistencia a su valor original. Ahora, duplique el valor de la capacitancia. ¿Cómo afecta este cambio a la velocidad de carga? Compare este resultado con el de la Actividad anterior.
+
+### Parte 2: Análisis del Circuito RL en DC
+- Abra el simulador Falstad y cargue el ejemplo “Circuitos/Basicos/Inductor”.
+- Observe el comportamiento de la corriente en el inductor y del voltaje en la resistencia a medida que la corriente se establece.
+  - ¿Cuál es el valor de la corriente inicial en el inductor?
+  - ¿Cuál es el voltaje inicial en la resistencia?
+  - ¿Qué sucede con estos valores a medida que transcurre el tiempo?
+- Identifique los valores de la resistencia y del inductor.
+- Calcule teóricamente la constante de tiempo 
+- En la simulación, active la opción de "Gráficos de Onda" para visualizar la corriente en el inductor. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. ¿Coincide el valor experimental de  con el valor teórico? ¿A qué porcentaje de su valor final se considera la corriente establecida en un tiempo igual a cinco constantes de tiempo?
+- Duplique el valor de la resistencia y observe cómo cambia el tiempo de crecimiento de la corriente. ¿La constante de tiempo aumenta o disminuye? Explique por qué.
+- Restaure el valor de la resistencia a su valor original. Ahora, duplique el valor de la inductancia. ¿Cómo afecta este cambio a la velocidad de crecimiento de la corriente? Compare este resultado con el de la actividad anterior.
+
+### Parte 3: Inductores en Serie y Equivalencia
+- Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Inductores en serie”.
+- Observe las dos configuraciones de circuito en paralelo. La de la izquierda tiene dos inductores en serie y la de la derecha tiene un solo inductor. Calcule la inductancia equivalente teórica para la configuración en serie de la izquierda. Verifique si la inductancia equivalente calculada coincide con el valor del inductor único en el circuito de la derecha. ¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios inductores en serie por uno solo de valor equivalente?
+- Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda de la corriente para ambos circuitos. ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de crecimiento de la corriente de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de inductancia?
+
+### Parte 4: Inductores en Paralelo y Equivalencia
+- Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Inductores en paralelo”.
+- Observe las dos configuraciones de circuito. La de la izquierda tiene dos inductores en paralelo y la de la derecha tiene un solo inductor. Calcule la inductancia equivalente teórica para la configuración en paralelo de la izquierda, utilizando la fórmula. Verifique si la inductancia equivalente calculada coincide con el valor del inductor único en el circuito de la derecha. ¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios inductores en paralelo por uno solo de valor equivalente?
+- Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda de la corriente para ambos circuitos. ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de crecimiento de la corriente de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de inductancia?
+
+### Parte 5: Capacitores en Serie y Equivalencia
+- Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Capacitores en serie”.
+- Observe las dos configuraciones de circuito. La de la izquierda tiene dos capacitores en serie y la de la derecha tiene un solo capacitor. Calcule la capacitancia equivalente teórica para la configuración en serie de la izquierda, utilizando la fórmula. Verifique si la capacitancia equivalente calculada coincide con el valor del capacitor único en el circuito de la derecha.
+¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios capacitores en serie por uno solo de valor equivalente?
+- Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda del voltaje para ambos circuitos. ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de carga del voltaje de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de capacitancia?
+
+### Parte 6: Capacitores en Paralelo y Equivalencia
+- Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Capacitores en paralelo”.
+- Observe las dos configuraciones de circuito. La de la izquierda tiene dos capacitores en paralelo y la de la derecha tiene un solo capacitor. Calcule la capacitancia equivalente teórica para la configuración en paralelo de la izquierda, utilizando la fórmula. Verifique si la capacitancia equivalente calculada coincide con el valor del capacitor único en el circuito de la derecha. ¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios capacitores en paralelo por uno solo de valor equivalente?
+- Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda del voltaje para ambos circuitos. Pregunta de Análisis: ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de carga del voltaje de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de capacitancia?
+
+### Parte 7: Análisis del Circuito RLC en DC
+- Abra el simulador Falstad y cargue el ejemplo “Circuitos/Basicos/Circuito LRC”.
+- Ejecute la simulación y observe el comportamiento del voltaje en el capacitor, el inductor y la resistencia. ¿Qué tipo de respuesta observa en el voltaje del capacitor y en la corriente del circuito? ¿Es un crecimiento o decrecimiento exponencial, o se trata de una oscilación?
+Reduzca el valor de la resistencia significativamente (1 o 2). Observe la nueva respuesta del circuito. ¿Cómo cambia la respuesta del circuito cuando la resistencia es baja? ¿Por qué se produce este comportamiento?
+- Aumente el valor de la inductancia o de la capacitancia, manteniendo la resistencia en un valor bajo. Observe la respuesta del circuito. ¿Cómo afecta el aumento de la inductancia o la capacitancia a la frecuencia de oscilación? ¿Qué relación hay entre estos componentes y la oscilación del circuito? ¿Qué ocurre con el inductor cuando el interruptor conectado a la fuente de voltaje se cierra? ¿Por qué el voltaje baja a cero?
+
+## Preguntas complementarias
+Una vez completadas las mediciones y el análisis de resultados, reflexione sobre las siguientes preguntas. Las respuestas deben ser concisas y basadas en sus observaciones y conocimientos teóricos.
+- ¿Qué tipo de respuesta se observó en cada variación del circuito RLC (sobreamortiguada, críticamente amortiguada, subamortiguada)?
+- Describa el rol de la resistencia, el capacitor y el inductor en un circuito RLC. ¿Cómo afecta cada componente el comportamiento transitorio del circuito?
+- En el circuito RLC, ¿qué combinación de valores de resistencia, inductancia y capacitancia (R, L, C) podría producir una respuesta críticamente amortiguada? ¿Por qué este tipo de respuesta es ideal en aplicaciones de control industrial, como en la amortiguación de movimientos mecánicos?
+- Explique la diferencia en el almacenamiento de energía entre un capacitor y un inductor. ¿Cómo se manifiestan estas diferencias en las gráficas de voltaje y corriente observadas en el simulador?
+- En el contexto de un sistema de control, como en un sistema de apertura de puertas automáticas, ¿cómo se podría utilizar un circuito RC para introducir un retardo de tiempo?
+- ¿Qué tipo de respuesta (sobreamortiguada, subamortiguada, críticamente amortiguada) es deseable en un sistema de suspensión de un vehículo? ¿Por qué?
+- Mencione un ejemplo de aplicación industrial para cada tipo de circuito (RC, RL, RLC).
+

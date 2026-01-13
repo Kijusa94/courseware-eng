@@ -1,0 +1,251 @@
+# Practica Circuitos AC
+
+## Introducción
+
+En la práctica anterior, exploramos el comportamiento de los circuitos de corriente continua (DC), un dominio donde las fuentes de voltaje y corriente son constantes. Sin embargo, en el mundo real, la mayoría de los sistemas industriales, redes eléctricas y dispositivos de comunicación operan con corriente alterna (AC), donde los parámetros de voltaje y corriente varían periódicamente con el tiempo. El análisis de circuitos AC requiere una comprensión más profunda de los conceptos pasivos de circuitos.
+
+Mientras que en DC, la resistencia es el único factor que se opone al flujo de corriente, en AC, los capacitores y los inductores también presentan una oposición, conocida como reactancia. La combinación de la resistencia y la reactancia en un circuito AC se denomina impedancia (Z). Este nuevo concepto nos permite analizar cómo los circuitos RC y RL se comportan en función de la frecuencia de la señal de entrada.
+
+Para un ingeniero industrial, la comprensión de estos principios es crítica para múltiples aplicaciones. Desde el diseño de filtros para eliminar el ruido eléctrico en sistemas de control y automatización, hasta la optimización de la eficiencia energética en motores y transformadores. Por ejemplo, los sensores de flujo basados en principios de inducción, o los sistemas de control de procesos que utilizan señales de AC moduladas, dependen de una comprensión sólida de la impedancia.
+
+La presente guía de laboratorio está diseñada para que, a través de la simulación, se pueda observar y comprender de manera práctica la respuesta de los circuitos RC y RL a las señales de corriente alterna. El objetivo no es solo la verificación de fórmulas, sino la internalización de los conceptos de fase, magnitud, reactancia e impedancia, que son la base para el diseño de sistemas de comunicación, filtrado y control en el ámbito de la ingeniería industrial.
+
+Al finalizar esta práctica, se tendrá la capacidad de analizar cómo una señal de AC interactúa con los componentes pasivos, una habilidad fundamental para el diagnóstico y el diseño de sistemas eléctricos y electrónicos en cualquier entorno de producción.
+
+## Objetivos
+
+### Objetivo General
+Analizar el comportamiento de los circuitos RC y RL en corriente alterna (AC) mediante simulación, validando los conceptos de reactancia, impedancia y el desfase entre voltaje y corriente
+
+### Objetivos específicos
+- Cuantificar la variación de la reactancia capacitiva ($X_C$) e inductiva ($X_L$) en función de la frecuencia de la señal de entrada y los valores de los componentes ($L, C$).
+
+- Verificar gráficamente el desfase de fase entre las señales de voltaje y corriente, identificando cuál magnitud se adelanta en inductores y capacitores.
+
+- Evaluar la respuesta en frecuencia de filtros pasivos RC y RL (pasa bajo y pasa alto) para determinar su frecuencia de corte teórica y experimental.
+
+- Relacionar el concepto de impedancia total con el factor de potencia y su impacto en la eficiencia energética de sistemas industriales
+
+- Analizar el comportamiento de un filtro pasa banda como resultado de la interacción de elementos reactivos frente a variaciones de frecuencia
+
+## Fundamentos teóricos
+El análisis de circuitos de corriente alterna (AC) introduce una dimensión temporal en la que el voltaje y la corriente varían de manera periódica. Esta variación constante requiere una nueva perspectiva para entender cómo los componentes pasivos, como los capacitores y los inductores, interactúan con la energía eléctrica.
+
+En un circuito de corriente continua (DC), los electrones fluyen en una sola dirección. Sin embargo, en un sistema de AC, su movimiento cambia de dirección de manera cíclica, generalmente con una forma de onda sinusoidal.
+
+
+```{ojs}
+//| echo: false
+// Controles deslizantes para los parámetros
+viewof amplitude = Inputs.range([0, 10], {step: 0.1, value: 5, label: "Amplitud (A)"})
+viewof frequency = Inputs.range([0.1, 10], {step: 0.1, value: 1, label: "Frecuencia (f)"})
+viewof phase = Inputs.range([0, 2 * Math.PI], {step: 0.1, value: 0, label: "Fase (φ)"})
+
+// Generación de los datos de la señal
+data = {
+  const points = 300;
+  return Array.from({ length: points }, (_, i) => {
+    const t = i / (points - 1); // Tiempo normalizado de 0 a 1
+    return {
+      t: t,
+      v: amplitude * Math.sin(2 * Math.PI * frequency * t + phase)
+    };
+  });
+}
+
+// Renderizado del gráfico usando Observable Plot
+Plot.plot({
+  height: 400,
+  grid: true,
+  x: { label: "Tiempo (t) →" },
+  y: { label: "↑ Voltaje (V)", domain: [-10, 10] },
+  marks: [
+    // Eje X central
+    Plot.ruleY([0], { stroke: "#ccc" }),
+    // Línea de la señal
+    Plot.line(data, { x: "t", y: "v", stroke: "#2563eb", strokeWidth: 3 }),
+    // Área bajo la curva opcional
+    Plot.areaY(data, { x: "t", y: "v", fill: "#2563eb", fillOpacity: 0.1 })
+  ]
+})
+
+// Cálculos derivados dinámicos
+md`
+- **Periodo (T):** ${(1 / frequency).toFixed(3)} s
+- **Frecuencia Angular (ω):** ${(2 * Math.PI * frequency).toFixed(2)} rad/s
+- **Ecuación:** $V_(t) = ${amplitude.toFixed(1)} \sin(2\pi ${frequency.toFixed(1)}t + ${(phase / Math.PI).toFixed(2)}\pi)$
+`
+```
+
+Esto es lo que caracteriza a las señales de AC, definidas por su amplitud (el valor máximo), su frecuencia (la cantidad de ciclos por segundo, en Hertz), y su fase (la posición de la onda en el tiempo). Estos parámetros son esenciales para comprender la dinámica de los circuitos:  
+
+- Amplitud ($Vp$​ o $Ip$​): El valor máximo de la onda.
+- Frecuencia ($f$): El número de ciclos que la onda completa en un segundo, medido en Hertz (Hz). La frecuencia angular ($ \omega $) se relaciona con la frecuencia como $ \omega = 2f $. Inversa al periodo.
+- Fase ($ \phi $): La posición de la onda en el tiempo en relación con un punto de referencia. Se mide en grados o radianes. Indicado en el grafico como .
+
+## Reactancia e impedancia.
+
+En los circuitos de DC, la resistencia es la única propiedad que se opone al flujo de corriente. Sin embargo, en un entorno de AC, donde el voltaje y la corriente cambian constantemente, los capacitores e inductores también ejercen una oposición. A esta oposición dinámica se le denomina reactancia.
+
+#### Reactancia Capacitiva (Xc) 
+La oposición de un capacitor a la corriente AC. Depende de la frecuencia y la capacitancia. A medida que la frecuencia aumenta, la reactancia capacitiva disminuye, permitiendo que más corriente fluya a través del capacitor.
+
+$$
+X_c = \frac{1}{2 \pi f C}
+$$
+
+#### Reactancia Inductiva (XL​)
+La oposición de un inductor a la corriente AC. Depende de la frecuencia y la inductancia. A medida que la frecuencia aumenta, la reactancia inductiva aumenta, limitando el flujo de corriente.
+
+$$
+X_L = 2 \pi f L
+$$
+
+#### La impedancia (Z)
+Es la oposición total al flujo de corriente en un circuito AC, incluyendo tanto la resistencia (R) como la reactancia ($X_C$​ y/o $X_L$​). La impedancia es un número complejo, donde la resistencia representa la parte real y la reactancia representa la parte imaginaria
+
+$$
+Z = R + jX
+$$
+
+La magnitud de la impedancia se calcula como:
+
+$$
+∣Z∣=\sqrt{R^2+X^2​} 
+$$
+
+Y el ángulo de fase (ϕ) se calcula como:
+
+$$
+\theta = \arctan{(\frac{X}{R})}
+$$
+
+La impedancia es el concepto que une la resistencia y la reactancia en un solo valor. Es la oposición total al flujo de corriente en un circuito AC. La impedancia se expresa como un número complejo y es clave para el análisis, ya que su magnitud determina la cantidad de corriente que fluirá en un circuito y su ángulo de fase predice un fenómeno crítico: el desfase de fase entre el voltaje y la corriente.
+
+Este desfase de fase es una característica fundamental de los circuitos de corriente alterna y es lo que permite a los capacitores e inductores almacenar y liberar energía de forma cíclica. En un inductor ideal, el voltaje se adelanta a la corriente, mientras que en un capacitor ideal, la corriente se adelanta al voltaje. Esta propiedad tiene una gran relevancia en la ingeniería industrial, ya que un desfase no deseado puede afectar la eficiencia energética de un sistema productivo. Por ejemplo, en grandes fábricas con motores inductivos, es necesario corregir el factor de potencia para minimizar las pérdidas y asegurar la estabilidad de la red eléctrica.
+
+El factor de potencia (FP) es una medida de la eficiencia con la que un circuito consume energía, y es el coseno del ángulo de desfase: 
+
+$$
+FP = \cos{\theta}
+$$
+
+En la industria, un factor de potencia bajo indica que las cargas reactivas (como motores y transformadores) están consumiendo una cantidad significativa de potencia "no útil". Esto es un problema, ya que las empresas de energía eléctrica suelen penalizar a las industrias con un factor de potencia bajo, dado que este consumo de energía reactiva sobrecarga la infraestructura de la red.
+
+### Filtros de señales
+El análisis de estos conceptos nos permite entender el comportamiento de los circuitos RC (resistencia-capacitor) y RL (resistencia-inductor) en AC. En estos circuitos, la impedancia total depende directamente de la frecuencia de la señal, lo que los convierte en la base para el diseño de filtros. Un filtro es un circuito que permite el paso de ciertas frecuencias mientras bloquea otras. Dependiendo de dónde se mida la salida en un circuito RC o RL, se puede diseñar un filtro pasa bajo (que atenúa altas frecuencias) o un filtro pasa alto (que atenúa bajas frecuencias).
+
+- Filtro Pasa Bajo (Low-Pass Filter): Este circuito permite el paso de frecuencias bajas y atenúa las frecuencias altas. En un circuito RC en serie, si la salida se toma a través del capacitor, las frecuencias altas se "cortocircuitan" a tierra a través de la baja reactancia capacitiva, atenuando la señal de salida.
+
+- Filtro Pasa Alto (High-Pass Filter): Este circuito permite el paso de frecuencias altas y atenúa las frecuencias bajas. En un circuito RC en serie, si la salida se toma a través de la resistencia, las frecuencias bajas encuentran una alta reactancia capacitiva, bloqueando su paso hacia la salida.
+
+- Filtro pasa banda: Un filtro pasa banda es un circuito que permite el paso de un rango específico de frecuencias y atenúa todas las demás. Esencialmente, es la combinación de un filtro pasa bajo y un filtro pasa alto. Funciona al permitir que las frecuencias por debajo de un punto de corte superior y por encima de un punto de corte inferior pasen a través del circuito. 
+
+Su funcionamiento se basa en la resonancia. Al combinar un inductor y un capacitor en un circuito, existe una frecuencia específica, llamada frecuencia de resonancia (f0), en la que la reactancia inductiva y la reactancia capacitiva se anulan mutuamente. En este punto, la impedancia del circuito se reduce a su mínima expresión (la resistencia), y la corriente alcanza su valor máximo. A medida que la frecuencia se aleja del punto de resonancia, la impedancia aumenta y la corriente disminuye.
+
+La importancia de este tipo de filtro en la ingeniería es crucial. Se utilizan para sintonizar o aislar una señal de una banda específica de frecuencias, como en los receptores de radio, donde permiten captar una estación específica de entre las muchas que transmiten al mismo tiempo.
+
+La resonancia en los circuitos RLC es un concepto vital para los filtros pasa banda. En la frecuencia de resonancia, la impedancia es mínima y la corriente alcanza su pico, lo que permite que una banda muy específica de frecuencias pase sin atenuación, mientras que el resto son bloqueadas.
+
+#### Diagrama de Bode
+Para visualizar la respuesta de un circuito a diferentes frecuencias, se utiliza el diagrama de Bode. Este gráfico es fundamental en la ingeniería de control, electrónica y telecomunicaciones. El diagrama de Bode consta de dos gráficos logarítmicos:
+
+- Gráfico de Magnitud: Muestra la ganancia del circuito (la relación entre la amplitud de la señal de salida y la de entrada, en decibeles) en función de la frecuencia.
+
+- Gráfico de Fase: Muestra el ángulo de desfase entre la señal de salida y la de entrada, en función de la frecuencia.
+
+El diagrama de Bode permite identificar la frecuencia de corte $f_c$ de un filtro, la cual se define como el punto donde la ganancia cae a $-3 dB$. A esta frecuencia, la potencia de la señal de salida es la mitad de la potencia de entrada.
+
+## Consultas previas
+Realice la lectura de las siguientes secciones del libro “Lessons in Industrial Instrumentation”, Tony R. Kuphaldt:
+
+| TEMA                                 | PAG |
+|--------------------------------------|----:|
+| AC electricity                       | 355 |
+| RMS quantities                       | 356 |
+| Resistance, Reactance, and Impedance | 360 |
+| Series and parallel circuits         | 361 |
+
+## Materiales
+Simulador Falstad: [Liink](https://www.falstad.com/circuit/circuitjs.html)
+
+## Procedimiento
+### Circuito AC con capacitor
+- Abra el simulador Falstad y cargue el ejemplo "AC Response of Capacitor".
+- Observe la animación de los electrones y las gráficas del voltaje (línea amarilla) y la corriente (línea verde). Pregunta de Análisis: ¿Cuál es la relación de fase entre el voltaje del capacitor y la corriente del circuito? ¿Cuál se adelanta al otro y por cuántos grados?
+- En la esquina superior izquierda del simulador, use el control deslizante para aumentar la frecuencia de la señal de entrada. Observe cómo cambian las gráficas de voltaje y corriente. Pregunta de Análisis: ¿Cómo afecta el aumento de la frecuencia a la reactancia capacitiva? ¿Y cómo se refleja esto en la amplitud de la corriente?
+- Ajuste la frecuencia a un valor intermedio. Luego, haga clic derecho en el capacitor y aumente su valor de capacitancia usando el menú de edición. Observe las gráficas de voltaje y corriente nuevamente. Pregunta de Análisis: ¿Cómo afecta el aumento de la capacitancia a la reactancia capacitiva?
+
+### Circuito AC con Inductor. 
+- Abra el simulador Falstad y cargue el ejemplo "AC Response of Inductor".
+- Observe la animación de los electrones y las gráficas del voltaje (línea amarilla) y la corriente (línea verde). Pregunta de Análisis: ¿Cuál es la relación de fase entre el voltaje del inductor y la corriente del circuito? ¿Cuál se adelanta al otro y por cuántos grados?
+- En la esquina superior izquierda del simulador, use el control deslizante para aumentar la frecuencia de la señal de entrada. Observe cómo cambian las gráficas de voltaje y corriente. Pregunta de Análisis: ¿Cómo afecta el aumento de la frecuencia a la reactancia inductiva? ¿Y cómo se refleja esto en la amplitud de la corriente?
+- Ajuste la frecuencia a un valor intermedio. Luego, haga clic derecho en el inductor y aumente su valor de inductancia usando el menú de edición. Observe las gráficas de voltaje y corriente nuevamente. Pregunta de Análisis: ¿Cómo afecta el aumento de la inductancia a la reactancia inductiva? ¿Cómo se refleja esto en la amplitud de la corriente y en el desfase de fase?
+
+### Comparación de capacitancias
+- Abra el simulador Falstad y cargue el ejemplo "Caps of Various Capacitances". 
+- Analice las tres configuraciones en paralelo, cada una con un capacitor de diferente valor. Observe las gráficas de la corriente en cada rama. Pregunta de Análisis: ¿Cuál es la relación entre el valor de la capacitancia y la amplitud de la corriente? ¿Cómo se relaciona esto con la fórmula de la reactancia capacitiva?
+- Use el control deslizante para variar la frecuencia de la señal de entrada. Pregunta de Análisis: ¿Cómo cambia la amplitud de la corriente en cada rama a medida que aumenta la frecuencia? ¿Se mantiene la relación entre la amplitud y el valor de la capacitancia? Explique su observación.
+
+### Comparación de frecuencias en capacitores.
+- Abra el simulador Falstad y cargue el ejemplo "Caps w/ Various Frequencies". 
+- Observe las dos configuraciones de circuito en paralelo. Ambas tienen el mismo capacitor, pero están alimentadas con fuentes de diferente frecuencia. Analice las gráficas de la corriente en cada rama. Pregunta de Análisis: ¿Cuál es la relación entre la frecuencia y la amplitud de la corriente en cada rama? ¿Cómo se relaciona esto con la fórmula de la reactancia capacitiva?
+- Seleccione el capacitor en una de las ramas y duplique su valor. Observe cómo cambian las gráficas de corriente en ambas ramas. Pregunta de Análisis: ¿El cambio en la capacitancia afecta la relación entre la frecuencia y la corriente? Explique su observación.
+
+### Comparación de inductancias
+- Abra el simulador Falstad y cargue el ejemplo "Inductors of Various Inductances".
+- Analice las tres configuraciones en paralelo, cada una con un inductor de diferente valor. Observe las gráficas de la corriente en cada rama. Pregunta de Análisis: ¿Cuál es la relación entre el valor de la inductancia y la amplitud de la corriente? ¿Cómo se relaciona esto con la fórmula de la reactancia inductiva?
+- Use el control deslizante para variar la frecuencia de la señal de entrada. Pregunta de Análisis: ¿Cómo cambia la amplitud de la corriente en cada rama a medida que aumenta la frecuencia? ¿Se mantiene la relación entre la amplitud y el valor de la inductancia? Explique su observación.
+
+### Comparación de frecuencias en inductores
+- Abra el simulador Falstad y cargue el ejemplo "Inductors w/ Various Frequencies".
+- Observe las dos configuraciones de circuito en paralelo. Ambas tienen el mismo inductor, pero están alimentadas con fuentes de diferente frecuencia. Analice las gráficas de la corriente en cada rama. Pregunta de Análisis: ¿Cuál es la relación entre la frecuencia y la amplitud de la corriente en cada rama? ¿Cómo se relaciona esto con la fórmula de la reactancia inductiva?
+- Seleccione el inductor en una de las ramas y duplique su valor. Observe cómo cambian las gráficas de corriente en ambas ramas. Pregunta de Análisis: ¿El cambio en la inductancia afecta la relación entre la frecuencia y la corriente? Explique su observación.
+
+### Filtro Pasa Alto RC
+- Abra el simulador Falstad y cargue el ejemplo "High-Pass Filter (RC)".
+- Observe el circuito y las gráficas. La gráfica de la izquierda es la señal de entrada, y la de la derecha es la señal de salida. Mueva el control deslizante de la frecuencia. Pregunta de Análisis: ¿Qué sucede con la amplitud de la señal de salida a medida que la frecuencia aumenta? ¿Y cuando la frecuencia disminuye? ¿Por qué este circuito se llama "pasa alto"?
+- Calcule teóricamente la frecuencia de corte (fc) del circuito utilizando la fórmula fc​=12RC. Duplique el valor de la resistencia o del capacitor. Pregunta de Análisis: ¿Cómo afecta este cambio a la frecuencia de corte? Verifique su respuesta teórica con la simulación.
+
+### Filtro Pasa Bajo RC
+- Abra el simulador Falstad y cargue el ejemplo "Low-Pass Filter (RC)".
+- Observe el circuito y las gráficas. Mueva el control deslizante de la frecuencia. Pregunta de Análisis: ¿Qué sucede con la amplitud de la señal de salida a medida que la frecuencia aumenta? ¿Y cuando la frecuencia disminuye? ¿Por qué este circuito se llama "pasa bajo"?
+- Calcule teóricamente la frecuencia de corte (fc​) del circuito. Duplique el valor de la resistencia o del capacitor. Pregunta de Análisis: ¿Cómo afecta este cambio a la frecuencia de corte? Verifique su respuesta teórica con la simulación.
+
+### Respuesta en frecuencia del filtro pasa alto RC – Diagrama de Bode.
+- Abra el simulador Falstad y cargue el ejemplo "High-Pass Filter response (RC)".
+- Observe el diagrama de la respuesta en frecuencia (gráfico de Bode). El eje horizontal es la frecuencia y el vertical es la ganancia (la relación entre la amplitud de la señal de salida y la de entrada). Pregunta de Análisis: Describa el comportamiento de la ganancia a medida que aumenta la frecuencia de la señal de entrada. ¿Por qué la ganancia es baja a frecuencias bajas y alta a frecuencias altas?
+- Haga clic derecho en la resistencia o el capacitor y cambie sus valores. Observe cómo cambia la curva de respuesta en frecuencia. Pregunta de Análisis: ¿Cómo afecta el cambio de la resistencia o el capacitor a la forma del gráfico? Identifique la frecuencia de corte (fc​) en el gráfico y observe cómo se desplaza.
+
+### Filtro Pasa Alto RL
+- Abra el simulador Falstad y cargue el ejemplo "High-Pass Filter (RL)". 
+- Observe el circuito y las gráficas. La gráfica de la izquierda es la señal de entrada, y la de la derecha es la señal de salida. Mueva el control deslizante de la frecuencia. Pregunta de Análisis: ¿Qué sucede con la amplitud de la señal de salida a medida que la frecuencia aumenta? ¿Y cuando la frecuencia disminuye? ¿Por qué este circuito se llama "pasa alto"?
+- Calcule teóricamente la frecuencia de corte (fc​) del circuito utilizando la fórmula fc​=2πLR​. Duplique el valor de la resistencia o del inductor. Pregunta de Análisis: ¿Cómo afecta este cambio a la frecuencia de corte? Verifique su respuesta teórica con la simulación.
+
+### Filtro Pasa Bajo RL
+- Abra el simulador Falstad y cargue el ejemplo "Low-Pass Filter (RL)".
+- Observe el circuito y las gráficas. Mueva el control deslizante de la frecuencia. Pregunta de Análisis: ¿Qué sucede con la amplitud de la señal de salida a medida que la frecuencia aumenta? ¿Y cuando la frecuencia disminuye? ¿Por qué este circuito se llama "pasa bajo"?
+- Calcule teóricamente la frecuencia de corte (fc​) del circuito utilizando la fórmula fc​=2πLR​. Duplique el valor de la resistencia o del inductor. Pregunta de Análisis: ¿Cómo afecta este cambio a la frecuencia de corte? Verifique su respuesta teórica con la simulación.
+
+### Filtro pasa banda
+- Abra el simulador Falstad y cargue el ejemplo "Band-Pass Filter".
+- Observe el diagrama de la respuesta en frecuencia (gráfico de Bode). El eje horizontal es la frecuencia y el vertical es la ganancia. Mueva el control deslizante de la frecuencia. Pregunta de Análisis: ¿Cómo se comporta la ganancia del filtro a medida que la frecuencia varía? ¿En qué rango de frecuencias se mantiene la ganancia alta? ¿Por qué se llama "filtro pasa banda"?
+- Calcule teóricamente la frecuencia de resonancia (fo​) del circuito utilizando la fórmula fo​=2πLC​1​. Duplique el valor de la capacitancia o de la inductancia. Pregunta de Análisis: ¿Cómo afecta este cambio a la frecuencia de resonancia? Verifique su respuesta teórica con la simulación.
+
+## Calculos y resultados
+Para las secciones 6.7. a 6.12. en donde se utiliza el diagrama de Bode, utilice una tabla para presentar la información de ganancia frente a los cambios en la frecuencia.
+
+|    Frecuencia (Hz)    | Ganancia (dB) |
+|:---------------------:|:-------------:|
+| Frecuencia de corte   |               |
+| Frecuencia menor a fc |               |
+| Frecuencia mayor a fc |               |
+
+## Preguntas complementarias
+- Basado en sus observaciones, explique la diferencia fundamental en la forma en que los capacitores y los inductores reaccionan a los cambios de frecuencia. ¿Qué componente se comporta de manera similar a un cortocircuito a altas frecuencias? ¿Y a un circuito abierto?
+
+- Utilizando los conceptos de desfase y factor de potencia, explique por qué un circuito con un factor de potencia cercano a cero es ineficiente desde un punto de vista energético. ¿Por qué es este concepto tan importante para los sistemas industriales con grandes motores?
+
+- Describa dos aplicaciones industriales de los filtros de frecuencia. Por ejemplo, ¿cómo se usaría un filtro pasa bajo para limpiar la señal de un sensor en una línea de producción, o un filtro pasa alto para eliminar el "ruido" de baja frecuencia en una comunicación?
+
+- En el circuito RLC, ¿qué significa la frecuencia de resonancia? ¿Qué ocurre con el factor de potencia y la impedancia total del circuito en ese punto? ¿Por qué este fenómeno es útil en la ingeniería?

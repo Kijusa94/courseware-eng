@@ -8,8 +8,7 @@ Esta es la página principal de Prácticas de Laboratorio y Simulación. Encontr
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Guías de Instrumentación Industrial
-Consulta nuestra documentación detallada para aprender a instalar, configurar y utilizar las herramientas del curso de Automatización Industrial.
-[Ir a las Guías &rarr;](automation/index.qmd){.btn .btn-primary role="button"}
+[Ir a las Prácticas &rarr;](instrumentation/index.qmd){.btn .btn-primary role="button"}
 :::
 
 ::::

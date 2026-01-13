@@ -7,8 +7,18 @@ Esta es la página principal de Prácticas de Laboratorio y Simulación de Instr
 :::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Configuración de extensiones en VSCode.
-[Ver Guía &rarr;](instrumentation_dc_circuits.qmd){.btn .btn-primary role="button"}
+## 📚 Práctica de Circuitos DC
+[Ver Práctica &rarr;](instrumentation_dc_circuits.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Circuitos RLC
+[Ver Práctica &rarr;](instrumentation_rlc_circuit.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Circuitos AC
+[Ver Práctica &rarr;](instrumentation_ac_circuits.qmd){.btn .btn-primary role="button"}
 :::
 
 ::::

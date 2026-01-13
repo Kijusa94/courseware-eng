@@ -12,7 +12,7 @@ Esta es la página principal del proyecto. Aquí centralizamos todo el conocimie
 Consulta nuestra documentación detallada para aprender a instalar, configurar y utilizar las herramientas.
 
 - Pasos claros y concisos.
-- Ejemplos de código.
+- Imagenes con el paso a paso.
 - Solución de problemas comunes.
 
 [Ir a las Guías &rarr;](guides/index.qmd){.btn .btn-primary role="button"}
@@ -31,6 +31,20 @@ Material visual utilizado en nuestras demos y reuniones. Perfecto para tener una
 [Ir a las Presentaciones &rarr;](slides/index.qmd){.btn .btn-primary role="button"}
 
 :::
+
+::: {.g-col-12 .g-col-md-6}
+
+## 📊 Prácticas
+Guías utilizadas para la realización de experimentos y simulaciones.
+
+- Simulaciones interactivas.
+- Enlaces a herramientas de simulación.
+- Accesible desde cualquier navegador.
+
+[Ir a las Prácticas &rarr;](labs/index.qmd){.btn .btn-primary role="button"}
+
+:::
+
 
 ::::
 

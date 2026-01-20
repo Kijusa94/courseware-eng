@@ -18,9 +18,9 @@ Esta es la página principal de Guías para configurar entornos para la document
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Instalación de MKDocs.
+## 📚 Instalación de Quarto.
 
-[Ver Guía &rarr;](vscode_md_mkdocs_mkslides.qmd){.btn .btn-primary role="button"}
+[Ver Guía &rarr;](vscode_quarto_install.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}

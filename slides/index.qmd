@@ -8,8 +8,14 @@ Esta es la página principal para las presentaciones de los cursos.
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📊 Presentaciones de Programación
-Consulta nuestra documentación detallada para aprender a instalar, configurar y utilizar las herramientas de Programación en Python.
+Consulta nuestra documentación del curso de Programación en Python.
 [Ir a las presentaciones &rarr;](programming/index.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Presentaciones de Instrumentación Industrial
+Consulta nuestra documentación del curso de Instrumentación Industrial.
+[Ir a las presentaciones &rarr;](instrumentation/index.qmd){.btn .btn-primary role="button"}
 :::
 
 :::

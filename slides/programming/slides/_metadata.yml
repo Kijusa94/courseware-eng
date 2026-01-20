@@ -1,8 +1,8 @@
 format:
     revealjs: 
-        #chalkboard: true
+        theme: default
         navigation-mode: vertical
-        
+               
         toc-depth: 1
         toc-title: "Tabla de contenido"
         toc: true
@@ -10,7 +10,7 @@ format:
         number-sections: true
         slide-number: c/t
         show-slide-number: all
-        footer: '[Documentación](https://docs.python.org/3/tutorial/index.html)'
+        footer: '[HOME](../index.html)'
         
         #background-image: "../assets/images/vscode_quarto_slides_fup/05.jpg"        
         #background-image-size: contain

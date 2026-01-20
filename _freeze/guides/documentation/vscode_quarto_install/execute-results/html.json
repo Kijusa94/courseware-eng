@@ -1,0 +1,17 @@
+{
+  "hash": "e086a3ac3dcde6912af42e9cf6d3a22e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Instalar Quarto\n\nAcceda al terminal en la parte inferior izquierda de la interfaz de Visual Studio Code.\n\n![quarto](../documentation/assets/images/vscode_quarto_install/01.png)\n\nTo install Quarto, run the following command from the command line:\n\n```\npip install quarto-cli\n```\n\n![quarto](../documentation/assets/images/vscode_quarto_install/02.png)\n\nDirijase a la pestaña de extensiones, en la barra de busqueda ingrese ``quarto``, e instale la extensión del autor ``Quarto``\n\n![quarto](../documentation/assets/images/vscode_quarto_install/03.png)\n\n---\n\n## Para modelos 3D en Quarto\n\nVe a https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js.\n\nPresiona Ctrl + S y guarda el archivo como ``model-viewer.min.js`` dentro de una carpeta dentro del proyecto. Para este caso, la carpeta ``assets``. \n\nAhora, en tu .qmd, enlaza el archivo localmente.\n\n```HTML\n<script type=\"module\" src=\"assets/model-viewer.min.js\"></script>\n\n<model-viewer \n  src=\"assets/mi-pieza.glb\" \n  camera-controls \n  style=\"width: 100%; height: 500px;\">\n</model-viewer>\n```\n\n## Para graficos de matemáticas y física\nUtilice tikz para crear gráficos en LaTeX y compatibles con Website y RevealJS de Quarto. \n\nPrimero, debe instalar R en su ordenador. Puede descargarlo del siguiente enlace: [link](https://www.r-project.org/)\n\nLuego, Luego debe instalar TinyTeX. Use el siguiente comando:\n\n``` bash\nquarto install tinytex\n```\n\nPuede crear el grafico indicando el lenguaje y el motor para el renderizado. Si ves un círculo rojo abajo, tu configuración está perfecta.\n\n\n````{.default}\n```{r, engine = 'tikz', echo=TRUE, eval=FALSE}\n\\begin{tikzpicture}\n \\draw (0,0) circle (1mm);\n \\draw (0,0) circle (2mm);\n\\end{tikzpicture}\n```\n````\n\n### Python + R en un mismo .qmd\nDebe agregar el siguiente código al archivo .qmd:\n\n\n````{.default}\n```{r setup, include=FALSE, eval=FALSE}\nlibrary(reticulate)\n\n# IMPORTANTE: Ajusta esta ruta a donde está tu .venv\n# En Windows suele ser algo como: \"C:/Users/juand/.../.venv/Scripts/python.exe\"\n# O si está en la misma carpeta del proyecto:\nuse_virtualenv(\"../../../.venv\", required = TRUE) \n```\n````\n\n## Para instalar paquetes de R usando renv\n\nEjecute en el terminal de R:\n\n``` markdown\ninstall.packages(\"renv\")\n\n# Activa renv en este proyecto\nrenv::init()\n\n#Generar el \"requirements\" (Snapshot) Cuando hayas instalado paquetes y tu código funcione, guarda el estado. Esto crea el archivo renv.lock (tu requirements).\nrenv::snapshot()\n\n#Instalar en otra máquina (Restore) Si le pasas tu código y el archivo renv.lock a un colega (o lo subes a GitHub), ellos solo tienen que ejecutar:\nrenv::restore()\n```\n\n\n## Para instalar paquetes de R de forma 'manual'(No recomendado)\nEjecute en el terminal de R:\n````markdown\n# Obtener nombres de paquetes instalados\npaquetes <- installed.packages()[, \"Package\"]\n\n# Guardarlos en un txt\nwriteLines(paquetes, \"requirements.txt\")\n\n# Leer el archivo\npaquetes_a_instalar <- readLines(\"requirements.txt\")\n\n# Instalar los que falten\ninstall.packages(paquetes_a_instalar)\n````",
+    "supporting": [
+      "vscode_quarto_install_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

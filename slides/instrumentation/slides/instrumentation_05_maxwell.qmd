@@ -1,0 +1,10 @@
+---
+title: Instrumentación Industrial  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+
+## Ecuaciones de Maxwell
+
+## Ondas electromagneticas - Fundamentos

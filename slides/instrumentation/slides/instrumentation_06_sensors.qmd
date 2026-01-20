@@ -1,0 +1,22 @@
+---
+title: Instrumentación Industrial    
+subtitle: "Atuadores"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+
+# Introducción
+
+## Propiedades
+
+## Tipos de sensores
+
+# Sensores de presión
+
+# Sensores de caudal
+
+# Sensores de nivel
+
+# Sensores de temperatura
+
+## Práctica de sensores

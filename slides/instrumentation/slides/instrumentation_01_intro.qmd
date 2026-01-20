@@ -1,0 +1,531 @@
+---
+title: Instrumentación Industrial  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+
+use_virtualenv("../../../.venv", required = TRUE) 
+```
+
+# Electróstatica
+
+
+
+## Carga eléctrica 
+
+La electrostática es el estudio de la electricidad en reposo, un efecto conocido desde la antigüedad como "efecto ámbar".
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### Convención de signos
+Existen cargas positivas y cargas negativas
+
+### Ley de interacción
+Las cargas iguales se repelen y las cargas opuestas se atraen.
+
+:::
+
+
+
+## Ley de Conservación de la Carga {.center-content}
+
+> "La carga eléctrica neta no se crea ni se destruye. La cantidad total de carga producida en cualquier proceso es cero"
+
+:::{.callout-important}
+Las cargas positivas y negativas se suman algebraicamente. Si un objeto adquiere carga negativa, otro objeto necesariamente adquiere una cantidad equivalente de carga positiva, manteniendo la suma total en cero
+:::
+
+Es una ley fundamental de la física, tan sólida como la conservación de la energía, y nunca se han observado violaciones a ella
+
+
+
+## La Base Atómica de la Electricidad
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Estructura del Átomo:**
+
+- El átomo tiene un núcleo positivo (protones y neutrones) rodeado por electrones negativos.
+- Los átomos neutros tienen igual cantidad de protones y electrones. Si un átomo pierde o gana electrones, se convierte en un ion (con carga neta positiva o negativa)
+
+### Modelo de Bohr
+
+{{< placeholder 400 200 format=svg >}}
+
+:::
+
+
+
+## Materiales
+:::{layout-ncol=3 layout-valign="top"}
+### **Conductores**
+
+Algunos electrones (libres o de conducción) pueden moverse libremente por el material. 
+
+
+### **Aislantes**
+
+Sus electrones están fuertemente ligados al núcleo y no se mueven libremente.
+
+
+### **Semiconductores**
+
+Son una categoría intermedia entre conductores y aislantes. 
+
+:::
+
+
+
+## Carga por Inducción 
+
+Es el proceso de cargar un objeto o redistribuir su carga acercando un objeto cargado, pero sin tocarlo.
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### En Conductores (Metales)
+
+{{< placeholder 200 200 format=svg >}}
+
+### En Aislantes (Polarización):
+
+{{< placeholder 200 200 format=svg >}}
+
+:::
+
+
+
+# Ley de Coulomb
+
+
+
+## Ley de Coulomb
+
+:::{.center-content}
+Charles Coulomb (1780s) utilizó una balanza de torsión para medir fuerzas eléctricas débiles, un instrumento similar al usado por Cavendish para la gravedad
+:::
+
+> La fuerza eléctrica entre dos cargas puntuales es directamente proporcional al producto de las magnitudes de las cargas (Q1 y Q2). Es inversamente proporcional al cuadrado de la distancia (r2) que las separa. La dirección de la fuerza sigue la línea recta que une las cargas: es de repulsión si los signos son iguales y de atracción si son opuestos
+
+$$
+F = k \frac{Q_1 Q_2}{r^2}
+$$
+
+## Sobre sus constantes
+
+> La unidad de carga es el coulomb (C).
+
+> La constante k es de $k ≈ 9.0× 10^9 \frac{N⋅m^2}{C}$ y puede ser expresada como $k = \frac{1}{4 \pi \epsilon _0}$
+
+> La carga del electrón es de $e = 1.602×10^−19 C$
+
+:::{.callout-important}
+Un coulomb es una cantidad inmensa de carga. Dos cargas de $1C$ separadas por $1m$ ejercerían una fuerza gigantesca (casi un millón de toneladas). Las cargas típicas en electrostática son del orden de microcoulombs (μC)
+:::
+
+
+
+## Ejercicio de ejemplo
+
+Calcule la fuerza electrostática neta sobre la carga $Q_3$, que se representa en la siguiente figura, debida a las cargas $Q_1$ y $Q_2$.
+
+```{r, engine = 'tikz', code = readLines("../assets/scripts/instrumentation_01_intro/instrumentation_01_three_charges.tex")}
+```
+
+
+
+## Ejercicio (Solución)
+
+:::{.panel-tabset}
+### Solución
+Las magnitudes de $\vec{F}_{31}$ y $\vec{F}_{32}$ son (ignorando los signos de las cargas, puesto que ya conocemos las direcciones de las fuerzas):
+
+$$ 
+F_{31} = k \frac{Q_3 Q_1}{r_{31}^2} = (9.0 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2) \frac{(6.5 \times 10^{-5} \, \text{C})(8.6 \times 10^{-5} \, \text{C})}{(0.60 \, \text{m})^2} = 140 \, \text{N} 
+$$
+
+$$ 
+F_{32} = k \frac{Q_3 Q_2}{r_{32}^2} = (9.0 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2) \frac{(6.5 \times 10^{-5} \, \text{C})(5.0 \times 10^{-5} \, \text{C})}{(0.30 \, \text{m})^2} = 330 \, \text{N} 
+$$
+
+Descomponemos $\vec{F}_{31}$ en sus componentes $x$ y $y$:
+$$
+F_{31x} = F_{31} \cos 30^\circ = (140 \, \text{N}) \cos 30^\circ = 120 \, \text{N}
+$$
+$$
+F_{31y} = -F_{31} \sin 30^\circ = -(140 \, \text{N}) \sin 30^\circ = -70 \, \text{N}
+$$
+
+### Continuación
+
+La fuerza $\vec{F}_{32}$ tiene sólo componente $y$ (vertical hacia arriba en el diagrama). Así que la fuerza neta $\vec{F}$ sobre $Q_3$ tiene componentes:
+
+*   $F_x = F_{31x} = 120 \, \text{N}$
+*   $F_y = F_{32} + F_{31y} = 330 \, \text{N} - 70 \, \text{N} = 260 \, \text{N}$
+​
+
+La magnitud de la fuerza neta es:
+
+$$
+F = \sqrt{F_x^2 + F_y^2} = \sqrt{(120 \, \text{N})^2 + (260 \, \text{N})^2} = 290 \, \text{N} 
+$$
+
+Y actúa a un ángulo $\theta$ dado por:
+
+$$
+\tan \theta = \frac{F_y}{F_x} = \frac{260 \, \text{N}}{120 \, \text{N}} = 2.2 \quad \Rightarrow \quad \theta = \tan^{-1}(2.2) = 65^\circ 
+$$
+:::
+
+
+
+## Conclusiones del ejemplo
+
+:::{.callout-important}
+Si existen varias cargas, la fuerza neta sobre una carga específica es la suma vectorial de las fuerzas ejercidas por cada una de las otras cargas individualmente
+:::
+
+:::{.callout-important}
+La presencia de una tercera carga no "bloquea" ni altera la fuerza que ejerce la carga 1 sobre la carga 2. Cada interacción se calcula por separado y luego se suman vectorialmente
+:::
+
+
+
+# Campo eléctrico
+
+
+
+## Campo eléctrico
+Michael Faraday introdujo el concepto de **campo**. Según esta visión, una carga eléctrica modifica el espacio que la rodea creando un "campo eléctrico".
+
+1.  La carga $Q_1$ crea un campo eléctrico en todo el espacio.
+2.  El campo en un punto específico interactúa directamente con la carga $Q_2$ colocada allí para producir una fuerza sobre ella.
+
+> No es que la carga $Q_1$ toque a la carga $Q_2$ a distancia.
+
+
+
+## Definición Operativa del Campo Eléctrico ($\vec{E}$)
+
+El campo eléctrico en cualquier punto se define como la fuerza eléctrica ($\vec{F}$) ejercida sobre una pequeña **carga de prueba positiva** ($q$) colocada en ese punto, dividida entre la magnitud de dicha carga.
+
+$$
+\vec{E} = \frac{\vec{F}}{q} 
+$$
+
+:::{layout-ncol=3 layout-valign="top" style="text-align: center; gap: 50px;"}
+### **La Carga de Prueba** 
+Debe ser extremadamente pequeña.
+
+### **Unidades** 
+En el SI, se mide en **Newton por Coulomb (N/C)**.
+
+### **Independencia** 
+**No** depende de la carga de prueba usada para medirlo.
+
+:::
+
+
+
+## Campo Eléctrico de Cargas Puntuales
+
+La magnitud del campo eléctrico creado por una única carga puntual $Q$ a una distancia $r$ es,:
+
+$$
+E = k \frac{Q}{r^2} \quad \text{o} \quad E = \frac{1}{4\pi\epsilon_0} \frac{Q}{r^2} 
+$$
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Carga Fuente Positiva:** 
+El campo apunta radialmente **hacia afuera** (alejándose de la carga), ya que una carga de prueba positiva sería repelida.
+
+### **Carga Fuente Negativa:** 
+El campo apunta radialmente **hacia adentro** (hacia la carga), ya que una carga de prueba positiva sería atraída,.
+
+:::
+
+## Campo Eléctrico de Cargas Puntuales
+
+Grafico pendiente.
+
+
+
+## Relación entre Fuerza y Campo
+
+Una vez conocido el campo eléctrico ($\vec{E}$) en un punto, se puede calcular la fuerza sobre *cualquier* carga $q$ colocada allí usando la fórmula:
+$$
+\vec{F} = q\vec{E} 
+$$
+
+**Dirección de la Fuerza:**
+
+- Si $q$ es positiva, la fuerza $\vec{F}$ y el campo $\vec{E}$ apuntan en la **misma dirección**.
+- Si $q$ es negativa (ej. un electrón), la fuerza apunta en **dirección opuesta** al campo eléctrico,.
+
+
+
+## Principio de Superposición para Campos
+
+Si el campo es creado por varias cargas ($Q_1, Q_2, ...$), el campo eléctrico total en un punto es la **suma vectorial** de los campos individuales creados por cada carga.
+$$
+\vec{E}_{total} = \vec{E}_1 + \vec{E}_2 + ... 
+$$
+
+**Estrategia de Resolución**  
+
+1. **Dibujar:** Crear un diagrama mostrando los vectores de campo.
+2. **Dirección Física:** Determinar la dirección de cada campo (+ (aleja) o - (atrae))
+3. **Magnitudes:** Calcular la magnitud de cada campo ($kQ/r^2$).
+4. **Suma Vectorial:** Descomponer en componentes $x$ e $y$ y sumar.
+5. **Simetría:** Buscar simetrías geométricas para simplificar.
+
+
+
+## Líneas de campo
+Figura pendiente
+
+
+
+## Flujo eléctrico
+El flujo eléctrico es una medida del campo eléctrico que atraviesa una superficie dada. Se puede interpretar intuitivamente como proporcional al número de líneas de campo que cruzan dicha superficie
+
+Si el campo eléctrico ($\vec{E}$) es uniforme y la superficie es plana con área $A$:
+
+$$
+\Phi_E = E A \cos \theta 
+$$
+
+Donde $\theta$ es el ángulo entre la dirección del campo eléctrico y la línea **perpendicular** (normal) a la superficie.
+
+- Si el campo es perpendicular a la superficie ($\theta = 0^\circ$), el flujo es máximo ($EA$).
+- Si el campo es paralelo a la superficie ($\theta = 90^\circ$), no la atraviesa y el flujo es cero.
+
+
+
+## Flujo eléctrico en un caso general
+Para campos no uniformes o superficies curvas, se divide la superficie en elementos pequeños ($dA$) y se integra:
+
+$$
+\Phi_E = \int \vec{E} \cdot d\vec{A} 
+$$
+
+
+
+## La Ley de Gauss (Definición General)
+
+La Ley de Gauss establece que el flujo eléctrico neto a través de cualquier **superficie cerrada** es igual a la carga neta encerrada ($Q_{enc}$) dividida por la permitividad del vacío ($\epsilon_0$).
+
+$$
+\oint \vec{E} \cdot d\vec{A} = \frac{Q_{enc}}{\epsilon_0}
+$$
+
+- **La Superficie Gaussiana:** La integral se realiza sobre una superficie cerrada imaginaria (llamada superficie gaussiana) que elegimos a conveniencia.
+- **Independencia de la Forma:** La ley es válida para una superficie de cualquier forma, siempre que encierre completamente un volumen,.
+
+
+
+## Explicación sencilla y utilidad
+Explicar con un ejemplo. Ejemplo del foco.
+
+
+
+# Potencial eléctrico
+## Potencial eléctrico
+Se define como la energía potencial eléctrica por unidad de carga. Es una magnitud escalar. Es el trabajo necesario para mover una unidad de carga positiva desde un punto hasta el otro en contra de las fuerzas eléctricas.
+
+$$
+V = W / q
+$$
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Unidad de medida**
+La unidad del potencial es el Joule por Coulomb ($V=J/C$).
+
+### **Voltaje** 
+Es la **Diferencia de potencial** entre dos puntos ($V_{ba} = V_b - V_a$).
+
+:::
+
+:::{.callout-note}
+##  **Punto de referencia**
+El valor del potencial $V$ depende de dónde se elija el nivel cero. Generalmente, se toma la tierra o un punto en el infinito como potencial cero.
+:::
+
+
+
+## Movimiento de cargas:
+
+:::{.callout-note}
+
+**Cargas positivas:** Se mueven naturalmente de una zona de **mayor potencial a una de menor potencial**, disminuyendo su energía potencial.
+ 
+:::
+
+:::{.callout-note}
+
+**Cargas negativas (ej. electrones):** Se mueven de una zona de **menor potencial a una de mayor potencial**. Aunque el potencial eléctrico aumenta, su energía potencial disminuye (debido al signo negativo de la carga), lo cual incrementa su energía cinética.
+
+:::
+
+
+
+## Relación entre Potencial y Campo Eléctrico
+Existe una conexión directa entre el potencial y el campo eléctrico ($E$):
+
+- **Campo Uniforme:** En el caso de placas paralelas donde el campo es uniforme, la diferencia de potencial ($V_{ba}$) se relaciona con el campo eléctrico ($E$) y la distancia ($d$) mediante la ecuación:
+
+$$
+V_{ba} = -Ed
+$$
+
+- **Caso General:** El potencial se calcula integrando el campo eléctrico a lo largo de una trayectoria:
+
+$$
+V_{ba} = -\int_a^b \vec{E} \cdot d\vec{L}
+$$
+
+:::{.callout-note}
+Las líneas de campo eléctrico siempre apuntan en la dirección en que disminuye el potencial.
+:::
+
+
+
+## Representación de Potencial
+Figura pendiente
+
+
+
+# Corriente Eléctrica
+
+
+
+## Corriente eléctrica
+
+La corriente eléctrica se define como **el flujo de carga eléctrica** a través de una trayectoria de conducción. 
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Definición precisa**
+
+$$
+I = \frac{dQ}{dt}
+$$
+
+### **Unidad**
+
+Se mide en **Amperes** (A)
+$$
+1\ A = 1\ C/s
+$$
+
+:::
+
+:::{.callout-note}
+
+**Conservación:** La carga no desaparece ni se crea. Una batería no crea carga y una bombilla no la destruye; la cantidad de carga que entra por un extremo del circuito sale por el otro.
+
+:::
+
+
+
+## El Circuito y la Dirección del Flujo
+Para que exista corriente, debe haber una **trayectoria continua** de conducción (un circuito cerrado) entre las terminales de una fuente de voltaje. Si el alambre se rompe, se llama "circuito abierto" y no hay flujo.
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Corriente Convencional** 
+
+{{< placeholder 200 200 format=svg >}}
+
+### **Flujo Real de Electrones**
+
+{{< placeholder 200 200 format=svg >}}
+
+:::
+
+
+
+# Resistencia
+
+
+
+## Resistencia
+
+Es la oposición que presentan los materiales al flujo de electrones. La resistencia de un alambre no es aleatoria; depende de su geometría y del material del que está hecho:
+
+$$
+R = \rho \frac{L}{A}
+$$
+
+Donde:
+
+- **$\rho$ (Resistividad):** Es una propiedad intrínseca del material.
+- **Longitud ($L$):** A mayor longitud, mayor resistencia.
+- **Área ($A$):** A mayor grosor (sección transversal), menor resistencia.
+
+:::{.callout-note}
+
+**Efecto de la Temperatura:** La resistividad de los metales generalmente aumenta con la temperatura. Al calentarse, los átomos vibran más e interfieren más con el flujo de electrones.
+
+:::
+
+
+
+## Resistencia en circuitos
+
+| Color     | Número |  Multiplicador  | Tolerancia |
+| :-------- | :----: | :-------------: | :--------: |
+| Negro     |   0    | 1               |            |
+| Café      |   1    | $10^1$          |     1%     |
+| Rojo      |   2    | $10^2$          |     2%     |
+| Naranja   |   3    | $10^3$          |            |
+| Amarillo  |   4    | $10^4$          |            |
+| Verde     |   5    | $10^5$          |            |
+| Azul      |   6    | $10^6$          |            |
+| Violeta   |   7    | $10^7$          |            |
+| Gris      |   8    | $10^8$          |            |
+| Blanco    |   9    | $10^9$          |            |
+| Oro       |        | $10^-1$         |     5%     |
+| Plata     |        | $10^-2$         |    10%     |
+| Sin color |        |                 |    20%     |
+
+
+
+## Ejemplos de resistencias
+Agregar ejercicios para practicar
+
+
+
+# Potencia eléctrica
+
+## Potencia Eléctrica
+La energía eléctrica es útil porque se transforma fácilmente en otras formas de energía (luz, calor, movimiento). La **potencia ($P$)** es la tasa a la cual se transforma esta energía.
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Fórmula General**
+
+La potencia entregada a cualquier dispositivo es:
+
+$$
+P = I V
+$$
+
+Su unidad es el **Watt** ($W$).
+
+### **En Resistencias** 
+La potencia disipada en calor por una resistencia se puede calcular como:
+
+$$
+P = I^2 R \quad \text{o} \quad P = \frac{V^2}{R}
+$$
+
+:::
+
+:::{.callout-note}
+Esto explica por qué los filamentos de las bombillas o los elementos de los calentadores eléctricos se calientan tanto: transforman energía eléctrica en energía térmica.
+:::

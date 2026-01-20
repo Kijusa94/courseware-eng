@@ -1,0 +1,25 @@
+---
+title: Instrumentación Industrial  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+
+# Circuitos AC
+
+## Capacitancia 
+
+## Inductancia 
+
+## Impedancia
+
+## Circuitos RC
+
+## Circuitos RL
+
+## Circuitos RCL
+### Resonancia
+
+## CA Trifasica
+
+

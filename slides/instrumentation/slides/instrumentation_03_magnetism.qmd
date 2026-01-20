@@ -1,0 +1,162 @@
+---
+title: Instrumentación Industrial  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+
+# Magnetismo
+
+## Imanes, campos magnéticos y líneas de campo
+
+El magnetismo es un fenómeno físico por el que los objetos ejercen fuerzas de atracción o repulsión sobre otros materiales.
+
+:::{.callout-note}
+### Polos Magnéticos
+Todo imán tiene dos polos: **Norte (N)** y **Sur (S)**.
+* Polos iguales se repelen.
+* Polos opuestos se atraen.
+* **No existen monopolos magnéticos**: Si cortas un imán a la mitad, obtienes dos imanes más pequeños, cada uno con su norte y sur.
+:::
+
+**Líneas de Campo Magnético:**
+* Salen del polo Norte y entran al polo Sur.
+* Son líneas cerradas (a diferencia de las líneas de campo eléctrico que nacen y mueren en cargas).
+* La densidad de líneas indica la intensidad del campo.
+
+## Corriente eléctrica y campos magnéticos
+
+En 1820, Hans Christian Ørsted descubrió que una corriente eléctrica desvía la aguja de una brújula.
+
+> **Conclusión fundamental:** Las cargas eléctricas en movimiento (corriente) crean campos magnéticos.
+
+### Regla de la mano derecha
+
+Es una herramienta mnemotécnica para determinar la dirección del campo magnético creado por una corriente.
+
+1.  Agarre el conductor con la mano derecha.
+2.  Apunte el **pulgar** en la dirección de la corriente convencional ($I$).
+3.  Los **dedos** se curvan en la dirección de las líneas de campo magnético ($\vec{B}$).
+
+## Definición de $\vec{B}$
+
+El campo magnético $\vec{B}$ se define en función de la fuerza magnética ejercida sobre una carga de prueba $q$ que se mueve con velocidad $\vec{v}$.
+
+$$
+\vec{F}_B = q(\vec{v} \times \vec{B})
+$$
+
+La magnitud de la fuerza es:
+$$
+F_B = |q| v B \sin(\theta)
+$$
+
+Donde $\theta$ es el ángulo entre la velocidad y el campo magnético.
+
+**Unidades:**
+* En el SI: **Tesla (T)**.
+* $1 \, T = 1 \frac{N}{C \cdot m/s} = 1 \frac{N}{A \cdot m}$
+* Otra unidad común (CGS): **Gauss (G)** ($1 \, T = 10^4 \, G$).
+
+## Ecuación de Lorentz
+
+Si una partícula cargada se mueve en una región donde existen tanto un campo eléctrico $\vec{E}$ como un campo magnético $\vec{B}$, la fuerza total (Fuerza de Lorentz) es la suma vectorial de ambas:
+
+$$
+\vec{F} = q\vec{E} + q(\vec{v} \times \vec{B})
+$$
+
+### Importancia de la Ecuación de Lorentz
+
+* **Fundamento de dispositivos:** Es la base operativa de ciclotrones, espectrómetros de masas y tubos de rayos catódicos.
+* **Efecto Hall:** Permite determinar el signo de los portadores de carga y medir campos magnéticos.
+* **Selectores de velocidad:** Permite filtrar partículas que se mueven a una velocidad específica cancelando las fuerzas eléctricas y magnéticas.
+
+## Ley de Ampère
+
+Relaciona la componente tangencial del campo magnético a lo largo de una curva cerrada con la corriente que atraviesa el área delimitada por dicha curva.
+
+$$
+\oint \vec{B} \cdot d\vec{l} = \mu_0 I_{encerrada}
+$$
+
+Donde $\mu_0$ es la **permeabilidad magnética del vacío**:
+$$\mu_0 = 4\pi \times 10^{-7} \, T\cdot m/A$$
+
+### Importancia de la Ley de Ampère y su aplicación
+
+* Es análoga a la Ley de Gauss en electrostática.
+* Es extremadamente útil para calcular campos magnéticos en configuraciones con **alta simetría** (ej. alambres infinitos, solenoides, toroides).
+* **Ejemplo (Alambre infinito):**
+    $$B = \frac{\mu_0 I}{2\pi r}$$
+
+## Ley de Biot-Savart
+
+Cuando la geometría del conductor no es simétrica, usamos la Ley de Biot-Savart para calcular el campo magnético diferencial $d\vec{B}$ generado por un elemento de corriente diferencial $I d\vec{l}$.
+
+$$
+d\vec{B} = \frac{\mu_0}{4\pi} \frac{I d\vec{l} \times \hat{r}}{r^2}
+$$
+
+### Importancias del ley de Biot-Savart y sus aplicaciones
+
+* Es la ley fundamental ("fuerza bruta") para calcular el campo magnético de **cualquier** distribución de corriente.
+* Permite calcular el campo en el eje de una espira circular o en bobinas cortas, donde Ampère no es aplicable directamente.
+
+## Ferromagnetismo
+
+Los materiales se clasifican según su respuesta a campos magnéticos externos. Los materiales ferromagnéticos (como el Hierro, Níquel, Cobalto) son los más importantes en ingeniería.
+
+* **Dominios Magnéticos:** Regiones microscópicas donde los dipolos magnéticos atómicos están alineados.
+* **Permeabilidad Relativa ($\mu_r$):** Estos materiales tienen una $\mu_r \gg 1$, lo que significa que amplifican enormemente el campo magnético externo.
+* **Histéresis:** Tienen "memoria" magnética. La relación entre $B$ y $H$ no es lineal y depende de la historia previa de magnetización (fundamental para transformadores y memorias magnéticas).
+
+## Ley de Faraday
+
+Michael Faraday descubrió que un campo magnético variable en el tiempo induce una fuerza electromotriz (FEM) en un circuito.
+
+$$
+\mathcal{E} = - \frac{d\Phi_B}{dt}
+$$
+
+Donde $\Phi_B$ es el flujo magnético:
+$$\Phi_B = \int \vec{B} \cdot d\vec{A}$$
+
+:::{.callout-important}
+### Ley de Lenz (El signo menos)
+La polaridad de la FEM inducida es tal que tiende a producir una corriente que crea un flujo magnético que se **opone** al cambio en el flujo magnético original.
+:::
+
+## Ley de Gauss para magnetismo
+
+Establece que el flujo magnético neto a través de cualquier superficie cerrada es siempre cero.
+
+$$
+\oint \vec{B} \cdot d\vec{A} = 0
+$$
+
+**Significado Físico:**
+* Las líneas de campo magnético no tienen principio ni fin; son bucles continuos.
+* Confirma la inexistencia de monopolos magnéticos aislados.
+
+## Inducción electromagnética
+
+Es el proceso de generar corriente eléctrica mediante campos magnéticos variables.
+
+**Aplicaciones principales:**
+* **Generadores:** Convierten energía mecánica en eléctrica rotando una bobina dentro de un campo magnético.
+* **Transformadores:** Dispositivos estáticos que cambian el voltaje AC basándose en el acople magnético entre dos bobinas (primario y secundario) a través de un núcleo ferromagnético.
+
+## Motores AC - básico
+
+Los motores transforman energía eléctrica en mecánica aprovechando las fuerzas magnéticas (Lorentz).
+
+1.  **Estator:** Genera un campo magnético rotatorio (gracias a corrientes trifásicas desfasadas).
+2.  **Rotor:**
+    * Siente el campo cambiante.
+    * Se inducen corrientes en él (Ley de Faraday).
+    * Estas corrientes interactúan con el campo del estator creando un torque (par motor).
+
+**Concepto Clave: Deslizamiento (Slip)**
+El rotor de un motor de inducción siempre gira un poco más lento que el campo magnético rotatorio del estator. Si giraran a la misma velocidad, no habría variación de flujo, ni inducción, ni torque.
+

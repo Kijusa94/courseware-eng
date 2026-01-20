@@ -2,7 +2,7 @@
 title: Programación  
 subtitle: "Fundamentos"
 author: M.Sc. Juan Guzman
-institute: Fundación Uinversitaria de Popayán
+institute: Kijusa94
 ---
 
 

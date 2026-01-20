@@ -1,0 +1,24 @@
+---
+title: Instrumentación Industrial    
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+
+# Actuadores
+
+# Motores eléctricos
+
+# Válvulas
+
+# Actuadores neumaticos y electricos
+
+# Otros componentes
+
+## Relé
+
+## Contactor
+
+## Transformadores
+
+## Compresores

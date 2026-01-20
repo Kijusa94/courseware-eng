@@ -1,0 +1,53 @@
+\begin{tikzpicture}[scale=0.15] % Escalamos para que 1cm de dibujo = 1 unidad de código
+
+    % Coordenadas
+    \coordinate (Q2) at (0,0);
+    \coordinate (Q1) at (52,0);
+    \coordinate (Q3) at (0,30);
+
+    % Dibujar triángulo
+    \draw[thick] (Q2) -- (Q1) node[midway, below] {52 cm};
+    \draw[thick] (Q2) -- (Q3) node[midway, above, rotate=90] {30 cm};
+    \draw[dashed] (Q3) -- (Q1) node[midway, above, rotate=-30] {60 cm};
+
+    % Cargas (Puntos negros)
+    \filldraw (Q2) circle (15pt) node[below left] {$Q_2 = +50 \mu C$};
+    \filldraw (Q1) circle (15pt) node[below right] {$Q_1 = -86 \mu C$};
+    \filldraw (Q3) circle (15pt) node[left=10pt] {$Q_3 = +65 \mu C$};
+
+    % Ángulos
+    \draw (0,4) arc (90:0:4); % Ángulo recto en Q2
+    \node at (5,5) {$90^\circ$};
+
+    \draw (44,0) arc (180:150:8); % Ángulo en Q1 (aprox)
+    \node at (40,5) {$30^\circ$};
+
+    % --- VECTORES DE FUERZA EN Q3 ---
+    
+    % Configuración de estilo de vectores
+    \tikzset{force/.style={-latex, ultra thick, cyan}}
+    \tikzset{component/.style={-latex, dashed, cyan!80}}
+
+    % F32 (Hacia arriba)
+    \draw[force] (Q3) -- ++(0,15) node[above, black] {$\mathbf{\vec{F}_{32}}$};
+
+    % F31 (Hacia Q1, -30 grados)
+    % Usamos coordenadas polares relativas: (ángulo:longitud)
+    \draw[force] (Q3) -- ++(-30:18) coordinate (F31tip) node[right, black] {$\mathbf{\vec{F}_{31}}$};
+
+    % Componentes de F31
+    % F31x (Horizontal)
+    \draw[component] (Q3) -- ++(15.5,0) node[midway, above, black] {$F_{31x}$};
+    % F31y (Vertical hacia abajo)
+    \draw[component] (Q3) -- ++(0,-7.8) node[midway, left, black] {$F_{31y}$};
+    
+    % Líneas de proyección punteadas para cerrar el rectángulo
+    \draw[dashed, gray] (15.5,30) -- (F31tip);
+    \draw[dashed, gray] (0,22.2) -- (F31tip);
+
+    % Ángulo pequeño en Q3
+    \draw[dashed] (Q3) -- ++(10,0); % Línea horizontal referencia
+    \draw (5,30) arc (0:-30:5);
+    \node at (8,29) {\footnotesize $30^\circ$};
+
+\end{tikzpicture}

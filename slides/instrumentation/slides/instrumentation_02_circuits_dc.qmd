@@ -1,0 +1,259 @@
+---
+title: Instrumentación Industrial    
+subtitle: "Circuitos DC y AC"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+
+```{python}
+#| echo: false
+%run ../assets/scripts/instrumentation_02_circuits_dc/instrumentation_dc_circuits.py
+```
+
+
+## Ley de Ohm
+Para producir corriente se requiere una diferencia de potencial (voltaje). George Simon Ohm descubrió que la corriente ($I$) en un metal es proporcional al voltaje ($V$) aplicado.
+
+$$
+V = I  R
+$$
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### Circuito cerrado
+
+{{< placeholder 200 200 format=svg >}}
+
+### Circuito abierto
+
+{{< placeholder 200 200 format=svg >}}
+
+:::
+
+:::{.callout-note}
+Se requiere que el circuito sea cerrado para que haya flujo de eléctrones.
+:::
+
+
+
+## Ejercicios de la Ley de Ohm
+
+### Enunciado
+
+Si se tiene un circuito con una fuente de voltaje de $12V$ y una resistencia de $6\Omega$, determine la corriente que circula por el circuito.
+
+{{< placeholder 300 200 format=svg >}}
+
+### Solucion
+
+$$
+I = \frac{V}{R} = \frac{12V}{6\Omega} = 2A
+$$
+
+
+
+## Ejercicios de la Ley de Ohm
+
+### Enunciado
+
+Se mide una corriente de $0.5A$ en un circuito alimentado por una batería de $9V$. ¿Cuál es el valor de la resistencia conectada?
+
+{{< placeholder 300 200 format=svg >}}
+
+### Solución
+
+$$
+R = \frac{V}{I} = \frac{9V}{0.5A} = 18\Omega
+$$
+
+
+
+# Circuito DC: Serie y Paralelo
+
+
+
+## Circuitos DC en serie y paralelo
+
+Existen dos formas fundamentales de conectar componentes en un circuito eléctrico: en serie y en paralelo.
+
+:::{.panel-tabset}
+
+### Serie
+
+:::{layout-nrow=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### Circuitos en serie
+
+```{python}
+#| echo: false
+dc_circuits_series()
+```
+
+### Formulas
+
+$$
+V_{TOTAL} = V_1 + V_2 + V_3 + \dots + V_n 
+$$
+$$
+I_{TOTAL} = I_1 = I_2 = I_3 = \dots = I_n
+$$
+$$
+R_{TOTAL} = R_1 + R_2 + R_3 + \dots + R_n
+$$
+
+:::
+
+### Paralelo
+
+:::{layout-nrow=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### Circuitos en paralelo
+```{python}
+#| echo: false
+dc_circuits_parallel()
+```
+
+### Formulas
+$$
+V_{TOTAL} = V_1 = V_2 = V_3 = \dots = V_n \\
+$$
+$$
+I_{TOTAL} = I_1 + I_2 + I_3 + \dots + I_n \\
+$$
+$$
+R_{TOTAL} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots + \frac{1}{R_n}}
+$$
+
+:::
+
+:::
+
+
+
+## Circuitos DC en Serie y Paralelo
+:::{.callout-important}
+### Regla Práctica
+
+En paralelo, la resistencia equivalente siempre es menor que la resistencia más pequeña del arreglo. En serie, siempre es mayor que la resistencia más grande.
+:::
+
+
+
+## Ejemplos de Circuitos DC: Serie y Paralelo.
+Vease **Práctica de circuitos DC**
+
+
+
+# Leyes de Kirchhoff
+
+
+
+## Leyes de Kirchhoff
+Para circuitos más complejos donde la Ley de Ohm no es suficiente directamente, utilizamos las leyes de conservación formuladas por Gustav Kirchhoff.
+
+> La suma algebraica de las corrientes que entran a un nodo es cero. Se basa en el principio de conservación de la carga.
+
+$$
+\sum I_{entrada} = \sum I_{salida}
+$$
+
+> La suma algebraica de las diferencias de potencial (voltajes) alrededor de cualquier lazo cerrado (malla) es cero. Se basa en la conservación de la energía.
+
+$$
+\sum V_{subidas} = \sum V_{caidas}
+$$
+
+::: {.callout-important}
+
+Subida de potencial: De (-) a (+).
+
+Caída de potencial: De (+) a (-).
+
+:::
+
+
+
+## Ejercicios de circuitos DC con Kirchhoff
+
+:::{.panel-tabset}
+### Enunciado
+Analicemos un circuito de dos mallas para encontrar las corrientes de rama $I_1, I_2, I_3$, dado el siguiente circuito con una fuente de voltaje y tres resistencias.
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+### Circuito
+
+```{python}
+#| echo: false
+dc_circuit_kirchhoff_example()
+```
+
+### Datos:
+
+$$V_s = 24V$$
+$$R_1 = 2\Omega$$
+$$R_2 = 4\Omega$$
+$$R_3 = 4\Omega$$
+
+:::
+
+### Solución
+
+Asumimos dos corrientes de malla, $I_1$ e $I_2$, circulando en sentido **horario**.
+
+Recorremos la fuente (de $+$ a $-$), $R_1$ y la resistencia compartida $R_2$:
+
+$$-V_s - I_1 R_1 - (I_1 - I_2)R_2 = 0$$
+
+$$-24 - 2I_1 - 4(I_1 - I_2) = 0$$
+
+$$-6I_1 + 4I_2 = 24$$
+
+$$-3I_1 + 2I_2 = 12 \quad \dots \textbf{(Ec. 1)}$$
+
+### Solución
+
+Recorremos $R_3$ y la resistencia compartida $R_2$:
+
+$$-I_2 R_3 - (I_2 - I_1)R_2 = 0$$
+
+$$-4I_2 - 4(I_2 - I_1) = 0$$
+
+$$-8I_2 + 4I_1 = 0 \rightarrow I_1 = 2I_2 \quad \dots \textbf{(Ec. 2)}$$
+
+### Solución
+
+Sustituimos la **Ec. 2** dentro de la **Ec. 1**:
+
+$$-3(2I_2) + 2I_2 = 12$$
+$$-6I_2 + 2I_2 = 12$$
+$$-4I_2 = 12$$
+
+::: {.callout-note appearance="simple"}
+Despejando obtenemos:
+
+* **$I_2 = -3\,A$**
+* **$I_1 = 2(-3) = -6\,A$**
+
+*El signo negativo indica que la dirección real de la corriente es anti-horaria.*
+:::
+
+### Resultados
+
+| Elemento | (Ω) | (A) | (V) | Cálculo |
+| :---: | :---: | :---: | :---: | :--- |
+| **R1** | 2 Ω | 6 A | **12 V** | `6A * 2Ω` |
+| **R2** | 4 Ω | 3 A | **12 V** | `(6A - 3A) * 4Ω` |
+| **R3** | 4 Ω | 3 A | **12 V** | `3A * 4Ω` |
+| **Fuente Vs**| - | 6 A | **24 V** | Valor fijo |
+
+### Verificación
+
+::: {.callout-important}
+La suma de caídas de voltaje en el lazo izquierdo ($V_R1 + V_R2$) debe igualar a la fuente:
+
+$$12 V + 12 V = 24 V$$
+
+✅ **Correcto**
+:::
+
+:::

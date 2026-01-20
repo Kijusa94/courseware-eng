@@ -1,0 +1,107 @@
+# Instalar Quarto
+
+Acceda al terminal en la parte inferior izquierda de la interfaz de Visual Studio Code.
+
+![quarto](../documentation/assets/images/vscode_quarto_install/01.png)
+
+To install Quarto, run the following command from the command line:
+
+```
+pip install quarto-cli
+```
+
+![quarto](../documentation/assets/images/vscode_quarto_install/02.png)
+
+Dirijase a la pestaña de extensiones, en la barra de busqueda ingrese ``quarto``, e instale la extensión del autor ``Quarto``
+
+![quarto](../documentation/assets/images/vscode_quarto_install/03.png)
+
+---
+
+## Para modelos 3D en Quarto
+
+Ve a https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js.
+
+Presiona Ctrl + S y guarda el archivo como ``model-viewer.min.js`` dentro de una carpeta dentro del proyecto. Para este caso, la carpeta ``assets``. 
+
+Ahora, en tu .qmd, enlaza el archivo localmente.
+
+```HTML
+<script type="module" src="assets/model-viewer.min.js"></script>
+
+<model-viewer 
+  src="assets/mi-pieza.glb" 
+  camera-controls 
+  style="width: 100%; height: 500px;">
+</model-viewer>
+```
+
+## Para graficos de matemáticas y física
+Utilice tikz para crear gráficos en LaTeX y compatibles con Website y RevealJS de Quarto. 
+
+Primero, debe instalar R en su ordenador. Puede descargarlo del siguiente enlace: [link](https://www.r-project.org/)
+
+Luego, Luego debe instalar TinyTeX. Use el siguiente comando:
+
+``` bash
+quarto install tinytex
+```
+
+Puede crear el grafico indicando el lenguaje y el motor para el renderizado. Si ves un círculo rojo abajo, tu configuración está perfecta.
+
+````{verbatim}
+```{r, engine = 'tikz', echo=TRUE, eval=FALSE}
+\begin{tikzpicture}
+ \draw (0,0) circle (1mm);
+ \draw (0,0) circle (2mm);
+\end{tikzpicture}
+```
+````
+
+### Python + R en un mismo .qmd
+Debe agregar el siguiente código al archivo .qmd:
+
+````{verbatim}
+```{r setup, include=FALSE, eval=FALSE}
+library(reticulate)
+
+# IMPORTANTE: Ajusta esta ruta a donde está tu .venv
+# En Windows suele ser algo como: "C:/Users/juand/.../.venv/Scripts/python.exe"
+# O si está en la misma carpeta del proyecto:
+use_virtualenv("../../../.venv", required = TRUE) 
+```
+````
+
+## Para instalar paquetes de R usando renv
+
+Ejecute en el terminal de R:
+
+``` markdown
+install.packages("renv")
+
+# Activa renv en este proyecto
+renv::init()
+
+#Generar el "requirements" (Snapshot) Cuando hayas instalado paquetes y tu código funcione, guarda el estado. Esto crea el archivo renv.lock (tu requirements).
+renv::snapshot()
+
+#Instalar en otra máquina (Restore) Si le pasas tu código y el archivo renv.lock a un colega (o lo subes a GitHub), ellos solo tienen que ejecutar:
+renv::restore()
+```
+
+
+## Para instalar paquetes de R de forma 'manual'(No recomendado)
+Ejecute en el terminal de R:
+````markdown
+# Obtener nombres de paquetes instalados
+paquetes <- installed.packages()[, "Package"]
+
+# Guardarlos en un txt
+writeLines(paquetes, "requirements.txt")
+
+# Leer el archivo
+paquetes_a_instalar <- readLines("requirements.txt")
+
+# Instalar los que falten
+install.packages(paquetes_a_instalar)
+````

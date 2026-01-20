@@ -1,0 +1,54 @@
+---
+title: "Galería de Presentaciones"
+format: html
+---
+
+Esta es la página principal del proyecto. Aquí centralizamos todo el conocimiento y los recursos visuales disponibles.
+
+:::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Introducción
+[Ver Presentación &rarr;](slides/instrumentation_01_intro.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Circuitos DC
+[Ver Presentación &rarr;](slides/instrumentation_02_circuits_dc.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Magnetismo
+[Ver Presentación &rarr;](slides/instrumentation_03_magnetism.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Circuitos AC
+[Ver Presentación &rarr;](slides/instrumentation_04_ac_circuits.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Leyes de Maxwell
+[Ver Presentación &rarr;](slides/instrumentation_05_maxwell.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Sensores
+[Ver Presentación &rarr;](slides/instrumentation_06_sensors.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📊 Actuadores
+[Ver Presentación &rarr;](slides/instrumentation_07_actuators.qmd){.btn .btn-primary role="button"}
+:::
+
+::::
+
+---
+
+### 🚀 Acceso Rápido
+
+::: {.callout-note}
+## Novedades
+El repositorio se actualizará con nuevas caracteristicas.
+:::

@@ -1061,7 +1061,7 @@ margin-right: 0; }
 M.Sc. Juan Guzman 
 </div>
         <p class="quarto-title-affiliation">
-            Fundación Uinversitaria de Popayán
+            Kijusa94
           </p>
     </div>
 </div>
@@ -1103,7 +1103,7 @@ M.Sc. Juan Guzman
 <section id="la-estructura-series" class="slide level2" data-number="1.2">
 <h2><span class="header-section-number">1.2</span> La Estructura “Series”</h2>
 <p>Contiene dos arrays: el <strong>índice</strong> y los <strong>datos</strong>.</p>
-<div id="00adb8e9" class="cell" data-execution_count="1">
+<div id="df99a7e3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a></a><span class="im">import</span> random</span>
 <span id="cb1-3"><a></a></span>
@@ -1125,7 +1125,7 @@ dtype: int64</code></pre>
 <section id="operaciones-en-series" class="slide level2" data-number="1.3">
 <h2><span class="header-section-number">1.3</span> Operaciones en Series</h2>
 <p>Podemos aplicar funciones matemáticas y acceder como si fueran listas.</p>
-<div id="9dc3f97c" class="cell" data-execution_count="2">
+<div id="64f8d466" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="co"># Generamos datos aleatorios</span></span>
 <span id="cb3-2"><a></a>datos <span class="op">=</span> [random.randrange(<span class="dv">1</span>, <span class="dv">50</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
 <span id="cb3-3"><a></a>s <span class="op">=</span> pd.Series(datos)</span>
@@ -1134,9 +1134,9 @@ dtype: int64</code></pre>
 <span id="cb3-6"><a></a><span class="bu">print</span>(<span class="ss">f&quot;Suma total: </span><span class="sc">{</span>s<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb3-7"><a></a><span class="bu">print</span>(<span class="ss">f&quot;Promedio: </span><span class="sc">{</span>s<span class="sc">.</span>mean()<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Valor en pos 2: 38
-Suma total: 148
-Promedio: 29.6</code></pre>
+<pre><code>Valor en pos 2: 44
+Suma total: 106
+Promedio: 21.2</code></pre>
 </div>
 </div>
 </section></section>
@@ -1149,7 +1149,7 @@ Promedio: 29.6</code></pre>
 <h2><span class="header-section-number">2.1</span> Creación de DataFrames</h2>
 <p>Podemos construirlos desde listas de tuplas o diccionarios.</p>
 <p><strong>Opción A: Diccionarios</strong> (Clave = Columna)</p>
-<div id="86240a19" class="cell" data-execution_count="3">
+<div id="52dcf934" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb5-2"><a></a>    <span class="st">&#39;Mes&#39;</span>: [<span class="st">&#39;Enero&#39;</span>,<span class="st">&#39;Febrero&#39;</span>], </span>
 <span id="cb5-3"><a></a>    <span class="st">&#39;Casos&#39;</span>: [<span class="dv">177643</span>, <span class="dv">33727</span>], </span>
@@ -1172,7 +1172,7 @@ Promedio: 29.6</code></pre>
 <li><code>df.describe()</code>: Estadísticas descriptivas (media, min, max, cuartiles).</li>
 <li><code>df.columns</code>: Lista de encabezados.</li>
 </ul>
-<div id="f0841677" class="cell" data-execution_count="4">
+<div id="f260582f" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>(df.describe())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="4">
@@ -1218,7 +1218,7 @@ max    177643.000000  996.000000</code></pre>
 <section id="uso-de-iloc-posición" class="slide level2 smaller" data-number="3.2">
 <h2><span class="header-section-number">3.2</span> Uso de <code>iloc</code> (Posición)</h2>
 <p>Sintaxis: <code>df.iloc[&lt;filas&gt;, &lt;columnas&gt;]</code></p>
-<div id="97d3047c" class="cell" data-execution_count="5">
+<div id="0224326f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>df <span class="op">=</span> pd.DataFrame(</span>
 <span id="cb9-2"><a></a>    data<span class="op">=</span>[(<span class="st">&#39;Enero&#39;</span>,<span class="dv">100</span>), (<span class="st">&#39;Febrero&#39;</span>,<span class="dv">200</span>), (<span class="st">&#39;Marzo&#39;</span>,<span class="dv">300</span>)],</span>
 <span id="cb9-3"><a></a>    columns<span class="op">=</span>[<span class="st">&#39;Mes&#39;</span>,<span class="st">&#39;Ventas&#39;</span>], index<span class="op">=</span>[<span class="st">&#39;a&#39;</span>,<span class="st">&#39;b&#39;</span>,<span class="st">&#39;c&#39;</span>]</span>
@@ -1245,7 +1245,7 @@ b  Febrero     200</code></pre>
 <section id="uso-de-loc-etiquetas" class="slide level2 smaller" data-number="3.3">
 <h2><span class="header-section-number">3.3</span> Uso de <code>loc</code> (Etiquetas)</h2>
 <p>Sintaxis: <code>df.loc[&lt;etiqueta_fila&gt;, &lt;etiqueta_columna&gt;]</code></p>
-<div id="4c3d106d" class="cell" data-execution_count="6">
+<div id="c1a19654" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">print</span>(df.loc[<span class="st">&#39;a&#39;</span>])              <span class="co"># Fila con indice &#39;a&#39;</span></span>
 <span id="cb11-2"><a></a><span class="bu">print</span>(df.loc[<span class="st">&#39;a&#39;</span>:<span class="st">&#39;b&#39;</span>])          <span class="co"># Rango (INCLUSIVO el final)</span></span>
 <span id="cb11-3"><a></a><span class="bu">print</span>(df.loc[:, <span class="st">&#39;Mes&#39;</span>])         <span class="co"># Columna &#39;Mes&#39;</span></span>
@@ -1275,7 +1275,7 @@ a  Enero     100</code></pre>
 <li><code>iat[fila, col]</code>: Por posición numérica.</li>
 <li><code>at[etiqueta_fila, etiqueta_col]</code>: Por nombre.</li>
 </ul>
-<div id="2026f3c8" class="cell" data-execution_count="7">
+<div id="1ece43d0" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>valor <span class="op">=</span> df.at[<span class="st">&#39;b&#39;</span>, <span class="st">&#39;Ventas&#39;</span>] <span class="co"># Fila &#39;b&#39;, Columna &#39;Ventas&#39;</span></span>
 <span id="cb13-2"><a></a><span class="bu">print</span>(<span class="ss">f&quot;Ventas de Febrero: </span><span class="sc">{</span>valor<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb13-3"><a></a></span>
@@ -1307,7 +1307,7 @@ a  Enero     100</code></pre>
 <section id="escritura-de-archivos" class="slide level2" data-number="4.2">
 <h2><span class="header-section-number">4.2</span> Escritura de Archivos</h2>
 <p>Exportar DataFrames procesados.</p>
-<div id="e9a756d1" class="cell" data-execution_count="8">
+<div id="98855616" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="co"># CSV</span></span>
 <span id="cb16-2"><a></a>df.to_csv(<span class="st">&#39;nuevo_archivo.csv&#39;</span>, index<span class="op">=</span><span class="va">False</span>) <span class="co"># index=False evita guardar el indice 0,1,2...</span></span>
 <span id="cb16-3"><a></a></span>
@@ -1325,7 +1325,7 @@ a  Enero     100</code></pre>
 <section id="concatenación" class="slide level2" data-number="5.1">
 <h2><span class="header-section-number">5.1</span> Concatenación</h2>
 <p>Unir DataFrames “uno debajo del otro” (axis=0) o “uno al lado del otro” (axis=1).</p>
-<div id="d77a9b28" class="cell" data-execution_count="9">
+<div id="fba222e2" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>]})</span>
 <span id="cb17-2"><a></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="dv">3</span>, <span class="dv">4</span>]})</span>
 <span id="cb17-3"><a></a></span>
@@ -1395,7 +1395,7 @@ a  Enero     100</code></pre>
 <h2><span class="header-section-number">6.1</span> GroupBy</h2>
 <p>Permite dividir los datos en grupos y aplicar cálculos (contar, sumar, promediar).</p>
 <p>Sintaxis: <code>df.groupby(by=&#39;Columna&#39;).funcion()</code></p>
-<div id="0719e53b" class="cell" data-execution_count="10">
+<div id="1ab9a428" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>data <span class="op">=</span> {<span class="st">&#39;Dieta&#39;</span>: [<span class="st">&#39;A&#39;</span>,<span class="st">&#39;A&#39;</span>,<span class="st">&#39;B&#39;</span>,<span class="st">&#39;B&#39;</span>], <span class="st">&#39;Peso&#39;</span>: [<span class="dv">80</span>, <span class="dv">82</span>, <span class="dv">70</span>, <span class="dv">75</span>]}</span>
 <span id="cb19-2"><a></a>df_g <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb19-3"><a></a></span>
@@ -1412,7 +1412,7 @@ Name: Peso, dtype: float64</code></pre>
 <section id="agregaciones-múltiples" class="slide level2" data-number="6.2">
 <h2><span class="header-section-number">6.2</span> Agregaciones Múltiples</h2>
 <p>Podemos pedir varias estadísticas a la vez usando <code>agg()</code>.</p>
-<div id="10d5bd48" class="cell" data-execution_count="11">
+<div id="d1153846" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="co"># Media, Mínimo y Máximo por grupo</span></span>
 <span id="cb21-2"><a></a>resumen <span class="op">=</span> df_g.groupby(<span class="st">&#39;Dieta&#39;</span>).agg([<span class="st">&#39;mean&#39;</span>, <span class="st">&#39;min&#39;</span>, <span class="st">&#39;max&#39;</span>])</span>
 <span id="cb21-3"><a></a><span class="bu">print</span>(resumen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1434,7 +1434,7 @@ B      72.5  70  75</code></pre>
 <h2><span class="header-section-number">7.1</span> Funciones Anónimas (Lambda)</h2>
 <p>Son funciones rápidas, de una sola línea, ideales para aplicar a columnas enteras.</p>
 <p>Estructura: <code>lambda argumentos : expresión</code></p>
-<div id="ba4c1633" class="cell" data-execution_count="12">
+<div id="81e1bda6" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>doble <span class="op">=</span> <span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb23-2"><a></a><span class="bu">print</span>(doble(<span class="dv">5</span>))</span>
 <span id="cb23-3"><a></a></span>
@@ -1450,7 +1450,7 @@ True</code></pre>
 <section id="lambda-en-dataframes-apply" class="slide level2" data-number="7.2">
 <h2><span class="header-section-number">7.2</span> Lambda en DataFrames (Apply)</h2>
 <p>Usamos <code>apply()</code> para ejecutar la función en cada elemento de una columna.</p>
-<div id="b18119ec" class="cell" data-execution_count="13">
+<div id="7b915c26" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;Precio&#39;</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>]})</span>
 <span id="cb25-2"><a></a></span>
 <span id="cb25-3"><a></a><span class="co"># Calcular IVA (19%) para cada precio</span></span>
@@ -1476,7 +1476,7 @@ True</code></pre>
 <li><strong>Conversión:</strong> <code>pd.to_datetime()</code> convierte texto a objetos de fecha reales.</li>
 <li><strong>Índice Temporal:</strong> Usar la fecha como índice facilita filtrar por años o meses.</li>
 </ol>
-<div id="80188855" class="cell" data-execution_count="14">
+<div id="090fa1b9" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>df_t <span class="op">=</span> pd.DataFrame({<span class="st">&#39;Fecha&#39;</span>:[<span class="st">&#39;2023-01-01&#39;</span>, <span class="st">&#39;2023-02-01&#39;</span>], <span class="st">&#39;Val&#39;</span>:[<span class="dv">10</span>,<span class="dv">20</span>]})</span>
 <span id="cb27-2"><a></a>df_t[<span class="st">&#39;Fecha&#39;</span>] <span class="op">=</span> pd.to_datetime(df_t[<span class="st">&#39;Fecha&#39;</span>])</span>
 <span id="cb27-3"><a></a>df_t.set_index(<span class="st">&#39;Fecha&#39;</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -1491,7 +1491,7 @@ True</code></pre>
 <section id="resampling-y-agrupación-temporal" class="slide level2" data-number="8.2">
 <h2><span class="header-section-number">8.2</span> Resampling y Agrupación Temporal</h2>
 <p>Podemos agrupar datos por periodicidad (mensual, anual) fácilmente.</p>
-<div id="9ed6780c" class="cell" data-execution_count="15">
+<div id="63caf098" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="co"># Sumar casos por Nombre de Mes</span></span>
 <span id="cb29-2"><a></a>df.groupby(df.index.month_name()).<span class="bu">sum</span>()</span>
 <span id="cb29-3"><a></a></span>
@@ -1507,7 +1507,7 @@ True</code></pre>
 <section id="intro-a-matplotlib" class="slide level2" data-number="9.1">
 <h2><span class="header-section-number">9.1</span> Intro a Matplotlib</h2>
 <p>Librería estándar para gráficos en Python. Se integra nativamente con Pandas.</p>
-<div id="5a4da9ce" class="cell" data-execution_count="16">
+<div id="736f098b" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb30-2"><a></a></span>
 <span id="cb30-3"><a></a>df <span class="op">=</span> pd.DataFrame({<span class="st">&#39;X&#39;</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>], <span class="st">&#39;Y&#39;</span>:[<span class="dv">10</span>,<span class="dv">30</span>,<span class="dv">20</span>]})</span>
@@ -1544,7 +1544,7 @@ True</code></pre>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p><a href="https://docs.python.org/3/tutorial/index.html">Documentación</a></p>
+<p><a href="../index.html">HOME</a></p>
 </div>
 </div></div>
 

@@ -2,138 +2,190 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Kijusa94.github.io/courseware-eng/slides/programming/slides/programming_04_pandas.html</loc>
-    <lastmod>2026-01-07T20:33:32.755Z</lastmod>
+    <lastmod>2026-01-20T15:56:37.146Z</lastmod>
   </url>
   <url>
     <loc>https://Kijusa94.github.io/courseware-eng/slides/programming/slides/programming_02_flow.html</loc>
-    <lastmod>2026-01-07T20:33:32.755Z</lastmod>
+    <lastmod>2026-01-20T15:56:25.042Z</lastmod>
   </url>
   <url>
     <loc>https://Kijusa94.github.io/courseware-eng/slides/programming/index.html</loc>
-    <lastmod>2026-01-07T20:50:09.856Z</lastmod>
+    <lastmod>2026-01-08T12:53:19.879Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/info/about.html</loc>
-    <lastmod>2026-01-07T16:14:26.243Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/slides/instrumentation_06_sensors.html</loc>
+    <lastmod>2026-01-20T15:57:21.067Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/tgs/tgs_procedure_v02.html</loc>
-    <lastmod>2026-01-07T16:17:20.599Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/slides/instrumentation_04_ac_circuits.html</loc>
+    <lastmod>2026-01-20T15:57:21.067Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/tgs/index.html</loc>
-    <lastmod>2026-01-07T19:36:59.954Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/slides/instrumentation_02_circuits_dc.html</loc>
+    <lastmod>2026-01-20T15:57:21.076Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_level_2.html</loc>
-    <lastmod>2026-01-07T16:17:20.502Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/index.html</loc>
+    <lastmod>2026-01-20T15:48:47.297Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_install.html</loc>
-    <lastmod>2026-01-07T16:17:20.487Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/labs/instrumentation/instrumentation_rlc_circuit.html</loc>
+    <lastmod>2026-01-13T16:05:18.251Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_utils_commands.html</loc>
-    <lastmod>2026-01-07T16:17:19.996Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/labs/instrumentation/instrumentation_ac_circuits.html</loc>
+    <lastmod>2026-01-15T00:14:14.367Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_python_project_transfer.html</loc>
-    <lastmod>2026-01-07T16:17:19.981Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/labs/index.html</loc>
+    <lastmod>2026-01-13T20:29:10.874Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/index.html</loc>
-    <lastmod>2026-01-07T20:03:59.373Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_workspace_extensions.html</loc>
-    <lastmod>2026-01-07T16:17:18.966Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_md_mkdocs_mkslides.html</loc>
-    <lastmod>2026-01-07T20:37:13.936Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_git_install.html</loc>
-    <lastmod>2026-01-07T20:36:07.327Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/index.html</loc>
-    <lastmod>2026-01-07T20:04:40.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_modbus.html</loc>
-    <lastmod>2026-01-07T19:41:12.904Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_factoryio_pid.html</loc>
-    <lastmod>2026-01-07T20:02:16.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_factoryio_opcua.html</loc>
-    <lastmod>2026-01-07T19:40:25.025Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_install.html</loc>
-    <lastmod>2026-01-07T16:17:16.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/factoryio_install.html</loc>
-    <lastmod>2026-01-07T16:17:16.365Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/index.html</loc>
-    <lastmod>2026-01-07T20:03:59.373Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_latex_setup.html</loc>
-    <lastmod>2026-01-07T16:17:18.950Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_md_setup.html</loc>
-    <lastmod>2026-01-07T16:17:18.966Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/index.html</loc>
-    <lastmod>2026-01-07T19:43:01.754Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_python_install.html</loc>
-    <lastmod>2026-01-07T20:37:22.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_shorcuts.html</loc>
-    <lastmod>2026-01-07T16:17:19.981Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/index.html</loc>
-    <lastmod>2026-01-07T20:03:59.373Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_level_1.html</loc>
-    <lastmod>2026-01-07T16:17:20.487Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_level_3.html</loc>
-    <lastmod>2026-01-07T16:17:20.503Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/index.html</loc>
+    <lastmod>2026-01-13T20:23:36.402Z</lastmod>
   </url>
   <url>
     <loc>https://Kijusa94.github.io/courseware-eng/guides/tgs/tgs_procedure_v01.html</loc>
     <lastmod>2026-01-07T16:17:20.583Z</lastmod>
   </url>
   <url>
-    <loc>https://Kijusa94.github.io/courseware-eng/index.html</loc>
-    <lastmod>2026-01-07T19:45:25.956Z</lastmod>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_level_3.html</loc>
+    <lastmod>2026-01-07T16:17:20.503Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_level_1.html</loc>
+    <lastmod>2026-01-07T16:17:20.487Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/index.html</loc>
+    <lastmod>2026-01-08T12:53:19.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_shorcuts.html</loc>
+    <lastmod>2026-01-07T16:17:19.981Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_python_install.html</loc>
+    <lastmod>2026-01-07T20:37:22.430Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/index.html</loc>
+    <lastmod>2026-01-08T12:53:19.886Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_quarto_install.html</loc>
+    <lastmod>2026-01-20T15:36:25.284Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_latex_setup.html</loc>
+    <lastmod>2026-01-07T16:17:18.950Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/index.html</loc>
+    <lastmod>2026-01-20T15:30:22.583Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/factoryio_install.html</loc>
+    <lastmod>2026-01-07T16:17:16.365Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_install.html</loc>
+    <lastmod>2026-01-07T16:17:16.349Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_factoryio_opcua.html</loc>
+    <lastmod>2026-01-07T19:40:25.025Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_factoryio_pid.html</loc>
+    <lastmod>2026-01-07T20:02:16.924Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/codesys_modbus.html</loc>
+    <lastmod>2026-01-07T19:41:12.904Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/automation/index.html</loc>
+    <lastmod>2026-01-08T12:53:19.886Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_git_install.html</loc>
+    <lastmod>2026-01-07T20:36:07.327Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_md_setup.html</loc>
+    <lastmod>2026-01-07T16:17:18.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/documentation/vscode_workspace_extensions.html</loc>
+    <lastmod>2026-01-07T16:17:18.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/index.html</loc>
+    <lastmod>2026-01-08T12:53:19.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_python_project_transfer.html</loc>
+    <lastmod>2026-01-07T16:17:19.981Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/programming/vscode_utils_commands.html</loc>
+    <lastmod>2026-01-07T16:17:19.996Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_install.html</loc>
+    <lastmod>2026-01-07T16:17:20.487Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/robotics/ros2_basics_level_2.html</loc>
+    <lastmod>2026-01-07T16:17:20.502Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/tgs/index.html</loc>
+    <lastmod>2026-01-08T12:53:19.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/guides/tgs/tgs_procedure_v02.html</loc>
+    <lastmod>2026-01-07T16:17:20.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/info/about.html</loc>
+    <lastmod>2026-01-07T16:14:26.243Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/labs/instrumentation/index.html</loc>
+    <lastmod>2026-01-13T20:29:21.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/labs/instrumentation/instrumentation_dc_circuits.html</loc>
+    <lastmod>2026-01-16T13:04:47.437Z</lastmod>
   </url>
   <url>
     <loc>https://Kijusa94.github.io/courseware-eng/slides/index.html</loc>
-    <lastmod>2026-01-07T19:29:04.981Z</lastmod>
+    <lastmod>2026-01-20T15:51:58.421Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/slides/instrumentation_01_intro.html</loc>
+    <lastmod>2026-01-20T15:57:21.078Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/slides/instrumentation_03_magnetism.html</loc>
+    <lastmod>2026-01-20T15:57:21.076Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/slides/instrumentation_05_maxwell.html</loc>
+    <lastmod>2026-01-20T15:57:21.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Kijusa94.github.io/courseware-eng/slides/instrumentation/slides/instrumentation_07_actuators.html</loc>
+    <lastmod>2026-01-20T15:57:21.067Z</lastmod>
   </url>
   <url>
     <loc>https://Kijusa94.github.io/courseware-eng/slides/programming/slides/programming_01_intro.html</loc>
-    <lastmod>2026-01-07T20:33:01.090Z</lastmod>
+    <lastmod>2026-01-20T15:56:18.090Z</lastmod>
   </url>
   <url>
     <loc>https://Kijusa94.github.io/courseware-eng/slides/programming/slides/programming_03_funcs.html</loc>
-    <lastmod>2026-01-07T20:33:32.755Z</lastmod>
+    <lastmod>2026-01-20T15:56:30.460Z</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,226 @@
+# Práctica: Ley de Faraday, Lenz y Aplicaciones Industriales
+
+## Introducción
+La inducción electromagnética representa uno de los pilares fundamentales de la física moderna y es el principio básico sobre el cual se sustenta gran parte de la infraestructura tecnológica de nuestra civilización actual. Desde la generación de energía a gran escala en centrales hidroeléctricas hasta el funcionamiento de los sensores de velocidad en vehículos y sistemas de seguridad en establecimientos comerciales, la capacidad de convertir energía mecánica en energía eléctrica mediante campos magnéticos ha transformado radicalmente la sociedad humana. Este fenómeno, descubierto de forma independiente por Michael Faraday y Joseph Henry en 1831, establece que un campo magnético variable en el tiempo es capaz de inducir una fuerza electromotriz (FEM) y, por ende, una corriente eléctrica en un circuito cerrado.
+
+En la presente práctica de laboratorio, se explorarán de manera sistemática las leyes que gobiernan este fenómeno: la Ley de Faraday y la Ley de Lenz. Para ello, se empleará un entorno de simulación interactiva que permite visualizar conceptos que, en un entorno físico tradicional, suelen ser abstractos o difíciles de cuantificar sin instrumentación avanzada. El uso del simulador, específicamente el módulo de "Bobina de Captación" (Pickup Coil), facilita la observación directa de las líneas de campo magnético, el flujo que atraviesa las espiras y la respuesta instantánea de un voltímetro ante variaciones en el sistema. Esta herramienta pedagógica es crucial para comprender que la electricidad inducida no depende únicamente de la presencia de un imán, sino de la dinámica del cambio en el flujo magnético.
+
+El fundamento teórico de este experimento se resume en la ecuación de Faraday: $\mathcal{E} = -N \frac{\Delta \Phi_B}{\Delta t}$. Aquí, la FEM inducida ($\mathcal{E}$) es directamente proporcional al número de vueltas o espiras de la bobina ($N$) y a la rapidez con la que cambia el flujo magnético ($\Phi_B$). El signo negativo en la ecuación es la representación matemática de la Ley de Lenz, la cual postula que la corriente inducida siempre fluye en una dirección tal que el campo magnético que genera se opone a la variación del flujo original que la produjo. Es un principio de conservación de la energía que se manifestará en la práctica al observar cómo la aguja del voltímetro oscila de un extremo a otro dependiendo de si el imán entra o sale de la bobina.
+
+El procedimiento diseñado para esta sesión se divide en tres ejes críticos: la dinámica del movimiento, la influencia de la geometría y la polaridad. En primer lugar, se analizará el "Fenómeno del Cambio", donde el estudiante podrá comparar el estado estático frente al dinámico. Es común la idea errónea de que un imán potente dentro de una bobina debería generar electricidad por su mera presencia; sin embargo, la simulación demostrará que si no hay movimiento relativo (es decir, si $\Delta \Phi_B$ es cero), no hay voltaje, sin importar la intensidad del campo. Al variar la velocidad del movimiento, se podrá constatar cómo la magnitud del voltaje y el brillo de una bombilla conectada aumentan proporcionalmente a la rapidez de la acción, validando el término $\Delta t$ en el denominador de la ley de Faraday.
+
+En segundo lugar, se estudiará la "Influencia de la Geometría" mediante la modificación del número de vueltas (loops). Este parámetro es vital en el diseño industrial de transformadores y generadores. Al incrementar el número de espiras de una a tres, el área efectiva de interacción se multiplica, permitiendo que una misma acción mecánica produzca una señal eléctrica mucho más robusta. Este segmento del experimento permite a los estudiantes visualizar por qué los sensores industriales a menudo requieren cientos de vueltas de alambre de cobre para detectar cambios minúsculos en campos magnéticos distantes.
+
+Finalmente, la sección de "Polaridad y Ley de Lenz" obligará al analista a observar la dirección de la deflexión de la aguja. Este detalle, aparentemente simple, es la base de la codificación de información en discos duros y la detección de dirección en sensores de posición. Comprender que el acercamiento de un polo norte genera una respuesta eléctrica opuesta a su alejamiento es fundamental para el diseño de sistemas de instrumentación y control. A través de este recorrido experimental mediado por tecnología virtual, se espera que el estudiante no solo memorice fórmulas, sino que desarrolle una intuición física sobre cómo la energía se transfiere a través del espacio mediante campos electromagnéticos, preparándolo para enfrentar problemas de ingeniería relacionados con la conversión de energía y la sensorización industrial.
+
+
+## Objetivos
+### Objetivo General
+Comprender los principios fundamentales de la inducción electromagnética mediante el uso de simuladores interactivos, analizando la relación entre el flujo magnético variable y la generación de fuerza electromotriz (FEM) para su aplicación en sistemas de instrumentación y potencia.
+
+### Objetivos Específicos
+*   Analizar el efecto de la velocidad del movimiento relativo entre un imán y una bobina sobre la magnitud del voltaje inducido, validando experimentalmente la dependencia temporal de la Ley de Faraday.
+*   Determinar la influencia de la geometría del sensor, específicamente el número de espiras, en la intensidad de la señal eléctrica generada y su capacidad de detección.
+*   Comprobar la Ley de Lenz mediante la observación de la polaridad del voltaje inducido, identificando cómo la dirección de la corriente se opone al cambio del flujo magnético original.
+
+
+## Fundamentos Teóricos
+La comprensión de la inducción electromagnética requiere el análisis de la interacción entre campos magnéticos y conductores eléctricos. El concepto fundamental que articula esta relación es el **Flujo Magnético** ($\Phi_B$), el cual representa la cantidad de líneas de campo magnético que atraviesan una superficie determinada. Matemáticamente, para una superficie plana y un campo magnético uniforme, el flujo se define como:
+
+$$\Phi_B = \vec{B} \cdot \vec{A} = B A \cos(\theta)$$
+
+Donde $B$ es la densidad de flujo magnético (Teslas), $A$ es el área de la superficie (m²) y $\theta$ es el ángulo entre el vector de campo magnético y el vector normal a la superficie. En el contexto de la práctica, el flujo cambia principalmente debido al movimiento del imán, lo que altera la intensidad del campo $B$ que atraviesa el área de las espiras de la bobina.
+
+### La Ley de Inducción de Faraday
+El descubrimiento de Michael Faraday en 1831 reveló que no es la presencia de un campo magnético lo que genera electricidad, sino su variación temporal. La **Ley de Faraday** establece que la fuerza electromotriz (FEM) inducida en un circuito cerrado es directamente proporcional a la rapidez con la que cambia el flujo magnético que lo atraviesa. Si el circuito consta de una bobina con $N$ vueltas de alambre, la FEM total se multiplica por este factor:
+
+$$\mathcal{E} = -N \frac{d\Phi_B}{dt}$$
+
+Esta ecuación es el núcleo de la práctica. El término $\frac{d\Phi_B}{dt}$ (o $\frac{\Delta \Phi_B}{\Delta t}$ en términos discretos) explica por qué, cuando el imán está estático dentro de la bobina, el voltímetro marca cero: aunque el flujo $\Phi_B$ es máximo, su derivada temporal es nula. Por el contrario, un movimiento rápido del imán reduce el intervalo de tiempo ($\Delta t$), aumentando drásticamente la magnitud de la FEM inducida ($\mathcal{E}$), lo que se traduce en un mayor brillo de la bombilla.
+
+### La Ley de Lenz y la Conservación de la Energía
+El signo negativo en la ecuación de Faraday no es una mera convención matemática; representa la **Ley de Lenz**. Esta ley es una manifestación del principio de conservación de la energía y establece que la dirección de la corriente inducida será tal que el campo magnético creado por dicha corriente se opondrá siempre al cambio en el flujo magnético original que la produjo.
+
+Si un polo norte se acerca a la bobina, el flujo magnético aumenta. La bobina reaccionará induciendo una corriente que genere un polo norte propio para repeler al imán entrante. Si el imán se aleja, la bobina inducirá una corriente en sentido opuesto para crear un polo sur e intentar "retener" el flujo que disminuye. Esta oposición es la razón por la cual la aguja del voltímetro oscila hacia valores positivos o negativos dependiendo de la dirección del movimiento y la polaridad del imán.
+
+### Factores de Diseño en Instrumentación
+En la ingeniería de sensores y sistemas de potencia, la eficiencia de la inducción depende de tres variables críticas que se manipulan en el laboratorio:
+
+1.  **Densidad de Vueltas ($N$):** Como indica la fórmula, la FEM es linealmente proporcional al número de espiras. En aplicaciones industriales, como los sensores de velocidad de efecto inductivo (pick-up sensors), se utilizan miles de vueltas de alambre muy fino para detectar variaciones mínimas de flujo magnético en engranajes metálicos.
+2.  **Velocidad de Operación ($v$):** Dado que el flujo cambia con la posición del imán, la velocidad de movimiento $v = \frac{dx}{dt}$ está intrínsecamente ligada a $\frac{d\Phi_B}{dt}$. A mayor velocidad mecánica, mayor frecuencia y amplitud de la señal eléctrica.
+3.  **Geometría del Lazo ($A$):** El área de la bobina determina cuánta "captura" de líneas de campo es posible. Un área mayor permite interceptar más líneas de fuerza, incrementando el flujo total disponible para ser transformado.
+
+### Aplicaciones Industriales
+Este fenómeno es la base de la **Generación de Energía Eléctrica**. En una central hidroeléctrica o eólica, una turbina hace girar imanes gigantes (o electroimanes) cerca de bobinas estacionarias, convirtiendo energía cinética en eléctrica mediante la variación continua del ángulo $\theta$ en la fórmula del flujo. Asimismo, en el área de **Instrumentación**, los transformadores de corriente y los sensores de posición sin contacto utilizan estos principios para monitorear procesos industriales de forma segura y precisa, permitiendo la automatización de líneas de producción mediante la conversión de variables físicas en señales eléctricas procesables.
+
+
+## Materiales
+- Computadora o Tablet.
+- Simulador PhET: **Faraday's Electromagnetic Lab** (Laboratorio Electromagnético).
+  - *Enlace:* [PhET Faraday Lab](https://phet.colorado.edu/es/simulations/faradays-electromagnetic-lab)
+
+## Procedimiento
+
+###  Parte 3: Inducción Electromagnética (Bobina de Captación)
+
+#### **El Fenómeno del Cambio**
+1.  Seleccione la pestaña **"Bobina de captación"** (Pickup Coil).
+2.  Active la casilla del **Voltímetro** y asegúrese de que la bombilla esté conectada.
+3.  **Experimento Estático:** Coloque el imán completamente quieto **dentro** de la bobina.
+    * *Observación:* ¿Cuánto marca el voltaje? ¿Se enciende la bombilla?
+4.  **Experimento Dinámico:** Mueva el imán de un lado a otro atravesando la bobina.
+    * *Acción:* Hágalo primero muy despacio y luego muy rápido. Compare la intensidad de la luz y la deflexión de la aguja del voltímetro.
+
+#### **Influencia de la Geometría (Número de Vueltas)**
+1.  Deje el indicador de "Área del lazo" al 50%.
+2.  Ajuste el deslizador de **Vueltas** (Loops) a **1**.
+3.  Mueva el imán a una velocidad constante y observe el brillo máximo.
+4.  Cambie el deslizador de **Vueltas** a **3**.
+5.  Repita el movimiento del imán intentando mantener la misma velocidad que antes.
+    * *Observación:* ¿Es más fácil encender la bombilla ahora?
+
+#### **Polaridad y Ley de Lenz**
+1.  Coloque el imán a la derecha de la bobina.
+2.  Mueva el imán hacia la **izquierda** (entrando a la bobina) y observe hacia qué lado se mueve la aguja del voltímetro (+ o -).
+3.  Mueva el imán hacia la **derecha** (saliendo de la bobina).
+    * *Observación:* Note que el signo del voltaje se invierte. Esto es una manifestación de la Ley de Lenz: la corriente inducida cambia de dirección dependiendo de si el flujo magnético está aumentando o disminuyendo.
+
+#### **Cálculos y Resultados**
+
+#### **Tabla 3.1: Velocidad y Cambio**
+*Describa la respuesta del sistema (Brillo/Voltaje) ante el movimiento.*
+
+| Estado del Imán | ¿Hay Voltaje? (Sí/No) | Intensidad (Baja/Alta) |
+|:---|:---:|:---:|
+| Quieto (Lejos de la bobina) | No | Nula |
+| Quieto (**Dentro** de la bobina) | | |
+| Moviéndose Lento | | |
+| Moviéndose Rápido | | |
+
+#### **Tabla 3.2: Variables de Diseño**
+*Mueva el imán a velocidad rápida constante y compare.*
+
+| Configuración de la Bobina | Brillo de la Bombilla (1 a 5) | Voltaje Pico Estimado |
+|:---|:---:|:---:|
+| 1 Vuelta (Loop) | | Bajo |
+| 2 Vueltas | | |
+| 3 Vueltas | | Alto |
+
+#### **Preguntas Complementarias**
+
+1.  **Paradoja del "Imán Quieto":** En el paso 1 del procedimiento, cuando usted deja el imán quieto dentro de la bobina, el campo magnético en ese punto es máximo (muy fuerte). Sin embargo, el voltaje inducido cae a cero instantáneamente. Explique por qué ocurre esto basándose en la fórmula de Faraday (piense en el término $\Delta t$).
+2.  **Sensores de Velocidad:** Imagine que instala un imán en el radio de una bicicleta y una bobina fija en el marco (como un velocímetro básico). Si la bicicleta va muy despacio, el sensor a veces falla en detectar el paso del imán. Basado en sus experimentos de "Velocidad", ¿por qué el sensor genera una señal más débil a bajas velocidades?
+3.  **Aplicación de Seguridad:** En las tiendas de ropa, las etiquetas de seguridad contienen una bobina interna. Cuando pasan por los arcos detectores de la salida (que emiten un campo magnético variable), se induce una corriente en la etiqueta que dispara la alarma. Si usted pasara la etiqueta "muy, muy lento" por el detector, teóricamente podría evitar la alarma (aunque en la práctica es difícil). ¿Por qué la velocidad afecta la detección?
+4.  **Polaridad:** ¿Por qué es importante que el voltaje cambie de signo (de + a -) cuando el imán entra y sale? ¿Qué nos dice esto sobre la dirección en la que fluyen los electrones en el cable?
+
+
+
+
+### Parte 4: El Transformador (Transmisión de Energía)
+#### **El "Fracaso" de la Corriente Directa (DC)**
+1.  Seleccione la pestaña **"Transformador"**.
+2.  Coloque ambas bobinas una frente a la otra, bastante cerca.
+3.  Seleccione la fuente de alimentación **DC** (símbolo de Batería) para la bobina de la derecha (Electroimán).
+4.  Active el **Voltímetro** en la bobina izquierda (Secundaria).
+5.  **Prueba Estática:** Deje todo quieto con la batería conectada.
+    * *Observación:* ¿La bombilla se enciende? ¿Hay voltaje inducido?
+6.  **Prueba Dinámica:** Mueva la bobina electromagnética (la de la batería) acercándola y alejándola rápidamente de la otra bobina.
+    * *Observación:* ¿Ahora sí se enciende? ¿Por qué? (Recuerde la Parte 3).
+
+#### **El Éxito de la Corriente Alterna (AC)**
+1.  Cambie la fuente de alimentación a **AC** (símbolo de onda sinusoidal).
+2.  Deje ambas bobinas **completamente quietas**.
+    * *Observación:* Note que la bombilla se enciende de forma continua (aunque parpadea). El campo magnético se está "moviendo" (invirtiendo polaridad) aunque la bobina esté fija mecánicamente.
+3.  **Frecuencia:** Ajuste el deslizador de frecuencia de la fuente AC.
+    * *Acción:* Póngalo al mínimo y luego al máximo. ¿Cómo afecta esto al brillo? (Relaciónelo con la velocidad de cambio $\Delta t$).
+
+#### **Relación de Vueltas y Distancia**
+1.  Mantenga la fuente en AC al 50% de frecuencia.
+2.  **Efecto Distancia:** Aleje lentamente las bobinas.
+    * *Observación:* Note cómo se pierde la eficiencia drásticamente (el aire es un mal conductor magnético).
+3.  **Efecto de Espiras:** Acerque las bobinas de nuevo. Aumente al máximo el número de vueltas de la **bobina receptora (izquierda)** y reduzca al mínimo las de la bobina emisora. Luego invierta la configuración.
+
+#### **Cálculos y Resultados**
+
+**Tabla 4.1: DC vs AC en Transformadores**
+*Manteniendo las bobinas estáticas (sin moverlas con el mouse).*
+
+| Tipo de Corriente | Comportamiento del Campo Magnético | ¿Hay Voltaje en el Secundario? |
+|:---:|:---:|:---:|
+| **DC** (Batería) | Constante (Fijo en una dirección) | No (0 V) |
+| **AC** (Alterna) | Variable (Se invierte cíclicamente) | Sí (Oscilante) |
+
+**Tabla 4.2: Eficiencia de Transmisión**
+*Con fuente AC. Estime el voltaje visualmente.*
+
+| Configuración | Nivel de Voltaje Inducido (Bajo/Medio/Alto) |
+|:---|:---:|
+| Bobinas muy cerca (casi tocándose) | |
+| Bobinas separadas por media pantalla | |
+| Bobinas con pocas vueltas vs. Muchas vueltas | |
+
+#### **Preguntas Complementarias**
+
+1.  **La Guerra de las Corrientes:** A finales del siglo XIX, Thomas Edison promovía la Corriente Directa (DC) y Nikola Tesla la Alterna (AC). Basado en su experimento del paso 1, explique por qué la DC de Edison no servía para transmitir energía a largas distancias usando transformadores.
+2.  **Pérdidas en el Aire:** En la simulación, usted notó que al separar las bobinas la luz se apaga rápidamente. En los transformadores industriales reales, las bobinas están enrolladas sobre un núcleo de **hierro** sólido, no de aire. ¿Cuál cree que es la función de ese núcleo de hierro? (Pista: Piense en "guiar" el campo magnético).
+3.  **Cargadores Inalámbricos:** Los cargadores modernos de celulares (carga Qi) funcionan exactamente como la simulación de esta pestaña. ¿Por qué la carga se detiene si usted levanta el celular apenas unos centímetros de la base?
+4.  **Seguridad Industrial:** Un transformador de aislamiento tiene la misma cantidad de vueltas en la entrada y la salida (Relación 1:1), por lo que no sube ni baja el voltaje. Si no cambia el voltaje, ¿cuál es el beneficio de seguridad de tener las bobinas separadas físicamente (sin cables directos entre la red y la máquina)?
+
+
+
+
+## Parte 5: El Generador (Conversión de Energía Mecánica a Eléctrica)
+### Procedimiento
+
+#### **Operación Básica (Puesta en Marcha)**
+1.  Seleccione la pestaña **"Generador"**.
+2.  Active la **Brújula** para visualizar el campo magnético rotatorio.
+3.  Active el **Voltímetro** y asegúrese de tener la bombilla conectada.
+4.  **Apertura de Compuertas:** Abra el grifo de agua (deslizador del caño) al nivel máximo.
+    * *Observación:* El agua golpea la rueda (turbina Pelton), haciendo girar el imán. Observe cómo se enciende la luz.
+
+#### **Control de Velocidad (RPM)**
+1.  Reduzca el flujo de agua a una cantidad muy pequeña (apenas un goteo constante).
+    * *Observación:* Note el comportamiento de la luz (parpadeo) y de la aguja del voltímetro.
+2.  Aumente el flujo de agua al máximo.
+    * *Análisis:* Observe dos cambios simultáneos:
+        * ¿La aguja llega más lejos (más voltaje)?
+        * ¿La aguja oscila más rápido (más frecuencia)?
+
+#### **Diseño de la Planta (Variables de la Bobina)**
+1.  Mantenga el flujo de agua constante al 50%.
+2.  **Prueba de Área:** Aumente el área del lazo (Loop area) al 100%.
+    * *Resultado:* ¿Mejora la generación?
+3.  **Prueba de Bobinado:** Aumente el número de vueltas a **3**.
+    * *Resultado:* Compare el brillo actual con el que tenía con 1 vuelta.
+
+#### **Inversión de Giro**
+1.  Utilice el botón de "Invertir Polaridad" del imán (o imagine que el agua cae por el otro lado haciendo girar la rueda al revés).
+2.  Observe si esto afecta la capacidad de generar luz. (Nota: En AC, la polaridad cambia constantemente de todos modos, por lo que el sentido de giro mecánico suele ser irrelevante para la generación básica de luz).
+
+### Cálculos y Resultados
+
+**Tabla 5.1: Relación Caudal - Generación**
+*Simulando el control de una represa.*
+
+| Apertura del Grifo (Caudal) | Velocidad de Giro (RPM Estimadas) | Voltaje Generado (Brillo) | Estabilidad de la Luz (Frecuencia) |
+|:---:|:---:|:---:|:---:|
+| 10% (Goteo) | Baja | Tenue | Parpadeo muy lento (molesto) |
+| 50% (Medio) | Media | | |
+| 100% (Máximo) | Alta | | Luz casi continua (parpadeo imperceptible) |
+
+**Tabla 5.2: Variables de Diseño**
+*Con flujo de agua constante al 50%.*
+
+| Configuración | Nivel de Voltaje |
+|:---|:---:|
+| Bobina Pequeña (1 Vuelta) | Bajo |
+| Bobina Grande (3 Vueltas) | |
+
+### Preguntas Complementarias
+
+1.  **Doble Efecto de la Velocidad:** En un generador, si duplicamos la velocidad de rotación ($\omega$), ocurren dos cosas buenas para la industria: el voltaje pico aumenta y la frecuencia aumenta. Basado en la fórmula de Faraday ($\Delta \Phi / \Delta t$), explique por qué girar más rápido genera *más voltaje* (piense en el $\Delta t$).
+2.  **Frecuencia Industrial:** En Colombia y América, la red eléctrica funciona a **60 Hz** (60 ciclos por segundo). En la simulación, cuando el agua es poca, la luz parpadea (baja frecuencia). ¿Por qué es importante para la industria que las turbinas giren siempre a una velocidad constante y exacta, en lugar de girar más rápido si llueve más?
+3.  **Mantenimiento Predictivo:** Si en la simulación el imán perdiera fuerza magnética con los años (se desmagnetiza), ¿qué le pasaría a la generación de energía aunque el agua siga cayendo con la misma fuerza?
+4.  **Transformación de Energía:** Identifique la cadena de transformación de energía en esta pestaña:
+    * Energía Potencial (Agua arriba) $\to$ Energía \_\_\_\_\_\_\_ (Rueda girando) $\to$ Energía \_\_\_\_\_\_\_ (Cables) $\to$ Energía \_\_\_\_\_\_\_\_ (Bombilla).

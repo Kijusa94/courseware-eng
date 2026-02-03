@@ -1,0 +1,244 @@
+# Práctica de microcontroladores (Analog)
+
+## Introducción
+La evolución de la tecnología industrial ha estado marcada por la transición de sistemas mecánicos puros a sistemas electrónicos altamente integrados y automatizados. En el corazón de esta transformación se encuentran los microcontroladores, dispositivos semiconductores que integran en un solo chip las funciones principales de una computadora: unidad central de procesamiento (CPU), memoria y periféricos de entrada/salida. En el ámbito de la ingeniería industrial, la automatización y el control de procesos no son simplemente herramientas adicionales, sino pilares fundamentales que definen la competitividad, la rentabilidad y la eficiencia de las organizaciones modernas en un mercado globalizado.
+
+La importancia de los microcontroladores en la automatización radica en su capacidad para ejecutar tareas repetitivas con una precisión y velocidad que superan con creces las capacidades humanas. En una línea de producción contemporánea, un microcontrolador puede supervisar simultáneamente múltiples variables críticas como la temperatura, la presión, el flujo y la posición, tomando decisiones en milisegundos para ajustar los actuadores y mantener el proceso dentro de los parámetros óptimos. Esta capacidad de respuesta en tiempo real es lo que permite la creación de sistemas de control de lazo cerrado, donde la retroalimentación constante asegura que el producto final cumpla con los estándares de calidad más exigentes, minimizando el error humano y maximizando el uso de los recursos.
+
+Para un ingeniero industrial, comprender el funcionamiento de estos dispositivos es esencial. La ingeniería industrial se enfoca en la optimización de sistemas complejos, y los microcontroladores son las herramientas tecnológicas que permiten implementar dichas optimizaciones a nivel físico y operativo. Ya sea reduciendo el desperdicio de energía mediante un control más fino de los motores, o aumentando la seguridad de los trabajadores a través de sistemas de monitoreo automatizados que detectan condiciones de riesgo, el microcontrolador actúa como el ejecutor de la estrategia de ingeniería. La integración de estos sistemas permite una visibilidad sin precedentes sobre el estado de la planta, facilitando la toma de decisiones basada en datos reales y la implementación de filosofías de gestión como Lean Manufacturing o Six Sigma, donde la reducción de la variabilidad y la eliminación de desperdicios son objetivos clave.
+
+A menudo se describe al microcontrolador como el "cerebro" de los sistemas de control. Esta analogía es particularmente apta porque, al igual que el cerebro humano recibe información de los sentidos, la procesa y envía órdenes a los músculos, el microcontrolador recibe señales de los sensores, aplica una lógica programada y actúa sobre los actuadores (como motores, válvulas o luces). Sin este cerebro, los componentes de una máquina serían simplemente piezas aisladas sin un propósito común ni coordinación. La programación es, por tanto, el lenguaje mediante el cual el ingeniero dota de inteligencia a la máquina. No se trata solo de escribir líneas de código, sino de diseñar algoritmos lógicos que contemplen todas las posibles contingencias del entorno industrial, garantizando la robustez, la seguridad y la fiabilidad del sistema ante cualquier perturbación externa.
+
+La programación de microcontroladores en el contexto de la automatización requiere un entendimiento profundo tanto del software como del hardware. El desarrollador debe ser capaz de gestionar recursos limitados de memoria y procesamiento para lograr un rendimiento óptimo en aplicaciones de tiempo crítico. En proyectos de automatización, la programación es el puente que conecta la teoría del control con la realidad física. Un algoritmo de control PID (Proporcional, Integral, Derivativo), por ejemplo, solo cobra vida cuando se traduce a un código eficiente que el microcontrolador puede ejecutar para regular con precisión la velocidad de un motor o la temperatura de un horno industrial. Sin una programación sólida, incluso el hardware más avanzado resulta inútil.
+
+Un aspecto crítico de esta integración es la interacción con el mundo exterior a través de sensores. En la naturaleza y en la industria, la inmensa mayoría de las variables físicas son de carácter analógico; es decir, varían de forma continua en el tiempo y pueden tomar infinitos valores dentro de un rango. La temperatura de un reactor químico no salta de 20°C a 21°C instantáneamente, sino que pasa por todos los valores intermedios. Para que un microcontrolador, que opera intrínsecamente en un mundo digital de ceros y unos, pueda entender y procesar estas variables, depende fundamentalmente de los sensores de señales analógicas y de los conversores analógico-digitales (ADC).
+
+Los sensores analógicos actúan como los ojos y oídos del sistema de control. Un potenciómetro, un sensor de temperatura (como el LM35), un sensor de presión o un sensor ultrasónico generan una señal de voltaje que es proporcional a la magnitud física que están midiendo. El microcontrolador debe leer este voltaje y convertirlo en un valor numérico digital que su CPU pueda procesar matemáticamente. Esta capacidad de interpretar señales analógicas es lo que permite que los sistemas de automatización sean verdaderamente "conscientes" de su entorno y puedan reaccionar ante cambios sutiles en las condiciones de operación. Sin la capacidad de leer señales analógicas, estaríamos limitados a sistemas binarios rudimentarios de encendido y apagado, perdiendo la riqueza de información necesaria para un control industrial sofisticado y preciso.
+
+En esta práctica, exploraremos precisamente esta frontera crítica entre lo analógico y lo digital. Utilizaremos la plataforma Arduino Uno para entender cómo se capturan estas señales del entorno y cómo, a través de técnicas como la modulación por ancho de pulso (PWM), podemos generar salidas que simulan un comportamiento analógico para controlar dispositivos de potencia como motores DC. Este conocimiento constituye la base fundamental para desarrollar sistemas más complejos, como robots industriales, sistemas de climatización inteligente o líneas de ensamblaje automatizadas. La habilidad para integrar sensores, procesar su información mediante código y actuar en consecuencia sobre el mundo físico es lo que define a la ingeniería moderna y es la competencia central que se busca desarrollar en este laboratorio, preparando al estudiante para los retos de la Industria 4.0.
+
+## Objetivos
+### Objetivo General
+Capacitar al estudiante en la integración de sistemas electrónicos de control mediante el uso de microcontroladores, enfocándose en la adquisición de señales analógicas de sensores y la implementación de técnicas de modulación para el mando de actuadores en entornos de automatización industrial.
+
+### Objetivos Específicos
+*   Comprender y configurar el funcionamiento del Conversor Analógico-Digital (ADC) del microcontrolador para interpretar magnitudes físicas variables provenientes de potenciómetros y sensores ultrasónicos.
+*   Implementar la técnica de Modulación por Ancho de Pulso (PWM) para el control preciso de la velocidad de motores DC, utilizando etapas de potencia como el puente H L293D.
+*   Desarrollar algoritmos de control lógico que establezcan relaciones funcionales entre la retroalimentación de los sensores y la respuesta de los actuadores, garantizando la coordinación del sistema electromecánico.
+
+## Fundamentos Teóricos
+### El Microcontrolador: El Núcleo de la Automatización
+
+Para comprender la automatización moderna, es imperativo diseccionar el componente que la hace posible: el microcontrolador. A diferencia de un microprocesador convencional, como el que se encuentra en una computadora personal diseñado para tareas de propósito general y alta capacidad de cómputo, un microcontrolador es un sistema completo en un solo chip (SoC) diseñado específicamente para tareas de control. Su arquitectura integra en una oblea de silicio minúscula una Unidad Central de Procesamiento (CPU), memoria de programa (Flash), memoria de datos (RAM), memoria no volátil (EEPROM) y, lo más importante para la ingeniería industrial, una vasta gama de periféricos de entrada y salida (I/O).
+
+El funcionamiento de un microcontrolador se basa en el ciclo de instrucción: *fetch* (búsqueda), *decode* (decodificación) y *execute* (ejecución). La CPU extrae una instrucción de la memoria Flash, la interpreta y activa los circuitos internos necesarios para realizar una operación aritmética o mover datos entre registros. En un entorno industrial, este ciclo ocurre millones de veces por segundo (MHz), permitiendo que el sistema reaccione a cambios en el entorno casi en tiempo real. La robustez de estos dispositivos radica en su capacidad para operar de manera autónoma y continua bajo condiciones de temperatura y ruido eléctrico que inhabilitarían a sistemas más complejos.
+
+### La Plataforma Arduino Uno y el Ecosistema de Prototipado
+
+En el ámbito educativo y de prototipado rápido, el Arduino Uno se ha consolidado como el estándar *de facto*. Basado en el microcontrolador ATmega328P de Microchip (anteriormente Atmel), esta placa abstrae la complejidad del hardware subyacente mediante una interfaz estandarizada y un lenguaje de programación simplificado basado en C++. Para un ingeniero, el Arduino no es solo una placa de desarrollo; es una herramienta de validación de conceptos.
+
+El ATmega328P opera a 16 MHz y cuenta con 32 KB de memoria Flash. Su importancia radica en cómo expone sus pines al usuario. El Arduino Uno organiza estos recursos en puertos digitales y analógicos, facilitando la conexión de sensores y actuadores sin necesidad de diseñar circuitos impresos complejos desde cero. Esta accesibilidad permite que el enfoque del ingeniero se desplace desde la electrónica de bajo nivel hacia el diseño del algoritmo de control y la optimización del proceso.
+
+### Puertos de Entrada y Salida: El Interfaz con el Mundo Físico
+
+Los puertos de entrada y salida (GPIO - General Purpose Input/Output) son los canales de comunicación del microcontrolador. Un pin configurado como entrada actúa como un sensor de estado, permitiendo al microcontrolador "leer" si un interruptor está cerrado o si un sensor ha detectado un objeto. Por el contrario, un pin configurado como salida permite al microcontrolador "actuar", enviando una señal eléctrica para encender un LED, activar un relé o enviar un comando a un controlador de motor.
+
+Es crucial entender que estos puertos operan bajo límites eléctricos estrictos. En el Arduino Uno, el voltaje de operación es de 5V y cada pin puede suministrar o absorber una corriente máxima de aproximadamente 20mA a 40mA. Exceder estos límites puede destruir permanentemente el canal de salida o el chip completo. Por ello, en aplicaciones industriales, estos pines nunca manejan cargas de potencia directamente; en su lugar, envían señales de control a etapas de potencia como transistores, optoacopladores o puentes H.
+
+### Señales Digitales y Analógicas: La Continuidad frente a la Discreción
+
+En la ingeniería de control, la distinción entre señales digitales y analógicas es fundamental. Una señal digital es discreta y binaria; solo puede existir en dos estados: ALTO (5V) o BAJO (0V). Es ideal para representar estados lógicos como "encendido/apagado" o "presencia/ausencia". Sin embargo, el mundo físico es intrínsecamente analógico. Variables como la presión, el flujo, la temperatura o la intensidad lumínica varían de forma continua.
+
+Una señal analógica puede tomar cualquier valor dentro de un rango determinado (por ejemplo, de 0V a 5V). El desafío para el microcontrolador, que es un dispositivo digital, es procesar esta infinitud de valores. Aquí es donde entran en juego los conceptos de resolución y muestreo. Para que el microcontrolador "entienda" una señal analógica, debe convertirla en un número digital mediante un proceso de cuantización.
+
+### Transistores BJT: Los Interruptores Electrónicos (NPN y PNP)
+
+Antes de profundizar en la conversión de señales, es necesario entender cómo el microcontrolador interactúa con corrientes mayores a las que sus pines pueden soportar. El transistor de unión bipolar (BJT) es el componente clave. Existen dos tipos principales: NPN y PNP.
+
+En un transistor **NPN**, una pequeña corriente aplicada a la "Base" permite el flujo de una corriente mucho mayor desde el "Colector" hacia el "Emisor". Es el tipo más común para conmutación de carga en el lado de baja (low-side switching), donde el transistor se coloca entre la carga y la tierra (GND). Por el contrario, el transistor **PNP** se activa cuando la base se pone a un potencial menor que el emisor, utilizándose generalmente para conmutación en el lado de alta (high-side switching), entre la fuente de alimentación y la carga. Para un ingeniero industrial, el transistor es el bloque de construcción de los relevadores de estado sólido y los controladores de velocidad, permitiendo que una señal lógica de baja potencia controle maquinaria de alta potencia.
+
+### Conversor Analógico-Digital (ADC) y la función `analogRead()`
+
+El Conversor Analógico-Digital (ADC) es el periférico encargado de traducir el voltaje analógico de un sensor a un valor numérico. El Arduino Uno cuenta con un ADC de 10 bits de resolución. Esto significa que el rango de voltaje de entrada (0V a 5V) se divide en $2^{10}$ niveles, es decir, 1024 niveles discretos (de 0 a 1023).
+
+Cuando ejecutamos la función `analogRead(pin)`, el microcontrolador realiza una aproximación sucesiva para determinar a qué nivel digital corresponde el voltaje presente en el pin. La relación matemática es:
+$$\text{Valor Digital} = \frac{V_{in} \times 1023}{V_{ref}}$$
+Donde $V_{ref}$ es usualmente 5V. Así, un valor de 512 representaría aproximadamente 2.5V.
+
+::: {.callout-note}
+### Placeholder: Diagrama de Tiempos de analogRead()
+Descripción: Un diagrama que muestra una señal analógica senoidal suave superpuesta con una señal escalonada que representa la cuantización del ADC a 10 bits. Se debe observar el tiempo de conversión (aproximadamente 100 microsegundos en Arduino) como pequeños intervalos donde la señal se mantiene constante antes de actualizarse.
+:::
+
+### Modulación por Ancho de Pulso (PWM) y la función `analogWrite()`
+
+Aunque el microcontrolador no puede generar un voltaje analógico real en sus salidas (no tiene un Conversor Digital-Analógico o DAC real en la mayoría de sus pines), puede simularlo mediante la Modulación por Ancho de Pulso (PWM). La técnica consiste en conmutar un pin digital entre ALTO y BAJO a una frecuencia muy alta (aproximadamente 490 Hz o 980 Hz en Arduino).
+
+El parámetro crítico aquí es el **Ciclo de Trabajo (Duty Cycle)**, que es el porcentaje de tiempo que la señal permanece en ALTO durante un periodo completo. Si el ciclo de trabajo es del 50%, el dispositivo conectado "percibe" un promedio de 2.5V. La función `analogWrite(pin, valor)` acepta valores de 0 (0% duty cycle) a 255 (100% duty cycle), proporcionando una resolución de 8 bits para el control de potencia.
+
+::: {.callout-note}
+### Placeholder: Diagrama de Tiempos de analogWrite() (PWM)
+Descripción: Un diagrama de tiempos que muestre tres señales cuadradas:
+1. Duty Cycle 25% (Valor 64): Pulso corto en alto, largo en bajo.
+2. Duty Cycle 50% (Valor 127): Tiempo igual en alto y bajo.
+3. Duty Cycle 75% (Valor 191): Pulso largo en alto, corto en bajo.
+Se debe incluir una línea punteada que represente el "Voltaje Promedio" resultante para cada caso.
+:::
+
+### El Puente H y el Controlador L293D
+
+Para controlar motores DC en aplicaciones industriales, no basta con variar la velocidad; también es necesario controlar el sentido de giro. Un motor DC cambia su dirección si se invierte la polaridad de sus terminales. Esto se logra mediante un circuito llamado **Puente H**, compuesto por cuatro interruptores (transistores) dispuestos en forma de "H".
+
+El circuito integrado **L293D** es un doble puente H diseñado para manejar cargas inductivas. Permite controlar dos motores de forma independiente. Al activar pares diagonales de transistores, el flujo de corriente a través del motor se invierte. Además, el L293D incluye diodos de protección (flyback diodes) que absorben los picos de voltaje generados por las bobinas del motor cuando se apagan, evitando daños al microcontrolador. La integración del PWM con el Puente H permite un control total sobre la dinámica del motor: velocidad mediante el ciclo de trabajo y dirección mediante la lógica de los pines de entrada.
+
+### Motor DC: El Actuador Electromecánico
+
+El motor de corriente continua es el actuador por excelencia en sistemas de pequeña y mediana escala. Su funcionamiento se basa en la ley de Lorentz: una corriente eléctrica que circula por un conductor dentro de un campo magnético experimenta una fuerza. En un motor, esta fuerza se traduce en torque sobre el eje.
+
+Desde la perspectiva del control, el motor DC es un sistema lineal donde la velocidad es proporcional al voltaje aplicado y el torque es proporcional a la corriente consumida. Sin embargo, los motores presentan desafíos como la inercia y la fuerza contraelectromotriz (Back EMF). El uso de PWM permite controlar la velocidad de manera eficiente sin disipar grandes cantidades de energía en forma de calor, como ocurriría si usáramos un regulador de voltaje lineal (como un potenciómetro en serie).
+
+### Sensor Ultrasónico HC-SR04: Percepción de Distancia
+
+Finalmente, para que el sistema sea autónomo, requiere sensores de distancia. El HC-SR04 funciona bajo el principio del sonar o ecolocalización. El sensor emite una ráfaga de ultrasonido (40 kHz) a través de un transductor ("Trigger") y mide el tiempo que tarda el eco en regresar al segundo transductor ("Echo").
+
+El microcontrolador inicia la medición enviando un pulso de 10 microsegundos al pin Trigger. Luego, mide la duración del pulso ALTO en el pin Echo. Dado que la velocidad del sonido en el aire es constante (aprox. 343 m/s), la distancia se calcula mediante la fórmula:
+$$\text{Distancia} = \frac{\text{Tiempo} \times \text{Velocidad del Sonido}}{2}$$
+El factor 2 se debe a que el sonido viaja hacia el objeto y regresa. Este sensor es vital en logística industrial para evitar colisiones de AGVs (Vehículos de Guiado Automático) o para medir niveles de llenado en silos y tanques.
+
+### Integración Sistémica
+
+La interconexión de estos elementos forma un lazo de control completo. El sensor ultrasónico y el potenciómetro (vía ADC) proporcionan la entrada de datos. El microcontrolador procesa esta información según la lógica programada (por ejemplo, "si la distancia es menor a 20 cm, reduce la velocidad"). Finalmente, el microcontrolador envía señales PWM al puente H para ajustar la operación del motor DC. Esta sinergia entre hardware y software es la piedra angular de la ingeniería mecatrónica y la automatización de procesos industriales, permitiendo transformar señales eléctricas abstractas en movimientos mecánicos precisos y coordinados.
+
+## Materiales
+
+- Protoboard
+- Arduino Uno
+- Potenciometro de 10k ohm
+- Bateria de 9V
+- Motor DC pequeño
+- Puente H L293D
+- Sensor ultrasonico HC-SR04
+- Cables
+
+## Procedimiento
+
+### Parte 1: Potenciómetro y Lectura Analógica
+1. Inicie un nuevo proyecto en **Tinkercad Circuits** y arrastre un **Arduino Uno** junto con una **protoboard**.
+2. Inserte un **potenciómetro** de 10k$\Omega$. Conecte los terminales de los extremos a los rieles de 5V y GND de la protoboard.
+3. Conecte la terminal central (cursor) al pin analógico **A0** del Arduino. 
+4. Utilice el código para leer el valor de voltaje (0-5V) convertido a digital (0-1023) mediante la función `analogRead()` y visualice los cambios en el **Monitor Serie**.
+
+### Parte 2: Configuración del Puente H L293D y Motor DC
+1. Coloque el circuito integrado **L293D** en el canal central de la protoboard.
+2. **Alimentación:** Conecte el Pin 16 (VCC1) a los 5V del Arduino para la lógica y el Pin 8 (VCC2) al terminal positivo de una **batería de 9V** para la potencia del motor. Una todos los GND (pines 4, 5, 12, 13) al negativo común.
+3. **Control:** Conecte los pines digitales **7** y **6** del Arduino a las entradas 1 y 2 del puente H para definir la dirección de giro. Conecte el pin **9 (PWM)** al pin de Activación 1 del L293D.
+4. **Salida:** Conecte las terminales del **motor DC** a los pines de Salida 1 y Salida 2 del puente H.
+5. En el código, mapee el valor del potenciómetro (0-1023) a un rango de 0-255 para controlar la velocidad del motor mediante `analogWrite()` en el pin 9.
+
+### Parte 3: Configuración del Sensor Ultrasónico HC-SR04
+1. Inserte el sensor **HC-SR04** en la protoboard. Conecte los pines VCC a 5V y GND a tierra.
+2. Conecte el pin **Trigger** al pin digital **12** y el pin **Echo** al pin digital **11**.
+3. El procedimiento de lectura consiste en enviar un pulso en alto de 10 $\mu s$ por el Trigger y medir el tiempo de respuesta del Echo con `pulseIn()`.
+4. Integre los datos para que el sistema reaccione a la distancia medida (por ejemplo, deteniendo el motor si la distancia es menor a un umbral de seguridad), simulando un sistema de frenado automático industrial.
+
+Diagrama de circuito resultante:
+
+![Circuito](../instrumentation/assets/images/instrumentation_07_sensors_analogWrite.png)
+
+Codigo:
+
+```c
+// pines de control
+#define pinM1_1 7
+#define pinM1_2 6
+#define PWM_M1 9
+
+//lectura analogica
+#define pinAnalog A0
+
+const int pinSensor = 13;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pinM1_1, OUTPUT);
+  pinMode(pinM1_2, OUTPUT);
+  pinMode(PWM_M1, OUTPUT);
+  pinMode(pinAnalog, INPUT);
+}
+
+void loop()
+{
+  //Para potenciometro y velocidad
+  int lectura;
+  lectura = analogRead(pinAnalog);
+  
+  Serial.print(lectura);  
+  Serial.print(", ");
+  
+  int velocidad = map(lectura, 0, 1023, 0, 255);
+  
+  //Para sensor
+  long duracion, cm;
+  pinMode(pinSensor, OUTPUT);
+  digitalWrite(pinSensor, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pinSensor, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(pinSensor, LOW);
+  
+  pinMode(pinSensor, INPUT);
+  duracion = pulseIn(pinSensor, HIGH);
+  
+  cm = Calcular_cm(duracion);
+  Serial.println(cm);
+  
+  //Funciones de movimiento
+  if (cm > 50)
+  	Avanzar(velocidad);
+  else
+  	Retroceder(velocidad/2);
+  
+  delay(2000);
+}
+
+long Calcular_cm(long microseg)
+{
+  /* La velocidad del sonido es 340m/s 
+  29 microsegundos por centimetro
+  el sonido va y vuelve */
+  return (microseg / 29 / 2);
+}
+
+void Avanzar(int vel)
+{
+  digitalWrite(pinM1_1, HIGH);
+  digitalWrite(pinM1_2, LOW);
+  analogWrite(PWM_M1, vel);
+}
+
+void Retroceder(int vel)
+{
+  digitalWrite(pinM1_1, LOW);
+  digitalWrite(pinM1_2, HIGH);
+  analogWrite(PWM_M1, vel);
+}
+```
+
+## Cálculos y resultados
+1. **Modificación de Control:** Ajuste el código para que un segundo motor DC (conectado a los pines 4, 5 y 10 PWM) varíe su velocidad de forma directamente proporcional a la distancia detectada por el sensor ultrasónico (a mayor distancia, mayor velocidad).
+2. **Relación Inversa:** Configure la lógica del sistema para que la velocidad máxima permitida del segundo motor sea inversamente proporcional al valor leído en el potenciómetro.
+3. **Monitoreo:** Grafique en el **Serial Plotter** la relación entre la distancia medida y la señal PWM enviada a los motores.
+
+### Desafío de Diseño: Sistema de Mezcla Automatizado
+Diseñe un circuito en Tinkercad que simule un sistema de control de procesos con las siguientes especificaciones:
+- **Entradas (3):** Tres potenciómetros que representen sensores de nivel de tres tanques distintos (Pines A1, A2, A3).
+- **Salidas (3):** Tres LEDs de colores (Rojo, Verde, Azul) conectados a pines PWM (Pines 3, 5, 11) que indiquen la intensidad de flujo de salida requerida para cada tanque.
+- **Lógica:** El brillo de cada LED debe ser inversamente proporcional al nivel del tanque correspondiente. Si los tres tanques están por debajo del 10% de su capacidad, se debe activar una alarma (LED en pin 13).
+
+## Preguntas complementarias
+1. ¿Cuál es la resolución de bits del convertidor analógico-digital (ADC) del Arduino Uno y qué incremento de voltaje mínimo puede detectar?
+2. ¿Por qué es indispensable el uso de un puente H (como el L293D) para controlar la dirección y velocidad de un motor DC en lugar de usar los pines del microcontrolador directamente?
+3. Explique la diferencia técnica entre una señal analógica real y una señal de Modulación por Ancho de Pulso (PWM).
+4. En el sensor HC-SR04, ¿cómo afectaría una variación extrema en la temperatura ambiente a la precisión del cálculo de la distancia?
+5. ¿Cuál es la función de los diodos de protección internos en el integrado L293D al trabajar con cargas inductivas como los motores?

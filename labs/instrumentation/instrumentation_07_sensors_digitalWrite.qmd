@@ -1,0 +1,209 @@
+# Práctica de microcontroladores (Digital)
+
+## Introducción
+
+En el panorama actual de la industria global, la automatización y el control de procesos se han consolidado como los pilares fundamentales para alcanzar niveles óptimos de eficiencia, productividad y competitividad. En el centro de esta revolución tecnológica se encuentran los microcontroladores, dispositivos integrados que actúan como el cerebro indiscutible de los sistemas de control modernos. Para la ingeniería industrial, el estudio y la implementación de estos dispositivos no es meramente una cuestión técnica o electrónica, sino una necesidad estratégica para optimizar recursos, reducir errores humanos y garantizar la repetibilidad de los procesos productivos.
+
+Un microcontrolador es, en esencia, una computadora completa encapsulada en un solo chip de silicio. Contiene una unidad central de procesamiento (CPU), memoria (RAM y Flash) y periféricos de entrada y salida. Su función principal es ejecutar instrucciones programadas para interactuar con el entorno físico. En el contexto de la automatización, el microcontrolador asume el rol de director de orquesta: recibe información de diversos sensores, procesa esos datos según una lógica predefinida y envía señales de mando a los actuadores, como motores, válvulas o indicadores lumínicos. Esta capacidad de toma de decisiones en tiempo real es lo que permite que una línea de producción pase de ser una serie de tareas manuales a un sistema inteligente y autónomo. 
+
+Desde la perspectiva de la ingeniería industrial, la relación con los microcontroladores es intrínseca a la búsqueda de la mejora continua (Kaizen). La automatización mediante microcontroladores permite la recolección de datos precisos en cada etapa del proceso, lo que facilita la implementación de metodologías como Lean Manufacturing o Seis Sigma. Al integrar estos dispositivos, los ingenieros pueden monitorizar variables críticas como temperatura, presión, velocidad y flujo, asegurando que el producto final cumpla con los estándares de calidad más rigurosos. Además, la flexibilidad que ofrecen los microcontroladores —al ser reprogramables— permite que las plantas industriales se adapten rápidamente a cambios en el diseño del producto o en la demanda del mercado sin necesidad de realizar cambios estructurales costosos en la maquinaria.
+
+La integración de los microcontroladores con los sensores es el punto donde la electrónica se encuentra con la realidad física. En la naturaleza, la mayoría de las variables son analógicas; es decir, cambian de manera continua en el tiempo. Sin embargo, para que un microcontrolador pueda procesar esta información, debe convertirla a un formato binario. Aquí es donde los sensores de señales digitales juegan un papel crucial. A diferencia de los sensores analógicos que varían su voltaje de forma continua, los sensores digitales entregan información en un formato binario discreto: un nivel de voltaje alto (1) o bajo (0). Esto simplifica enormemente el procesamiento, ya que no requiere conversión analógica-digital. Ejemplos de estos sensores incluyen interruptores de límite, detectores de presencia magnética (reed switches), codificadores rotatorios y sensores de proximidad inductivos o capacitivos que operan con lógica binaria. Estos dispositivos son fundamentales en aplicaciones de conteo, posicionamiento y detección de estado (abierto/cerrado), permitiendo que el microcontrolador tome decisiones rápidas y precisas basadas en estados definidos.
+
+Sin embargo, el hardware por sí solo es inerte. La programación es el componente fundamental que dota de "inteligencia" al sistema. Un ingeniero industrial capaz de programar microcontroladores posee una ventaja competitiva enorme, ya que puede diseñar algoritmos de control personalizados, desde simples estructuras condicionales (if-else) hasta complejos sistemas de control PID (Proporcional, Integral, Derivativo). La programación permite definir la lógica de seguridad, los tiempos de respuesta y la interacción hombre-máquina (HMI). En proyectos de automatización, el código fuente es el documento donde se plasman los objetivos de eficiencia y las restricciones del proceso; es el puente entre la teoría de sistemas y la ejecución física en la planta.
+
+En esta práctica aprenderemos a manejar los puertos de entrada y salida discretos de un microcontrolador, en este caso el Arduino Uno.
+
+## Objetivos
+
+### Objetivo General
+
+Desarrollar la capacidad de implementar sistemas de control digital mediante el uso de microcontroladores, integrando sensores y actuadores discretos para la automatización de procesos básicos, comprendiendo la lógica de programación en C++ y el manejo técnico de los puertos de entrada y salida de propósito general (GPIO).
+
+### Objetivos Específicos
+
+1. Configurar y manipular los pines de entrada y salida digital (GPIO) de un microcontrolador Arduino Uno para interactuar con componentes electrónicos básicos como LEDs e interruptores.
+2. Implementar algoritmos de control lógico mediante estructuras condicionales en lenguaje C++ para procesar señales provenientes de sensores digitales y ejecutar acciones en actuadores.
+3. Diseñar y simular circuitos electrónicos en entornos virtuales como Tinkercad o Wokwi, asegurando la correcta conexión de componentes y la validación funcional del código programado.
+
+## Materiales
+
+- Arduino Uno
+- Protoboard
+- 4 LEDs
+- 1 Resistencia de 220 ohmios
+- 1 Switch de 4 botones de 2 posiciones
+- Cables
+- Alternativa: TinkerCAD, simulador de circuitos. Wokwi, simulador de circuitos.
+
+## Fundamentos Teóricos
+Para comprender el funcionamiento de los sistemas de control basados en microcontroladores, es imperativo profundizar en los conceptos técnicos que permiten la interacción entre el código de software y el hardware físico. Esta sección detalla los pilares fundamentales que sustentan la práctica de la automatización digital.
+
+### El Microcontrolador: El Cerebro del Sistema Embebido
+
+Un microcontrolador es un circuito integrado de alta escala de integración que contiene todos los componentes de un computador funcional en un solo chip de silicio. A diferencia de un microprocesador convencional (como el de una PC), que requiere de periféricos externos como memoria RAM, almacenamiento y controladores de bus para operar, el microcontrolador está diseñado como una unidad autónoma y optimizada para tareas específicas de control.
+
+Internamente, un microcontrolador consta de una Unidad Central de Procesamiento (CPU), memoria de programa (Flash), memoria de datos (RAM), memoria no volátil (EEPROM) y una variedad de periféricos de entrada/salida (I/O). La CPU interpreta y ejecuta las instrucciones almacenadas en la memoria Flash, mientras que la RAM se utiliza para el almacenamiento temporal de variables durante la ejecución. Los periféricos integrados, como temporizadores (timers), conversores analógico-digitales (ADC) y módulos de comunicación (UART, SPI, I2C), permiten que el chip interactúe con el mundo exterior de manera eficiente sin necesidad de circuitería compleja adicional. En la ingeniería industrial, su importancia radica en su bajo costo, bajo consumo energético y alta confiabilidad en entornos de operación continua.
+
+### Arduino Uno y la Democratización de la Electrónica
+
+El Arduino Uno es, posiblemente, la plataforma de desarrollo basada en microcontroladores más extendida en el mundo. Su núcleo es el microcontrolador ATmega328P de la arquitectura AVR de 8 bits. Lo que diferencia a Arduino de otros sistemas de desarrollo no es solo el hardware, sino su ecosistema: un entorno de desarrollo integrado (IDE) simplificado, una comunidad masiva y un estándar de hardware abierto.
+
+El Arduino Uno proporciona una interfaz estandarizada para acceder a los pines del microcontrolador a través de cabezales de conexión (headers), facilitando el prototipado rápido sin necesidad de soldadura en las etapas iniciales. Opera a una frecuencia de reloj de 16 MHz, lo cual es más que suficiente para la mayoría de las aplicaciones de control industrial discreto y monitoreo de sensores. Además, incluye un regulador de voltaje integrado y un chip de comunicación USB-Serial que permite la programación directa desde una computadora, eliminando la necesidad de programadores externos especializados.
+
+### Puertos de Entrada y Salida (GPIO)
+
+Los pines de Propósito General de Entrada y Salida (GPIO, por sus siglas en inglés) son los canales de comunicación física entre el microcontrolador y el entorno. Cada pin puede configurarse mediante software para actuar como una entrada (recibiendo información) o como una salida (enviando comandos).
+
+Cuando un pin se configura como **salida**, el microcontrolador actúa como una fuente de voltaje. En lógica digital de 5V (como la del Arduino Uno), un estado "ALTO" (HIGH) aplica 5V al pin, permitiendo energizar componentes como LEDs o activar relés. Un estado "BAJO" (LOW) conecta el pin a tierra (0V). Es vital entender que estos pines tienen limitaciones de corriente (típicamente 20-40 mA por pin); exceder este límite puede destruir permanentemente el canal de salida del microcontrolador.
+
+Cuando se configura como **entrada**, el pin presenta una alta impedancia, actuando como un voltímetro sensible que detecta el nivel de voltaje aplicado externamente. Esto permite al microcontrolador "leer" el estado de interruptores, sensores de proximidad o niveles lógicos de otros dispositivos.
+
+### Señales Digitales y Analógicas: El Enfoque Discreto
+
+En el universo de la instrumentación, distinguimos dos tipos de señales: analógicas y digitales. Una señal **analógica** es continua en el tiempo y puede tomar un número infinito de valores dentro de un rango determinado (por ejemplo, una temperatura que varía suavemente de 20.0°C a 20.1°C).
+
+Por el contrario, una señal **digital** es discreta y solo puede ocupar estados definidos. En la mayoría de los sistemas de control, utilizamos la lógica binaria, donde solo existen dos estados posibles: 0 y 1, Falso y Verdadero, o Bajo y Alto. Esta abstracción simplifica drásticamente el diseño de sistemas de control, ya que elimina la ambigüedad causada por el ruido eléctrico. Mientras que una pequeña fluctuación de voltaje podría alterar una lectura analógica, en un sistema digital de 5V, cualquier valor cercano a los 5V se interpreta como un "1" y cualquier valor cercano a 0V como un "0", garantizando una transmisión de datos robusta y una toma de decisiones lógica e inequívoca.
+
+### Concepto de Normalmente Abierto (NO) y Normalmente Cerrado (NC)
+
+En el diseño de circuitos de control y seguridad industrial, la configuración de los contactos es fundamental. Estos conceptos se refieren al estado de reposo de un interruptor o sensor cuando no hay ninguna fuerza externa actuando sobre él.
+
+- **Normalmente Abierto (NO - Normally Open):** El circuito está interrumpido en su estado inicial. La corriente no fluye hasta que el sensor se activa (por ejemplo, al presionar un botón). Al activarse, el contacto se cierra y la señal pasa. Es la configuración estándar para botones de inicio.
+- **Normalmente Cerrado (NC - Normally Closed):** El circuito está completo en su estado inicial. La corriente fluye constantemente hasta que el sensor se activa, momento en el cual el contacto se abre y corta el flujo. Esta configuración es crítica en sistemas de seguridad, como paradas de emergencia o sensores de límites, ya que si un cable se rompe accidentalmente, el sistema lo detectará como una apertura (activación), deteniendo el proceso por seguridad (sistema *fail-safe*).
+
+### Programación en C++ y Variables Globales
+
+El lenguaje de programación utilizado para Arduino es una variante de C++, un lenguaje de alto nivel que permite un control preciso sobre el hardware. La programación en sistemas embebidos requiere una gestión eficiente de la memoria y el tiempo de ejecución.
+
+Un concepto clave es el de las **Variables Globales**. Estas se declaran fuera de cualquier función, generalmente al principio del programa. Su característica principal es que tienen un "alcance" (scope) global, lo que significa que pueden ser accedidas y modificadas por cualquier parte del código en cualquier momento. En Arduino, se utilizan frecuentemente para definir los números de los pines a los que están conectados los componentes, o para almacenar estados de sensores que deben persistir a través de los ciclos de ejecución del programa. El uso adecuado de variables globales facilita la legibilidad y el mantenimiento del código, permitiendo cambiar la configuración del hardware en un solo lugar.
+
+### Estructura del Programa: setup() y loop()
+
+A diferencia de los programas de computadora tradicionales que se ejecutan de principio a fin y luego terminan, el software de un microcontrolador está diseñado para funcionar indefinidamente. La arquitectura del programa en Arduino se divide en dos funciones principales:
+
+1.  **setup():** Esta función se ejecuta exactamente una vez cuando el microcontrolador se enciende o se reinicia. Su propósito es la configuración inicial: definir qué pines serán entradas o salidas, inicializar comunicaciones seriales o establecer estados iniciales de variables. Es la fase de preparación del sistema.
+2.  **loop():** Una vez que termina `setup()`, el programa entra en la función `loop()`. Esta función se ejecuta de forma cíclica e infinita a la máxima velocidad que permita el procesador. Aquí es donde reside la lógica de control: el microcontrolador lee los sensores, procesa la información mediante condicionales y actualiza los actuadores. Cada repetición del `loop()` se conoce como un ciclo de escaneo, similar al funcionamiento de un PLC industrial.
+
+### Funciones de Control de Hardware: pinMode, digitalRead y digitalWrite
+
+Para interactuar con los pines GPIO, el lenguaje de Arduino proporciona funciones específicas que abstraen la complejidad de los registros internos del microcontrolador:
+
+- **pinMode(pin, modo):** Se utiliza dentro de `setup()` para configurar un pin específico. El `modo` puede ser `INPUT` (entrada) u `OUTPUT` (salida). Por ejemplo, `pinMode(7, OUTPUT);` prepara el pin 7 para enviar energía a un LED.
+- **digitalRead(pin):** Lee el estado lógico de un pin configurado como entrada. Devuelve `HIGH` si detecta voltaje (5V) o `LOW` si detecta 0V. Es la función que permite al código "sentir" si un botón ha sido presionado.
+- **digitalWrite(pin, valor):** Envía un nivel lógico a un pin configurado como salida. Si el `valor` es `HIGH`, el pin entrega 5V; si es `LOW`, el pin se conecta a tierra. Esta es la instrucción que "actúa" sobre el mundo físico, encendiendo motores, luces o activando electroválvulas.
+
+La combinación de estas funciones dentro de la estructura de control permite crear sistemas inteligentes capaces de responder en milisegundos a los cambios en el entorno productivo, sentando las bases de la automatización industrial moderna.
+
+## Procedimiento
+1.  **Ingreso a la plataforma:** 
+- Acceda a [Tinkercad](https://www.tinkercad.com/), inicie sesión y cree un nuevo proyecto haciendo clic en **"Diseños"** > **"Crear"** > **"Circuito"**.
+
+2.  **Selección de componentes:** En el panel de componentes a la derecha, busque y arrastre al lienzo los siguientes elementos:
+    *   1 Arduino Uno R3.
+    *   1 Protoboard (Placa de pruebas).
+    *   4 LEDs (pueden ser de distintos colores).
+    *   4 Resistencias de 220 $\Omega$ (para protección de los LEDs).
+    *   1 Pulsador (Pushbutton).
+    *   1 Resistencia de 10 k$\Omega$ (para configuración Pull-down).
+3.  **Montaje del hardware:**
+    *   Conecte el pin **GND** del Arduino al bus negativo de la protoboard.
+    *   Ubique los 4 LEDs en la placa. Conecte el cátodo (pata corta) de cada uno a la línea de tierra (GND).
+    *   Conecte el ánodo (pata larga) de cada LED a los pines digitales **7, 6, 5 y 4** del Arduino, colocando una resistencia de 220 $\Omega$ en serie para cada uno.
+    *   Instale el pulsador: conecte una terminal a la línea de **5V**. La terminal opuesta debe conectarse al pin digital **12** del Arduino y, simultáneamente, a **GND** a través de la resistencia de 10 k$\Omega$.
+4.  **Configuración del Código:**
+    *   Haga clic en el botón **"Código"** en la parte superior derecha y cambie el modo de "Bloques" a **"Texto"**.
+    *   Copie y pegue el código que se presenta a continuación en el editor.
+5.  **Ejecución:** Haga clic en **"Iniciar simulación"**. Al presionar el pulsador en el circuito virtual, los LEDs se encenderán siguiendo la secuencia programada.
+
+El circuito debe asemejarse al mostrado en la siguiente imagen.
+
+![Circuito](../instrumentation/assets/images/instrumentation_07_sensors_digitalWrite.png)
+
+El código correspondiente para la simulación es el siguiente:
+
+```c
+// C++ code
+// variable global
+int pinLED1 = 7;
+int pinLED2 = 6;
+int pinLED3 = 5;
+int pinLED4 = 4;
+
+//Etiquetas
+#define pinBoton 12
+
+void setup()
+{
+  pinMode(pinBoton, INPUT);
+  pinMode(pinLED1, OUTPUT);
+  pinMode(pinLED2, OUTPUT);
+  pinMode(pinLED3, OUTPUT);
+  pinMode(pinLED4, OUTPUT);
+}
+
+void loop()
+{
+  int boton = digitalRead(pinBoton);
+  if (boton == 1)
+  {
+    digitalWrite(pinLED1, HIGH);
+    delay(1000);
+    digitalWrite(pinLED1, LOW);
+    delay(1000);
+    digitalWrite(pinLED2, HIGH);
+    delay(2500);
+    digitalWrite(pinLED2, LOW);
+    delay(1000);
+    digitalWrite(pinLED3, HIGH);
+    delay(5000);
+    digitalWrite(pinLED3, LOW);
+    delay(1000);
+    digitalWrite(pinLED3, HIGH);
+    delay(5000);
+    digitalWrite(pinLED3, LOW);
+    delay(1000);
+    digitalWrite(pinLED4, HIGH);
+    delay(10000);
+    digitalWrite(pinLED4, LOW);
+    delay(1000);
+  }
+  else
+  {
+    digitalWrite(pinLED1, LOW);
+    digitalWrite(pinLED2, LOW);
+    digitalWrite(pinLED3, LOW);
+    digitalWrite(pinLED4, LOW);
+  }
+}
+```
+
+## Cálculos y resultados
+1.  **Modificación de Secuencia Temporal:**
+    Ajuste el código para que, al presionar el pulsador, los LEDs se enciendan en orden descendente (del pin 4 al pin 7) con una duración fija de 500 ms por cada estado, eliminando los retardos de 1000 ms entre transiciones.
+
+2.  **Control por Segundo Canal:**
+    Conecte un segundo interruptor del switch al pin digital **11**. Programe una secuencia de "auto fantástico" (ida y vuelta) que solo se ejecute mientras este segundo interruptor permanezca en estado ALTO.
+
+3.  **Lógica de Seguridad Combinacional:**
+    Implemente una función donde el LED del pin 7 se encienda únicamente si el interruptor del pin **12** y el del pin **11** están activos al mismo tiempo. Si solo uno de ellos está activo, el LED del pin 4 debe parpadear a una frecuencia de 2 Hz.
+
+4.  **Diseño de Sistema de Clasificación (Nuevo Circuito):**
+    Diseñe un prototipo de sistema de control para una línea de producción que utilice:
+    - **Entradas:** 3 interruptores que simulan sensores de proximidad (Pines 10, 9 y 8).
+    - **Salidas:** 3 LEDs que representan indicadores de estado (Verde: Operación Normal, Amarillo: Mantenimiento, Rojo: Parada de Emergencia).
+    - **Requerimiento:** El sistema debe encender el LED Verde si solo el sensor 1 está activo, el Amarillo si los sensores 1 y 2 están activos, y el Rojo (bloqueando los demás) si el sensor 3 (Emergencia) se activa en cualquier momento.
+
+5.  **Tabla de Verdad de Operación:**
+    A partir del ejercicio anterior, complete la tabla de estados lógicos para validar el comportamiento del sistema diseñado.
+
+| Sensor 1 | Sensor 2 | Sensor 3 | LED Verde | LED Amarillo | LED Rojo |
+|:--------:|:--------:|:--------:|:---------:|:------------:|:--------:|
+| 1        | 0        | 0        |           |              |          |
+| 1        | 1        | 0        |           |              |          |
+| X        | X        | 1        |           |              |          |
+
+## Preguntas complementarias
+- ¿Cuál es la función de las resistencias de pull-down o pull-up en la conexión de los interruptores y qué sucedería si se omiten?
+- ¿De qué manera afecta el uso de la función `delay()` a la capacidad del microcontrolador para detectar cambios en los sensores en tiempo real?
+- ¿Cómo podría modificarse el código para que una secuencia se interrumpa inmediatamente al cambiar el estado de un interruptor de seguridad, sin esperar a que finalicen los tiempos de espera?

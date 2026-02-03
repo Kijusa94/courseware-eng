@@ -257,3 +257,11 @@ $$12 V + 12 V = 24 V$$
 :::
 
 :::
+
+
+
+## Divisor de Voltaje
+
+
+
+## Puente de Wheatstone

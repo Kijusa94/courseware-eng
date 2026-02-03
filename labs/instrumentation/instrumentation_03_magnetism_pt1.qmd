@@ -1,0 +1,149 @@
+# Práctica: Campo magnético
+
+## Introducción
+La inducción electromagnética es el principio físico que mueve al mundo industrial moderno. Casi toda la energía eléctrica que consumimos se produce mediante este fenómeno (en hidroeléctricas, termoeléctricas o eólicas) y la gran mayoría de los motores industriales funcionan gracias a él.
+
+Mientras que la electrostática se ocupa de cargas en reposo, la inducción nos enseña cómo **el movimiento y el cambio magnético pueden generar electricidad**. Michael Faraday descubrió que un campo magnético variable puede inducir una corriente eléctrica, y Heinrich Lenz definió la dirección de esa corriente, estableciendo un principio de conservación de energía fundamental.
+
+En esta práctica, exploraremos cómo un simple imán puede convertirse en un generador de potencia y cómo funcionan los transformadores que distribuyen la energía eléctrica a las fábricas.
+
+## Objetivos
+
+### Objetivo General
+Comprender los principios de inducción electromagnética y su aplicación en la conversión de energía mecánica a eléctrica (generadores) y en la transmisión de energía (transformadores).
+
+### Objetivos Específicos
+- Observar cómo la variación del flujo magnético induce un voltaje (fuerza electromotriz).
+- Determinar la dirección de la corriente inducida y cómo esta se opone al cambio que la produce.
+- Entender la transmisión de energía inalámbrica entre bobinas y la diferencia entre corriente directa (DC) y alterna (AC).
+- Visualizar el funcionamiento básico de una turbina de generación eléctrica.
+
+## Fundamentos Teóricos
+
+### Ley de Faraday de la Inducción
+La ley establece que la fuerza electromotriz (FEM o voltaje, $\varepsilon$) inducida en un circuito es proporcional a la rapidez con la que cambia el flujo magnético ($\Phi_B$) a través de él.
+
+$$
+\varepsilon = -N \frac{\Delta \Phi_B}{\Delta t}
+$$
+
+Donde:
+- $N$ es el número de vueltas de la bobina.
+- $\frac{\Delta \Phi_B}{\Delta t}$ es la tasa de cambio del flujo magnético.
+
+> Para generar electricidad, necesitamos un campo magnético que **cambie** (se mueva, crezca o decrezca). Un campo magnético estático **no** genera electricidad.
+
+### Ley de Lenz
+El signo negativo en la ley de Faraday representa la Ley de Lenz. Esta ley dicta que la corriente inducida fluirá en una dirección tal que creará su propio campo magnético para **oponerse** al cambio que la produjo. Es la "inercia" electromagnética.
+
+## Materiales
+- Computadora o Tablet.
+- Simulador PhET: **Faraday's Electromagnetic Lab** (Laboratorio Electromagnético).
+  - *Enlace:* [PhET Faraday Lab](https://phet.colorado.edu/es/simulations/faradays-electromagnetic-lab)
+
+## Procedimiento
+
+### Parte 1: El Campo Magnético Estático (Imán de Barra)
+
+Antes de comprender cómo generar electricidad, debemos entender la "fuente" invisible que permite la inducción: el campo magnético ($\vec{B}$). En la industria, los imanes permanentes son cruciales en motores DC, servomotores de robótica y sensores de posición.
+
+#### 1. Visualización del Campo Magnético
+1.  Acceda a la pestaña **"Imán de Barra"**.
+2.  Active la opción **"Mostrar Campo"** (Show Field).
+3.  Observe las pequeñas brújulas en el fondo.
+    * **Acción:** Mueva el imán por la pantalla.
+    * **Observación:** Note hacia dónde apuntan las agujas rojas (Norte) y blancas (Sur) en relación con los polos del imán.
+    * **Interior del Imán:** Active la opción "Ver dentro del imán". ¿Las líneas de campo van de Norte a Sur o de Sur a Norte *dentro* del material?
+
+#### 2. Medición de Intensidad (Uso del Gaussímetro)
+1.  Active la herramienta **"Medidor de Campo"** (Field Meter). Este instrumento simula un **Gaussímetro** o sensor de efecto Hall industrial.
+2.  Mueva el sensor a diferentes distancias a lo largo del eje del imán (línea horizontal que atraviesa los polos).
+3.  Observe cómo cambia la magnitud del campo $B$ (en Gauss, G) al alejarse.
+    * *Nota:* $1 \text{ Tesla} = 10,000 \text{ Gauss}$.
+4.  Realice mediciones a 1, 2 y 3 unidades de distancia (puede usar la cuadrícula de fondo como referencia).
+
+#### 3. El Planeta Tierra como Imán
+1.  Active la casilla **"Mostrar Planeta Tierra"**.
+2.  Observe la orientación del gran imán imaginario dentro de la Tierra.
+3.  Use la brújula (Compass) y muévala cerca del Polo Norte geográfico (arriba).
+4.  **Verificación:** ¿El polo "Norte" de su brújula apunta al polo "Sur" magnético de la Tierra?
+
+#### **Tabla 1.1: Decaimiento del Campo Magnético**
+*Tome mediciones sobre el eje horizontal partiendo desde el polo Norte del imán.*
+
+| Distancia (cuadros) | Campo Magnético $B$ (Gauss) | Observación |
+|:-------------------:|:---------------------------:|:-----------:|
+| 1 (Cerca)           |                             | Valor Alto  |
+| 2 (Media)           |                             |             |
+| 3 (Lejos)           |                             |             |
+
+#### **Gráfica Rápida:**
+Con los datos anteriores, ¿el campo disminuye de forma lineal (como una rampa suave) o decae abruptamente? (Ayuda: El campo de un dipolo decae como $1/r^3$, mucho más rápido que el campo eléctrico $1/r^2$).
+
+#### **Tabla 1.2: Dirección del Campo**
+*Dibuje o describa la dirección de la flecha roja de la brújula en las siguientes posiciones:*
+
+| Posición Relativa al Imán | Dirección de la Brújula (Norte) |
+|:--------------------------|:--------------------------------|
+| Frente al Polo Norte      | (Ej: Apunta hacia afuera)       |
+| Frente al Polo Sur        |                                 |
+| Justo en el centro (arriba del imán) |                      |
+
+#### **Preguntas Complementarias (Introductores)**
+1.  **Paradoja de la Brújula:** Si los polos opuestos se atraen (Norte atrae a Sur), ¿por qué el polo "Norte" de una brújula apunta hacia el Norte Geográfico de la Tierra (Ártico)? ¿Qué tipo de polo magnético debe haber en realidad en el Ártico terrestre?
+2.  **Sensores Industriales:** El "Medidor de Campo" que usó en la simulación funciona bajo el mismo principio que los **sensores de Efecto Hall**. En una fábrica, estos sensores se usan para detectar si una puerta de seguridad está cerrada o para contar las vueltas de un motor. Si usted pega un imán a un eje rotatorio y coloca el sensor fijo cerca, ¿qué lectura esperaría ver en el medidor cada vez que el imán pasa frente a él?
+3.  **Seguridad:** Los campos magnéticos muy intensos pueden borrar datos de tarjetas de crédito o discos duros antiguos. Basado en su Tabla 0.1, ¿la zona de peligro es muy extensa o se limita a la proximidad inmediata del imán?
+
+
+
+
+
+### Parte 2: El Electroimán (Magnetismo Controlado)
+
+#### **Configuración Inicial**
+1.  En el simulador, seleccione la pestaña **"Electroimán"**.
+2.  Asegúrese de activar la opción **"Mostrar Campo"** y **"Mostrar Brújula"**.
+3.  Fije el número de vueltas (Loops) en **4** (o el máximo disponible).
+
+#### **Relación Voltaje - Campo Magnético**
+1.  Utilice el deslizador de la batería para ajustar el voltaje a **0V**. Observe el campo.
+2.  Aumente el voltaje lentamente hasta el máximo positivo (**10V**).
+    * *Observación:* Fíjese en la intensidad del brillo de los electrones (que representan la corriente) y la densidad de las flechas del campo magnético.
+3.  Active la herramienta **"Medidor de Campo"** y colóquela en el centro de la bobina o justo en un extremo.
+4.  Registre el valor del campo magnético para 0V, 5V y 10V.
+
+#### **Efecto del Número de Vueltas (Espiras)**
+1.  Mantenga el voltaje de la batería al máximo (**10V**).
+2.  Varíe el número de vueltas (Loops) de la bobina usando el deslizador lateral.
+3.  Mida la intensidad del campo magnético ($B$) manteniendo el sensor fijo en la misma posición (no mueva el medidor, solo cambie las vueltas).
+    * Pruebe con 1 vuelta, 2 vueltas, etc.
+
+#### **Inversión de Polaridad**
+1.  Mueva el deslizador de voltaje hacia el lado negativo (o invierta la batería).
+2.  Observe qué sucede con las brújulas y la dirección del flujo magnético.
+
+#### **Tabla 2.1: Control por Voltaje**
+*Manteniendo el número de vueltas fijo en 4.*
+
+| Voltaje de la Fuente (V) | Corriente (Visual: Lenta/Rápida) | Campo Magnético $B$ (Gauss) |
+|:------------------------:|:--------------------------------:|:---------------------------:|
+| 0 V                      | Detenida                         | 0.00                        |
+| 5 V (Medio)              |                                  |                             |
+| 10 V (Máximo)            |                                  |                             |
+
+#### **Tabla 2.2: Importancia del Bobinado**
+*Manteniendo el voltaje fijo en 10V. Posicione el sensor justo en la boca de la bobina.*
+
+| Número de Vueltas (N) | Campo Magnético $B$ (Gauss) | ¿Aumenta o Disminuye? |
+|:---------------------:|:---------------------------:|:---------------------:|
+| 1 Vuelta              |                             |                       |
+| 2 Vueltas             |                             |                       |
+| 3 Vueltas             |                             |                       |
+| 4 Vueltas             |                             |                       |
+
+#### Preguntas Complementarias
+
+1.  **Ventaja Industrial:** Compare el electroimán con el imán de barra de la Parte 1. ¿Cuál es la ventaja operativa fundamental del electroimán para una grúa que mueve chatarra en una planta de reciclaje? ¿Qué pasaría si usaran un imán permanente gigante?
+2.  **Relación V-I-B:** Basado en la Ley de Ohm ($V=I \cdot R$), al aumentar el voltaje de la batería, aumenta la corriente. Según sus datos de la Tabla 2.1, ¿cómo afecta este aumento de corriente a la fuerza del campo magnético? ¿Es una relación directa?
+3.  **Inversión de Giro:** En la industria, para cambiar el sentido de giro de un motor DC, se invierte la polaridad de la alimentación. Basado en el paso 4 del procedimiento, explique qué le ocurre a los polos magnéticos (Norte y Sur) de la bobina cuando usted invierte el voltaje de positivo a negativo.
+4.  **Diseño de Solenoides:** Si usted necesita una válvula solenoide con mucha fuerza para cerrar una tubería de alta presión, pero no puede aumentar el voltaje de alimentación (limitado a 24V), ¿qué cambio físico le pediría al fabricante que haga en la bobina basándose en la Tabla 2.2?

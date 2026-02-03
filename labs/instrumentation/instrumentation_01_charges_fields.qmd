@@ -1,0 +1,95 @@
+# Práctica de Electrostática: Cargas y Campos
+
+## Introducción
+En el entorno industrial, la electrostática suele percibirse de dos formas: como una herramienta poderosa o como un riesgo latente. Procesos como la pintura electrostática (usada en la industria automotriz), la impresión láser y los precipitadores electrostáticos para filtrar gases en chimeneas, dependen de la manipulación precisa de campos eléctricos.
+
+Por otro lado, la acumulación de carga estática representa un peligro severo en plantas que manejan combustibles, polvos inflamables o componentes electrónicos sensibles. Entender cómo se distribuye un campo eléctrico y cómo se comporta el potencial (voltaje) alrededor de una carga no es solo teoría física; es la base para diseñar sistemas de seguridad, apantallamiento y conexión a tierra.
+
+Esta práctica utiliza simulación computacional para visualizar estos "campos invisibles", permitiendo observar fenómenos que son imposibles de ver a simple vista, validando las leyes fundamentales de Coulomb y la Superposición.
+
+## Objetivos
+
+### Objetivo General
+Analizar el comportamiento del campo eléctrico y el potencial eléctrico generado por distribuciones de cargas puntuales.
+
+### Objetivos Específicos
+- Comprobar experimentalmente que la intensidad del campo eléctrico disminuye con el cuadrado de la distancia ($1/r^2$).
+- Observar cómo interactúan los campos de múltiples cargas (dipolos) y cómo se suman vectorialmente.
+- Entender el concepto de voltaje (potencial) y su relación geométrica con las líneas de campo eléctrico.
+
+## Fundamentos Teóricos
+
+### El Campo Eléctrico ($\vec{E}$)
+Una carga eléctrica modifica el espacio que la rodea. El campo eléctrico se define como la fuerza por unidad de carga y, para una carga puntual $Q$, su magnitud es:
+
+$$
+E = k \frac{|Q|}{r^2}
+$$
+
+Donde $k \approx 9.0 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2$.
+La dirección del campo es **radial hacia afuera** para cargas positivas y **hacia adentro** para negativas.
+
+### Potencial Eléctrico ($V$)
+El potencial eléctrico es una medida escalar de la energía por unidad de carga en un punto del espacio. A diferencia del campo (que es un vector), el potencial se suma aritméticamente. Las líneas donde el potencial es constante se llaman **líneas equipotenciales**.
+
+$$
+V = E \cdot r
+$$
+
+Las líneas de campo eléctrico siempre son perpendiculares a las líneas equipotenciales y apuntan hacia donde disminuye el potencial.
+
+## Materiales
+- Computadora o Tablet con acceso a internet.
+- Simulador PhET: **Charges and Fields** (Cargas y Campos).
+  - *Enlace:* [PhET Cargas y Campos](https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_es.html)
+
+## Procedimiento
+
+### Parte 1: El Campo de una Carga Puntual (Ley de Coulomb)
+1. Inicie el simulador y active las casillas: **Campo eléctrico**, **Valores**, **Grilla** y **Dirección solamente** (si desea ver flechas más claras).
+2. Arrastre una carga positiva de **+1 nC** al centro de la pantalla (intersección de dos líneas mayores de la cuadrícula).
+3. Utilice la herramienta **Sensor de Campo** (punto amarillo) para medir la intensidad del campo eléctrico ($E$) a diferentes distancias.
+   - *Nota:* Use la herramienta de "Cinta métrica" para medir la distancia ($r$) desde el centro de la carga hasta el sensor.
+4. Tome al menos 3 mediciones a distancias diferentes (ej. 1m, 2m, 3m) manteniendo la alineación horizontal o vertical.
+
+### Parte 2: Interacción de Dos Cargas (Dipolo Eléctrico)
+1. Reinicie el simulador.
+2. Coloque una carga de **+1 nC** y una de **-1 nC** separadas por una distancia de **2 metros** (2 cuadros grandes de la grilla) sobre la misma línea horizontal.
+3. Observe el patrón de las flechas del campo eléctrico.
+4. Mida el campo eléctrico ($E$) justo en el **punto medio** entre las dos cargas.
+5. Mida el campo eléctrico en un punto externo, alineado con las cargas.
+
+### Parte 3: Potencial y Líneas Equipotenciales
+1. Mantenga la configuración del dipolo (+1 nC y -1 nC).
+2. Utilice la herramienta de **Potencial** (el visor con la mira) que muestra el voltaje.
+3. Mueva el sensor alrededor de la carga positiva hasta encontrar un punto donde el voltaje sea aprox. **10 V**. Haga clic en el botón del "Lápiz" para dibujar la línea equipotencial.
+4. Repita para dibujar líneas de **5 V**, **0 V**, **-5 V** y **-10 V**.
+5. Observe la relación geométrica entre estas líneas curvas y las flechas del campo eléctrico.
+
+## Cálculos y Resultados
+
+### Tabla 1: Variación del Campo con la Distancia
+Utilice la siguiente tabla para escribir los valores del procedimiento en su parte 1.
+
+| Distancia $r$ (m) | Campo Medido $E_{sim}$ (V/m) | Campo Teórico $E_{calc}$ (V/m) | % Error |
+|:-----------------:|:--------------------------:|:----------------------------:|:-------:|
+| 1.0               |                            |                              |         |
+| 2.0               |                            |                              |         |
+| 3.0               |                            |                              |         |
+
+> **Fórmula de cálculo:** $E_{calc} = (9 \times 10^9) \cdot \frac{1 \times 10^{-9}}{r^2}$
+
+### Tabla 2: Campo en el Dipolo
+Utilice la siguiente tabla para escribir los valores del procedimiento en su parte 2.
+
+| Punto de Medición | Campo Medido (V/m) | ¿Hacia dónde apunta? (Izq/Der) |
+|:------------------|:------------------:|:------------------------------:|
+| Punto Medio       |                    |                                |
+| 1m a la derecha de la carga negativa | |                                |
+
+## Preguntas Complementarias
+
+1. Basado en la Tabla 1, si duplicamos la distancia a la carga, ¿el campo eléctrico se reduce a la mitad? Explique usando sus datos si la relación es lineal o exponencial.
+2. En la Parte 2 (Dipolo), el campo en el centro **no es cero**, a pesar de estar equidistante de ambas cargas. Explique por qué ocurre esto basándose en la naturaleza vectorial del campo (¿se suman o se restan las flechas?).
+3. Imagine que las líneas equipotenciales son curvas de nivel en un mapa topográfico. Si una carga positiva "cae" desde un potencial alto a uno bajo, gana energía cinética. ¿En qué zona del dipolo aceleraría más rápido una partícula? (Pista: donde las líneas equipotenciales están más juntas).
+4. Observe las líneas equipotenciales que dibujó en la Parte 3. ¿Qué ángulo forman siempre con las flechas del campo eléctrico cuando se cruzan?

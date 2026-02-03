@@ -1,0 +1,7 @@
+---
+title: Instrumentación Industrial  
+subtitle: "Fundamentos"
+author: M.Sc. Juan Guzman
+institute: Kijusa94
+---
+

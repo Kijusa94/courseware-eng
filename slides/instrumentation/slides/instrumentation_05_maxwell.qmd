@@ -5,6 +5,29 @@ author: M.Sc. Juan Guzman
 institute: Kijusa94
 ---
 
-## Ecuaciones de Maxwell
+# Las Ecuaciones de Maxwell
 
-## Ondas electromagneticas - Fundamentos
+## El Gran Unificador
+
+Hasta mediados del siglo XIX, la electricidad y el magnetismo parecían fenómenos separados. James Clerk Maxwell unificó ambos conceptos en una sola teoría.
+
+:::{.callout-note}
+### Concepto Clave
+Así como Newton unificó la física terrestre y celeste, Maxwell demostró que **la electricidad, el magnetismo y la luz** son manifestaciones del mismo fenómeno: el campo electromagnético.
+:::
+
+
+## Las Ecuaciones de Maxwell
+
+
+## Las 4 Ecuaciones (Interpretación Ingeniería)
+
+Para un ingeniero industrial, lo importante no es memorizar el cálculo vectorial, sino entender qué nos dicen sobre cómo funciona el mundo físico:
+
+| Nombre | Significado Físico | Aplicación Industrial |
+|:---|:---|:---|
+| **Ley de Gauss (E)** | Las cargas crean campos eléctricos. | Capacitores, blindaje electrostático. |
+| **Ley de Gauss (M)** | No existen monopolos magnéticos. | Líneas de campo cerradas. |
+| **Ley de Faraday** | Un campo magnético variable crea voltaje. | Generadores, Transformadores. |
+| **Ley de Ampère-Maxwell** | La corriente **O** un campo eléctrico variable crea magnetismo. | Antenas, Telecomunicaciones. |
+

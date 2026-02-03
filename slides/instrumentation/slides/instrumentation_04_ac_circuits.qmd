@@ -5,21 +5,244 @@ author: M.Sc. Juan Guzman
 institute: Kijusa94
 ---
 
-# Circuitos AC
-
-## Capacitancia 
-
-## Inductancia 
-
-## Impedancia
-
-## Circuitos RC
-
-## Circuitos RL
-
-## Circuitos RCL
-### Resonancia
-
-## CA Trifasica
+# Capacitancia
 
 
+
+## El Capacitor
+
+Un capacitor es un dispositivo capaz de almacenar energía en forma de **campo eléctrico**. Se compone de dos placas conductoras separadas por un material aislante (dieléctrico).
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Definición**
+La capacitancia ($C$) es la relación entre la carga almacenada ($Q$) y la diferencia de potencial ($V$).
+
+### **Unidad**
+
+$$
+C = \frac{Q}{V}
+$$
+
+Se mide en **Farads (F)**. Como es una unidad muy grande, en instrumentación usamos: $\mu F, nF, pF$.
+
+:::
+
+
+
+## Reactancia Capacitiva ($X_C$)
+
+En corriente alterna (AC), el capacitor se opone al cambio de voltaje. Esta oposición se llama reactancia.
+
+> A diferencia de la resistencia, la reactancia **depende de la frecuencia**.
+
+$$X_C = \frac{1}{2 \pi f C}$$
+
+:::{.callout-important}
+### Comportamiento según frecuencia
+* **Baja frecuencia:** El capacitor actúa como un circuito abierto (gran oposición).
+* **Alta frecuencia:** El capacitor deja pasar la corriente fácilmente (poca oposición).
+:::
+
+# Inductancia
+
+## El Inductor
+
+Un inductor (o bobina) almacena energía en forma de **campo magnético** generado por la corriente que lo atraviesa.
+
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center; gap: 50px;"}
+
+### **Autoinducción**
+Al cambiar la corriente, se induce una tensión que se opone al cambio (Ley de Lenz).
+
+$$V = -L \frac{di}{dt}$$
+
+### **Unidad**
+Se mide en **Henrios (H)**.
+Común en motores y transformadores.
+
+:::
+
+## Reactancia Inductiva ($X_L$)
+
+Es la oposición que presenta la bobina al paso de la corriente alterna.
+
+$$X_L = 2 \pi f L$$
+
+:::{.callout-note}
+### Comportamiento inverso al capacitor
+* **Baja frecuencia:** La bobina es casi un cortocircuito (cable).
+* **Alta frecuencia:** La bobina bloquea el paso de la corriente.
+:::
+
+# Impedancia
+
+## Concepto de Impedancia ($Z$)
+
+En circuitos AC reales, existen resistencias, capacitores e inductores combinados. La oposición total al flujo de corriente se llama **Impedancia ($Z$)**.
+
+> La impedancia no es solo un número, es un vector: tiene **magnitud** y **ángulo (fase)**.
+
+$$Z = \sqrt{R^2 + (X_L - X_C)^2}$$
+
+:::{.center-content}
+**Ley de Ohm Generalizada:**
+$$V = I \cdot Z$$
+:::
+
+## Triángulo de Impedancia
+
+La resistencia ($R$) es la parte real, y las reactancias ($X_L, X_C$) son la parte imaginaria.
+
+
+* Si $X_L > X_C$: El circuito es **inductivo** (la corriente se atrasa respecto al voltaje).
+* Si $X_C > X_L$: El circuito es **capacitivo** (la corriente se adelanta).
+
+# Circuitos RC y RL
+
+## Circuitos RC (Resistencia-Capacitor)
+
+Son fundamentales en instrumentación para **filtrar señales** y eliminar ruido eléctrico.
+
+:::{layout-ncol=2 layout-valign="top" style="text-align: center;"}
+
+### **Filtro Paso Bajo**
+Permite pasar señales lentas (DC) y bloquea ruido de alta frecuencia.
+El capacitor se coloca en paralelo a la salida.
+
+### **Constante de Tiempo ($\tau$)**
+Determina qué tan rápido se carga el capacitor.
+$$\tau = R \cdot C$$
+
+:::
+
+## Circuitos RL (Resistencia-Inductor)
+
+Son el modelo básico de cargas industriales como motores y solenoides.
+
+:::{.callout-warning}
+### El transitorio inductivo
+Al desconectar un circuito RL, la bobina intenta mantener la corriente, generando picos de voltaje muy altos (Golpe inductivo).
+En instrumentación, usamos **diodos de protección** (flyback) para evitar quemar los transistores de control.
+:::
+
+# Circuitos RCL y Resonancia
+
+## Circuito RLC Serie
+
+Cuando conectamos R, L y C en serie, las reactancias inductiva y capacitiva compiten entre sí.
+
+$$Z = \sqrt{R^2 + (2\pi f L - \frac{1}{2\pi f C})^2}$$
+
+## Resonancia
+
+Ocurre a una frecuencia específica ($f_0$) donde la reactancia inductiva se cancela con la capacitiva ($X_L = X_C$).
+
+$$f_0 = \frac{1}{2\pi \sqrt{LC}}$$
+
+:::{.callout-important}
+### En Resonancia:
+1.  La impedancia es mínima ($Z = R$).
+2.  La corriente es **máxima**.
+3.  **Peligro industrial:** En sistemas de potencia, la resonancia no deseada puede causar sobrevoltajes destructivos.
+:::
+
+# CA Trifásica
+
+## ¿Por qué Trifásica?
+
+La industria utiliza corriente alterna trifásica para generación y transmisión de potencia.
+
+1.  **Eficiencia:** Requiere menos material conductor para transmitir la misma potencia que un sistema monofásico.
+2.  **Torque constante:** Los motores trifásicos arrancan por sí mismos y tienen un par suave, a diferencia de los monofásicos que vibran más.
+
+
+## Conexiones Estrella (Y) y Delta ($\Delta$)
+
+:::{.panel-tabset}
+
+### Estrella (Y)
+Existe un punto neutro común.
+* **Voltaje de Línea ($V_L$):** Voltaje entre dos fases vivas (ej. 380V, 480V).
+* **Voltaje de Fase ($V_F$):** Voltaje entre una fase y el neutro (ej. 220V, 277V).
+
+$$V_L = \sqrt{3} V_F$$
+
+### Delta ($\Delta$)
+No hay neutro. Las fases se conectan en triángulo.
+* Ideal para motores y transmisión de potencia.
+* El voltaje de línea es igual al de fase.
+
+$$V_L = V_F$$
+
+:::
+
+## Potencia Trifásica
+
+Para calcular la potencia en un sistema trifásico equilibrado:
+
+$$P = \sqrt{3} \cdot V_L \cdot I_L \cdot \cos(\theta)$$
+
+* **$V_L$**: Voltaje de Línea.
+* **$I_L$**: Corriente de Línea.
+* **$\cos(\theta)$**: Factor de Potencia.
+
+:::{.callout-tip}
+### Nota para Ingenieros Industriales
+El **Factor de Potencia** ($\cos \theta$) mide la eficiencia. Si es bajo (muchos motores inductivos), la empresa paga multas a la compañía eléctrica. Se corrige agregando **bancos de capacitores**.
+:::
+
+
+
+# Caso Práctico: Factor de Potencia
+
+## El Problema de la "Energía Reactiva"
+
+:::{.callout-warning}
+### Escenario Industrial
+Una planta de manufactura tiene un motor de **10 kW** (potencia real/activa) que opera con un voltaje de **220 V** y $60 Hz$.
+Debido a que es una carga inductiva, su **Factor de Potencia (FP)** actual es de **0.60** (muy bajo).
+
+**Consecuencia:** La empresa eléctrica cobra una multa por bajo factor de potencia y los cables se calientan innecesariamente.
+**Objetivo:** Corregir el factor de potencia a **0.90** conectando un capacitor en paralelo.
+:::
+
+## Paso 1: Calcular la Potencia Reactiva Actual ($Q_1$)
+
+Primero determinamos cuánta "energía desperdiciada" (reactiva) está consumiendo el motor actualmente.
+
+1.  **Ángulo actual ($\theta_1$):**
+    $$\theta_1 = \cos^{-1}(0.60) = 53.13^\circ$$
+2.  **Reactiva actual ($Q_1$):**
+    $$Q_1 = P \cdot \tan(\theta_1)$$
+    $$Q_1 = 10\,kW \cdot \tan(53.13^\circ) \approx 13.33\,kVAR$$
+
+## Paso 2: Calcular la Meta ($Q_2$)
+
+Calculamos cuánta reactiva deberíamos tener para lograr el FP de 0.90.
+
+1.  **Ángulo deseado ($\theta_2$):**
+    $$\theta_2 = \cos^{-1}(0.90) = 25.84^\circ$$
+2.  **Reactiva deseada ($Q_2$):**
+    $$Q_2 = 10\,kW \cdot \tan(25.84^\circ) \approx 4.84\,kVAR$$
+
+## Paso 3: Dimensionar el Capacitor
+
+El capacitor debe eliminar la diferencia de energía reactiva ($Q_C$).
+
+$$Q_C = Q_1 - Q_2$$
+$$Q_C = 13.33\,kVAR - 4.84\,kVAR = \mathbf{8.49\,kVAR}$$
+
+Ahora, calculamos la capacitancia necesaria ($C$) usando la fórmula de reactancia:
+
+$$C = \frac{Q_C}{2 \pi f V^2}$$
+
+$$C = \frac{8490}{(2 \pi)(60)(220^2)}$$
+
+$$C \approx 0.000465\,F \rightarrow \mathbf{465\,\mu F}$$
+
+:::{.callout-tip}
+### Solución de Ingeniería
+Se debe instalar un **banco de capacitores de $465\,\mu F$** (o un valor comercial cercano como $470\,\mu F$) en paralelo al motor. Esto eliminará la multa de la compañía eléctrica sin afectar el funcionamiento mecánico del motor.
+:::

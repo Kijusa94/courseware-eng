@@ -77,37 +77,3 @@ library(reticulate)
 use_virtualenv("../../../.venv", required = TRUE) 
 ```
 ````
-
-## Para instalar paquetes de R usando renv
-
-Ejecute en el terminal de R:
-
-``` markdown
-install.packages("renv")
-
-# Activa renv en este proyecto
-renv::init()
-
-#Generar el "requirements" (Snapshot) Cuando hayas instalado paquetes y tu código funcione, guarda el estado. Esto crea el archivo renv.lock (tu requirements).
-renv::snapshot()
-
-#Instalar en otra máquina (Restore) Si le pasas tu código y el archivo renv.lock a un colega (o lo subes a GitHub), ellos solo tienen que ejecutar:
-renv::restore()
-```
-
-
-## Para instalar paquetes de R de forma 'manual'(No recomendado)
-Ejecute en el terminal de R:
-````markdown
-# Obtener nombres de paquetes instalados
-paquetes <- installed.packages()[, "Package"]
-
-# Guardarlos en un txt
-writeLines(paquetes, "requirements.txt")
-
-# Leer el archivo
-paquetes_a_instalar <- readLines("requirements.txt")
-
-# Instalar los que falten
-install.packages(paquetes_a_instalar)
-````

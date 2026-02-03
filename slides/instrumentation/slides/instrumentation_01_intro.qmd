@@ -51,7 +51,7 @@ Es una ley fundamental de la física, tan sólida como la conservación de la en
 - El átomo tiene un núcleo positivo (protones y neutrones) rodeado por electrones negativos.
 - Los átomos neutros tienen igual cantidad de protones y electrones. Si un átomo pierde o gana electrones, se convierte en un ion (con carga neta positiva o negativa)
 
-### Modelo de Bohr
+### Modelo Atómico Simplificado:
 
 {{< placeholder 400 200 format=svg >}}
 
@@ -274,7 +274,9 @@ $$
 \vec{E}_{total} = \vec{E}_1 + \vec{E}_2 + ... 
 $$
 
-**Estrategia de Resolución**  
+
+
+## **Estrategia de Resolución**  
 
 1. **Dibujar:** Crear un diagrama mostrando los vectores de campo.
 2. **Dirección Física:** Determinar la dirección de cada campo (+ (aleja) o - (atrae))
@@ -314,7 +316,7 @@ $$
 
 
 
-## La Ley de Gauss (Definición General)
+## La Ley de Gauss
 
 La Ley de Gauss establece que el flujo eléctrico neto a través de cualquier **superficie cerrada** es igual a la carga neta encerrada ($Q_{enc}$) dividida por la permitividad del vacío ($\epsilon_0$).
 
@@ -509,13 +511,12 @@ La energía eléctrica es útil porque se transforma fácilmente en otras formas
 
 ### **Fórmula General**
 
-La potencia entregada a cualquier dispositivo es:
+Su unidad es el **Watt** ($W$).
 
 $$
 P = I V
 $$
 
-Su unidad es el **Watt** ($W$).
 
 ### **En Resistencias** 
 La potencia disipada en calor por una resistencia se puede calcular como:

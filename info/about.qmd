@@ -3,3 +3,21 @@ title: "About"
 ---
 
 About this site
+
+## Librerias de Python instaladas
+```markdown
+pip install numpy pandas matplotlib seaborn schemdraw 
+```
+
+## Libreria de R/Latex instaladas
+
+```markdown
+install.packages("reticulate")
+install.packages("pdftools")
+install.packages("magick")
+```
+
+## Librerias de Quarto instaladas
+```markdown
+quarto install tinytex
+```

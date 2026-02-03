@@ -7,18 +7,48 @@ Esta es la página principal de Prácticas de Laboratorio y Simulación de Instr
 :::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Práctica de Circuitos DC
-[Ver Práctica &rarr;](instrumentation_dc_circuits.qmd){.btn .btn-primary role="button"}
+## 📚 Práctica de Carga Eléctrica
+[Ver Práctica &rarr;](instrumentation_01_charges_fields.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Práctica de Circuitos RLC
-[Ver Práctica &rarr;](instrumentation_rlc_circuit.qmd){.btn .btn-primary role="button"}
+## 📚 Práctica de Circuitos DC
+[Ver Práctica &rarr;](instrumentation_02_dc_circuits.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Magnetismo - Parte 1
+[Ver Práctica &rarr;](instrumentation_03_magnetism_pt1.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Magnetismo - Parte 2
+[Ver Práctica &rarr;](instrumentation_04_magnetism_pt2.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Práctica de Circuitos AC
-[Ver Práctica &rarr;](instrumentation_ac_circuits.qmd){.btn .btn-primary role="button"}
+[Ver Práctica &rarr;](instrumentation_05_ac_circuits.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Circuitos RLC
+[Ver Práctica &rarr;](instrumentation_06_rlc_circuit.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Sensores (Digital)
+[Ver Práctica &rarr;](instrumentation_07_sensors_digitalWrite.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Sensores (Analógico)
+[Ver Práctica &rarr;](instrumentation_07_sensors_analogWrite.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Práctica de Actuadores y Diagramas
+[Ver Práctica &rarr;](instrumentation_08_actuators_diagrams.qmd){.btn .btn-primary role="button"}
 :::
 
 ::::

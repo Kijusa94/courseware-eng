@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>instrumentation_dc_circuits – Mi Documentación</title>
+<title>instrumentation_03_magnetism_pt1 – Mi Documentación</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4018,7 +4018,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#práctica-campo-magnético" id="toc-práctica-campo-magnético" class="nav-link active" data-scroll-target="#práctica-campo-magnético">Práctica: Campo magnético</a>
+  <ul class="collapse">
+  <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción">Introducción</a></li>
   <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">Objetivos</a>
   <ul class="collapse">
   <li><a href="#objetivo-general" id="toc-objetivo-general" class="nav-link" data-scroll-target="#objetivo-general">Objetivo General</a></li>
@@ -4026,535 +4028,313 @@ window.Quarto = {
   </ul></li>
   <li><a href="#fundamentos-teóricos" id="toc-fundamentos-teóricos" class="nav-link" data-scroll-target="#fundamentos-teóricos">Fundamentos Teóricos</a>
   <ul class="collapse">
-  <li><a href="#ley-de-ohm" id="toc-ley-de-ohm" class="nav-link" data-scroll-target="#ley-de-ohm">Ley de Ohm</a></li>
-  <li><a href="#instrumento-de-medición" id="toc-instrumento-de-medición" class="nav-link" data-scroll-target="#instrumento-de-medición">Instrumento de medición</a></li>
-  <li><a href="#ley-de-kirchhoff" id="toc-ley-de-kirchhoff" class="nav-link" data-scroll-target="#ley-de-kirchhoff">Ley de Kirchhoff</a></li>
+  <li><a href="#ley-de-faraday-de-la-inducción" id="toc-ley-de-faraday-de-la-inducción" class="nav-link" data-scroll-target="#ley-de-faraday-de-la-inducción">Ley de Faraday de la Inducción</a></li>
+  <li><a href="#ley-de-lenz" id="toc-ley-de-lenz" class="nav-link" data-scroll-target="#ley-de-lenz">Ley de Lenz</a></li>
   </ul></li>
-  <li><a href="#consultas-preliminares" id="toc-consultas-preliminares" class="nav-link" data-scroll-target="#consultas-preliminares">Consultas preliminares</a></li>
   <li><a href="#materiales" id="toc-materiales" class="nav-link" data-scroll-target="#materiales">Materiales</a></li>
   <li><a href="#procedimiento" id="toc-procedimiento" class="nav-link" data-scroll-target="#procedimiento">Procedimiento</a>
   <ul class="collapse">
-  <li><a href="#ley-de-ohm-y-medición-de-potencia" id="toc-ley-de-ohm-y-medición-de-potencia" class="nav-link" data-scroll-target="#ley-de-ohm-y-medición-de-potencia">Ley de Ohm y Medición de Potencia</a></li>
-  <li><a href="#circutos-en-serie-y-en-paralelo" id="toc-circutos-en-serie-y-en-paralelo" class="nav-link" data-scroll-target="#circutos-en-serie-y-en-paralelo">Circutos en Serie y en Paralelo</a></li>
-  <li><a href="#uso-del-potenciometro-y-analisis-de-fallas" id="toc-uso-del-potenciometro-y-analisis-de-fallas" class="nav-link" data-scroll-target="#uso-del-potenciometro-y-analisis-de-fallas">Uso del potenciometro y analisis de fallas</a></li>
-  <li><a href="#variación-del-voltaje-y-su-influencia" id="toc-variación-del-voltaje-y-su-influencia" class="nav-link" data-scroll-target="#variación-del-voltaje-y-su-influencia">Variación del Voltaje y su Influencia</a></li>
+  <li><a href="#parte-1-el-campo-magnético-estático-imán-de-barra" id="toc-parte-1-el-campo-magnético-estático-imán-de-barra" class="nav-link" data-scroll-target="#parte-1-el-campo-magnético-estático-imán-de-barra">Parte 1: El Campo Magnético Estático (Imán de Barra)</a></li>
+  <li><a href="#parte-2-el-electroimán-magnetismo-controlado" id="toc-parte-2-el-electroimán-magnetismo-controlado" class="nav-link" data-scroll-target="#parte-2-el-electroimán-magnetismo-controlado">Parte 2: El Electroimán (Magnetismo Controlado)</a></li>
   </ul></li>
-  <li><a href="#calculos-y-resultados" id="toc-calculos-y-resultados" class="nav-link" data-scroll-target="#calculos-y-resultados">Calculos y resultados</a></li>
-  <li><a href="#preguntas-complementarias" id="toc-preguntas-complementarias" class="nav-link" data-scroll-target="#preguntas-complementarias">Preguntas complementarias</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Practica de Circuitos DC</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="práctica-campo-magnético" class="level1">
+<h1>Práctica: Campo magnético</h1>
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>La comprensión y aplicación de los fundamentos de la electricidad de corriente continua (DC) son esenciales para la formación del ingeniero industrial, particularmente en el campo de la instrumentación y automatización. Si bien la disciplina se centra en la optimización de procesos y la gestión de sistemas productivos, la base tecnológica de estos sistemas es inherentemente eléctrica y electrónica. El conocimiento de los principios que rigen el comportamiento de la energía eléctrica no es un mero requisito curricular, sino una necesidad operativa y estratégica.</p>
-<p>La ingeniería industrial se apoya en sistemas de control y medición que dependen directamente de circuitos eléctricos. Sensores de temperatura, presión, flujo o nivel, así como actuadores como motores, relés y válvulas solenoides, funcionan con señales eléctricas y responden a comandos que viajan a través de circuitos. Ignorar estos fundamentos implica una limitación significativa en la capacidad de un ingeniero para diagnosticar fallas, diseñar soluciones de control, seleccionar componentes adecuados y garantizar la fiabilidad del equipo. La eficiencia y la seguridad de un proceso automatizado están directamente ligadas al correcto funcionamiento de su infraestructura eléctrica.</p>
-<p>Esta práctica de laboratorio se enfoca en la validación de la Ley de Ohm y las Leyes de Kirchhoff a través de la experimentación controlada. La Ley de Ohm establece la relación fundamental entre el voltaje, la corriente y la resistencia, que es la base para el análisis de cualquier circuito. V=I⋅R</p>
-<p>Las Leyes de Kirchhoff, por su parte, permiten analizar sistemas más complejos, describiendo cómo se distribuyen la corriente y el voltaje en nodos y mallas. La Ley de Corrientes de Kirchhoff (LKC) afirma que la suma de las corrientes que entran en un nodo es igual a la suma de las que salen ∑Ientrada=∑Isalida. Pro su parte. La Ley de Voltajes de Kirchhoff (LKV) establece que la suma algebraica de los voltajes en una malla cerrada es cero ∑Vmalla=0.</p>
-<p>En el ámbito industrial, los circuitos en serie y en paralelo tienen aplicaciones directas. Los circuitos en serie se utilizan para la interconexión de sensores de seguridad, donde la interrupción de un único componente desactiva el circuito completo, garantizando la detención de una máquina. Los circuitos en paralelo son comunes en la distribución de energía a múltiples cargas, como motores o luminarias, asegurando que cada carga reciba el mismo voltaje nominal de la fuente. La comprensión de estas configuraciones es indispensable para el diseño de sistemas de control eficientes y robustos, donde la capacidad de un ingeniero para resolver problemas eléctricos impacta directamente en la productividad y la seguridad de la operación.</p>
-<p>Para esta actividad, se utilizará un entorno de simulación que replica el comportamiento de los componentes físicos. Este enfoque presenta varias ventajas: permite la manipulación de variables sin riesgo, facilita la visualización de fenómenos eléctricos que no son visibles a simple vista y, lo más importante, promueve la experimentación y el aprendizaje por descubrimiento. El objetivo no es solo replicar valores teóricos, sino desarrollar un entendimiento intuitivo de cómo las interacciones entre voltaje, corriente y resistencia influyen en el comportamiento de un sistema.</p>
+<p>La inducción electromagnética es el principio físico que mueve al mundo industrial moderno. Casi toda la energía eléctrica que consumimos se produce mediante este fenómeno (en hidroeléctricas, termoeléctricas o eólicas) y la gran mayoría de los motores industriales funcionan gracias a él.</p>
+<p>Mientras que la electrostática se ocupa de cargas en reposo, la inducción nos enseña cómo <strong>el movimiento y el cambio magnético pueden generar electricidad</strong>. Michael Faraday descubrió que un campo magnético variable puede inducir una corriente eléctrica, y Heinrich Lenz definió la dirección de esa corriente, estableciendo un principio de conservación de energía fundamental.</p>
+<p>En esta práctica, exploraremos cómo un simple imán puede convertirse en un generador de potencia y cómo funcionan los transformadores que distribuyen la energía eléctrica a las fábricas.</p>
 </section>
 <section id="objetivos" class="level2">
 <h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
 <section id="objetivo-general" class="level3">
 <h3 class="anchored" data-anchor-id="objetivo-general">Objetivo General</h3>
-<p>Aplicar los conceptos teóricos de la electricidad DC para analizar y validar el comportamiento de circuitos básicos en configuraciones en serie y paralelo.</p>
+<p>Comprender los principios de inducción electromagnética y su aplicación en la conversión de energía mecánica a eléctrica (generadores) y en la transmisión de energía (transformadores).</p>
 </section>
 <section id="objetivos-específicos" class="level3">
 <h3 class="anchored" data-anchor-id="objetivos-específicos">Objetivos Específicos</h3>
 <ul>
-<li>Comprender y aplicar la Ley de Ohm para calcular las variables eléctricas (V, I, R) en un circuito simple.</li>
-<li>Identificar las características distintivas de los circuitos en serie y paralelo.</li>
-<li>Verificar experimentalmente las Leyes de Kirchhoff de voltaje y corriente.</li>
-<li>Utilizar un simulador de circuitos para construir, medir y analizar circuitos eléctricos de manera segura y eficiente.</li>
+<li>Observar cómo la variación del flujo magnético induce un voltaje (fuerza electromotriz).</li>
+<li>Determinar la dirección de la corriente inducida y cómo esta se opone al cambio que la produce.</li>
+<li>Entender la transmisión de energía inalámbrica entre bobinas y la diferencia entre corriente directa (DC) y alterna (AC).</li>
+<li>Visualizar el funcionamiento básico de una turbina de generación eléctrica.</li>
 </ul>
 </section>
 </section>
-<section id="fundamentos-teóricos" class="level2 page-columns page-full">
+<section id="fundamentos-teóricos" class="level2">
 <h2 class="anchored" data-anchor-id="fundamentos-teóricos">Fundamentos Teóricos</h2>
-<section id="ley-de-ohm" class="level3">
-<h3 class="anchored" data-anchor-id="ley-de-ohm">Ley de Ohm</h3>
-<p>La corriente continua es el flujo unidireccional de carga eléctrica a través de un conductor. A diferencia de la corriente alterna (AC), la polaridad de un circuito DC no se invierte. Las fuentes de energía DC, como baterías y fuentes de alimentación reguladas, ofrecen estabilidad y predictibilidad, características esenciales para la alimentación de sensores y microcontroladores en sistemas de automatización industrial. Para comprender el flujo de la corriente continua, es fundamental definir tres conceptos interdependientes. El voltaje (V) es la fuerza impulsora, la diferencia de potencial que empuja las cargas. La corriente (I) es el resultado directo de este empuje, representando el flujo de esas cargas a través del conductor. Sin embargo, este flujo enfrenta una oposición natural, conocida como resistencia (R), que limita la cantidad de corriente que puede fluir para un voltaje dado.</p>
-<ul>
-<li>Voltaje (V): Es la diferencia de potencial eléctrico entre dos puntos. Se mide en voltios (V).</li>
-<li>Corriente (I): Es el flujo de carga eléctrica por unidad de tiempo a través de un punto en un circuito. Se mide en amperios (A).</li>
-<li>Resistencia (R): Es la oposición al flujo de la corriente eléctrica. Se mide en ohmios $ $.</li>
-</ul>
-<p>La relación entre voltaje, corriente y resistencia no es arbitraria; está descrita por una ley fundamental que rige el comportamiento de los circuitos: la Ley de Ohm. Esta ley establece que la corriente en un circuito es directamente proporcional al voltaje aplicado e inversamente proporcional a la resistencia del circuito, un principio que es la piedra angular del análisis de cualquier sistema eléctrico.</p>
+<section id="ley-de-faraday-de-la-inducción" class="level3">
+<h3 class="anchored" data-anchor-id="ley-de-faraday-de-la-inducción">Ley de Faraday de la Inducción</h3>
+<p>La ley establece que la fuerza electromotriz (FEM o voltaje, <span class="math inline">\(\varepsilon\)</span>) inducida en un circuito es proporcional a la rapidez con la que cambia el flujo magnético (<span class="math inline">\(\Phi_B\)</span>) a través de él.</p>
 <p><span class="math display">\[
-V = I R
+\varepsilon = -N \frac{\Delta \Phi_B}{\Delta t}
 \]</span></p>
-<p>El concepto de potencia eléctrica es tan importante como la Ley de Ohm, ya que cuantifica la tasa a la que la energía eléctrica es transferida o consumida en un circuito. En el contexto de la ingeniería industrial, la potencia es una métrica crucial para el dimensionamiento de equipos, la evaluación de la eficiencia energética y la determinación de los costos operativos. Un motor, una resistencia de calentamiento o una lámpara consumen potencia para realizar un trabajo.</p>
-<p>La potencia (P) se define como el producto del voltaje (V) y la corriente (I). La unidad de medida de la potencia es el vatio (W). A partir de la Ley de Ohm, la fórmula de potencia se puede expresar de otras dos formas, lo que permite su cálculo incluso si no se conocen el voltaje o la corriente, siempre que se conozcan dos de las tres variables (V, I, R):</p>
-<p><span class="math display">\[
-P = I V \qquad P=I^2R \qquad P=V2/R
-\]</span></p>
+<p>Donde: - <span class="math inline">\(N\)</span> es el número de vueltas de la bobina. - <span class="math inline">\(\frac{\Delta \Phi_B}{\Delta t}\)</span> es la tasa de cambio del flujo magnético.</p>
+<blockquote class="blockquote">
+<p>Para generar electricidad, necesitamos un campo magnético que <strong>cambie</strong> (se mueva, crezca o decrezca). Un campo magnético estático <strong>no</strong> genera electricidad.</p>
+</blockquote>
 </section>
-<section id="instrumento-de-medición" class="level3">
-<h3 class="anchored" data-anchor-id="instrumento-de-medición">Instrumento de medición</h3>
-<p>La medición de voltaje se realiza en paralelo con el componente o la fuente, ya que el voltímetro mide la diferencia de potencial entre dos puntos. En contraste, la medición de corriente requiere que el amperímetro se conecte en serie dentro del circuito, interrumpiendo el flujo de electrones para poder contar la cantidad de carga que pasa a través de él.</p>
+<section id="ley-de-lenz" class="level3">
+<h3 class="anchored" data-anchor-id="ley-de-lenz">Ley de Lenz</h3>
+<p>El signo negativo en la ley de Faraday representa la Ley de Lenz. Esta ley dicta que la corriente inducida fluirá en una dirección tal que creará su propio campo magnético para <strong>oponerse</strong> al cambio que la produjo. Es la “inercia” electromagnética.</p>
 </section>
-<div class="column-screen-inset">
-<div class="quarto-layout-panel" data-layout-ncol="3" style="text-align: center; gap: 50px;">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="70a9e050" class="cell quarto-layout-cell" data-execution_count="2" style="flex-basis: 33.3%;justify-content: flex-start;">
-<section id="medir-voltaje" class="level3">
-<h3 class="anchored" data-anchor-id="medir-voltaje">Medir Voltaje</h3>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjI5MS43NTZwdCIgaGVpZ2h0PSIxMTcuMzZwdCIgdmlld0JveD0iMCAwIDI5MS43NTYgMTE3LjM2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiA8bWV0YWRhdGE+CiAgPHJkZjpSREYgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICA8Y2M6V29yaz4KICAgIDxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz4KICAgIDxkYzpkYXRlPjIwMjYtMDEtMTZUMDg6MDQ6NTYuOTgzOTc5PC9kYzpkYXRlPgogICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICA8ZGM6Y3JlYXRvcj4KICAgICA8Y2M6QWdlbnQ+CiAgICAgIDxkYzp0aXRsZT5NYXRwbG90bGliIHYzLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvPC9kYzp0aXRsZT4KICAgICA8L2NjOkFnZW50PgogICAgPC9kYzpjcmVhdG9yPgogICA8L2NjOldvcms+CiAgPC9yZGY6UkRGPgogPC9tZXRhZGF0YT4KIDxkZWZzPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+KntzdHJva2UtbGluZWpvaW46IHJvdW5kOyBzdHJva2UtbGluZWNhcDogYnV0dH08L3N0eWxlPgogPC9kZWZzPgogPGcgaWQ9ImZpZ3VyZV8xIj4KICA8ZyBpZD0icGF0Y2hfMSI+CiAgIDxwYXRoIGQ9Ik0gMCAxMTcuMzYgCkwgMjkxLjc1NiAxMTcuMzYgCkwgMjkxLjc1NiAwIApMIDAgMCAKegoiIHN0eWxlPSJmaWxsOiAjZmZmZmZmIi8+CiAgPC9nPgogIDxnIGlkPSJheGVzXzEiPgogICA8ZyBpZD0icGF0Y2hfMiI+CiAgICA8cGF0aCBkPSJNIDUzLjA3NiA3Ni42OCAKQyA1Ny44NDk2NTYgNzYuNjggNjIuNDI4NDM4IDc0Ljc4MzQwNiA2NS44MDM5MjIgNzEuNDA3OTIyIApDIDY5LjE3OTQwNiA2OC4wMzI0MzggNzEuMDc2IDYzLjQ1MzY1NiA3MS4wNzYgNTguNjggCkMgNzEuMDc2IDUzLjkwNjM0NCA2OS4xNzk0MDYgNDkuMzI3NTYyIDY1LjgwMzkyMiA0NS45NTIwNzggCkMgNjIuNDI4NDM4IDQyLjU3NjU5NCA1Ny44NDk2NTYgNDAuNjggNTMuMDc2IDQwLjY4IApDIDQ4LjMwMjM0NCA0MC42OCA0My43MjM1NjIgNDIuNTc2NTk0IDQwLjM0ODA3OCA0NS45NTIwNzggCkMgMzYuOTcyNTk0IDQ5LjMyNzU2MiAzNS4wNzYgNTMuOTA2MzQ0IDM1LjA3NiA1OC42OCAKQyAzNS4wNzYgNjMuNDUzNjU2IDM2Ljk3MjU5NCA2OC4wMzI0MzggNDAuMzQ4MDc4IDcxLjQwNzkyMiAKQyA0My43MjM1NjIgNzQuNzgzNDA2IDQ4LjMwMjM0NCA3Ni42OCA1My4wNzYgNzYuNjggCkwgNTMuMDc2IDc2LjY4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3AyMDQxNTM2YjY0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzMiPgogICAgPHBhdGggZD0iTSAyNjkuMDc2IDc2LjY4IApDIDI3My44NDk2NTYgNzYuNjggMjc4LjQyODQzOCA3NC43ODM0MDYgMjgxLjgwMzkyMiA3MS40MDc5MjIgCkMgMjg1LjE3OTQwNiA2OC4wMzI0MzggMjg3LjA3NiA2My40NTM2NTYgMjg3LjA3NiA1OC42OCAKQyAyODcuMDc2IDUzLjkwNjM0NCAyODUuMTc5NDA2IDQ5LjMyNzU2MiAyODEuODAzOTIyIDQ1Ljk1MjA3OCAKQyAyNzguNDI4NDM4IDQyLjU3NjU5NCAyNzMuODQ5NjU2IDQwLjY4IDI2OS4wNzYgNDAuNjggCkMgMjY0LjMwMjM0NCA0MC42OCAyNTkuNzIzNTYyIDQyLjU3NjU5NCAyNTYuMzQ4MDc4IDQ1Ljk1MjA3OCAKQyAyNTIuOTcyNTk0IDQ5LjMyNzU2MiAyNTEuMDc2IDUzLjkwNjM0NCAyNTEuMDc2IDU4LjY4IApDIDI1MS4wNzYgNjMuNDUzNjU2IDI1Mi45NzI1OTQgNjguMDMyNDM4IDI1Ni4zNDgwNzggNzEuNDA3OTIyIApDIDI1OS43MjM1NjIgNzQuNzgzNDA2IDI2NC4zMDIzNDQgNzYuNjggMjY5LjA3NiA3Ni42OCAKTCAyNjkuMDc2IDc2LjY4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3AyMDQxNTM2YjY0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xIj4KICAgIDxwYXRoIGQ9Ik0gNTMuMDc2IDExMi42OCAKTCA1My4wNzYgNzYuNjggCkwgNTMuMDc2IDc2LjY4IApNIDUzLjA3NiA0MC42OCAKTCA1My4wNzYgNDAuNjggCkwgNTMuMDc2IDQuNjggCiIgY2xpcC1wYXRoPSJ1cmwoI3AyMDQxNTM2YjY0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzIiPgogICAgPHBhdGggZD0iTSA1Ni42NzYgNjcuNjggCkwgNDkuNDc2IDY3LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwMjA0MTUzNmI2NCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8zIj4KICAgIDxwYXRoIGQ9Ik0gNTMuMDc2IDUzLjI4IApMIDUzLjA3NiA0Ni4wOCAKIiBjbGlwLXBhdGg9InVybCgjcDIwNDE1MzZiNjQpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfNCI+CiAgICA8cGF0aCBkPSJNIDU2LjY3NiA0OS42OCAKTCA0OS40NzYgNDkuNjggCiIgY2xpcC1wYXRoPSJ1cmwoI3AyMDQxNTM2YjY0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzUiPgogICAgPHBhdGggZD0iTSA1My4wNzYgNC42OCAKTCAxMDcuMDc2IDQuNjggCkwgMTYxLjA3NiA0LjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwMjA0MTUzNmI2NCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF82Ij4KICAgIDxwYXRoIGQ9Ik0gMTYxLjA3NiA0LjY4IApMIDE2MS4wNzYgNDAuNjggCkwgMTcwLjA3NiA0My42OCAKTCAxNTIuMDc2IDQ5LjY4IApMIDE3MC4wNzYgNTUuNjggCkwgMTUyLjA3NiA2MS42OCAKTCAxNzAuMDc2IDY3LjY4IApMIDE1Mi4wNzYgNzMuNjggCkwgMTYxLjA3NiA3Ni42OCAKTCAxNjEuMDc2IDExMi42OCAKIiBjbGlwLXBhdGg9InVybCgjcDIwNDE1MzZiNjQpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfNyI+CiAgICA8cGF0aCBkPSJNIDE2MS4wNzYgMTEyLjY4IApMIDEwNy4wNzYgMTEyLjY4IApMIDUzLjA3NiAxMTIuNjggCiIgY2xpcC1wYXRoPSJ1cmwoI3AyMDQxNTM2YjY0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzgiPgogICAgPHBhdGggZD0iTSAxNjEuMDc2IDQuNjggCkwgMjE1LjA3NiA0LjY4IApMIDI2OS4wNzYgNC42OCAKIiBjbGlwLXBhdGg9InVybCgjcDIwNDE1MzZiNjQpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfOSI+CiAgICA8cGF0aCBkPSJNIDI2OS4wNzYgNC42OCAKTCAyNjkuMDc2IDQwLjY4IApMIDI2OS4wNzYgNDAuNjggCk0gMjY5LjA3NiA3Ni42OCAKTCAyNjkuMDc2IDc2LjY4IApMIDI2OS4wNzYgMTEyLjY4IAoiIGNsaXAtcGF0aD0idXJsKCNwMjA0MTUzNmI2NCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xMCI+CiAgICA8cGF0aCBkPSJNIDI2OS4wNzYgMTEyLjY4IApMIDE2MS4wNzYgMTEyLjY4IApMIDUzLjA3NiAxMTIuNjggCiIgY2xpcC1wYXRoPSJ1cmwoI3AyMDQxNTM2YjY0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzExIj4KICAgIDxwYXRoIGQ9Ik0gMTc1LjQ3NiAyMi42OCAKTCAxNzUuNDc2IDgzLjg4IAoiIGNsaXAtcGF0aD0idXJsKCNwMjA0MTUzNmI2NCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzQiPgogICAgPHBhdGggZD0iTSAxNzkuMDc2IDgzLjg4IApMIDE3NS40NzYgOTQuNjggCkwgMTcxLjg3NiA4My44OCAKegoiIGNsaXAtcGF0aD0idXJsKCNwMjA0MTUzNmI2NCkiLz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF8xIj4KICAgIDwhLS0gJFZfe2NjfSQgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMC42MTYgNjIuNTQzMTI1KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPGRlZnM+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLU9ibGlxdWUtNTYiIGQ9Ik0gMTMxOSAwIApMIDUwMCA0NjY2IApMIDExMTkgNDY2NiAKTCAxNzk3IDY1MyAKTCA0MDYzIDQ2NjYgCkwgNDc1MCA0NjY2IApMIDIwNTMgMCAKTCAxMzE5IDAgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy1PYmxpcXVlLTYzIiBkPSJNIDM0MzEgMzM2NiAKTCAzMzE2IDI3OTcgClEgMzEwOSAyOTQ3IDI4NzYgMzAyMiAKUSAyNjQ0IDMwOTcgMjM5NCAzMDk3IApRIDIxMTkgMzA5NyAxODcwIDMwMDAgClEgMTYyMiAyOTAzIDE0NTMgMjcyNSAKUSAxMTg0IDI0NTMgMTAzNyAyMDg3IApRIDg5MSAxNzIyIDg5MSAxMzMxIApRIDg5MSA4NTkgMTEyNyA2MjggClEgMTM2MyAzOTcgMTg0NCAzOTcgClEgMjA4MSAzOTcgMjM0OCA0NjkgClEgMjYxNiA1NDEgMjkwNiA2ODQgCkwgMjc5NyAxMTYgClEgMjU0NyAxMyAyMjgzIC0zOSAKUSAyMDE5IC05MSAxNzQxIC05MSAKUSAxMDQ0IC05MSA2NjkgMjU3IApRIDI5NCA2MDYgMjk0IDEyNTMgClEgMjk0IDE3OTcgNDg5IDIyNTUgClEgNjg0IDI3MTMgMTA2OSAzMDc4IApRIDEzMzEgMzMyOCAxNjg0IDM0NTYgClEgMjAzOCAzNTg0IDI0NTYgMzU4NCAKUSAyNzAwIDM1ODQgMjk0MCAzNTI5IApRIDMxODEgMzQ3NSAzNDMxIDMzNjYgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4wOTM3NSkiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNjMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY4LjQwODIwMyAtMTYuMzEyNSkgc2NhbGUoMC43KSIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS02MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA2Ljg5NDUzMSAtMTYuMzEyNSkgc2NhbGUoMC43KSIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzIiPgogICAgPCEtLSBSIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTM4Ljc0ODE4NyA2Mi41NDMxMjUpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtNTIiIGQ9Ik0gMjg0MSAyMTg4IApRIDMwNDQgMjExOSAzMjM2IDE4OTQgClEgMzQyOCAxNjY5IDM2MjIgMTI3NSAKTCA0MjYzIDAgCkwgMzU4NCAwIApMIDI5ODggMTE5NyAKUSAyNzU2IDE2NjYgMjUzOSAxODE5IApRIDIzMjIgMTk3MiAxOTQ3IDE5NzIgCkwgMTI1OSAxOTcyIApMIDEyNTkgMCAKTCA2MjggMCAKTCA2MjggNDY2NiAKTCAyMDUzIDQ2NjYgClEgMjg1MyA0NjY2IDMyNDcgNDMzMSAKUSAzNjQxIDM5OTcgMzY0MSAzMzIyIApRIDM2NDEgMjg4MSAzNDM2IDI1OTAgClEgMzIzMSAyMzAwIDI4NDEgMjE4OCAKegpNIDEyNTkgNDE0NyAKTCAxMjU5IDI0OTEgCkwgMjA1MyAyNDkxIApRIDI1MDkgMjQ5MSAyNzQyIDI3MDIgClEgMjk3NSAyOTEzIDI5NzUgMzMyMiAKUSAyOTc1IDM3MzEgMjc0MiAzOTM5IApRIDI1MDkgNDE0NyAyMDUzIDQxNDcgCkwgMTI1OSA0MTQ3IAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8L2RlZnM+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy01MiIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzMiPgogICAgPCEtLSBWIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjY0LjI4NzU2MiA2Mi41NDMxMjUpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtNTYiIGQ9Ik0gMTgzMSAwIApMIDUwIDQ2NjYgCkwgNzA5IDQ2NjYgCkwgMjE4OCA3MzggCkwgMzY2OSA0NjY2IApMIDQzMjUgNDY2NiAKTCAyNTQ3IDAgCkwgMTgzMSAwIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8L2RlZnM+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy01NiIvPgogICAgPC9nPgogICA8L2c+CiAgPC9nPgogPC9nPgogPGRlZnM+CiAgPGNsaXBQYXRoIGlkPSJwMjA0MTUzNmI2NCI+CiAgIDxyZWN0IHg9IjAiIHk9Ii0wIiB3aWR0aD0iMjkxLjc1NiIgaGVpZ2h0PSIxMTcuMzYiLz4KICA8L2NsaXBQYXRoPgogPC9kZWZzPgo8L3N2Zz4K" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</section>
-</div>
-<div id="dd15094e" class="cell quarto-layout-cell" data-execution_count="3" style="flex-basis: 33.3%;justify-content: flex-start;">
-<section id="medir-corriente" class="level3">
-<h3 class="anchored" data-anchor-id="medir-corriente">Medir Corriente</h3>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjE4My43NTZwdCIgaGVpZ2h0PSIxMzguOTZwdCIgdmlld0JveD0iMCAwIDE4My43NTYgMTM4Ljk2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiA8bWV0YWRhdGE+CiAgPHJkZjpSREYgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICA8Y2M6V29yaz4KICAgIDxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz4KICAgIDxkYzpkYXRlPjIwMjYtMDEtMTZUMDg6MDQ6NTcuMDI3Mzc1PC9kYzpkYXRlPgogICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICA8ZGM6Y3JlYXRvcj4KICAgICA8Y2M6QWdlbnQ+CiAgICAgIDxkYzp0aXRsZT5NYXRwbG90bGliIHYzLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvPC9kYzp0aXRsZT4KICAgICA8L2NjOkFnZW50PgogICAgPC9kYzpjcmVhdG9yPgogICA8L2NjOldvcms+CiAgPC9yZGY6UkRGPgogPC9tZXRhZGF0YT4KIDxkZWZzPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+KntzdHJva2UtbGluZWpvaW46IHJvdW5kOyBzdHJva2UtbGluZWNhcDogYnV0dH08L3N0eWxlPgogPC9kZWZzPgogPGcgaWQ9ImZpZ3VyZV8xIj4KICA8ZyBpZD0icGF0Y2hfMSI+CiAgIDxwYXRoIGQ9Ik0gMCAxMzguOTYgCkwgMTgzLjc1NiAxMzguOTYgCkwgMTgzLjc1NiAwIApMIDAgMCAKegoiIHN0eWxlPSJmaWxsOiAjZmZmZmZmIi8+CiAgPC9nPgogIDxnIGlkPSJheGVzXzEiPgogICA8ZyBpZD0icGF0Y2hfMiI+CiAgICA8cGF0aCBkPSJNIDUzLjA3NiA5OC4yOCAKQyA1Ny44NDk2NTYgOTguMjggNjIuNDI4NDM4IDk2LjM4MzQwNiA2NS44MDM5MjIgOTMuMDA3OTIyIApDIDY5LjE3OTQwNiA4OS42MzI0MzggNzEuMDc2IDg1LjA1MzY1NiA3MS4wNzYgODAuMjggCkMgNzEuMDc2IDc1LjUwNjM0NCA2OS4xNzk0MDYgNzAuOTI3NTYyIDY1LjgwMzkyMiA2Ny41NTIwNzggCkMgNjIuNDI4NDM4IDY0LjE3NjU5NCA1Ny44NDk2NTYgNjIuMjggNTMuMDc2IDYyLjI4IApDIDQ4LjMwMjM0NCA2Mi4yOCA0My43MjM1NjIgNjQuMTc2NTk0IDQwLjM0ODA3OCA2Ny41NTIwNzggCkMgMzYuOTcyNTk0IDcwLjkyNzU2MiAzNS4wNzYgNzUuNTA2MzQ0IDM1LjA3NiA4MC4yOCAKQyAzNS4wNzYgODUuMDUzNjU2IDM2Ljk3MjU5NCA4OS42MzI0MzggNDAuMzQ4MDc4IDkzLjAwNzkyMiAKQyA0My43MjM1NjIgOTYuMzgzNDA2IDQ4LjMwMjM0NCA5OC4yOCA1My4wNzYgOTguMjggCkwgNTMuMDc2IDk4LjI4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3A1OWIxNjE3OGI0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzMiPgogICAgPHBhdGggZD0iTSAxNjEuMDc2IDk4LjI4IApDIDE2NS44NDk2NTYgOTguMjggMTcwLjQyODQzOCA5Ni4zODM0MDYgMTczLjgwMzkyMiA5My4wMDc5MjIgCkMgMTc3LjE3OTQwNiA4OS42MzI0MzggMTc5LjA3NiA4NS4wNTM2NTYgMTc5LjA3NiA4MC4yOCAKQyAxNzkuMDc2IDc1LjUwNjM0NCAxNzcuMTc5NDA2IDcwLjkyNzU2MiAxNzMuODAzOTIyIDY3LjU1MjA3OCAKQyAxNzAuNDI4NDM4IDY0LjE3NjU5NCAxNjUuODQ5NjU2IDYyLjI4IDE2MS4wNzYgNjIuMjggCkMgMTU2LjMwMjM0NCA2Mi4yOCAxNTEuNzIzNTYyIDY0LjE3NjU5NCAxNDguMzQ4MDc4IDY3LjU1MjA3OCAKQyAxNDQuOTcyNTk0IDcwLjkyNzU2MiAxNDMuMDc2IDc1LjUwNjM0NCAxNDMuMDc2IDgwLjI4IApDIDE0My4wNzYgODUuMDUzNjU2IDE0NC45NzI1OTQgODkuNjMyNDM4IDE0OC4zNDgwNzggOTMuMDA3OTIyIApDIDE1MS43MjM1NjIgOTYuMzgzNDA2IDE1Ni4zMDIzNDQgOTguMjggMTYxLjA3NiA5OC4yOCAKTCAxNjEuMDc2IDk4LjI4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3A1OWIxNjE3OGI0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xIj4KICAgIDxwYXRoIGQ9Ik0gNTMuMDc2IDEzNC4yOCAKTCA1My4wNzYgOTguMjggCkwgNTMuMDc2IDk4LjI4IApNIDUzLjA3NiA2Mi4yOCAKTCA1My4wNzYgNjIuMjggCkwgNTMuMDc2IDI2LjI4IAoiIGNsaXAtcGF0aD0idXJsKCNwNTliMTYxNzhiNCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8yIj4KICAgIDxwYXRoIGQ9Ik0gNTYuNjc2IDg5LjI4IApMIDQ5LjQ3NiA4OS4yOCAKIiBjbGlwLXBhdGg9InVybCgjcDU5YjE2MTc4YjQpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfMyI+CiAgICA8cGF0aCBkPSJNIDUzLjA3NiA3NC44OCAKTCA1My4wNzYgNjcuNjggCiIgY2xpcC1wYXRoPSJ1cmwoI3A1OWIxNjE3OGI0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzQiPgogICAgPHBhdGggZD0iTSA1Ni42NzYgNzEuMjggCkwgNDkuNDc2IDcxLjI4IAoiIGNsaXAtcGF0aD0idXJsKCNwNTliMTYxNzhiNCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF81Ij4KICAgIDxwYXRoIGQ9Ik0gNTMuMDc2IDI2LjI4IApMIDg5LjA3NiAyNi4yOCAKTCA5Mi4wNzYgMTcuMjggCkwgOTguMDc2IDM1LjI4IApMIDEwNC4wNzYgMTcuMjggCkwgMTEwLjA3NiAzNS4yOCAKTCAxMTYuMDc2IDE3LjI4IApMIDEyMi4wNzYgMzUuMjggCkwgMTI1LjA3NiAyNi4yOCAKTCAxNjEuMDc2IDI2LjI4IAoiIGNsaXAtcGF0aD0idXJsKCNwNTliMTYxNzhiNCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF82Ij4KICAgIDxwYXRoIGQ9Ik0gMTYxLjA3NiAyNi4yOCAKTCAxNjEuMDc2IDYyLjI4IApMIDE2MS4wNzYgNjIuMjggCk0gMTYxLjA3NiA5OC4yOCAKTCAxNjEuMDc2IDk4LjI4IApMIDE2MS4wNzYgMTM0LjI4IAoiIGNsaXAtcGF0aD0idXJsKCNwNTliMTYxNzhiNCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF83Ij4KICAgIDxwYXRoIGQ9Ik0gMTYxLjA3NiAxMzQuMjggCkwgMTA3LjA3NiAxMzQuMjggCkwgNTMuMDc2IDEzNC4yOCAKIiBjbGlwLXBhdGg9InVybCgjcDU5YjE2MTc4YjQpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfOCI+CiAgICA8cGF0aCBkPSJNIDcxLjA3NiAxMS44OCAKTCAxMzIuMjc2IDExLjg4IAoiIGNsaXAtcGF0aD0idXJsKCNwNTliMTYxNzhiNCkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzQiPgogICAgPHBhdGggZD0iTSAxMzIuMjc2IDguMjggCkwgMTQzLjA3NiAxMS44OCAKTCAxMzIuMjc2IDE1LjQ4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3A1OWIxNjE3OGI0KSIvPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzEiPgogICAgPCEtLSAkVl97Y2N9JCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwLjYxNiA4NC4xNDMxMjUpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtT2JsaXF1ZS01NiIgZD0iTSAxMzE5IDAgCkwgNTAwIDQ2NjYgCkwgMTExOSA0NjY2IApMIDE3OTcgNjUzIApMIDQwNjMgNDY2NiAKTCA0NzUwIDQ2NjYgCkwgMjA1MyAwIApMIDEzMTkgMCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLU9ibGlxdWUtNjMiIGQ9Ik0gMzQzMSAzMzY2IApMIDMzMTYgMjc5NyAKUSAzMTA5IDI5NDcgMjg3NiAzMDIyIApRIDI2NDQgMzA5NyAyMzk0IDMwOTcgClEgMjExOSAzMDk3IDE4NzAgMzAwMCAKUSAxNjIyIDI5MDMgMTQ1MyAyNzI1IApRIDExODQgMjQ1MyAxMDM3IDIwODcgClEgODkxIDE3MjIgODkxIDEzMzEgClEgODkxIDg1OSAxMTI3IDYyOCAKUSAxMzYzIDM5NyAxODQ0IDM5NyAKUSAyMDgxIDM5NyAyMzQ4IDQ2OSAKUSAyNjE2IDU0MSAyOTA2IDY4NCAKTCAyNzk3IDExNiAKUSAyNTQ3IDEzIDIyODMgLTM5IApRIDIwMTkgLTkxIDE3NDEgLTkxIApRIDEwNDQgLTkxIDY2OSAyNTcgClEgMjk0IDYwNiAyOTQgMTI1MyAKUSAyOTQgMTc5NyA0ODkgMjI1NSAKUSA2ODQgMjcxMyAxMDY5IDMwNzggClEgMTMzMSAzMzI4IDE2ODQgMzQ1NiAKUSAyMDM4IDM1ODQgMjQ1NiAzNTg0IApRIDI3MDAgMzU4NCAyOTQwIDM1MjkgClEgMzE4MSAzNDc1IDM0MzEgMzM2NiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS01NiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjA5Mzc1KSIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS02MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjguNDA4MjAzIC0xNi4zMTI1KSBzY2FsZSgwLjcpIi8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy1PYmxpcXVlLTYzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDYuODk0NTMxIC0xNi4zMTI1KSBzY2FsZSgwLjcpIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMiI+CiAgICA8IS0tIFIgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDIuMjEyMDk0IDQ5LjUxNzgxMikgc2NhbGUoMC4xNCAtMC4xNCkiPgogICAgIDxkZWZzPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy01MiIgZD0iTSAyODQxIDIxODggClEgMzA0NCAyMTE5IDMyMzYgMTg5NCAKUSAzNDI4IDE2NjkgMzYyMiAxMjc1IApMIDQyNjMgMCAKTCAzNTg0IDAgCkwgMjk4OCAxMTk3IApRIDI3NTYgMTY2NiAyNTM5IDE4MTkgClEgMjMyMiAxOTcyIDE5NDcgMTk3MiAKTCAxMjU5IDE5NzIgCkwgMTI1OSAwIApMIDYyOCAwIApMIDYyOCA0NjY2IApMIDIwNTMgNDY2NiAKUSAyODUzIDQ2NjYgMzI0NyA0MzMxIApRIDM2NDEgMzk5NyAzNjQxIDMzMjIgClEgMzY0MSAyODgxIDM0MzYgMjU5MCAKUSAzMjMxIDIzMDAgMjg0MSAyMTg4IAp6Ck0gMTI1OSA0MTQ3IApMIDEyNTkgMjQ5MSAKTCAyMDUzIDI0OTEgClEgMjUwOSAyNDkxIDI3NDIgMjcwMiAKUSAyOTc1IDI5MTMgMjk3NSAzMzIyIApRIDI5NzUgMzczMSAyNzQyIDM5MzkgClEgMjUwOSA0MTQ3IDIwNTMgNDE0NyAKTCAxMjU5IDQxNDcgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTUyIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMyI+CiAgICA8IS0tIEEgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTYuMjg3NTYyIDg0LjE0MzEyNSkgc2NhbGUoMC4xNCAtMC4xNCkiPgogICAgIDxkZWZzPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy00MSIgZD0iTSAyMTg4IDQwNDQgCkwgMTMzMSAxNzIyIApMIDMwNDcgMTcyMiAKTCAyMTg4IDQwNDQgCnoKTSAxODMxIDQ2NjYgCkwgMjU0NyA0NjY2IApMIDQzMjUgMCAKTCAzNjY5IDAgCkwgMzI0NCAxMTk3IApMIDExNDEgMTE5NyAKTCA3MTYgMCAKTCA1MCAwIApMIDE4MzEgNDY2NiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtNDEiLz4KICAgIDwvZz4KICAgPC9nPgogIDwvZz4KIDwvZz4KIDxkZWZzPgogIDxjbGlwUGF0aCBpZD0icDU5YjE2MTc4YjQiPgogICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTgzLjc1NiIgaGVpZ2h0PSIxMzguOTYiLz4KICA8L2NsaXBQYXRoPgogPC9kZWZzPgo8L3N2Zz4K" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</section>
-</div>
-<div id="daa19196" class="cell quarto-layout-cell" data-execution_count="4" style="flex-basis: 33.3%;justify-content: flex-start;">
-<section id="medir-resistencia" class="level3">
-<h3 class="anchored" data-anchor-id="medir-resistencia">Medir Resistencia</h3>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjI5MS43NTZwdCIgaGVpZ2h0PSIxMzMuNTZwdCIgdmlld0JveD0iMCAwIDI5MS43NTYgMTMzLjU2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiA8bWV0YWRhdGE+CiAgPHJkZjpSREYgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICA8Y2M6V29yaz4KICAgIDxkYzp0eXBlIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiLz4KICAgIDxkYzpkYXRlPjIwMjYtMDEtMTZUMDg6MDQ6NTcuMDc1OTgwPC9kYzpkYXRlPgogICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICA8ZGM6Y3JlYXRvcj4KICAgICA8Y2M6QWdlbnQ+CiAgICAgIDxkYzp0aXRsZT5NYXRwbG90bGliIHYzLjEwLjgsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvPC9kYzp0aXRsZT4KICAgICA8L2NjOkFnZW50PgogICAgPC9kYzpjcmVhdG9yPgogICA8L2NjOldvcms+CiAgPC9yZGY6UkRGPgogPC9tZXRhZGF0YT4KIDxkZWZzPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+KntzdHJva2UtbGluZWpvaW46IHJvdW5kOyBzdHJva2UtbGluZWNhcDogYnV0dH08L3N0eWxlPgogPC9kZWZzPgogPGcgaWQ9ImZpZ3VyZV8xIj4KICA8ZyBpZD0icGF0Y2hfMSI+CiAgIDxwYXRoIGQ9Ik0gMCAxMzMuNTYgCkwgMjkxLjc1NiAxMzMuNTYgCkwgMjkxLjc1NiAwIApMIDAgMCAKegoiIHN0eWxlPSJmaWxsOiAjZmZmZmZmIi8+CiAgPC9nPgogIDxnIGlkPSJheGVzXzEiPgogICA8ZyBpZD0icGF0Y2hfMiI+CiAgICA8cGF0aCBkPSJNIDUzLjA3NiA5Mi44OCAKQyA1Ny44NDk2NTYgOTIuODggNjIuNDI4NDM4IDkwLjk4MzQwNiA2NS44MDM5MjIgODcuNjA3OTIyIApDIDY5LjE3OTQwNiA4NC4yMzI0MzggNzEuMDc2IDc5LjY1MzY1NiA3MS4wNzYgNzQuODggCkMgNzEuMDc2IDcwLjEwNjM0NCA2OS4xNzk0MDYgNjUuNTI3NTYyIDY1LjgwMzkyMiA2Mi4xNTIwNzggCkMgNjIuNDI4NDM4IDU4Ljc3NjU5NCA1Ny44NDk2NTYgNTYuODggNTMuMDc2IDU2Ljg4IApDIDQ4LjMwMjM0NCA1Ni44OCA0My43MjM1NjIgNTguNzc2NTk0IDQwLjM0ODA3OCA2Mi4xNTIwNzggCkMgMzYuOTcyNTk0IDY1LjUyNzU2MiAzNS4wNzYgNzAuMTA2MzQ0IDM1LjA3NiA3NC44OCAKQyAzNS4wNzYgNzkuNjUzNjU2IDM2Ljk3MjU5NCA4NC4yMzI0MzggNDAuMzQ4MDc4IDg3LjYwNzkyMiAKQyA0My43MjM1NjIgOTAuOTgzNDA2IDQ4LjMwMjM0NCA5Mi44OCA1My4wNzYgOTIuODggCkwgNTMuMDc2IDkyLjg4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3BhYThiOTI0NWFhKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzMiPgogICAgPHBhdGggZD0iTSAyNjkuMDc2IDkyLjg4IApDIDI3My44NDk2NTYgOTIuODggMjc4LjQyODQzOCA5MC45ODM0MDYgMjgxLjgwMzkyMiA4Ny42MDc5MjIgCkMgMjg1LjE3OTQwNiA4NC4yMzI0MzggMjg3LjA3NiA3OS42NTM2NTYgMjg3LjA3NiA3NC44OCAKQyAyODcuMDc2IDcwLjEwNjM0NCAyODUuMTc5NDA2IDY1LjUyNzU2MiAyODEuODAzOTIyIDYyLjE1MjA3OCAKQyAyNzguNDI4NDM4IDU4Ljc3NjU5NCAyNzMuODQ5NjU2IDU2Ljg4IDI2OS4wNzYgNTYuODggCkMgMjY0LjMwMjM0NCA1Ni44OCAyNTkuNzIzNTYyIDU4Ljc3NjU5NCAyNTYuMzQ4MDc4IDYyLjE1MjA3OCAKQyAyNTIuOTcyNTk0IDY1LjUyNzU2MiAyNTEuMDc2IDcwLjEwNjM0NCAyNTEuMDc2IDc0Ljg4IApDIDI1MS4wNzYgNzkuNjUzNjU2IDI1Mi45NzI1OTQgODQuMjMyNDM4IDI1Ni4zNDgwNzggODcuNjA3OTIyIApDIDI1OS43MjM1NjIgOTAuOTgzNDA2IDI2NC4zMDIzNDQgOTIuODggMjY5LjA3NiA5Mi44OCAKTCAyNjkuMDc2IDkyLjg4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3BhYThiOTI0NWFhKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xIj4KICAgIDxwYXRoIGQ9Ik0gNTMuMDc2IDEyOC44OCAKTCA1My4wNzYgOTIuODggCkwgNTMuMDc2IDkyLjg4IApNIDUzLjA3NiA1Ni44OCAKTCA1My4wNzYgNTYuODggCkwgNTMuMDc2IDIwLjg4IAoiIGNsaXAtcGF0aD0idXJsKCNwYWE4YjkyNDVhYSkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8yIj4KICAgIDxwYXRoIGQ9Ik0gNTYuNjc2IDgzLjg4IApMIDQ5LjQ3NiA4My44OCAKIiBjbGlwLXBhdGg9InVybCgjcGFhOGI5MjQ1YWEpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfMyI+CiAgICA8cGF0aCBkPSJNIDUzLjA3NiA2OS40OCAKTCA1My4wNzYgNjIuMjggCiIgY2xpcC1wYXRoPSJ1cmwoI3BhYThiOTI0NWFhKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzQiPgogICAgPHBhdGggZD0iTSA1Ni42NzYgNjUuODggCkwgNDkuNDc2IDY1Ljg4IAoiIGNsaXAtcGF0aD0idXJsKCNwYWE4YjkyNDVhYSkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF81Ij4KICAgIDxwYXRoIGQ9Ik0gNTMuMDc2IDIwLjg4IApMIDg5LjA3NiAyMC44OCAKTCAxMTkuNjc2IDQuNjggCk0gMTI1LjA3NiAyMC44OCAKTCAxNjEuMDc2IDIwLjg4IAoiIGNsaXAtcGF0aD0idXJsKCNwYWE4YjkyNDVhYSkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF82Ij4KICAgIDxwYXRoIGQ9Ik0gMTYxLjA3NiAyMC44OCAKTCAxNjEuMDc2IDU2Ljg4IApMIDE3MC4wNzYgNTkuODggCkwgMTUyLjA3NiA2NS44OCAKTCAxNzAuMDc2IDcxLjg4IApMIDE1Mi4wNzYgNzcuODggCkwgMTcwLjA3NiA4My44OCAKTCAxNTIuMDc2IDg5Ljg4IApMIDE2MS4wNzYgOTIuODggCkwgMTYxLjA3NiAxMjguODggCiIgY2xpcC1wYXRoPSJ1cmwoI3BhYThiOTI0NWFhKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzciPgogICAgPHBhdGggZD0iTSAxNjEuMDc2IDEyOC44OCAKTCAxMDcuMDc2IDEyOC44OCAKTCA1My4wNzYgMTI4Ljg4IAoiIGNsaXAtcGF0aD0idXJsKCNwYWE4YjkyNDVhYSkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF84Ij4KICAgIDxwYXRoIGQ9Ik0gMTYxLjA3NiAyMC44OCAKTCAyMTUuMDc2IDIwLjg4IApMIDI2OS4wNzYgMjAuODggCiIgY2xpcC1wYXRoPSJ1cmwoI3BhYThiOTI0NWFhKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzkiPgogICAgPHBhdGggZD0iTSAyNjkuMDc2IDIwLjg4IApMIDI2OS4wNzYgNTYuODggCkwgMjY5LjA3NiA1Ni44OCAKTSAyNjkuMDc2IDkyLjg4IApMIDI2OS4wNzYgOTIuODggCkwgMjY5LjA3NiAxMjguODggCiIgY2xpcC1wYXRoPSJ1cmwoI3BhYThiOTI0NWFhKSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzEwIj4KICAgIDxwYXRoIGQ9Ik0gMjY5LjA3NiAxMjguODggCkwgMTYxLjA3NiAxMjguODggCkwgNTMuMDc2IDEyOC44OCAKIiBjbGlwLXBhdGg9InVybCgjcGFhOGI5MjQ1YWEpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzEiPgogICAgPCEtLSAkVl97Y2N9JCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwLjYxNiA3OC43NDMxMjUpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtT2JsaXF1ZS01NiIgZD0iTSAxMzE5IDAgCkwgNTAwIDQ2NjYgCkwgMTExOSA0NjY2IApMIDE3OTcgNjUzIApMIDQwNjMgNDY2NiAKTCA0NzUwIDQ2NjYgCkwgMjA1MyAwIApMIDEzMTkgMCAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLU9ibGlxdWUtNjMiIGQ9Ik0gMzQzMSAzMzY2IApMIDMzMTYgMjc5NyAKUSAzMTA5IDI5NDcgMjg3NiAzMDIyIApRIDI2NDQgMzA5NyAyMzk0IDMwOTcgClEgMjExOSAzMDk3IDE4NzAgMzAwMCAKUSAxNjIyIDI5MDMgMTQ1MyAyNzI1IApRIDExODQgMjQ1MyAxMDM3IDIwODcgClEgODkxIDE3MjIgODkxIDEzMzEgClEgODkxIDg1OSAxMTI3IDYyOCAKUSAxMzYzIDM5NyAxODQ0IDM5NyAKUSAyMDgxIDM5NyAyMzQ4IDQ2OSAKUSAyNjE2IDU0MSAyOTA2IDY4NCAKTCAyNzk3IDExNiAKUSAyNTQ3IDEzIDIyODMgLTM5IApRIDIwMTkgLTkxIDE3NDEgLTkxIApRIDEwNDQgLTkxIDY2OSAyNTcgClEgMjk0IDYwNiAyOTQgMTI1MyAKUSAyOTQgMTc5NyA0ODkgMjI1NSAKUSA2ODQgMjcxMyAxMDY5IDMwNzggClEgMTMzMSAzMzI4IDE2ODQgMzQ1NiAKUSAyMDM4IDM1ODQgMjQ1NiAzNTg0IApRIDI3MDAgMzU4NCAyOTQwIDM1MjkgClEgMzE4MSAzNDc1IDM0MzEgMzM2NiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS01NiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjA5Mzc1KSIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS02MyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjguNDA4MjAzIC0xNi4zMTI1KSBzY2FsZSgwLjcpIi8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy1PYmxpcXVlLTYzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDYuODk0NTMxIC0xNi4zMTI1KSBzY2FsZSgwLjcpIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMiI+CiAgICA8IS0tIFIgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzguNzQ4MTg3IDc4Ljc0MzEyNSkgc2NhbGUoMC4xNCAtMC4xNCkiPgogICAgIDxkZWZzPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy01MiIgZD0iTSAyODQxIDIxODggClEgMzA0NCAyMTE5IDMyMzYgMTg5NCAKUSAzNDI4IDE2NjkgMzYyMiAxMjc1IApMIDQyNjMgMCAKTCAzNTg0IDAgCkwgMjk4OCAxMTk3IApRIDI3NTYgMTY2NiAyNTM5IDE4MTkgClEgMjMyMiAxOTcyIDE5NDcgMTk3MiAKTCAxMjU5IDE5NzIgCkwgMTI1OSAwIApMIDYyOCAwIApMIDYyOCA0NjY2IApMIDIwNTMgNDY2NiAKUSAyODUzIDQ2NjYgMzI0NyA0MzMxIApRIDM2NDEgMzk5NyAzNjQxIDMzMjIgClEgMzY0MSAyODgxIDM0MzYgMjU5MCAKUSAzMjMxIDIzMDAgMjg0MSAyMTg4IAp6Ck0gMTI1OSA0MTQ3IApMIDEyNTkgMjQ5MSAKTCAyMDUzIDI0OTEgClEgMjUwOSAyNDkxIDI3NDIgMjcwMiAKUSAyOTc1IDI5MTMgMjk3NSAzMzIyIApRIDI5NzUgMzczMSAyNzQyIDM5MzkgClEgMjUwOSA0MTQ3IDIwNTMgNDE0NyAKTCAxMjU5IDQxNDcgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTUyIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMyI+CiAgICA8IS0tICRcT21lZ2EkIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjYzLjY4NiA3OC43NDMxMjUpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtM2E5IiBkPSJNIDQ2NDcgNTU2IApMIDQ2NDcgMCAKTCAyNzcyIDAgCkwgMjc3MiA1NTYgClEgMzMyNSA4NTkgMzYzNCAxMzc4IApRIDM5NDQgMTg5NyAzOTQ0IDI1MjggClEgMzk0NCAzMjc4IDM1MzEgMzczMSAKUSAzMTE5IDQxODQgMjQ0NCA0MTg0IApRIDE3NjkgNDE4NCAxMzU1IDM3MjkgClEgOTQxIDMyNzUgOTQxIDI1MjggClEgOTQxIDE4OTcgMTI1MCAxMzc4IApRIDE1NjMgODU5IDIxMTkgNTU2IApMIDIxMTkgMCAKTCAyNDQgMCAKTCAyNDQgNTU2IApMIDEyNDEgNTU2IApRIDc0NyA5OTEgNTE5IDE0NTYgClEgMjk0IDE5MjIgMjk0IDI0OTcgClEgMjk0IDM0OTEgODk0IDQxMDYgClEgMTQ5MSA0NzIyIDI0NDQgNDcyMiAKUSAzMzkxIDQ3MjIgMzk5NCA0MTA2IApRIDQ1OTQgMzQ5NCA0NTk0IDI1MjggClEgNDU5NCAxOTIyIDQzNzIgMTQ1OSAKUSA0MTUwIDk5NyAzNjQ3IDU1NiAKTCA0NjQ3IDU1NiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtM2E5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuMjE4NzUpIi8+CiAgICA8L2c+CiAgIDwvZz4KICA8L2c+CiA8L2c+CiA8ZGVmcz4KICA8Y2xpcFBhdGggaWQ9InBhYThiOTI0NWFhIj4KICAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjI5MS43NTYiIGhlaWdodD0iMTMzLjU2Ii8+CiAgPC9jbGlwUGF0aD4KIDwvZGVmcz4KPC9zdmc+Cg==" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</section>
-</div>
-</div>
-</div>
-</div>
-<section id="ley-de-kirchhoff" class="level3">
-<h3 class="anchored" data-anchor-id="ley-de-kirchhoff">Ley de Kirchhoff</h3>
-<p>Si bien la Ley de Ohm es suficiente para circuitos simples, los sistemas industriales a menudo contienen múltiples componentes y ramificaciones. Para abordar esta complejidad, se utilizan las Leyes de Kirchhoff, que extienden la aplicación de la Ley de Ohm para analizar circuitos con múltiples mallas y nodos, garantizando el cumplimiento de los principios de conservación de carga y energía.</p>
-<ul>
-<li>Ley de Corrientes de Kirchhoff (LKC): Afirma que la suma algebraica de las corrientes que entran y salen de un nodo es igual a cero</li>
-<li>Ley de Voltajes de Kirchhoff (LKV): Establece que la suma algebraica de las caídas de voltaje en cualquier malla cerrada de un circuito es igual a cero</li>
-</ul>
-<p>Las Leyes de Kirchhoff y la Ley de Ohm se aplican de manera específica a las dos configuraciones básicas de un circuito: en serie y en paralelo. La comprensión de estas configuraciones es vital, ya que determinan cómo la corriente y el voltaje se distribuyen a lo largo del sistema y cómo se interconectan los componentes para lograr la funcionalidad deseada en aplicaciones industriales</p>
-</section>
-<div class="quarto-layout-panel" style="text-align: center; gap: 50px;" data-layout-nrow="2">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="409d2aa9" class="cell quarto-layout-cell" data-execution_count="5" style="flex-basis: 100.0%;justify-content: flex-start;">
-<section id="circuitos-en-serie" class="level3">
-<h3 class="anchored" data-anchor-id="circuitos-en-serie">Circuitos en serie</h3>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjUxMy4zNnB0IiBoZWlnaHQ9IjYyLjU2cHQiIHZpZXdCb3g9IjAgMCA1MTMuMzYgNjIuNTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIj4KIDxtZXRhZGF0YT4KICA8cmRmOlJERiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmNjPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9ucyMiIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgIDxjYzpXb3JrPgogICAgPGRjOnR5cGUgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIvPgogICAgPGRjOmRhdGU+MjAyNi0wMS0xNlQwODowNDo1Ny4xNTk5MDQ8L2RjOmRhdGU+CiAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgIDxkYzpjcmVhdG9yPgogICAgIDxjYzpBZ2VudD4KICAgICAgPGRjOnRpdGxlPk1hdHBsb3RsaWIgdjMuMTAuOCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy88L2RjOnRpdGxlPgogICAgIDwvY2M6QWdlbnQ+CiAgICA8L2RjOmNyZWF0b3I+CiAgIDwvY2M6V29yaz4KICA8L3JkZjpSREY+CiA8L21ldGFkYXRhPgogPGRlZnM+CiAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4qe3N0cm9rZS1saW5lam9pbjogcm91bmQ7IHN0cm9rZS1saW5lY2FwOiBidXR0fTwvc3R5bGU+CiA8L2RlZnM+CiA8ZyBpZD0iZmlndXJlXzEiPgogIDxnIGlkPSJwYXRjaF8xIj4KICAgPHBhdGggZD0iTSAwIDYyLjU2IApMIDUxMy4zNiA2Mi41NiAKTCA1MTMuMzYgMCAKTCAwIDAgCnoKIiBzdHlsZT0iZmlsbDogI2ZmZmZmZiIvPgogIDwvZz4KICA8ZyBpZD0iYXhlc18xIj4KICAgPGcgaWQ9InBhdGNoXzIiPgogICAgPHBhdGggZD0iTSAzNDYuNjggMzMuOTggCkMgMzQ3LjM5NjA0OCAzMy45OCAzNDguMDgyODY2IDMzLjY5NTUxMSAzNDguNTg5MTg4IDMzLjE4OTE4OCAKQyAzNDkuMDk1NTExIDMyLjY4Mjg2NiAzNDkuMzggMzEuOTk2MDQ4IDM0OS4zOCAzMS4yOCAKQyAzNDkuMzggMzAuNTYzOTUyIDM0OS4wOTU1MTEgMjkuODc3MTM0IDM0OC41ODkxODggMjkuMzcwODEyIApDIDM0OC4wODI4NjYgMjguODY0NDg5IDM0Ny4zOTYwNDggMjguNTggMzQ2LjY4IDI4LjU4IApDIDM0NS45NjM5NTIgMjguNTggMzQ1LjI3NzEzNCAyOC44NjQ0ODkgMzQ0Ljc3MDgxMiAyOS4zNzA4MTIgCkMgMzQ0LjI2NDQ4OSAyOS44NzcxMzQgMzQzLjk4IDMwLjU2Mzk1MiAzNDMuOTggMzEuMjggCkMgMzQzLjk4IDMxLjk5NjA0OCAzNDQuMjY0NDg5IDMyLjY4Mjg2NiAzNDQuNzcwODEyIDMzLjE4OTE4OCAKQyAzNDUuMjc3MTM0IDMzLjY5NTUxMSAzNDUuOTYzOTUyIDMzLjk4IDM0Ni42OCAzMy45OCAKegoiIGNsaXAtcGF0aD0idXJsKCNwNGY1Y2JlNTMwNCkiIHN0eWxlPSJzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlciIvPgogICA8L2c+CiAgIDxnIGlkPSJwYXRjaF8zIj4KICAgIDxwYXRoIGQ9Ik0gMzY0LjY4IDMzLjk4IApDIDM2NS4zOTYwNDggMzMuOTggMzY2LjA4Mjg2NiAzMy42OTU1MTEgMzY2LjU4OTE4OCAzMy4xODkxODggCkMgMzY3LjA5NTUxMSAzMi42ODI4NjYgMzY3LjM4IDMxLjk5NjA0OCAzNjcuMzggMzEuMjggCkMgMzY3LjM4IDMwLjU2Mzk1MiAzNjcuMDk1NTExIDI5Ljg3NzEzNCAzNjYuNTg5MTg4IDI5LjM3MDgxMiAKQyAzNjYuMDgyODY2IDI4Ljg2NDQ4OSAzNjUuMzk2MDQ4IDI4LjU4IDM2NC42OCAyOC41OCAKQyAzNjMuOTYzOTUyIDI4LjU4IDM2My4yNzcxMzQgMjguODY0NDg5IDM2Mi43NzA4MTIgMjkuMzcwODEyIApDIDM2Mi4yNjQ0ODkgMjkuODc3MTM0IDM2MS45OCAzMC41NjM5NTIgMzYxLjk4IDMxLjI4IApDIDM2MS45OCAzMS45OTYwNDggMzYyLjI2NDQ4OSAzMi42ODI4NjYgMzYyLjc3MDgxMiAzMy4xODkxODggCkMgMzYzLjI3NzEzNCAzMy42OTU1MTEgMzYzLjk2Mzk1MiAzMy45OCAzNjQuNjggMzMuOTggCnoKIiBjbGlwLXBhdGg9InVybCgjcDRmNWNiZTUzMDQpIiBzdHlsZT0ic3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lam9pbjogbWl0ZXIiLz4KICAgPC9nPgogICA8ZyBpZD0icGF0Y2hfNCI+CiAgICA8cGF0aCBkPSJNIDM4Mi42OCAzMy45OCAKQyAzODMuMzk2MDQ4IDMzLjk4IDM4NC4wODI4NjYgMzMuNjk1NTExIDM4NC41ODkxODggMzMuMTg5MTg4IApDIDM4NS4wOTU1MTEgMzIuNjgyODY2IDM4NS4zOCAzMS45OTYwNDggMzg1LjM4IDMxLjI4IApDIDM4NS4zOCAzMC41NjM5NTIgMzg1LjA5NTUxMSAyOS44NzcxMzQgMzg0LjU4OTE4OCAyOS4zNzA4MTIgCkMgMzg0LjA4Mjg2NiAyOC44NjQ0ODkgMzgzLjM5NjA0OCAyOC41OCAzODIuNjggMjguNTggCkMgMzgxLjk2Mzk1MiAyOC41OCAzODEuMjc3MTM0IDI4Ljg2NDQ4OSAzODAuNzcwODEyIDI5LjM3MDgxMiAKQyAzODAuMjY0NDg5IDI5Ljg3NzEzNCAzNzkuOTggMzAuNTYzOTUyIDM3OS45OCAzMS4yOCAKQyAzNzkuOTggMzEuOTk2MDQ4IDM4MC4yNjQ0ODkgMzIuNjgyODY2IDM4MC43NzA4MTIgMzMuMTg5MTg4IApDIDM4MS4yNzcxMzQgMzMuNjk1NTExIDM4MS45NjM5NTIgMzMuOTggMzgyLjY4IDMzLjk4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3A0ZjVjYmU1MzA0KSIgc3R5bGU9InN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xIj4KICAgIDxwYXRoIGQ9Ik0gNC42OCAzMS4yOCAKTCA0MC42OCAzMS4yOCAKTCA0My42OCAyMi4yOCAKTCA0OS42OCA0MC4yOCAKTCA1NS42OCAyMi4yOCAKTCA2MS42OCA0MC4yOCAKTCA2Ny42OCAyMi4yOCAKTCA3My42OCA0MC4yOCAKTCA3Ni42OCAzMS4yOCAKTCAxMTIuNjggMzEuMjggCiIgY2xpcC1wYXRoPSJ1cmwoI3A0ZjVjYmU1MzA0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzIiPgogICAgPHBhdGggZD0iTSAxMTIuNjggMzEuMjggCkwgMTQ4LjY4IDMxLjI4IApMIDE1MS42OCAyMi4yOCAKTCAxNTcuNjggNDAuMjggCkwgMTYzLjY4IDIyLjI4IApMIDE2OS42OCA0MC4yOCAKTCAxNzUuNjggMjIuMjggCkwgMTgxLjY4IDQwLjI4IApMIDE4NC42OCAzMS4yOCAKTCAyMjAuNjggMzEuMjggCiIgY2xpcC1wYXRoPSJ1cmwoI3A0ZjVjYmU1MzA0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzMiPgogICAgPHBhdGggZD0iTSAyMjAuNjggMzEuMjggCkwgMjU2LjY4IDMxLjI4IApMIDI1OS42OCAyMi4yOCAKTCAyNjUuNjggNDAuMjggCkwgMjcxLjY4IDIyLjI4IApMIDI3Ny42OCA0MC4yOCAKTCAyODMuNjggMjIuMjggCkwgMjg5LjY4IDQwLjI4IApMIDI5Mi42OCAzMS4yOCAKTCAzMjguNjggMzEuMjggCiIgY2xpcC1wYXRoPSJ1cmwoI3A0ZjVjYmU1MzA0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzQiPgogICAgPHBhdGggZD0iTSA0MDAuNjggMzEuMjggCkwgNDM2LjY4IDMxLjI4IApMIDQzOS42OCAyMi4yOCAKTCA0NDUuNjggNDAuMjggCkwgNDUxLjY4IDIyLjI4IApMIDQ1Ny42OCA0MC4yOCAKTCA0NjMuNjggMjIuMjggCkwgNDY5LjY4IDQwLjI4IApMIDQ3Mi42OCAzMS4yOCAKTCA1MDguNjggMzEuMjggCiIgY2xpcC1wYXRoPSJ1cmwoI3A0ZjVjYmU1MzA0KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF8xIj4KICAgIDwhLS0gJFJfMSQgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MC40OSA1NC41MTc4MTIpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtT2JsaXF1ZS01MiIgZD0iTSAxNjEzIDQxNDcgCkwgMTI5NCAyNDkxIApMIDIxMDYgMjQ5MSAKUSAyNTg0IDI0OTEgMjg3OSAyNzU1IApRIDMxNzUgMzAxOSAzMTc1IDM0NDQgClEgMzE3NSAzNzg0IDI5NzYgMzk2NSAKUSAyNzc4IDQxNDcgMjQwNiA0MTQ3IApMIDE2MTMgNDE0NyAKegpNIDI3NzIgMjI0MSAKUSAyOTcyIDIxOTQgMzEwNSAyMDA5IApRIDMyMzggMTgyNSAzNDEzIDEyNzUgCkwgMzgwOSAwIApMIDMxNDQgMCAKTCAyNzc4IDExOTcgClEgMjYzOCAxNjU5IDI0NTMgMTgxNSAKUSAyMjY5IDE5NzIgMTg4OCAxOTcyIApMIDExOTEgMTk3MiAKTCA4MDYgMCAKTCAxNzIgMCAKTCAxMDgxIDQ2NjYgCkwgMjUwMyA0NjY2IApRIDMxNTAgNDY2NiAzNDk1IDQzNzMgClEgMzg0MSA0MDgxIDM4NDEgMzUzMSAKUSAzODQxIDMwNDQgMzU0NyAyNjg3IApRIDMyNTMgMjMzMSAyNzcyIDIyNDEgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy0zMSIgZD0iTSA3OTQgNTMxIApMIDE4MjUgNTMxIApMIDE4MjUgNDA5MSAKTCA3MDMgMzg2NiAKTCA3MDMgNDQ0MSAKTCAxODE5IDQ2NjYgCkwgMjQ1MCA0NjY2IApMIDI0NTAgNTMxIApMIDM0ODEgNTMxIApMIDM0ODEgMCAKTCA3OTQgMCAKTCA3OTQgNTMxIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8L2RlZnM+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy1PYmxpcXVlLTUyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuMDkzNzUpIi8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjkuNDgyNDIyIC0xNi4zMTI1KSBzY2FsZSgwLjcpIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMiI+CiAgICA8IS0tICsgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNS44MTQyMTkgMTUuNzY4NDM3KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPGRlZnM+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLTJiIiBkPSJNIDI5NDQgNDAxMyAKTCAyOTQ0IDIyNzIgCkwgNDY4NCAyMjcyIApMIDQ2ODQgMTc0MSAKTCAyOTQ0IDE3NDEgCkwgMjk0NCAwIApMIDI0MTkgMCAKTCAyNDE5IDE3NDEgCkwgNjc4IDE3NDEgCkwgNjc4IDIyNzIgCkwgMjQxOSAyMjcyIApMIDI0MTkgNDAxMyAKTCAyOTQ0IDQwMTMgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTJiIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMyI+CiAgICA8IS0tICRWXzEkIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTAuNTYgMTUuNzY4NDM3KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPGRlZnM+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLU9ibGlxdWUtNTYiIGQ9Ik0gMTMxOSAwIApMIDUwMCA0NjY2IApMIDExMTkgNDY2NiAKTCAxNzk3IDY1MyAKTCA0MDYzIDQ2NjYgCkwgNDc1MCA0NjY2IApMIDIwNTMgMCAKTCAxMzE5IDAgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4wOTM3NSkiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTMxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OC40MDgyMDMgLTE2LjMxMjUpIHNjYWxlKDAuNykiLz4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF80Ij4KICAgIDwhLS0gLSAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgzLjE1NDUzMSAxNS43Njg0MzcpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtMmQiIGQ9Ik0gMzEzIDIwMDkgCkwgMTk5NyAyMDA5IApMIDE5OTcgMTQ5NyAKTCAzMTMgMTQ5NyAKTCAzMTMgMjAwOSAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtMmQiLz4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF81Ij4KICAgIDwhLS0gJFJfMiQgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTguNDkgNTQuNTE3ODEyKSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPGRlZnM+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLTMyIiBkPSJNIDEyMjggNTMxIApMIDM0MzEgNTMxIApMIDM0MzEgMCAKTCA0NjkgMCAKTCA0NjkgNTMxIApRIDgyOCA5MDMgMTQ0OCAxNTI5IApRIDIwNjkgMjE1NiAyMjI4IDIzMzggClEgMjUzMSAyNjc4IDI2NTEgMjkxNCAKUSAyNzcyIDMxNTAgMjc3MiAzMzc4IApRIDI3NzIgMzc1MCAyNTExIDM5ODQgClEgMjI1MCA0MjE5IDE4MzEgNDIxOSAKUSAxNTM0IDQyMTkgMTIwNCA0MTE2IApRIDg3NSA0MDEzIDUwMCAzODAzIApMIDUwMCA0NDQxIApRIDg4MSA0NTk0IDEyMTIgNDY3MiAKUSAxNTQ0IDQ3NTAgMTgxOSA0NzUwIApRIDI1NDQgNDc1MCAyOTc1IDQzODcgClEgMzQwNiA0MDI1IDM0MDYgMzQxOSAKUSAzNDA2IDMxMzEgMzI5OCAyODczIApRIDMxOTEgMjYxNiAyOTA2IDIyNjYgClEgMjgyOCAyMTc1IDI0MDkgMTc0MiAKUSAxOTkxIDEzMDkgMTIyOCA1MzEgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4wOTM3NSkiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTMyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OS40ODI0MjIgLTE2LjMxMjUpIHNjYWxlKDAuNykiLz4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF82Ij4KICAgIDwhLS0gKyAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzMy44MTQyMTkgMTUuNzY4NDM3KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0yYiIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzciPgogICAgPCEtLSAkVl8yJCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1OC41NiAxNS43Njg0MzcpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4wOTM3NSkiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTMyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OC40MDgyMDMgLTE2LjMxMjUpIHNjYWxlKDAuNykiLz4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF84Ij4KICAgIDwhLS0gLSAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE5MS4xNTQ1MzEgMTUuNzY4NDM3KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0yZCIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzkiPgogICAgPCEtLSAkUl8zJCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2Ni40OSA1NC41MTc4MTIpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtMzMiIGQ9Ik0gMjU5NyAyNTE2IApRIDMwNTAgMjQxOSAzMzA0IDIxMTIgClEgMzU1OSAxODA2IDM1NTkgMTM1NiAKUSAzNTU5IDY2NiAzMDg0IDI4NyAKUSAyNjA5IC05MSAxNzM0IC05MSAKUSAxNDQxIC05MSAxMTMwIC0zMyAKUSA4MTkgMjUgNDg4IDE0MSAKTCA0ODggNzUwIApRIDc1MCA1OTcgMTA2MiA1MTkgClEgMTM3NSA0NDEgMTcxNiA0NDEgClEgMjMwOSA0NDEgMjYyMCA2NzUgClEgMjkzMSA5MDkgMjkzMSAxMzU2IApRIDI5MzEgMTc2OSAyNjQyIDIwMDEgClEgMjM1MyAyMjM0IDE4MzggMjIzNCAKTCAxMjk0IDIyMzQgCkwgMTI5NCAyNzUzIApMIDE4NjMgMjc1MyAKUSAyMzI4IDI3NTMgMjU3NSAyOTM5IApRIDI4MjIgMzEyNSAyODIyIDM0NzUgClEgMjgyMiAzODM0IDI1NjcgNDAyNiAKUSAyMzEzIDQyMTkgMTgzOCA0MjE5IApRIDE1NzggNDIxOSAxMjgxIDQxNjIgClEgOTg0IDQxMDYgNjI4IDM5ODggCkwgNjI4IDQ1NTAgClEgOTg4IDQ2NTAgMTMwMiA0NzAwIApRIDE2MTYgNDc1MCAxODk0IDQ3NTAgClEgMjYxMyA0NzUwIDMwMzEgNDQyMyAKUSAzNDUwIDQwOTcgMzQ1MCAzNTQxIApRIDM0NTAgMzE1MyAzMjI4IDI4ODYgClEgMzAwNiAyNjE5IDI1OTcgMjUxNiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS01MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjA5Mzc1KSIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtMzMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjQ4MjQyMiAtMTYuMzEyNSkgc2NhbGUoMC43KSIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzEwIj4KICAgIDwhLS0gKyAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0MS44MTQyMTkgMTUuNzY4NDM3KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0yYiIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzExIj4KICAgIDwhLS0gJFZfMyQgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNjYuNTYgMTUuNzY4NDM3KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy1PYmxpcXVlLTU2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuMDkzNzUpIi8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0zMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjguNDA4MjAzIC0xNi4zMTI1KSBzY2FsZSgwLjcpIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMTIiPgogICAgPCEtLSAtIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjk5LjE1NDUzMSAxNS43Njg0MzcpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTJkIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMTMiPgogICAgPCEtLSAkUl9uJCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ0Ni40OSA1NC41MTc4MTIpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtT2JsaXF1ZS02ZSIgZD0iTSAzNTY2IDIxMTMgCkwgMzE1NiAwIApMIDI1NzggMCAKTCAyOTg4IDIwOTEgClEgMzAxNiAyMjM4IDMwMzEgMjM1MCAKUSAzMDQ3IDI0NjMgMzA0NyAyNTI4IApRIDMwNDcgMjc5MSAyODgxIDI5MzcgClEgMjcxNiAzMDg0IDI0MTkgMzA4NCAKUSAxOTU2IDMwODQgMTYyMiAyNzc2IApRIDEyODggMjQ2OSAxMTg0IDE5NDEgCkwgODAwIDAgCkwgMjI1IDAgCkwgOTAzIDM1MDAgCkwgMTQ3OCAzNTAwIApMIDEzNjMgMjk1MCAKUSAxNjAzIDMyNTMgMTk0MCAzNDE4IApRIDIyNzggMzU4NCAyNjUwIDM1ODQgClEgMzExMyAzNTg0IDMzNjcgMzMzNCAKUSAzNjIyIDMwODQgMzYyMiAyNjMxIApRIDM2MjIgMjUxOSAzNjA4IDIzOTEgClEgMzU5NCAyMjYzIDM1NjYgMjExMyAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS01MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjA5Mzc1KSIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS02ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjkuNDgyNDIyIC0xNi4zMTI1KSBzY2FsZSgwLjcpIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMTQiPgogICAgPCEtLSArIC0tPgogICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDIxLjgxNDIxOSAxNS43Njg0MzcpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTJiIi8+CiAgICA8L2c+CiAgIDwvZz4KICAgPGcgaWQ9InRleHRfMTUiPgogICAgPCEtLSAkVl9uJCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ0Ni41NiAxNS43Njg0MzcpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNTYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4wOTM3NSkiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNmUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY4LjQwODIwMyAtMTYuMzEyNSkgc2NhbGUoMC43KSIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzE2Ij4KICAgIDwhLS0gLSAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ3OS4xNTQ1MzEgMTUuNzY4NDM3KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy0yZCIvPgogICAgPC9nPgogICA8L2c+CiAgPC9nPgogPC9nPgogPGRlZnM+CiAgPGNsaXBQYXRoIGlkPSJwNGY1Y2JlNTMwNCI+CiAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI1MTMuMzYiIGhlaWdodD0iNjIuNTYiLz4KICA8L2NsaXBQYXRoPgogPC9kZWZzPgo8L3N2Zz4K" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</section>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<section id="section" class="level3 quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<h3 class="anchored" data-anchor-id="section"></h3>
-<p><span class="math display">\[
-V_{TOTAL} = V_1 + V_2 + V_3 + \dots + V_n
-\]</span> <span class="math display">\[
-I_{TOTAL} = I_1 = I_2 = I_3 = \dots = I_n
-\]</span> <span class="math display">\[
-R_{TOTAL} = R_1 + R_2 + R_3 + \dots + R_n
-\]</span></p>
-</section>
-</div>
-</div>
-<div class="quarto-layout-panel" style="text-align: center; gap: 50px;" data-layout-nrow="2">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div id="19141d0a" class="cell quarto-layout-cell" data-execution_count="6" style="flex-basis: 100.0%;justify-content: flex-start;">
-<section id="circuitos-en-paralelo" class="level3">
-<h3 class="anchored" data-anchor-id="circuitos-en-paralelo">Circuitos en paralelo</h3>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIKICAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjMyNC4zNnB0IiBoZWlnaHQ9IjEyMi43NnB0IiB2aWV3Qm94PSIwIDAgMzI0LjM2IDEyMi43NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiPgogPG1ldGFkYXRhPgogIDxyZGY6UkRGIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgPGNjOldvcms+CiAgICA8ZGM6dHlwZSByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIi8+CiAgICA8ZGM6ZGF0ZT4yMDI2LTAxLTE2VDA4OjA0OjU3LjI2MzQ1ODwvZGM6ZGF0ZT4KICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgPGRjOmNyZWF0b3I+CiAgICAgPGNjOkFnZW50PgogICAgICA8ZGM6dGl0bGU+TWF0cGxvdGxpYiB2My4xMC44LCBodHRwczovL21hdHBsb3RsaWIub3JnLzwvZGM6dGl0bGU+CiAgICAgPC9jYzpBZ2VudD4KICAgIDwvZGM6Y3JlYXRvcj4KICAgPC9jYzpXb3JrPgogIDwvcmRmOlJERj4KIDwvbWV0YWRhdGE+CiA8ZGVmcz4KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPip7c3Ryb2tlLWxpbmVqb2luOiByb3VuZDsgc3Ryb2tlLWxpbmVjYXA6IGJ1dHR9PC9zdHlsZT4KIDwvZGVmcz4KIDxnIGlkPSJmaWd1cmVfMSI+CiAgPGcgaWQ9InBhdGNoXzEiPgogICA8cGF0aCBkPSJNIDAgMTIyLjc2IApMIDMyNC4zNiAxMjIuNzYgCkwgMzI0LjM2IDAgCkwgMCAwIAp6CiIgc3R5bGU9ImZpbGw6ICNmZmZmZmYiLz4KICA8L2c+CiAgPGcgaWQ9ImF4ZXNfMSI+CiAgIDxnIGlkPSJwYXRjaF8yIj4KICAgIDxwYXRoIGQ9Ik0gMjAyLjY4IDEwLjA4IApDIDIwMy4zOTYwNDggMTAuMDggMjA0LjA4Mjg2NiA5Ljc5NTUxMSAyMDQuNTg5MTg4IDkuMjg5MTg4IApDIDIwNS4wOTU1MTEgOC43ODI4NjYgMjA1LjM4IDguMDk2MDQ4IDIwNS4zOCA3LjM4IApDIDIwNS4zOCA2LjY2Mzk1MiAyMDUuMDk1NTExIDUuOTc3MTM0IDIwNC41ODkxODggNS40NzA4MTIgCkMgMjA0LjA4Mjg2NiA0Ljk2NDQ4OSAyMDMuMzk2MDQ4IDQuNjggMjAyLjY4IDQuNjggCkMgMjAxLjk2Mzk1MiA0LjY4IDIwMS4yNzcxMzQgNC45NjQ0ODkgMjAwLjc3MDgxMiA1LjQ3MDgxMiAKQyAyMDAuMjY0NDg5IDUuOTc3MTM0IDE5OS45OCA2LjY2Mzk1MiAxOTkuOTggNy4zOCAKQyAxOTkuOTggOC4wOTYwNDggMjAwLjI2NDQ4OSA4Ljc4Mjg2NiAyMDAuNzcwODEyIDkuMjg5MTg4IApDIDIwMS4yNzcxMzQgOS43OTU1MTEgMjAxLjk2Mzk1MiAxMC4wOCAyMDIuNjggMTAuMDggCnoKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0ic3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lam9pbjogbWl0ZXIiLz4KICAgPC9nPgogICA8ZyBpZD0icGF0Y2hfMyI+CiAgICA8cGF0aCBkPSJNIDIyMC42OCAxMC4wOCAKQyAyMjEuMzk2MDQ4IDEwLjA4IDIyMi4wODI4NjYgOS43OTU1MTEgMjIyLjU4OTE4OCA5LjI4OTE4OCAKQyAyMjMuMDk1NTExIDguNzgyODY2IDIyMy4zOCA4LjA5NjA0OCAyMjMuMzggNy4zOCAKQyAyMjMuMzggNi42NjM5NTIgMjIzLjA5NTUxMSA1Ljk3NzEzNCAyMjIuNTg5MTg4IDUuNDcwODEyIApDIDIyMi4wODI4NjYgNC45NjQ0ODkgMjIxLjM5NjA0OCA0LjY4IDIyMC42OCA0LjY4IApDIDIxOS45NjM5NTIgNC42OCAyMTkuMjc3MTM0IDQuOTY0NDg5IDIxOC43NzA4MTIgNS40NzA4MTIgCkMgMjE4LjI2NDQ4OSA1Ljk3NzEzNCAyMTcuOTggNi42NjM5NTIgMjE3Ljk4IDcuMzggCkMgMjE3Ljk4IDguMDk2MDQ4IDIxOC4yNjQ0ODkgOC43ODI4NjYgMjE4Ljc3MDgxMiA5LjI4OTE4OCAKQyAyMTkuMjc3MTM0IDkuNzk1NTExIDIxOS45NjM5NTIgMTAuMDggMjIwLjY4IDEwLjA4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3AzNzE5NjA4MTQ5KSIgc3R5bGU9InN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzQiPgogICAgPHBhdGggZD0iTSAyMzguNjggMTAuMDggCkMgMjM5LjM5NjA0OCAxMC4wOCAyNDAuMDgyODY2IDkuNzk1NTExIDI0MC41ODkxODggOS4yODkxODggCkMgMjQxLjA5NTUxMSA4Ljc4Mjg2NiAyNDEuMzggOC4wOTYwNDggMjQxLjM4IDcuMzggCkMgMjQxLjM4IDYuNjYzOTUyIDI0MS4wOTU1MTEgNS45NzcxMzQgMjQwLjU4OTE4OCA1LjQ3MDgxMiAKQyAyNDAuMDgyODY2IDQuOTY0NDg5IDIzOS4zOTYwNDggNC42OCAyMzguNjggNC42OCAKQyAyMzcuOTYzOTUyIDQuNjggMjM3LjI3NzEzNCA0Ljk2NDQ4OSAyMzYuNzcwODEyIDUuNDcwODEyIApDIDIzNi4yNjQ0ODkgNS45NzcxMzQgMjM1Ljk4IDYuNjYzOTUyIDIzNS45OCA3LjM4IApDIDIzNS45OCA4LjA5NjA0OCAyMzYuMjY0NDg5IDguNzgyODY2IDIzNi43NzA4MTIgOS4yODkxODggCkMgMjM3LjI3NzEzNCA5Ljc5NTUxMSAyMzcuOTYzOTUyIDEwLjA4IDIzOC42OCAxMC4wOCAKegoiIGNsaXAtcGF0aD0idXJsKCNwMzcxOTYwODE0OSkiIHN0eWxlPSJzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlciIvPgogICA8L2c+CiAgIDxnIGlkPSJwYXRjaF81Ij4KICAgIDxwYXRoIGQ9Ik0gMjAyLjY4IDExOC4wOCAKQyAyMDMuMzk2MDQ4IDExOC4wOCAyMDQuMDgyODY2IDExNy43OTU1MTEgMjA0LjU4OTE4OCAxMTcuMjg5MTg4IApDIDIwNS4wOTU1MTEgMTE2Ljc4Mjg2NiAyMDUuMzggMTE2LjA5NjA0OCAyMDUuMzggMTE1LjM4IApDIDIwNS4zOCAxMTQuNjYzOTUyIDIwNS4wOTU1MTEgMTEzLjk3NzEzNCAyMDQuNTg5MTg4IDExMy40NzA4MTIgCkMgMjA0LjA4Mjg2NiAxMTIuOTY0NDg5IDIwMy4zOTYwNDggMTEyLjY4IDIwMi42OCAxMTIuNjggCkMgMjAxLjk2Mzk1MiAxMTIuNjggMjAxLjI3NzEzNCAxMTIuOTY0NDg5IDIwMC43NzA4MTIgMTEzLjQ3MDgxMiAKQyAyMDAuMjY0NDg5IDExMy45NzcxMzQgMTk5Ljk4IDExNC42NjM5NTIgMTk5Ljk4IDExNS4zOCAKQyAxOTkuOTggMTE2LjA5NjA0OCAyMDAuMjY0NDg5IDExNi43ODI4NjYgMjAwLjc3MDgxMiAxMTcuMjg5MTg4IApDIDIwMS4yNzcxMzQgMTE3Ljc5NTUxMSAyMDEuOTYzOTUyIDExOC4wOCAyMDIuNjggMTE4LjA4IAp6CiIgY2xpcC1wYXRoPSJ1cmwoI3AzNzE5NjA4MTQ5KSIgc3R5bGU9InN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWpvaW46IG1pdGVyIi8+CiAgIDwvZz4KICAgPGcgaWQ9InBhdGNoXzYiPgogICAgPHBhdGggZD0iTSAyMjAuNjggMTE4LjA4IApDIDIyMS4zOTYwNDggMTE4LjA4IDIyMi4wODI4NjYgMTE3Ljc5NTUxMSAyMjIuNTg5MTg4IDExNy4yODkxODggCkMgMjIzLjA5NTUxMSAxMTYuNzgyODY2IDIyMy4zOCAxMTYuMDk2MDQ4IDIyMy4zOCAxMTUuMzggCkMgMjIzLjM4IDExNC42NjM5NTIgMjIzLjA5NTUxMSAxMTMuOTc3MTM0IDIyMi41ODkxODggMTEzLjQ3MDgxMiAKQyAyMjIuMDgyODY2IDExMi45NjQ0ODkgMjIxLjM5NjA0OCAxMTIuNjggMjIwLjY4IDExMi42OCAKQyAyMTkuOTYzOTUyIDExMi42OCAyMTkuMjc3MTM0IDExMi45NjQ0ODkgMjE4Ljc3MDgxMiAxMTMuNDcwODEyIApDIDIxOC4yNjQ0ODkgMTEzLjk3NzEzNCAyMTcuOTggMTE0LjY2Mzk1MiAyMTcuOTggMTE1LjM4IApDIDIxNy45OCAxMTYuMDk2MDQ4IDIxOC4yNjQ0ODkgMTE2Ljc4Mjg2NiAyMTguNzcwODEyIDExNy4yODkxODggCkMgMjE5LjI3NzEzNCAxMTcuNzk1NTExIDIxOS45NjM5NTIgMTE4LjA4IDIyMC42OCAxMTguMDggCnoKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0ic3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lam9pbjogbWl0ZXIiLz4KICAgPC9nPgogICA8ZyBpZD0icGF0Y2hfNyI+CiAgICA8cGF0aCBkPSJNIDIzOC42OCAxMTguMDggCkMgMjM5LjM5NjA0OCAxMTguMDggMjQwLjA4Mjg2NiAxMTcuNzk1NTExIDI0MC41ODkxODggMTE3LjI4OTE4OCAKQyAyNDEuMDk1NTExIDExNi43ODI4NjYgMjQxLjM4IDExNi4wOTYwNDggMjQxLjM4IDExNS4zOCAKQyAyNDEuMzggMTE0LjY2Mzk1MiAyNDEuMDk1NTExIDExMy45NzcxMzQgMjQwLjU4OTE4OCAxMTMuNDcwODEyIApDIDI0MC4wODI4NjYgMTEyLjk2NDQ4OSAyMzkuMzk2MDQ4IDExMi42OCAyMzguNjggMTEyLjY4IApDIDIzNy45NjM5NTIgMTEyLjY4IDIzNy4yNzcxMzQgMTEyLjk2NDQ4OSAyMzYuNzcwODEyIDExMy40NzA4MTIgCkMgMjM2LjI2NDQ4OSAxMTMuOTc3MTM0IDIzNS45OCAxMTQuNjYzOTUyIDIzNS45OCAxMTUuMzggCkMgMjM1Ljk4IDExNi4wOTYwNDggMjM2LjI2NDQ4OSAxMTYuNzgyODY2IDIzNi43NzA4MTIgMTE3LjI4OTE4OCAKQyAyMzcuMjc3MTM0IDExNy43OTU1MTEgMjM3Ljk2Mzk1MiAxMTguMDggMjM4LjY4IDExOC4wOCAKegoiIGNsaXAtcGF0aD0idXJsKCNwMzcxOTYwODE0OSkiIHN0eWxlPSJzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVqb2luOiBtaXRlciIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfMSI+CiAgICA8cGF0aCBkPSJNIDQuNjggNy4zOCAKTCAzMS42OCA3LjM4IApMIDU4LjY4IDcuMzggCiIgY2xpcC1wYXRoPSJ1cmwoI3AzNzE5NjA4MTQ5KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzIiPgogICAgPHBhdGggZD0iTSA1OC42OCA3LjM4IApMIDU4LjY4IDQzLjM4IApMIDY3LjY4IDQ2LjM4IApMIDQ5LjY4IDUyLjM4IApMIDY3LjY4IDU4LjM4IApMIDQ5LjY4IDY0LjM4IApMIDY3LjY4IDcwLjM4IApMIDQ5LjY4IDc2LjM4IApMIDU4LjY4IDc5LjM4IApMIDU4LjY4IDExNS4zOCAKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfMyI+CiAgICA8cGF0aCBkPSJNIDU4LjY4IDExNS4zOCAKTCAzMS42OCAxMTUuMzggCkwgNC42OCAxMTUuMzggCiIgY2xpcC1wYXRoPSJ1cmwoI3AzNzE5NjA4MTQ5KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzQiPgogICAgPHBhdGggZD0iTSA1OC42OCA3LjM4IApMIDg1LjY4IDcuMzggCkwgMTEyLjY4IDcuMzggCiIgY2xpcC1wYXRoPSJ1cmwoI3AzNzE5NjA4MTQ5KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzUiPgogICAgPHBhdGggZD0iTSAxMTIuNjggNy4zOCAKTCAxMTIuNjggNDMuMzggCkwgMTIxLjY4IDQ2LjM4IApMIDEwMy42OCA1Mi4zOCAKTCAxMjEuNjggNTguMzggCkwgMTAzLjY4IDY0LjM4IApMIDEyMS42OCA3MC4zOCAKTCAxMDMuNjggNzYuMzggCkwgMTEyLjY4IDc5LjM4IApMIDExMi42OCAxMTUuMzggCiIgY2xpcC1wYXRoPSJ1cmwoI3AzNzE5NjA4MTQ5KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzYiPgogICAgPHBhdGggZD0iTSAxMTIuNjggMTE1LjM4IApMIDg1LjY4IDExNS4zOCAKTCA1OC42OCAxMTUuMzggCiIgY2xpcC1wYXRoPSJ1cmwoI3AzNzE5NjA4MTQ5KSIgc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZTogIzAwMDAwMDsgc3Ryb2tlLXdpZHRoOiAyOyBzdHJva2UtbGluZWNhcDogcm91bmQiLz4KICAgPC9nPgogICA8ZyBpZD0ibGluZTJkXzciPgogICAgPHBhdGggZD0iTSAxMTIuNjggNy4zOCAKTCAxMzkuNjggNy4zOCAKTCAxNjYuNjggNy4zOCAKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfOCI+CiAgICA8cGF0aCBkPSJNIDE2Ni42OCA3LjM4IApMIDE2Ni42OCA0My4zOCAKTCAxNzUuNjggNDYuMzggCkwgMTU3LjY4IDUyLjM4IApMIDE3NS42OCA1OC4zOCAKTCAxNTcuNjggNjQuMzggCkwgMTc1LjY4IDcwLjM4IApMIDE1Ny42OCA3Ni4zOCAKTCAxNjYuNjggNzkuMzggCkwgMTY2LjY4IDExNS4zOCAKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfOSI+CiAgICA8cGF0aCBkPSJNIDE2Ni42OCAxMTUuMzggCkwgMTM5LjY4IDExNS4zOCAKTCAxMTIuNjggMTE1LjM4IAoiIGNsaXAtcGF0aD0idXJsKCNwMzcxOTYwODE0OSkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xMCI+CiAgICA8cGF0aCBkPSJNIDE2Ni42OCA3LjM4IApMIDE3NS42OCA3LjM4IApMIDE4NC42OCA3LjM4IAoiIGNsaXAtcGF0aD0idXJsKCNwMzcxOTYwODE0OSkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xMSI+CiAgICA8cGF0aCBkPSJNIDI1Ni42OCA3LjM4IApMIDI4My42OCA3LjM4IApMIDMxMC42OCA3LjM4IAoiIGNsaXAtcGF0aD0idXJsKCNwMzcxOTYwODE0OSkiIHN0eWxlPSJmaWxsOiBub25lOyBzdHJva2U6ICMwMDAwMDA7IHN0cm9rZS13aWR0aDogMjsgc3Ryb2tlLWxpbmVjYXA6IHJvdW5kIi8+CiAgIDwvZz4KICAgPGcgaWQ9ImxpbmUyZF8xMiI+CiAgICA8cGF0aCBkPSJNIDMxMC42OCA3LjM4IApMIDMxMC42OCA0My4zOCAKTCAzMTkuNjggNDYuMzggCkwgMzAxLjY4IDUyLjM4IApMIDMxOS42OCA1OC4zOCAKTCAzMDEuNjggNjQuMzggCkwgMzE5LjY4IDcwLjM4IApMIDMwMS42OCA3Ni4zOCAKTCAzMTAuNjggNzkuMzggCkwgMzEwLjY4IDExNS4zOCAKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfMTMiPgogICAgPHBhdGggZD0iTSAzMTAuNjggMTE1LjM4IApMIDI4My42OCAxMTUuMzggCkwgMjU2LjY4IDExNS4zOCAKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJsaW5lMmRfMTQiPgogICAgPHBhdGggZD0iTSAxNjYuNjggMTE1LjM4IApMIDE3NS42OCAxMTUuMzggCkwgMTg0LjY4IDExNS4zOCAKIiBjbGlwLXBhdGg9InVybCgjcDM3MTk2MDgxNDkpIiBzdHlsZT0iZmlsbDogbm9uZTsgc3Ryb2tlOiAjMDAwMDAwOyBzdHJva2Utd2lkdGg6IDI7IHN0cm9rZS1saW5lY2FwOiByb3VuZCIvPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzEiPgogICAgPCEtLSAkUl8xJCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI5LjcgNjUuMjQzMTI1KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPGRlZnM+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLU9ibGlxdWUtNTIiIGQ9Ik0gMTYxMyA0MTQ3IApMIDEyOTQgMjQ5MSAKTCAyMTA2IDI0OTEgClEgMjU4NCAyNDkxIDI4NzkgMjc1NSAKUSAzMTc1IDMwMTkgMzE3NSAzNDQ0IApRIDMxNzUgMzc4NCAyOTc2IDM5NjUgClEgMjc3OCA0MTQ3IDI0MDYgNDE0NyAKTCAxNjEzIDQxNDcgCnoKTSAyNzcyIDIyNDEgClEgMjk3MiAyMTk0IDMxMDUgMjAwOSAKUSAzMjM4IDE4MjUgMzQxMyAxMjc1IApMIDM4MDkgMCAKTCAzMTQ0IDAgCkwgMjc3OCAxMTk3IApRIDI2MzggMTY1OSAyNDUzIDE4MTUgClEgMjI2OSAxOTcyIDE4ODggMTk3MiAKTCAxMTkxIDE5NzIgCkwgODA2IDAgCkwgMTcyIDAgCkwgMTA4MSA0NjY2IApMIDI1MDMgNDY2NiAKUSAzMTUwIDQ2NjYgMzQ5NSA0MzczIApRIDM4NDEgNDA4MSAzODQxIDM1MzEgClEgMzg0MSAzMDQ0IDM1NDcgMjY4NyAKUSAzMjUzIDIzMzEgMjc3MiAyMjQxIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtMzEiIGQ9Ik0gNzk0IDUzMSAKTCAxODI1IDUzMSAKTCAxODI1IDQwOTEgCkwgNzAzIDM4NjYgCkwgNzAzIDQ0NDEgCkwgMTgxOSA0NjY2IApMIDI0NTAgNDY2NiAKTCAyNDUwIDUzMSAKTCAzNDgxIDUzMSAKTCAzNDgxIDAgCkwgNzk0IDAgCkwgNzk0IDUzMSAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS01MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjA5Mzc1KSIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtMzEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjQ4MjQyMiAtMTYuMzEyNSkgc2NhbGUoMC43KSIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzIiPgogICAgPCEtLSAkUl8yJCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgzLjcgNjUuMjQzMTI1KSBzY2FsZSgwLjE0IC0wLjE0KSI+CiAgICAgPGRlZnM+CiAgICAgIDxwYXRoIGlkPSJEZWphVnVTYW5zLTMyIiBkPSJNIDEyMjggNTMxIApMIDM0MzEgNTMxIApMIDM0MzEgMCAKTCA0NjkgMCAKTCA0NjkgNTMxIApRIDgyOCA5MDMgMTQ0OCAxNTI5IApRIDIwNjkgMjE1NiAyMjI4IDIzMzggClEgMjUzMSAyNjc4IDI2NTEgMjkxNCAKUSAyNzcyIDMxNTAgMjc3MiAzMzc4IApRIDI3NzIgMzc1MCAyNTExIDM5ODQgClEgMjI1MCA0MjE5IDE4MzEgNDIxOSAKUSAxNTM0IDQyMTkgMTIwNCA0MTE2IApRIDg3NSA0MDEzIDUwMCAzODAzIApMIDUwMCA0NDQxIApRIDg4MSA0NTk0IDEyMTIgNDY3MiAKUSAxNTQ0IDQ3NTAgMTgxOSA0NzUwIApRIDI1NDQgNDc1MCAyOTc1IDQzODcgClEgMzQwNiA0MDI1IDM0MDYgMzQxOSAKUSAzNDA2IDMxMzEgMzI5OCAyODczIApRIDMxOTEgMjYxNiAyOTA2IDIyNjYgClEgMjgyOCAyMTc1IDI0MDkgMTc0MiAKUSAxOTkxIDEzMDkgMTIyOCA1MzEgCnoKIiB0cmFuc2Zvcm09InNjYWxlKDAuMDE1NjI1KSIvPgogICAgIDwvZGVmcz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLU9ibGlxdWUtNTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC4wOTM3NSkiLz4KICAgICA8dXNlIHhsaW5rOmhyZWY9IiNEZWphVnVTYW5zLTMyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OS40ODI0MjIgLTE2LjMxMjUpIHNjYWxlKDAuNykiLz4KICAgIDwvZz4KICAgPC9nPgogICA8ZyBpZD0idGV4dF8zIj4KICAgIDwhLS0gJFJfMyQgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzcuNyA2NS4yNDMxMjUpIHNjYWxlKDAuMTQgLTAuMTQpIj4KICAgICA8ZGVmcz4KICAgICAgPHBhdGggaWQ9IkRlamFWdVNhbnMtMzMiIGQ9Ik0gMjU5NyAyNTE2IApRIDMwNTAgMjQxOSAzMzA0IDIxMTIgClEgMzU1OSAxODA2IDM1NTkgMTM1NiAKUSAzNTU5IDY2NiAzMDg0IDI4NyAKUSAyNjA5IC05MSAxNzM0IC05MSAKUSAxNDQxIC05MSAxMTMwIC0zMyAKUSA4MTkgMjUgNDg4IDE0MSAKTCA0ODggNzUwIApRIDc1MCA1OTcgMTA2MiA1MTkgClEgMTM3NSA0NDEgMTcxNiA0NDEgClEgMjMwOSA0NDEgMjYyMCA2NzUgClEgMjkzMSA5MDkgMjkzMSAxMzU2IApRIDI5MzEgMTc2OSAyNjQyIDIwMDEgClEgMjM1MyAyMjM0IDE4MzggMjIzNCAKTCAxMjk0IDIyMzQgCkwgMTI5NCAyNzUzIApMIDE4NjMgMjc1MyAKUSAyMzI4IDI3NTMgMjU3NSAyOTM5IApRIDI4MjIgMzEyNSAyODIyIDM0NzUgClEgMjgyMiAzODM0IDI1NjcgNDAyNiAKUSAyMzEzIDQyMTkgMTgzOCA0MjE5IApRIDE1NzggNDIxOSAxMjgxIDQxNjIgClEgOTg0IDQxMDYgNjI4IDM5ODggCkwgNjI4IDQ1NTAgClEgOTg4IDQ2NTAgMTMwMiA0NzAwIApRIDE2MTYgNDc1MCAxODk0IDQ3NTAgClEgMjYxMyA0NzUwIDMwMzEgNDQyMyAKUSAzNDUwIDQwOTcgMzQ1MCAzNTQxIApRIDM0NTAgMzE1MyAzMjI4IDI4ODYgClEgMzAwNiAyNjE5IDI1OTcgMjUxNiAKegoiIHRyYW5zZm9ybT0ic2NhbGUoMC4wMTU2MjUpIi8+CiAgICAgPC9kZWZzPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtT2JsaXF1ZS01MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjA5Mzc1KSIvPgogICAgIDx1c2UgeGxpbms6aHJlZj0iI0RlamFWdVNhbnMtMzMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjQ4MjQyMiAtMTYuMzEyNSkgc2NhbGUoMC43KSIvPgogICAgPC9nPgogICA8L2c+CiAgIDxnIGlkPSJ0ZXh0XzQiPgogICAgPCEtLSAkUl9uJCAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4MS43IDY1LjI0MzEyNSkgc2NhbGUoMC4xNCAtMC4xNCkiPgogICAgIDxkZWZzPgogICAgICA8cGF0aCBpZD0iRGVqYVZ1U2Fucy1PYmxpcXVlLTZlIiBkPSJNIDM1NjYgMjExMyAKTCAzMTU2IDAgCkwgMjU3OCAwIApMIDI5ODggMjA5MSAKUSAzMDE2IDIyMzggMzAzMSAyMzUwIApRIDMwNDcgMjQ2MyAzMDQ3IDI1MjggClEgMzA0NyAyNzkxIDI4ODEgMjkzNyAKUSAyNzE2IDMwODQgMjQxOSAzMDg0IApRIDE5NTYgMzA4NCAxNjIyIDI3NzYgClEgMTI4OCAyNDY5IDExODQgMTk0MSAKTCA4MDAgMCAKTCAyMjUgMCAKTCA5MDMgMzUwMCAKTCAxNDc4IDM1MDAgCkwgMTM2MyAyOTUwIApRIDE2MDMgMzI1MyAxOTQwIDM0MTggClEgMjI3OCAzNTg0IDI2NTAgMzU4NCAKUSAzMTEzIDM1ODQgMzM2NyAzMzM0IApRIDM2MjIgMzA4NCAzNjIyIDI2MzEgClEgMzYyMiAyNTE5IDM2MDggMjM5MSAKUSAzNTk0IDIyNjMgMzU2NiAyMTEzIAp6CiIgdHJhbnNmb3JtPSJzY2FsZSgwLjAxNTYyNSkiLz4KICAgICA8L2RlZnM+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy1PYmxpcXVlLTUyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuMDkzNzUpIi8+CiAgICAgPHVzZSB4bGluazpocmVmPSIjRGVqYVZ1U2Fucy1PYmxpcXVlLTZlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2OS40ODI0MjIgLTE2LjMxMjUpIHNjYWxlKDAuNykiLz4KICAgIDwvZz4KICAgPC9nPgogIDwvZz4KIDwvZz4KIDxkZWZzPgogIDxjbGlwUGF0aCBpZD0icDM3MTk2MDgxNDkiPgogICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzI0LjM2IiBoZWlnaHQ9IjEyMi43NiIvPgogIDwvY2xpcFBhdGg+CiA8L2RlZnM+Cjwvc3ZnPgo=" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</section>
-</div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<section id="section-1" class="level3 quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
-<h3 class="anchored" data-anchor-id="section-1"></h3>
-<p><span class="math display">\[
-V_{TOTAL} = V_1 = V_2 = V_3 = \dots = V_n \\
-\]</span> <span class="math display">\[
-I_{TOTAL} = I_1 + I_2 + I_3 + \dots + I_n \\
-\]</span> <span class="math display">\[
-R_{TOTAL} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots + \frac{1}{R_n}}
-\]</span></p>
-</section>
-</div>
-</div>
-<p>El estado físico de un circuito afecta directamente su comportamiento. Un circuito cerrado es un camino continuo por el que la corriente puede fluir libremente desde la fuente hasta la carga y de regreso. Es la condición normal de operación de un sistema eléctrico. En contraste, un circuito abierto es un circuito interrumpido o incompleto. En esta condición, el flujo de corriente es nulo, ya que el camino se ha roto. Sin embargo, el voltaje de la fuente puede seguir presente a través de la interrupción, ya que no se necesita un flujo de corriente para que exista una diferencia de potencial. Comprender estas condiciones es crucial para la resolución de problemas y el diagnóstico de fallas en sistemas industriales.</p>
-</section>
-<section id="consultas-preliminares" class="level2">
-<h2 class="anchored" data-anchor-id="consultas-preliminares">Consultas preliminares</h2>
-<p>Realice la lectura de las siguientes secciones del libro “Lessons in Industrial Instrumentation”, Tony R. Kuphaldt:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Concepto</th>
-<th>Página</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Electrical voltage</td>
-<td>292</td>
-</tr>
-<tr class="even">
-<td>Electrical current</td>
-<td>298</td>
-</tr>
-<tr class="odd">
-<td>Electron versus conventional flow</td>
-<td>301</td>
-</tr>
-<tr class="even">
-<td>Electrical sources and loads</td>
-<td>306</td>
-</tr>
-<tr class="odd">
-<td>Electrical power</td>
-<td>312</td>
-</tr>
-<tr class="even">
-<td>Electrical resistance and Ohm’s Law</td>
-<td>313</td>
-</tr>
-<tr class="odd">
-<td>Series versus parallel circuits</td>
-<td>316</td>
-</tr>
-<tr class="even">
-<td>Kirchhoff’s Laws</td>
-<td>320</td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="materiales" class="level2">
 <h2 class="anchored" data-anchor-id="materiales">Materiales</h2>
 <ul>
-<li>Simulador Tinkercad Circuits</li>
+<li>Computadora o Tablet.</li>
+<li>Simulador PhET: <strong>Faraday’s Electromagnetic Lab</strong> (Laboratorio Electromagnético).
+<ul>
+<li><em>Enlace:</em> <a href="https://phet.colorado.edu/es/simulations/faradays-electromagnetic-lab">PhET Faraday Lab</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="procedimiento" class="level2">
 <h2 class="anchored" data-anchor-id="procedimiento">Procedimiento</h2>
-<section id="ley-de-ohm-y-medición-de-potencia" class="level3">
-<h3 class="anchored" data-anchor-id="ley-de-ohm-y-medición-de-potencia">Ley de Ohm y Medición de Potencia</h3>
-<section id="montaje-y-medición" class="level4">
-<h4 class="anchored" data-anchor-id="montaje-y-medición">Montaje y Medición:</h4>
+<section id="parte-1-el-campo-magnético-estático-imán-de-barra" class="level3">
+<h3 class="anchored" data-anchor-id="parte-1-el-campo-magnético-estático-imán-de-barra">Parte 1: El Campo Magnético Estático (Imán de Barra)</h3>
+<p>Antes de comprender cómo generar electricidad, debemos entender la “fuente” invisible que permite la inducción: el campo magnético (<span class="math inline">\(\vec{B}\)</span>). En la industria, los imanes permanentes son cruciales en motores DC, servomotores de robótica y sensores de posición.</p>
+<section id="visualización-del-campo-magnético" class="level4">
+<h4 class="anchored" data-anchor-id="visualización-del-campo-magnético">1. Visualización del Campo Magnético</h4>
+<ol type="1">
+<li>Acceda a la pestaña <strong>“Imán de Barra”</strong>.</li>
+<li>Active la opción <strong>“Mostrar Campo”</strong> (Show Field).</li>
+<li>Observe las pequeñas brújulas en el fondo.
 <ul>
-<li>Abra el simulador Tinkercad Circuits.</li>
-<li>Arrastre una fuente de alimentación DC y configúrela a 9V.</li>
-<li>Arrastre una resistencia de 1 kΩ y un multímetro.</li>
-<li>Conecte el circuito en serie: terminal positivo de la fuente, resistencia, multímetro (en modo Amperímetro) y de regreso al terminal negativo de la fuente.</li>
-<li>Inicie la simulación. Anote la corriente medida.</li>
-</ul>
+<li><strong>Acción:</strong> Mueva el imán por la pantalla.</li>
+<li><strong>Observación:</strong> Note hacia dónde apuntan las agujas rojas (Norte) y blancas (Sur) en relación con los polos del imán.</li>
+<li><strong>Interior del Imán:</strong> Active la opción “Ver dentro del imán”. ¿Las líneas de campo van de Norte a Sur o de Sur a Norte <em>dentro</em> del material?</li>
+</ul></li>
+</ol>
 </section>
-<section id="cálculo-de-potencia" class="level4">
-<h4 class="anchored" data-anchor-id="cálculo-de-potencia">Cálculo de Potencia:</h4>
+<section id="medición-de-intensidad-uso-del-gaussímetro" class="level4">
+<h4 class="anchored" data-anchor-id="medición-de-intensidad-uso-del-gaussímetro">2. Medición de Intensidad (Uso del Gaussímetro)</h4>
+<ol type="1">
+<li>Active la herramienta <strong>“Medidor de Campo”</strong> (Field Meter). Este instrumento simula un <strong>Gaussímetro</strong> o sensor de efecto Hall industrial.</li>
+<li>Mueva el sensor a diferentes distancias a lo largo del eje del imán (línea horizontal que atraviesa los polos).</li>
+<li>Observe cómo cambia la magnitud del campo <span class="math inline">\(B\)</span> (en Gauss, G) al alejarse.
 <ul>
-<li>Detenga la simulación.</li>
-<li>Use un segundo multímetro o reconfigure el existente en modo Voltímetro. Conéctelo en paralelo a la resistencia para medir el voltaje sobre ella.</li>
-<li>Con los valores de voltaje y corriente medidos, calcule la potencia disipada por la resistencia usando la fórmula P = VI. Anote el resultado</li>
-</ul>
+<li><em>Nota:</em> <span class="math inline">\(1 \text{ Tesla} = 10,000 \text{ Gauss}\)</span>.</li>
+</ul></li>
+<li>Realice mediciones a 1, 2 y 3 unidades de distancia (puede usar la cuadrícula de fondo como referencia).</li>
+</ol>
+</section>
+<section id="el-planeta-tierra-como-imán" class="level4">
+<h4 class="anchored" data-anchor-id="el-planeta-tierra-como-imán">3. El Planeta Tierra como Imán</h4>
+<ol type="1">
+<li>Active la casilla <strong>“Mostrar Planeta Tierra”</strong>.</li>
+<li>Observe la orientación del gran imán imaginario dentro de la Tierra.</li>
+<li>Use la brújula (Compass) y muévala cerca del Polo Norte geográfico (arriba).</li>
+<li><strong>Verificación:</strong> ¿El polo “Norte” de su brújula apunta al polo “Sur” magnético de la Tierra?</li>
+</ol>
+</section>
+<section id="tabla-1.1-decaimiento-del-campo-magnético" class="level4">
+<h4 class="anchored" data-anchor-id="tabla-1.1-decaimiento-del-campo-magnético"><strong>Tabla 1.1: Decaimiento del Campo Magnético</strong></h4>
+<p><em>Tome mediciones sobre el eje horizontal partiendo desde el polo Norte del imán.</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Distancia (cuadros)</th>
+<th style="text-align: center;">Campo Magnético <span class="math inline">\(B\)</span> (Gauss)</th>
+<th style="text-align: center;">Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1 (Cerca)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Valor Alto</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2 (Media)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3 (Lejos)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gráfica-rápida" class="level4">
+<h4 class="anchored" data-anchor-id="gráfica-rápida"><strong>Gráfica Rápida:</strong></h4>
+<p>Con los datos anteriores, ¿el campo disminuye de forma lineal (como una rampa suave) o decae abruptamente? (Ayuda: El campo de un dipolo decae como <span class="math inline">\(1/r^3\)</span>, mucho más rápido que el campo eléctrico <span class="math inline">\(1/r^2\)</span>).</p>
+</section>
+<section id="tabla-1.2-dirección-del-campo" class="level4">
+<h4 class="anchored" data-anchor-id="tabla-1.2-dirección-del-campo"><strong>Tabla 1.2: Dirección del Campo</strong></h4>
+<p><em>Dibuje o describa la dirección de la flecha roja de la brújula en las siguientes posiciones:</em></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Posición Relativa al Imán</th>
+<th style="text-align: left;">Dirección de la Brújula (Norte)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Frente al Polo Norte</td>
+<td style="text-align: left;">(Ej: Apunta hacia afuera)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Frente al Polo Sur</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Justo en el centro (arriba del imán)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="preguntas-complementarias-introductores" class="level4">
+<h4 class="anchored" data-anchor-id="preguntas-complementarias-introductores"><strong>Preguntas Complementarias (Introductores)</strong></h4>
+<ol type="1">
+<li><strong>Paradoja de la Brújula:</strong> Si los polos opuestos se atraen (Norte atrae a Sur), ¿por qué el polo “Norte” de una brújula apunta hacia el Norte Geográfico de la Tierra (Ártico)? ¿Qué tipo de polo magnético debe haber en realidad en el Ártico terrestre?</li>
+<li><strong>Sensores Industriales:</strong> El “Medidor de Campo” que usó en la simulación funciona bajo el mismo principio que los <strong>sensores de Efecto Hall</strong>. En una fábrica, estos sensores se usan para detectar si una puerta de seguridad está cerrada o para contar las vueltas de un motor. Si usted pega un imán a un eje rotatorio y coloca el sensor fijo cerca, ¿qué lectura esperaría ver en el medidor cada vez que el imán pasa frente a él?</li>
+<li><strong>Seguridad:</strong> Los campos magnéticos muy intensos pueden borrar datos de tarjetas de crédito o discos duros antiguos. Basado en su Tabla 0.1, ¿la zona de peligro es muy extensa o se limita a la proximidad inmediata del imán?</li>
+</ol>
 </section>
 </section>
-<section id="circutos-en-serie-y-en-paralelo" class="level3">
-<h3 class="anchored" data-anchor-id="circutos-en-serie-y-en-paralelo">Circutos en Serie y en Paralelo</h3>
-<section id="circuitos-en-serie-1" class="level4">
-<h4 class="anchored" data-anchor-id="circuitos-en-serie-1">Circuitos en Serie</h4>
+<section id="parte-2-el-electroimán-magnetismo-controlado" class="level3">
+<h3 class="anchored" data-anchor-id="parte-2-el-electroimán-magnetismo-controlado">Parte 2: El Electroimán (Magnetismo Controlado)</h3>
+<section id="configuración-inicial" class="level4">
+<h4 class="anchored" data-anchor-id="configuración-inicial"><strong>Configuración Inicial</strong></h4>
+<ol type="1">
+<li>En el simulador, seleccione la pestaña <strong>“Electroimán”</strong>.</li>
+<li>Asegúrese de activar la opción <strong>“Mostrar Campo”</strong> y <strong>“Mostrar Brújula”</strong>.</li>
+<li>Fije el número de vueltas (Loops) en <strong>4</strong> (o el máximo disponible).</li>
+</ol>
+</section>
+<section id="relación-voltaje---campo-magnético" class="level4">
+<h4 class="anchored" data-anchor-id="relación-voltaje---campo-magnético"><strong>Relación Voltaje - Campo Magnético</strong></h4>
+<ol type="1">
+<li>Utilice el deslizador de la batería para ajustar el voltaje a <strong>0V</strong>. Observe el campo.</li>
+<li>Aumente el voltaje lentamente hasta el máximo positivo (<strong>10V</strong>).
 <ul>
-<li>Monte un circuito en serie con la fuente de 9V y tres resistencias: 220Ω, 330Ω y 470Ω.</li>
-<li>Mida el voltaje a través de cada resistencia y verifique que su suma sea igual al voltaje de la fuente.</li>
-</ul>
+<li><em>Observación:</em> Fíjese en la intensidad del brillo de los electrones (que representan la corriente) y la densidad de las flechas del campo magnético.</li>
+</ul></li>
+<li>Active la herramienta <strong>“Medidor de Campo”</strong> y colóquela en el centro de la bobina o justo en un extremo.</li>
+<li>Registre el valor del campo magnético para 0V, 5V y 10V.</li>
+</ol>
 </section>
-<section id="circtuios-en-paralelo" class="level4">
-<h4 class="anchored" data-anchor-id="circtuios-en-paralelo">Circtuios en Paralelo</h4>
+<section id="efecto-del-número-de-vueltas-espiras" class="level4">
+<h4 class="anchored" data-anchor-id="efecto-del-número-de-vueltas-espiras"><strong>Efecto del Número de Vueltas (Espiras)</strong></h4>
+<ol type="1">
+<li>Mantenga el voltaje de la batería al máximo (<strong>10V</strong>).</li>
+<li>Varíe el número de vueltas (Loops) de la bobina usando el deslizador lateral.</li>
+<li>Mida la intensidad del campo magnético (<span class="math inline">\(B\)</span>) manteniendo el sensor fijo en la misma posición (no mueva el medidor, solo cambie las vueltas).
 <ul>
-<li>Monte un circuito en paralelo con la misma fuente y resistencias.</li>
-<li>Mida el voltaje en cada una y verifique que es el mismo.</li>
-<li>Mida la corriente total de la fuente y la corriente en cada rama. Verifique que la suma de las corrientes de rama sea igual a la corriente total.</li>
-</ul>
+<li>Pruebe con 1 vuelta, 2 vueltas, etc.</li>
+</ul></li>
+</ol>
 </section>
+<section id="inversión-de-polaridad" class="level4">
+<h4 class="anchored" data-anchor-id="inversión-de-polaridad"><strong>Inversión de Polaridad</strong></h4>
+<ol type="1">
+<li>Mueva el deslizador de voltaje hacia el lado negativo (o invierta la batería).</li>
+<li>Observe qué sucede con las brújulas y la dirección del flujo magnético.</li>
+</ol>
 </section>
-<section id="uso-del-potenciometro-y-analisis-de-fallas" class="level3">
-<h3 class="anchored" data-anchor-id="uso-del-potenciometro-y-analisis-de-fallas">Uso del potenciometro y analisis de fallas</h3>
-<section id="potenciometro" class="level4">
-<h4 class="anchored" data-anchor-id="potenciometro">Potenciometro</h4>
-<ul>
-<li>Reemplace la resistencia de 1 kΩ del primer circuito por un potenciómetro.</li>
-<li>Configure el potenciómetro a su valor máximo y mida la corriente. Anote la lectura.</li>
-<li>Ajuste el potenciómetro a su valor mínimo y observe el cambio en la corriente.</li>
-<li>Explique cómo el potenciómetro permite controlar la corriente en el circuito. #### Simulación de Falla (Circuito Abierto):</li>
-<li>En su circuito en serie, desconecte una de las resistencias. Esto simula un circuito abierto.</li>
-<li>Mida el voltaje en los terminales de la resistencia que se desconectó.</li>
-<li>Mida la corriente en el circuito. Anote los resultados y sus observaciones. #### Simulación de Falla (Cortocircuito):</li>
-<li>En su circuito en paralelo, reemplace una de las resistencias con un cable de conexión (resistencia cercana a 0 Ohms. Esto simula un cortocircuito.</li>
-<li>Mida la corriente que fluye a través de este cable.</li>
-<li>Mida la corriente total de la fuente. Tenga cuidado, ya que un cortocircuito puede generar corrientes muy altas. Anote sus observaciones.</li>
-</ul>
-</section>
-</section>
-<section id="variación-del-voltaje-y-su-influencia" class="level3">
-<h3 class="anchored" data-anchor-id="variación-del-voltaje-y-su-influencia">Variación del Voltaje y su Influencia</h3>
-<ul>
-<li>Regrese al circuito simple con la resistencia de 1 kΩ y de 10kΩ.</li>
-<li>Mida la corriente con la fuente a 9V, 6V y 3V.</li>
-<li>Anote los valores de corriente y expliquen la relación que observan</li>
-</ul>
-</section>
-</section>
-<section id="calculos-y-resultados" class="level2">
-<h2 class="anchored" data-anchor-id="calculos-y-resultados">Calculos y resultados</h2>
-<p>Utilicen las siguientes tablas para organizar los datos obtenidos durante el procedimiento. Calculen los valores teóricos antes de realizar las mediciones en el simulador y luego compárenlos con los datos experimentales.</p>
-<p>Complete la siguiente tabla con los valores de corriente calculados teóricamente y los medidos en la primera parte del laboratorio.</p>
+<section id="tabla-2.1-control-por-voltaje" class="level4">
+<h4 class="anchored" data-anchor-id="tabla-2.1-control-por-voltaje"><strong>Tabla 2.1: Control por Voltaje</strong></h4>
+<p><em>Manteniendo el número de vueltas fijo en 4.</em></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 15%">
-<col style="width: 23%">
-<col style="width: 21%">
-<col style="width: 12%">
+<col style="width: 29%">
+<col style="width: 38%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Voltaje de la fuente</th>
-<th>Resistencia</th>
-<th>Corriente Teórica</th>
-<th>Corriente medida</th>
-<th>Potencia</th>
+<th style="text-align: center;">Voltaje de la Fuente (V)</th>
+<th style="text-align: center;">Corriente (Visual: Lenta/Rápida)</th>
+<th style="text-align: center;">Campo Magnético <span class="math inline">\(B\)</span> (Gauss)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>9V</td>
-<td>470</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: center;">0 V</td>
+<td style="text-align: center;">Detenida</td>
+<td style="text-align: center;">0.00</td>
 </tr>
 <tr class="even">
-<td>9V</td>
-<td>1k</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: center;">5 V (Medio)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td>9V</td>
-<td>2.2k</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Registre los voltajes medidos en cada resistencia y la corriente total del circuito. Verifique que la suma de los voltajes en las resistencias sea igual al voltaje de la fuente.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 20%">
-<col style="width: 19%">
-<col style="width: 22%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Medida</th>
-<th>Voltaje teórico</th>
-<th>Voltaje medido</th>
-<th>Corriente Teórica</th>
-<th>Corriente medida</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>V en R1 220</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>V en R2 330</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>V en R3 470</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Registre los voltajes y corrientes medidos. Verifique que los voltajes sean los mismos en todas las resistencias y que la suma de las corrientes de rama sea igual a la corriente total de la fuente.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 20%">
-<col style="width: 19%">
-<col style="width: 22%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Medida</th>
-<th>Voltaje teórico</th>
-<th>Voltaje medido</th>
-<th>Corriente Teórica</th>
-<th>Corriente medida</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>V en R1 220</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>V en R2 330</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>V en R3 470</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>I total</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Registre las mediciones realizadas al cambiar el valor del potenciómetro y la fuente de voltaje.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 34%">
-<col style="width: 24%">
-<col style="width: 19%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Potenciómetro de R=</th>
-<th>Resistencia medida</th>
-<th>Voltaje medido</th>
-<th>Corriente medida</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Potenciómetro en Rmax</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Potenciómetro en Rmin</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Potenciómetro en Raleatorio</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Parámetro</th>
-<th>Corriente medida con 1kΩ</th>
-<th>Corriente con 10kΩ</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Voltaje de fuente 9V</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Voltaje de fuente 6V</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Voltaje de fuente 3V</td>
-<td></td>
-<td></td>
+<td style="text-align: center;">10 V (Máximo)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="preguntas-complementarias" class="level2">
-<h2 class="anchored" data-anchor-id="preguntas-complementarias">Preguntas complementarias</h2>
-<p>Una vez completadas las mediciones y el análisis de resultados, reflexione sobre las siguientes preguntas. Las respuestas deben ser concisas y basadas en sus observaciones y conocimientos teóricos.</p>
-<ul>
-<li>Comparación de Circuitos: Basado en la práctica, describan las diferencias fundamentales en el comportamiento de la corriente y el voltaje en los circuitos en serie versus los circuitos en paralelo. Utilicen los datos de sus tablas para justificar su respuesta.</li>
-<li>Análisis de Fallas: Si la resistencia de 330Ω en su circuito en serie sufriera una interrupción (circuito abierto), ¿qué lecturas de voltaje y corriente esperaría en el resto de los componentes? ¿Qué pasaría si la misma falla ocurriera en el circuito en paralelo? Explique el razonamiento en cada caso.</li>
-<li>Aplicación de Leyes de Kirchhoff: ¿Cómo se evidenciaron las Leyes de Kirchhoff de Voltaje y Corriente en los resultados de sus mediciones en los circuitos en serie y en paralelo? ¿Por qué es esencial la comprensión de estas leyes para el diagnóstico de sistemas eléctricos industriales?</li>
-<li>Eficiencia y Potencia: Considere los circuitos en serie y en paralelo que montaron. Si cada resistencia representa una carga (por ejemplo, una luz o un motor), ¿cuál de las dos configuraciones es más eficiente para alimentar múltiples cargas con el mismo voltaje? Justifique su respuesta utilizando el concepto de potencia eléctrica.</li>
-</ul>
+<section id="tabla-2.2-importancia-del-bobinado" class="level4">
+<h4 class="anchored" data-anchor-id="tabla-2.2-importancia-del-bobinado"><strong>Tabla 2.2: Importancia del Bobinado</strong></h4>
+<p><em>Manteniendo el voltaje fijo en 10V. Posicione el sensor justo en la boca de la bobina.</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 38%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Número de Vueltas (N)</th>
+<th style="text-align: center;">Campo Magnético <span class="math inline">\(B\)</span> (Gauss)</th>
+<th style="text-align: center;">¿Aumenta o Disminuye?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1 Vuelta</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2 Vueltas</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3 Vueltas</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4 Vueltas</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="preguntas-complementarias" class="level4">
+<h4 class="anchored" data-anchor-id="preguntas-complementarias">Preguntas Complementarias</h4>
+<ol type="1">
+<li><strong>Ventaja Industrial:</strong> Compare el electroimán con el imán de barra de la Parte 1. ¿Cuál es la ventaja operativa fundamental del electroimán para una grúa que mueve chatarra en una planta de reciclaje? ¿Qué pasaría si usaran un imán permanente gigante?</li>
+<li><strong>Relación V-I-B:</strong> Basado en la Ley de Ohm (<span class="math inline">\(V=I \cdot R\)</span>), al aumentar el voltaje de la batería, aumenta la corriente. Según sus datos de la Tabla 2.1, ¿cómo afecta este aumento de corriente a la fuerza del campo magnético? ¿Es una relación directa?</li>
+<li><strong>Inversión de Giro:</strong> En la industria, para cambiar el sentido de giro de un motor DC, se invierte la polaridad de la alimentación. Basado en el paso 4 del procedimiento, explique qué le ocurre a los polos magnéticos (Norte y Sur) de la bobina cuando usted invierte el voltaje de positivo a negativo.</li>
+<li><strong>Diseño de Solenoides:</strong> Si usted necesita una válvula solenoide con mucha fuerza para cerrar una tubería de alta presión, pero no puede aumentar el voltaje de alimentación (limitado a 24V), ¿qué cambio físico le pediría al fabricante que haga en la bobina basándose en la Tabla 2.2?</li>
+</ol>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

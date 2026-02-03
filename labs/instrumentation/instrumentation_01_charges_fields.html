@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>instrumentation_rlc_circuit – Mi Documentación</title>
+<title>instrumentation_01_charges_fields – Mi Documentación</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4018,33 +4018,32 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#practica-de-circuitos-dc" id="toc-practica-de-circuitos-dc" class="nav-link active" data-scroll-target="#practica-de-circuitos-dc">Practica de Circuitos DC</a>
+  <li><a href="#práctica-de-electrostática-cargas-y-campos" id="toc-práctica-de-electrostática-cargas-y-campos" class="nav-link active" data-scroll-target="#práctica-de-electrostática-cargas-y-campos">Práctica de Electrostática: Cargas y Campos</a>
   <ul class="collapse">
   <li><a href="#introducción" id="toc-introducción" class="nav-link" data-scroll-target="#introducción">Introducción</a></li>
   <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">Objetivos</a>
   <ul class="collapse">
-  <li><a href="#objetivo-general" id="toc-objetivo-general" class="nav-link" data-scroll-target="#objetivo-general">Objetivo general</a></li>
-  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link" data-scroll-target="#objetivos-específicos">Objetivos específicos</a></li>
+  <li><a href="#objetivo-general" id="toc-objetivo-general" class="nav-link" data-scroll-target="#objetivo-general">Objetivo General</a></li>
+  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link" data-scroll-target="#objetivos-específicos">Objetivos Específicos</a></li>
   </ul></li>
   <li><a href="#fundamentos-teóricos" id="toc-fundamentos-teóricos" class="nav-link" data-scroll-target="#fundamentos-teóricos">Fundamentos Teóricos</a>
   <ul class="collapse">
-  <li><a href="#capacitor" id="toc-capacitor" class="nav-link" data-scroll-target="#capacitor">Capacitor</a></li>
-  <li><a href="#inductores" id="toc-inductores" class="nav-link" data-scroll-target="#inductores">Inductores</a></li>
-  <li><a href="#circuitos-transitorios-en-dc-rc-rl-y-rlc" id="toc-circuitos-transitorios-en-dc-rc-rl-y-rlc" class="nav-link" data-scroll-target="#circuitos-transitorios-en-dc-rc-rl-y-rlc">Circuitos Transitorios en DC: RC, RL, y RLC</a></li>
+  <li><a href="#el-campo-eléctrico-vece" id="toc-el-campo-eléctrico-vece" class="nav-link" data-scroll-target="#el-campo-eléctrico-vece">El Campo Eléctrico (<span class="math inline">\(\vec{E}\)</span>)</a></li>
+  <li><a href="#potencial-eléctrico-v" id="toc-potencial-eléctrico-v" class="nav-link" data-scroll-target="#potencial-eléctrico-v">Potencial Eléctrico (<span class="math inline">\(V\)</span>)</a></li>
   </ul></li>
-  <li><a href="#consultas-preliminares" id="toc-consultas-preliminares" class="nav-link" data-scroll-target="#consultas-preliminares">Consultas preliminares</a></li>
   <li><a href="#materiales" id="toc-materiales" class="nav-link" data-scroll-target="#materiales">Materiales</a></li>
   <li><a href="#procedimiento" id="toc-procedimiento" class="nav-link" data-scroll-target="#procedimiento">Procedimiento</a>
   <ul class="collapse">
-  <li><a href="#parte-1-análisis-del-circuito-rc-en-dc" id="toc-parte-1-análisis-del-circuito-rc-en-dc" class="nav-link" data-scroll-target="#parte-1-análisis-del-circuito-rc-en-dc">Parte 1: Análisis del Circuito RC en DC</a></li>
-  <li><a href="#parte-2-análisis-del-circuito-rl-en-dc" id="toc-parte-2-análisis-del-circuito-rl-en-dc" class="nav-link" data-scroll-target="#parte-2-análisis-del-circuito-rl-en-dc">Parte 2: Análisis del Circuito RL en DC</a></li>
-  <li><a href="#parte-3-inductores-en-serie-y-equivalencia" id="toc-parte-3-inductores-en-serie-y-equivalencia" class="nav-link" data-scroll-target="#parte-3-inductores-en-serie-y-equivalencia">Parte 3: Inductores en Serie y Equivalencia</a></li>
-  <li><a href="#parte-4-inductores-en-paralelo-y-equivalencia" id="toc-parte-4-inductores-en-paralelo-y-equivalencia" class="nav-link" data-scroll-target="#parte-4-inductores-en-paralelo-y-equivalencia">Parte 4: Inductores en Paralelo y Equivalencia</a></li>
-  <li><a href="#parte-5-capacitores-en-serie-y-equivalencia" id="toc-parte-5-capacitores-en-serie-y-equivalencia" class="nav-link" data-scroll-target="#parte-5-capacitores-en-serie-y-equivalencia">Parte 5: Capacitores en Serie y Equivalencia</a></li>
-  <li><a href="#parte-6-capacitores-en-paralelo-y-equivalencia" id="toc-parte-6-capacitores-en-paralelo-y-equivalencia" class="nav-link" data-scroll-target="#parte-6-capacitores-en-paralelo-y-equivalencia">Parte 6: Capacitores en Paralelo y Equivalencia</a></li>
-  <li><a href="#parte-7-análisis-del-circuito-rlc-en-dc" id="toc-parte-7-análisis-del-circuito-rlc-en-dc" class="nav-link" data-scroll-target="#parte-7-análisis-del-circuito-rlc-en-dc">Parte 7: Análisis del Circuito RLC en DC</a></li>
+  <li><a href="#parte-1-el-campo-de-una-carga-puntual-ley-de-coulomb" id="toc-parte-1-el-campo-de-una-carga-puntual-ley-de-coulomb" class="nav-link" data-scroll-target="#parte-1-el-campo-de-una-carga-puntual-ley-de-coulomb">Parte 1: El Campo de una Carga Puntual (Ley de Coulomb)</a></li>
+  <li><a href="#parte-2-interacción-de-dos-cargas-dipolo-eléctrico" id="toc-parte-2-interacción-de-dos-cargas-dipolo-eléctrico" class="nav-link" data-scroll-target="#parte-2-interacción-de-dos-cargas-dipolo-eléctrico">Parte 2: Interacción de Dos Cargas (Dipolo Eléctrico)</a></li>
+  <li><a href="#parte-3-potencial-y-líneas-equipotenciales" id="toc-parte-3-potencial-y-líneas-equipotenciales" class="nav-link" data-scroll-target="#parte-3-potencial-y-líneas-equipotenciales">Parte 3: Potencial y Líneas Equipotenciales</a></li>
   </ul></li>
-  <li><a href="#preguntas-complementarias" id="toc-preguntas-complementarias" class="nav-link" data-scroll-target="#preguntas-complementarias">Preguntas complementarias</a></li>
+  <li><a href="#cálculos-y-resultados" id="toc-cálculos-y-resultados" class="nav-link" data-scroll-target="#cálculos-y-resultados">Cálculos y Resultados</a>
+  <ul class="collapse">
+  <li><a href="#tabla-1-variación-del-campo-con-la-distancia" id="toc-tabla-1-variación-del-campo-con-la-distancia" class="nav-link" data-scroll-target="#tabla-1-variación-del-campo-con-la-distancia">Tabla 1: Variación del Campo con la Distancia</a></li>
+  <li><a href="#tabla-2-campo-en-el-dipolo" id="toc-tabla-2-campo-en-el-dipolo" class="nav-link" data-scroll-target="#tabla-2-campo-en-el-dipolo">Tabla 2: Campo en el Dipolo</a></li>
+  </ul></li>
+  <li><a href="#preguntas-complementarias" id="toc-preguntas-complementarias" class="nav-link" data-scroll-target="#preguntas-complementarias">Preguntas Complementarias</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -4055,214 +4054,177 @@ window.Quarto = {
 
 
 
-<section id="practica-de-circuitos-dc" class="level1">
-<h1>Practica de Circuitos DC</h1>
+<section id="práctica-de-electrostática-cargas-y-campos" class="level1">
+<h1>Práctica de Electrostática: Cargas y Campos</h1>
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>En el ámbito de la ingeniería industrial, el conocimiento de los circuitos eléctricos va más allá del análisis estático de la corriente continua. El estudio de los componentes que almacenan energía, como los capacitores e inductores, es fundamental para comprender el comportamiento dinámico y transitorio de los sistemas de control y los instrumentos de medición. Esta guía de laboratorio tiene como objetivo analizar la respuesta de estos elementos en circuitos de corriente continua (DC), un paso crucial para abordar la complejidad inherente a la corriente alterna (AC) y su impacto en la eficiencia y la seguridad industrial.</p>
-<p>La importancia de este tema para el ingeniero industrial se manifiesta en diversas áreas críticas. En primer lugar, la capacidad de los capacitores para almacenar y liberar energía es la base de los sistemas de alimentación ininterrumpida (UPS) y los filtros de ruido, los cuales son esenciales para proteger equipos sensibles en entornos de fabricación donde las fluctuaciones de voltaje son comunes. El ingeniero debe ser capaz de seleccionar y dimensionar estos componentes para garantizar la integridad de los datos y el funcionamiento continuo de la maquinaria automatizada.</p>
-<p>En segundo lugar, el análisis de la respuesta transitoria en circuitos RC (resistor-capacitor) y RL (resistor-inductor) es directamente aplicable al diseño de sistemas de temporización. Los procesos industriales, desde el ciclo de un robot de soldadura hasta el control de un horno de secado, dependen de la precisión de los intervalos de tiempo. Comprender cómo la constante de tiempo (τ=RC o τ=L/R) afecta la velocidad de carga y descarga de un capacitor o inductor permite diseñar circuitos que controlan estas secuencias temporales con exactitud.</p>
-<p>La combinación de los tres componentes en un circuito RLC introduce el fenómeno de la oscilación y la respuesta amortiguada, lo cual es vital en la ingeniería de control. Estos circuitos se utilizan para modelar sistemas mecánicos y de control de procesos donde una perturbación inicial provoca una oscilación que debe ser atenuada rápidamente para que el sistema retorne a su estado de equilibrio. La capacidad de un ingeniero para identificar si un sistema es subamortiguado, sobreamortiguado o críticamente amortiguado es determinante para garantizar la estabilidad y el rendimiento óptimo de un controlador, ya sea un brazo robótico o una válvula de flujo en un sistema de tuberías.</p>
-<p>Además, el conocimiento de estos circuitos es indispensable para la optimización energética. Los inductores se utilizan en los convertidores de potencia para mejorar la eficiencia al almacenar energía magnética, mientras que los capacitores en bancos de compensación ayudan a corregir el factor de potencia en las instalaciones industriales, reduciendo los costos de energía y las penalizaciones de la compañía eléctrica. Un ingeniero industrial con conocimientos en estos temas puede implementar soluciones que no solo mejoran el rendimiento de la producción, sino que también contribuyen a la sostenibilidad económica y ambiental de la empresa.</p>
+<p>En el entorno industrial, la electrostática suele percibirse de dos formas: como una herramienta poderosa o como un riesgo latente. Procesos como la pintura electrostática (usada en la industria automotriz), la impresión láser y los precipitadores electrostáticos para filtrar gases en chimeneas, dependen de la manipulación precisa de campos eléctricos.</p>
+<p>Por otro lado, la acumulación de carga estática representa un peligro severo en plantas que manejan combustibles, polvos inflamables o componentes electrónicos sensibles. Entender cómo se distribuye un campo eléctrico y cómo se comporta el potencial (voltaje) alrededor de una carga no es solo teoría física; es la base para diseñar sistemas de seguridad, apantallamiento y conexión a tierra.</p>
+<p>Esta práctica utiliza simulación computacional para visualizar estos “campos invisibles”, permitiendo observar fenómenos que son imposibles de ver a simple vista, validando las leyes fundamentales de Coulomb y la Superposición.</p>
 </section>
 <section id="objetivos" class="level2">
 <h2 class="anchored" data-anchor-id="objetivos">Objetivos</h2>
 <section id="objetivo-general" class="level3">
-<h3 class="anchored" data-anchor-id="objetivo-general">Objetivo general</h3>
-<p>Comprender la respuesta transitoria de los circuitos RC, RL y RLC en corriente continua (DC), validando experimentalmente las constantes de tiempo y el comportamiento de sus componentes, así como la equivalencia de los arreglos en serie y en paralelo de capacitores e inductores.</p>
+<h3 class="anchored" data-anchor-id="objetivo-general">Objetivo General</h3>
+<p>Analizar el comportamiento del campo eléctrico y el potencial eléctrico generado por distribuciones de cargas puntuales.</p>
 </section>
 <section id="objetivos-específicos" class="level3">
-<h3 class="anchored" data-anchor-id="objetivos-específicos">Objetivos específicos</h3>
+<h3 class="anchored" data-anchor-id="objetivos-específicos">Objetivos Específicos</h3>
 <ul>
-<li>Construir y simular circuitos RC y RL en el simulador Falstad.</li>
-<li>Medir y graficar la carga y descarga de capacitores, así como el crecimiento y decrecimiento de corriente en inductores.</li>
-<li>Comprobar las ecuaciones de capacitancia e inductancia equivalente en arreglos en serie y en paralelo.</li>
-<li>Observar la respuesta oscilatoria y amortiguada de un circuito RLC en DC.</li>
+<li>Comprobar experimentalmente que la intensidad del campo eléctrico disminuye con el cuadrado de la distancia (<span class="math inline">\(1/r^2\)</span>).</li>
+<li>Observar cómo interactúan los campos de múltiples cargas (dipolos) y cómo se suman vectorialmente.</li>
+<li>Entender el concepto de voltaje (potencial) y su relación geométrica con las líneas de campo eléctrico.</li>
 </ul>
 </section>
 </section>
 <section id="fundamentos-teóricos" class="level2">
 <h2 class="anchored" data-anchor-id="fundamentos-teóricos">Fundamentos Teóricos</h2>
-<p>El análisis de circuitos que contienen capacitores e inductores requiere una comprensión de los principios básicos de la electricidad, así como del comportamiento dinámico de estos componentes. A continuación, se detallan los conceptos clave para esta práctica.</p>
-<p>Las Leyes de Ohm y de Kirchhoff constituyen la base del análisis de cualquier circuito. Para un circuito de corriente continua (DC), estas leyes describen el flujo y la distribución de la energía.</p>
-<p>Ley de Ohm: La relación fundamental entre voltaje (<span class="math inline">\(V\)</span>), corriente (<span class="math inline">\(I\)</span>) y resistencia (<span class="math inline">\(R\)</span>) se expresa:</p>
+<section id="el-campo-eléctrico-vece" class="level3">
+<h3 class="anchored" data-anchor-id="el-campo-eléctrico-vece">El Campo Eléctrico (<span class="math inline">\(\vec{E}\)</span>)</h3>
+<p>Una carga eléctrica modifica el espacio que la rodea. El campo eléctrico se define como la fuerza por unidad de carga y, para una carga puntual <span class="math inline">\(Q\)</span>, su magnitud es:</p>
 <p><span class="math display">\[
-V = I R
+E = k \frac{|Q|}{r^2}
 \]</span></p>
-<p>Ley de Corriente de Kirchhoff (LCK): En cualquier nodo de un circuito, la suma de las corrientes que entran es igual a la suma de las corrientes que salen. Este principio se basa en la conservación de la carga eléctrica. Matemáticamente:</p>
-<p><span class="math display">\[
-\sum I_{fuente} = \sum I_{cargas}
-\]</span></p>
-<p>Ley de Voltaje de Kirchhoff (LVK): La suma algebraica de los voltajes en una trayectoria cerrada (malla) de un circuito es cero. Este principio se basa en la conservación de la energía. Matemáticamente:</p>
-<p><span class="math display">\[
-\sum V_{fuente} = \sum V_{cargas}
-\]</span></p>
-<section id="capacitor" class="level3">
-<h3 class="anchored" data-anchor-id="capacitor">Capacitor</h3>
-<p>Un capacitor es un componente electrónico pasivo que almacena energía en un campo eléctrico. Se compone de dos placas conductoras separadas por un material aislante o dieléctrico. Su capacidad para almacenar carga es proporcional al voltaje a traves de sus terminales, siendo la constante de proporcionalidad la capacitancia <span class="math inline">\(C\)</span> medida en Faradios. <span class="math display">\[
-C = \frac{Q}{V}
-\]</span></p>
-<p>En un circuito DC, un capacitor actúa como un circuito abierto una vez que está completamente cargado, bloqueando el flujo de corriente. El voltaje en un capacitor no puede cambiar de forma instantánea.</p>
-<p>Así como la resistencia, los capacitores pueden conectarse en Serie o en Paralelo. La capacitancia equivalente en conexiones en serie Ceq es la inversa de la suma de las inversas de las capacitancias individuales. La fórmula es:</p>
-<p><span class="math display">\[
-\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}
-\]</span></p>
-<p>La capacitancia equivalente de capacitores en paralelo es la suma de las capacitancias individuales:</p>
-<p><span class="math display">\[
-C_{eq} = C_1 + C_2 + C_3 + \dots + C_n
-\]</span></p>
+<p>Donde <span class="math inline">\(k \approx 9.0 \times 10^9 \, \text{N}\cdot\text{m}^2/\text{C}^2\)</span>. La dirección del campo es <strong>radial hacia afuera</strong> para cargas positivas y <strong>hacia adentro</strong> para negativas.</p>
 </section>
-<section id="inductores" class="level3">
-<h3 class="anchored" data-anchor-id="inductores">Inductores</h3>
-<p>Un inductor es un componente pasivo que almacena energía en un campo magnético. Consiste en una bobina de alambre que se opone a los cambios en la corriente que la atraviesa. Esta propiedad, conocida como inductancia se mide en Henrios (H).</p>
-<p>El voltaje a través de un inductor es directamente proporcional a la tasa de cambio de la corriente. Esto se describe por la relación</p>
+<section id="potencial-eléctrico-v" class="level3">
+<h3 class="anchored" data-anchor-id="potencial-eléctrico-v">Potencial Eléctrico (<span class="math inline">\(V\)</span>)</h3>
+<p>El potencial eléctrico es una medida escalar de la energía por unidad de carga en un punto del espacio. A diferencia del campo (que es un vector), el potencial se suma aritméticamente. Las líneas donde el potencial es constante se llaman <strong>líneas equipotenciales</strong>.</p>
 <p><span class="math display">\[
-V_L = L \frac{\delta I}{\delta t}
+V = E \cdot r
 \]</span></p>
-<p>En DC, una vez que la corriente se estabiliza $ = 0 $ por lo que el inductor se comporta como un cortocircuito.</p>
-<p>Así como la resistencia, los inductores pueden conectarse en Serie o en Paralelo. La inductancia equivalente de inductores en serie es la suma de las inductancias individuales:</p>
-<p><span class="math display">\[
-L_{eq} = L_1 + L_2 + L_3 + \dots + L_n
-\]</span></p>
-<p>La inductancia equivalente de inductores en paralelo es la inversa de la suma de las inversas de las inductancias individuales:</p>
-<p><span class="math display">\[
-L_{eq} = \frac{1}{\frac{1}{L_1} + \frac{1}{L_2} + \frac{1}{L_3} + \dots + \frac{1}{L_n}}
-\]</span></p>
+<p>Las líneas de campo eléctrico siempre son perpendiculares a las líneas equipotenciales y apuntan hacia donde disminuye el potencial.</p>
 </section>
-<section id="circuitos-transitorios-en-dc-rc-rl-y-rlc" class="level3">
-<h3 class="anchored" data-anchor-id="circuitos-transitorios-en-dc-rc-rl-y-rlc">Circuitos Transitorios en DC: RC, RL, y RLC</h3>
-<p>Un circuito transitorio es aquel en el que el voltaje y la corriente cambian con el tiempo después de un evento de conmutación, como el encendido o apagado de una fuente de energía.</p>
+</section>
+<section id="materiales" class="level2">
+<h2 class="anchored" data-anchor-id="materiales">Materiales</h2>
 <ul>
-<li><p><strong>CIRCUITO RC:</strong> La carga y descarga de un capacitor en un circuito RC siguen una curva exponencial. La velocidad de este proceso está determinada por la constante de tiempo que se calcula como $ = R C $. Despues de un periodo de $ 5 $ el capacitor se considera completamente cargado o descargado.</p></li>
-<li><p><strong>Circuitos RL:</strong> El crecimiento y decrecimiento de la corriente en un inductor en un circuito RL también sigue una curva exponencial. La constante de tiempo para un circuito RL es $ = $.</p></li>
-<li><p><strong>Circuitos RLC:</strong> Un circuito RLC en DC exhibe un comportamiento transitorio que puede ser oscilatorio o no oscilatorio. La naturaleza de la respuesta depende de los valores de R, L y C, que determinan el tipo de amortiguamiento.</p>
+<li>Computadora o Tablet con acceso a internet.</li>
+<li>Simulador PhET: <strong>Charges and Fields</strong> (Cargas y Campos).
 <ul>
-<li>Respuesta Subamortiguada: Ocurre cuando la resistencia es baja, resultando en un comportamiento oscilatorio que se desvanece con el tiempo.</li>
-<li>Respuesta Críticamente Amortiguada: El sistema vuelve a su estado de equilibrio de la forma más rápida posible sin oscilar.</li>
-<li>Respuesta Sobreamortiguada: El sistema retorna a su estado de equilibrio de manera lenta y sin oscilaciones, debido a una alta resistencia.</li>
+<li><em>Enlace:</em> <a href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_es.html">PhET Cargas y Campos</a></li>
 </ul></li>
 </ul>
 </section>
+<section id="procedimiento" class="level2">
+<h2 class="anchored" data-anchor-id="procedimiento">Procedimiento</h2>
+<section id="parte-1-el-campo-de-una-carga-puntual-ley-de-coulomb" class="level3">
+<h3 class="anchored" data-anchor-id="parte-1-el-campo-de-una-carga-puntual-ley-de-coulomb">Parte 1: El Campo de una Carga Puntual (Ley de Coulomb)</h3>
+<ol type="1">
+<li>Inicie el simulador y active las casillas: <strong>Campo eléctrico</strong>, <strong>Valores</strong>, <strong>Grilla</strong> y <strong>Dirección solamente</strong> (si desea ver flechas más claras).</li>
+<li>Arrastre una carga positiva de <strong>+1 nC</strong> al centro de la pantalla (intersección de dos líneas mayores de la cuadrícula).</li>
+<li>Utilice la herramienta <strong>Sensor de Campo</strong> (punto amarillo) para medir la intensidad del campo eléctrico (<span class="math inline">\(E\)</span>) a diferentes distancias.
+<ul>
+<li><em>Nota:</em> Use la herramienta de “Cinta métrica” para medir la distancia (<span class="math inline">\(r\)</span>) desde el centro de la carga hasta el sensor.</li>
+</ul></li>
+<li>Tome al menos 3 mediciones a distancias diferentes (ej. 1m, 2m, 3m) manteniendo la alineación horizontal o vertical.</li>
+</ol>
 </section>
-<section id="consultas-preliminares" class="level2">
-<h2 class="anchored" data-anchor-id="consultas-preliminares">Consultas preliminares</h2>
-<p>Realice la lectura de las siguientes secciones del libro “Lessons in Industrial Instrumentation”, Tony R. Kuphaldt:</p>
+<section id="parte-2-interacción-de-dos-cargas-dipolo-eléctrico" class="level3">
+<h3 class="anchored" data-anchor-id="parte-2-interacción-de-dos-cargas-dipolo-eléctrico">Parte 2: Interacción de Dos Cargas (Dipolo Eléctrico)</h3>
+<ol type="1">
+<li>Reinicie el simulador.</li>
+<li>Coloque una carga de <strong>+1 nC</strong> y una de <strong>-1 nC</strong> separadas por una distancia de <strong>2 metros</strong> (2 cuadros grandes de la grilla) sobre la misma línea horizontal.</li>
+<li>Observe el patrón de las flechas del campo eléctrico.</li>
+<li>Mida el campo eléctrico (<span class="math inline">\(E\)</span>) justo en el <strong>punto medio</strong> entre las dos cargas.</li>
+<li>Mida el campo eléctrico en un punto externo, alineado con las cargas.</li>
+</ol>
+</section>
+<section id="parte-3-potencial-y-líneas-equipotenciales" class="level3">
+<h3 class="anchored" data-anchor-id="parte-3-potencial-y-líneas-equipotenciales">Parte 3: Potencial y Líneas Equipotenciales</h3>
+<ol type="1">
+<li>Mantenga la configuración del dipolo (+1 nC y -1 nC).</li>
+<li>Utilice la herramienta de <strong>Potencial</strong> (el visor con la mira) que muestra el voltaje.</li>
+<li>Mueva el sensor alrededor de la carga positiva hasta encontrar un punto donde el voltaje sea aprox. <strong>10 V</strong>. Haga clic en el botón del “Lápiz” para dibujar la línea equipotencial.</li>
+<li>Repita para dibujar líneas de <strong>5 V</strong>, <strong>0 V</strong>, <strong>-5 V</strong> y <strong>-10 V</strong>.</li>
+<li>Observe la relación geométrica entre estas líneas curvas y las flechas del campo eléctrico.</li>
+</ol>
+</section>
+</section>
+<section id="cálculos-y-resultados" class="level2">
+<h2 class="anchored" data-anchor-id="cálculos-y-resultados">Cálculos y Resultados</h2>
+<section id="tabla-1-variación-del-campo-con-la-distancia" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-1-variación-del-campo-con-la-distancia">Tabla 1: Variación del Campo con la Distancia</h3>
+<p>Utilice la siguiente tabla para escribir los valores del procedimiento en su parte 1.</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 32%">
+<col style="width: 34%">
+<col style="width: 10%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Tema</th>
-<th>Página</th>
+<th style="text-align: center;">Distancia <span class="math inline">\(r\)</span> (m)</th>
+<th style="text-align: center;">Campo Medido <span class="math inline">\(E_{sim}\)</span> (V/m)</th>
+<th style="text-align: center;">Campo Teórico <span class="math inline">\(E_{calc}\)</span> (V/m)</th>
+<th style="text-align: center;">% Error</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Resistencia eléctrica y Ley de Ohm</td>
-<td>313</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td>Circuitos en serie frente a circuitos en paralelo</td>
-<td>316</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td>Leyes de Kirchhoff</td>
-<td>320</td>
+<td style="text-align: center;">3.0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>Fórmula de cálculo:</strong> <span class="math inline">\(E_{calc} = (9 \times 10^9) \cdot \frac{1 \times 10^{-9}}{r^2}\)</span></p>
+</blockquote>
+</section>
+<section id="tabla-2-campo-en-el-dipolo" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-2-campo-en-el-dipolo">Tabla 2: Campo en el Dipolo</h3>
+<p>Utilice la siguiente tabla para escribir los valores del procedimiento en su parte 2.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 28%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Punto de Medición</th>
+<th style="text-align: center;">Campo Medido (V/m)</th>
+<th style="text-align: center;">¿Hacia dónde apunta? (Izq/Der)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Punto Medio</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td>Capacitores (Condensadores)</td>
-<td>346</td>
-</tr>
-<tr class="odd">
-<td>Inductores (Bobinas)</td>
-<td>350</td>
+<td style="text-align: left;">1m a la derecha de la carga negativa</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="materiales" class="level2">
-<h2 class="anchored" data-anchor-id="materiales">Materiales</h2>
-<p>Simulador Falstad: <a href="https://www.falstad.com/circuit/circuitjs.html">Link</a></p>
-</section>
-<section id="procedimiento" class="level2">
-<h2 class="anchored" data-anchor-id="procedimiento">Procedimiento</h2>
-<p>Para esta práctica, utilizaremos los ejemplos predefinidos en el simulador Falstad. Esto nos permitirá centrarnos en el análisis del comportamiento del circuito, en lugar de en la construcción.</p>
-<section id="parte-1-análisis-del-circuito-rc-en-dc" class="level3">
-<h3 class="anchored" data-anchor-id="parte-1-análisis-del-circuito-rc-en-dc">Parte 1: Análisis del Circuito RC en DC</h3>
-<ul>
-<li>Abra el simulador Falstad y cargue el ejemplo “Circuitos/Basicos/Capacitor”.</li>
-<li>Observe el comportamiento del voltaje en el capacitor y de la corriente total a medida que el capacitor se carga.
-<ul>
-<li>¿Cuál es el valor del voltaje inicial en el capacitor?</li>
-<li>¿Cuál es la corriente inicial?</li>
-<li>¿Qué sucede con estos valores a medida que transcurre el tiempo?</li>
-</ul></li>
-<li>Identifique el valor de la resistencia y del capacitor.</li>
-<li>Calcule teóricamente la constante de tiempo .</li>
-<li>En la simulación, active la opción de “Gráficos de Onda” para visualizar el voltaje en el capacitor o la corriente. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. Este tiempo corresponde a la constante de tiempo experimental. ¿Coincide el valor experimental de con el valor teórico? ¿A qué porcentaje de su valor final se considera el capacitor cargado en un tiempo igual a cinco constantes de tiempo?</li>
-<li>Duplique el valor de la resistencia y observe cómo cambia el tiempo de carga del capacitor. ¿La constante de tiempo aumenta o disminuye? Explique por qué.</li>
-<li>Restaure el valor de la resistencia a su valor original. Ahora, duplique el valor de la capacitancia. ¿Cómo afecta este cambio a la velocidad de carga? Compare este resultado con el de la Actividad anterior.</li>
-</ul>
-</section>
-<section id="parte-2-análisis-del-circuito-rl-en-dc" class="level3">
-<h3 class="anchored" data-anchor-id="parte-2-análisis-del-circuito-rl-en-dc">Parte 2: Análisis del Circuito RL en DC</h3>
-<ul>
-<li>Abra el simulador Falstad y cargue el ejemplo “Circuitos/Basicos/Inductor”.</li>
-<li>Observe el comportamiento de la corriente en el inductor y del voltaje en la resistencia a medida que la corriente se establece.
-<ul>
-<li>¿Cuál es el valor de la corriente inicial en el inductor?</li>
-<li>¿Cuál es el voltaje inicial en la resistencia?</li>
-<li>¿Qué sucede con estos valores a medida que transcurre el tiempo?</li>
-</ul></li>
-<li>Identifique los valores de la resistencia y del inductor.</li>
-<li>Calcule teóricamente la constante de tiempo</li>
-<li>En la simulación, active la opción de “Gráficos de Onda” para visualizar la corriente en el inductor. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. ¿Coincide el valor experimental de con el valor teórico? ¿A qué porcentaje de su valor final se considera la corriente establecida en un tiempo igual a cinco constantes de tiempo?</li>
-<li>Duplique el valor de la resistencia y observe cómo cambia el tiempo de crecimiento de la corriente. ¿La constante de tiempo aumenta o disminuye? Explique por qué.</li>
-<li>Restaure el valor de la resistencia a su valor original. Ahora, duplique el valor de la inductancia. ¿Cómo afecta este cambio a la velocidad de crecimiento de la corriente? Compare este resultado con el de la actividad anterior.</li>
-</ul>
-</section>
-<section id="parte-3-inductores-en-serie-y-equivalencia" class="level3">
-<h3 class="anchored" data-anchor-id="parte-3-inductores-en-serie-y-equivalencia">Parte 3: Inductores en Serie y Equivalencia</h3>
-<ul>
-<li>Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Inductores en serie”.</li>
-<li>Observe las dos configuraciones de circuito en paralelo. La de la izquierda tiene dos inductores en serie y la de la derecha tiene un solo inductor. Calcule la inductancia equivalente teórica para la configuración en serie de la izquierda. Verifique si la inductancia equivalente calculada coincide con el valor del inductor único en el circuito de la derecha. ¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios inductores en serie por uno solo de valor equivalente?</li>
-<li>Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda de la corriente para ambos circuitos. ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de crecimiento de la corriente de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de inductancia?</li>
-</ul>
-</section>
-<section id="parte-4-inductores-en-paralelo-y-equivalencia" class="level3">
-<h3 class="anchored" data-anchor-id="parte-4-inductores-en-paralelo-y-equivalencia">Parte 4: Inductores en Paralelo y Equivalencia</h3>
-<ul>
-<li>Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Inductores en paralelo”.</li>
-<li>Observe las dos configuraciones de circuito. La de la izquierda tiene dos inductores en paralelo y la de la derecha tiene un solo inductor. Calcule la inductancia equivalente teórica para la configuración en paralelo de la izquierda, utilizando la fórmula. Verifique si la inductancia equivalente calculada coincide con el valor del inductor único en el circuito de la derecha. ¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios inductores en paralelo por uno solo de valor equivalente?</li>
-<li>Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda de la corriente para ambos circuitos. ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de crecimiento de la corriente de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de inductancia?</li>
-</ul>
-</section>
-<section id="parte-5-capacitores-en-serie-y-equivalencia" class="level3">
-<h3 class="anchored" data-anchor-id="parte-5-capacitores-en-serie-y-equivalencia">Parte 5: Capacitores en Serie y Equivalencia</h3>
-<ul>
-<li>Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Capacitores en serie”.</li>
-<li>Observe las dos configuraciones de circuito. La de la izquierda tiene dos capacitores en serie y la de la derecha tiene un solo capacitor. Calcule la capacitancia equivalente teórica para la configuración en serie de la izquierda, utilizando la fórmula. Verifique si la capacitancia equivalente calculada coincide con el valor del capacitor único en el circuito de la derecha. ¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios capacitores en serie por uno solo de valor equivalente?</li>
-<li>Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda del voltaje para ambos circuitos. ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de carga del voltaje de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de capacitancia?</li>
-</ul>
-</section>
-<section id="parte-6-capacitores-en-paralelo-y-equivalencia" class="level3">
-<h3 class="anchored" data-anchor-id="parte-6-capacitores-en-paralelo-y-equivalencia">Parte 6: Capacitores en Paralelo y Equivalencia</h3>
-<ul>
-<li>Abra el simulador Falstad y cargue el ejemplo “Circuitos/Otros circuitos pasivos/Series/Paralelo/Capacitores en paralelo”.</li>
-<li>Observe las dos configuraciones de circuito. La de la izquierda tiene dos capacitores en paralelo y la de la derecha tiene un solo capacitor. Calcule la capacitancia equivalente teórica para la configuración en paralelo de la izquierda, utilizando la fórmula. Verifique si la capacitancia equivalente calculada coincide con el valor del capacitor único en el circuito de la derecha. ¿Qué significa esta equivalencia en términos del comportamiento del circuito? ¿Por qué se pueden reemplazar varios capacitores en paralelo por uno solo de valor equivalente?</li>
-<li>Ejecute la simulación para ambos circuitos simultáneamente. Observe las gráficas de onda del voltaje para ambos circuitos. Pregunta de Análisis: ¿Qué similitudes y diferencias observa en las constantes de tiempo y en la curva de carga del voltaje de ambos circuitos? ¿Cómo se relaciona esto con la equivalencia de capacitancia?</li>
-</ul>
-</section>
-<section id="parte-7-análisis-del-circuito-rlc-en-dc" class="level3">
-<h3 class="anchored" data-anchor-id="parte-7-análisis-del-circuito-rlc-en-dc">Parte 7: Análisis del Circuito RLC en DC</h3>
-<ul>
-<li>Abra el simulador Falstad y cargue el ejemplo “Circuitos/Basicos/Circuito LRC”.</li>
-<li>Ejecute la simulación y observe el comportamiento del voltaje en el capacitor, el inductor y la resistencia. ¿Qué tipo de respuesta observa en el voltaje del capacitor y en la corriente del circuito? ¿Es un crecimiento o decrecimiento exponencial, o se trata de una oscilación? Reduzca el valor de la resistencia significativamente (1 o 2). Observe la nueva respuesta del circuito. ¿Cómo cambia la respuesta del circuito cuando la resistencia es baja? ¿Por qué se produce este comportamiento?</li>
-<li>Aumente el valor de la inductancia o de la capacitancia, manteniendo la resistencia en un valor bajo. Observe la respuesta del circuito. ¿Cómo afecta el aumento de la inductancia o la capacitancia a la frecuencia de oscilación? ¿Qué relación hay entre estos componentes y la oscilación del circuito? ¿Qué ocurre con el inductor cuando el interruptor conectado a la fuente de voltaje se cierra? ¿Por qué el voltaje baja a cero?</li>
-</ul>
-</section>
 </section>
 <section id="preguntas-complementarias" class="level2">
-<h2 class="anchored" data-anchor-id="preguntas-complementarias">Preguntas complementarias</h2>
-<p>Una vez completadas las mediciones y el análisis de resultados, reflexione sobre las siguientes preguntas. Las respuestas deben ser concisas y basadas en sus observaciones y conocimientos teóricos. - ¿Qué tipo de respuesta se observó en cada variación del circuito RLC (sobreamortiguada, críticamente amortiguada, subamortiguada)? - Describa el rol de la resistencia, el capacitor y el inductor en un circuito RLC. ¿Cómo afecta cada componente el comportamiento transitorio del circuito? - En el circuito RLC, ¿qué combinación de valores de resistencia, inductancia y capacitancia (R, L, C) podría producir una respuesta críticamente amortiguada? ¿Por qué este tipo de respuesta es ideal en aplicaciones de control industrial, como en la amortiguación de movimientos mecánicos? - Explique la diferencia en el almacenamiento de energía entre un capacitor y un inductor. ¿Cómo se manifiestan estas diferencias en las gráficas de voltaje y corriente observadas en el simulador? - En el contexto de un sistema de control, como en un sistema de apertura de puertas automáticas, ¿cómo se podría utilizar un circuito RC para introducir un retardo de tiempo? - ¿Qué tipo de respuesta (sobreamortiguada, subamortiguada, críticamente amortiguada) es deseable en un sistema de suspensión de un vehículo? ¿Por qué? - Mencione un ejemplo de aplicación industrial para cada tipo de circuito (RC, RL, RLC).</p>
+<h2 class="anchored" data-anchor-id="preguntas-complementarias">Preguntas Complementarias</h2>
+<ol type="1">
+<li>Basado en la Tabla 1, si duplicamos la distancia a la carga, ¿el campo eléctrico se reduce a la mitad? Explique usando sus datos si la relación es lineal o exponencial.</li>
+<li>En la Parte 2 (Dipolo), el campo en el centro <strong>no es cero</strong>, a pesar de estar equidistante de ambas cargas. Explique por qué ocurre esto basándose en la naturaleza vectorial del campo (¿se suman o se restan las flechas?).</li>
+<li>Imagine que las líneas equipotenciales son curvas de nivel en un mapa topográfico. Si una carga positiva “cae” desde un potencial alto a uno bajo, gana energía cinética. ¿En qué zona del dipolo aceleraría más rápido una partícula? (Pista: donde las líneas equipotenciales están más juntas).</li>
+<li>Observe las líneas equipotenciales que dibujó en la Parte 3. ¿Qué ángulo forman siempre con las flechas del campo eléctrico cuando se cruzan?</li>
+</ol>
 
 
 </section>

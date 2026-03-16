@@ -1,11 +1,11 @@
 # Práctica: Campo magnético
 
 ## Introducción
-La inducción electromagnética es el principio físico que mueve al mundo industrial moderno. Casi toda la energía eléctrica que consumimos se produce mediante este fenómeno (en hidroeléctricas, termoeléctricas o eólicas) y la gran mayoría de los motores industriales funcionan gracias a él.
+El magnetismo es una propiedad fundamental de la materia que describe la interacción entre cargas eléctricas en movimiento. Un **campo magnético** ($\vec{B}$) es una región del espacio donde una carga en movimiento o un material magnético experimenta una fuerza. Estos campos son invisibles, pero sus efectos son la base de motores, generadores y sistemas de almacenamiento de datos.
 
-Mientras que la electrostática se ocupa de cargas en reposo, la inducción nos enseña cómo **el movimiento y el cambio magnético pueden generar electricidad**. Michael Faraday descubrió que un campo magnético variable puede inducir una corriente eléctrica, y Heinrich Lenz definió la dirección de esa corriente, estableciendo un principio de conservación de energía fundamental.
+Los campos magnéticos son generados principalmente por dos medios: el movimiento de electrones en el interior de los átomos (imanes permanentes) y el flujo de corriente eléctrica a través de conductores. En un imán, el campo se concentra en los **polos magnéticos** (Norte y Sur). La interacción entre ellos sigue un principio simple: polos opuestos se atraen y polos iguales se repelen.
 
-En esta práctica, exploraremos cómo un simple imán puede convertirse en un generador de potencia y cómo funcionan los transformadores que distribuyen la energía eléctrica a las fábricas.
+Un hito crucial en la física fue el descubrimiento de que la electricidad y el magnetismo están íntimamente ligados. Cuando una corriente circula por un alambre, se genera un campo magnético cuyas líneas forman círculos concéntricos alrededor del conductor. Este fenómeno se cuantifica mediante la **Ley de Ampere**, la cual establece que la intensidad del campo magnético es proporcional a la corriente eléctrica que lo genera. En esta práctica, exploraremos desde la naturaleza estática de los imanes de barra hasta el control dinámico de los campos mediante electroimanes y la inducción electromagnética.
 
 ## Objetivos
 
@@ -19,6 +19,13 @@ Comprender los principios de inducción electromagnética y su aplicación en la
 - Visualizar el funcionamiento básico de una turbina de generación eléctrica.
 
 ## Fundamentos Teóricos
+
+### El Campo Magnético y la Ley de Ampere
+El campo magnético ($\vec{B}$) es un campo vectorial producido por cargas en movimiento. Mientras que en un imán permanente el campo proviene del espín y el movimiento orbital de los electrones, en un conductor el campo es resultado de la corriente eléctrica ($I$).
+
+La **Ley de Ampere** describe la relación entre una corriente eléctrica y el campo magnético que crea. En su forma más simple para un alambre largo y recto, establece que el campo magnético a una distancia $r$ es:
+$$B = \frac{\mu_0 I}{2\pi r}$$
+Donde $\mu_0$ es la permeabilidad del vacío. Esto significa que a mayor corriente, mayor es la fuerza del campo magnético.
 
 ### Ley de Faraday de la Inducción
 La ley establece que la fuerza electromotriz (FEM o voltaje, $\varepsilon$) inducida en un circuito es proporcional a la rapidez con la que cambia el flujo magnético ($\Phi_B$) a través de él.

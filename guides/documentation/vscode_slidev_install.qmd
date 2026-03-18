@@ -1,0 +1,87 @@
+### 1. Inicializar el proyecto
+Abre tu terminal en VS Code y ejecuta el comando de inicio de Slidev. Esto creará la estructura base:
+
+```bash
+npm init slidev@latest
+```
+*Sigue las instrucciones en pantalla (nombre del proyecto, etc.).*
+
+---
+
+### 2. Instalar dependencias de UI
+Para que DaisyUI funcione dentro del motor de Slidev (UnoCSS), necesitamos instalar el paquete de DaisyUI y su preset para UnoCSS:
+
+```bash
+npm install -D daisyui unocss-preset-daisy
+```
+
+---
+
+### 3. Configurar UnoCSS
+Crea (o edita) un archivo llamado `uno.config.ts` en la raíz de tu proyecto. Aquí es donde ocurre la magia para que Slidev reconozca las clases de DaisyUI (como `btn`, `card`, etc.):
+
+```typescript
+// uno.config.ts
+import { defineConfig, presetUno, presetAttributify, presetIcons } from 'unocss'
+import { presetDaisy } from 'unocss-preset-daisy'
+
+export default defineConfig({
+  presets: [
+    presetUno(),
+    presetAttributify(), // Te permite usar atributos como <div border="~" p="4">
+    presetIcons(),       // Para usar cualquier icono de Iconify directamente
+    presetDaisy({
+      // Aquí puedes elegir tus temas favoritos de DaisyUI
+      themes: ["light", "dark", "cupcake", "synthwave"], 
+    }),
+  ],
+})
+```
+
+---
+
+### 4. Tu primera diapositiva interactiva
+Ahora abre tu archivo `slides.md` y pega este ejemplo para probar que todo funciona. Verás que puedes usar componentes de DaisyUI y clases de Tailwind mezcladas:
+
+```markdown
+---
+theme: seriph
+background: https://source.unsplash.com/collection/94734566/1920x1080
+class: text-center
+highlighter: shiki
+drawings:
+  persist: false
+---
+
+# Bienvenido a mi Presentación Pro
+Presentación moderna con **Slidev** + **DaisyUI**
+
+<div class="flex justify-center gap-4 mt-10">
+  <button class="btn btn-primary">Botón DaisyUI</button>
+  <button class="btn btn-secondary btn-outline">Efecto Outline</button>
+</div>
+
+---
+
+# Componentes Rápidos
+Usa el "Card" de DaisyUI directamente en Markdown
+
+<div class="card w-96 bg-base-100 shadow-xl mx-auto mt-5">
+  <figure><img src="https://picsum.photos/400/225" alt="Shoes" /></figure>
+  <div class="card-body text-left">
+    <h2 class="card-title text-black">¡Funciona!</h2>
+    <p>Este es un componente de DaisyUI dentro de Slidev.</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-accent">Comprar ahora</button>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+### Herramientas complementarias.
+- Meraki UI
+- Daysi UI
+- Hyper UI
+- Flowbite

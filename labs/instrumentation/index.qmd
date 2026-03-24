@@ -27,13 +27,13 @@ Esta es la página principal de Prácticas de Laboratorio y Simulación de Instr
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Práctica de Circuitos AC
-[Ver Práctica &rarr;](instrumentation_05_ac_circuits.qmd){.btn .btn-primary role="button"}
+## 📚 Práctica de Circuitos RLC
+[Ver Práctica &rarr;](instrumentation_06_rlc_circuit.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Práctica de Circuitos RLC
-[Ver Práctica &rarr;](instrumentation_06_rlc_circuit.qmd){.btn .btn-primary role="button"}
+## 📚 Práctica de Circuitos AC
+[Ver Práctica &rarr;](instrumentation_05_ac_circuits.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}

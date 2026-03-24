@@ -170,11 +170,19 @@ Reduzca el valor de la resistencia significativamente (1 o 2). Observe la nueva 
 
 ## Preguntas complementarias
 Una vez completadas las mediciones y el análisis de resultados, reflexione sobre las siguientes preguntas. Las respuestas deben ser concisas y basadas en sus observaciones y conocimientos teóricos.
+
 - ¿Qué tipo de respuesta se observó en cada variación del circuito RLC (sobreamortiguada, críticamente amortiguada, subamortiguada)?
+  
 - Describa el rol de la resistencia, el capacitor y el inductor en un circuito RLC. ¿Cómo afecta cada componente el comportamiento transitorio del circuito?
+  
 - En el circuito RLC, ¿qué combinación de valores de resistencia, inductancia y capacitancia (R, L, C) podría producir una respuesta críticamente amortiguada? ¿Por qué este tipo de respuesta es ideal en aplicaciones de control industrial, como en la amortiguación de movimientos mecánicos?
+  
 - Explique la diferencia en el almacenamiento de energía entre un capacitor y un inductor. ¿Cómo se manifiestan estas diferencias en las gráficas de voltaje y corriente observadas en el simulador?
+  
 - En el contexto de un sistema de control, como en un sistema de apertura de puertas automáticas, ¿cómo se podría utilizar un circuito RC para introducir un retardo de tiempo?
+  
 - ¿Qué tipo de respuesta (sobreamortiguada, subamortiguada, críticamente amortiguada) es deseable en un sistema de suspensión de un vehículo? ¿Por qué?
+  
 - Mencione un ejemplo de aplicación industrial para cada tipo de circuito (RC, RL, RLC).
+  
 

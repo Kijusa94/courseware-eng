@@ -1,0 +1,37 @@
+That "Authentication failed" error is a classic rite of passage. GitHub retired password authentication for Git operations back in 2021. Even though the prompt asks for a "Password," it actually requires a **Personal Access Token (PAT)** or an **SSH Key**.
+
+Since you are working in WSL2, here are the two best ways to fix this:
+
+---
+
+### Option 1: The Quick Fix (Personal Access Token)
+If you want to keep using HTTPS, you need to generate a token to use *instead* of your password.
+
+1.  **Generate a Token:** Go to GitHub **Settings** > **Developer Settings** > **Personal Access Tokens** > **Tokens (classic)**.
+2.  **Set Permissions:** Click "Generate new token." Give it a name and select the **repo** scope (this allows cloning and pushing).
+3.  **Copy the Token:** Copy it immediately; you won’t see it again.
+4.  **Clone Again:** When the terminal asks for your password, **paste the token** instead.
+
+> **Tip:** Typing this every time is a pain. In WSL, run `git config --global credential.helper store` to save your credentials (stored in plain text in your home folder), or better yet, use the **GitHub CLI** to manage authentication.
+
+---
+
+### Option 2: The Pro Fix (SSH Keys)
+This is the preferred method for ROS development and WSL because it’s more secure and doesn't require typing credentials once set up.
+
+1.  **Generate a Key:** In your WSL terminal, run:
+    `ssh-keygen -t ed25519 -C "your_email@example.com"` (Press Enter through the prompts).
+2.  **Start the Agent:** `eval "$(ssh-agent -s)"`
+    `ssh-add ~/.ssh/id_ed25519`
+3.  **Add to GitHub:** Copy your public key with `cat ~/.ssh/id_ed25519.pub`. Go to GitHub **Settings** > **SSH and GPG keys** > **New SSH key** and paste it there.
+4.  **Clone via SSH:** Use the SSH URL instead of HTTPS:
+    `git clone git@github.com:Kijusa94/wsl-robotics-repo.git`
+
+---
+
+### Why this happens
+
+
+When you use **HTTPS**, GitHub expects a secure handshake that simple passwords can't provide. **SSH** uses a pair of cryptographic keys (a public one on GitHub and a private one on your laptop) to prove your identity automatically.
+
+Would you like me to walk you through setting up the **GitHub Credential Manager** so you can share your Windows login credentials with WSL2?

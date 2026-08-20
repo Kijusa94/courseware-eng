@@ -13,11 +13,11 @@ Esta guía muestra el paso a paso para conectar el simulador de Codesys con Fact
 
 Inicie CODESYS, se desplegará un cuadro de dialogo como el siguiente. Marque la opción que considere apropiada. Presione ``Continuar``.
 
-![codesys_factorio_opcua](assets/images/codesys_factoryio_opcua/01.png)
+![codesys_factorio_opcua](assets/images/codesys_install/15.png)
 
 Esta es la ventana principal de Codesys. Presione sobre la opción ``New Project``.
 
-![codesys_factorio_opcua](assets/images/codesys_factoryio_opcua/02.png)
+![codesys_factorio_opcua](assets/images/codesys_install/16.png)
 
 Seleccione ``Standar project`` de la lista de plantillas, escoja una ruta para su proyecto y establezca un nombre. Presione ``Ok``.
 

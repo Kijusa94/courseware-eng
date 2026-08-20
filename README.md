@@ -22,9 +22,42 @@ Sitio publicado en: https://kijusa94.github.io/courseware-eng/
 
 ## Render y despliegue
 
+### Render local
+
 ```bash
 quarto render          # genera el sitio en docs/
 quarto preview         # vista previa local
 ```
 
-El sitio se despliega en GitHub Pages desde la rama `gh-pages` (el directorio `docs/` no se versiona en `main`).
+### Despliegue manual a GitHub Pages (gh-pages)
+
+El sitio se publica desde la rama `gh-pages` (el directorio `docs/` no se versiona en `main`). El despliegue es **manual y deliberado**, sin automatizaciones:
+
+```bash
+# 1. Renderizar el sitio (con Python y R disponibles)
+quarto render
+
+# 2. Preparar la rama gh-pages con la salida
+git worktree add gh-pages-build gh-pages
+rm -rf gh-pages-build/*          # limpiar la salida anterior
+cp -r docs/* gh-pages-build/
+
+# 3. Confirmar los cambios y publicar
+cd gh-pages-build
+git add -A
+git commit -m "docs: publicar sitio"
+git push origin gh-pages
+cd ..
+git worktree remove gh-pages-build
+
+# 4. (Opcional) volver a main
+git checkout main
+```
+
+> **Alternativa más simple** (equivalente): clonar la rama `gh-pages` en una carpeta aparte (`git clone -b gh-pages <url> sitio-publicado`), copiar el contenido de `docs/` allí y hacer commit+push desde esa carpeta.
+
+> **Recordatorio:** antes de publicar, verifique el render local sin errores y revise que los enlaces de los índices apunten a archivos existentes (ver `CONTRIBUTING.md`).
+
+## Contribuir
+
+Lea [`CONTRIBUTING.md`](CONTRIBUTING.md) antes de agregar o modificar recursos.

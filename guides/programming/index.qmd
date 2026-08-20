@@ -14,7 +14,7 @@ Esta es la página principal de Guías para configurar entornos de programación
 ::: {.g-col-12 .g-col-md-6}
 ## 📚 Shorcuts para VSCode.
 
-[Ver Guía &rarr;](vscode_shorcuts.qmd){.btn .btn-primary role="button"}
+[Ver Guía &rarr;](vscode_shortcuts.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}

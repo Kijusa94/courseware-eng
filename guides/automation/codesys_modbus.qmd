@@ -1,53 +1,118 @@
 ---
 title: "Configuración de Codesys con Factory IO mediante Modbus"
-description: "Paso a paso para comunicar CODESYS con Factory IO de Siemens usando MODBUS TCP/IP."
+description: "Paso a paso para comunicar CODESYS con Factory IO de Siemens usando MODBUS TCP/IP, desde la configuración del esclavo hasta la simulación."
 ---
 
-Esta guía muestra el paso a paso para comunicar CODESYS con Factory IO de Siemens mediante MODBUS TCP/IP.
+Esta guía muestra el paso a paso para comunicar CODESYS con Factory IO de Siemens mediante **MODBUS TCP/IP**. El PLC simulado de CODESYS actuará como esclavo Modbus, y Factory IO como maestro, intercambiando las entradas y salidas del escenario.
 
 ::: {.callout-important}
-**Requisitos:** tener instalados [CODESYS](codesys_install.qmd) y [Factory IO](factoryio_install.qmd).
+**Requisitos:** tener instalados [CODESYS](codesys_install.qmd) y [Factory IO](factoryio_install.qmd), y conocer la [conexión básica por OPC UA](codesys_factoryio_opcua.qmd) (el flujo de arranque del PLC y creación de proyecto es el mismo).
 :::
 
-![codesys_modbus](assets/images/codesys_modbus/01.png)
-![codesys_modbus](assets/images/codesys_modbus/02.png)
-![codesys_modbus](assets/images/codesys_modbus/03.png)
-![codesys_modbus](assets/images/codesys_modbus/04.png)
-![codesys_modbus](assets/images/codesys_modbus/05.png)
-![codesys_modbus](assets/images/codesys_modbus/06.png)
-![codesys_modbus](assets/images/codesys_modbus/07.png)
-![codesys_modbus](assets/images/codesys_modbus/08.png)
-![codesys_modbus](assets/images/codesys_modbus/09.png)
-![codesys_modbus](assets/images/codesys_modbus/10.png)
-![codesys_modbus](assets/images/codesys_modbus/11.png)
-![codesys_modbus](assets/images/codesys_modbus/12.png)
-![codesys_modbus](assets/images/codesys_modbus/13.png)
-![codesys_modbus](assets/images/codesys_modbus/14.png)
-![codesys_modbus](assets/images/codesys_modbus/15.png)
-![codesys_modbus](assets/images/codesys_modbus/16.png)
-![codesys_modbus](assets/images/codesys_modbus/17.png)
-![codesys_modbus](assets/images/codesys_modbus/18.png)
-![codesys_modbus](assets/images/codesys_modbus/19.png)
-![codesys_modbus](assets/images/codesys_modbus/20.png)
-![codesys_modbus](assets/images/codesys_modbus/21.png)
-![codesys_modbus](assets/images/codesys_modbus/22.png)
-![codesys_modbus](assets/images/codesys_modbus/23.png)
-![codesys_modbus](assets/images/codesys_modbus/24.png)
-![codesys_modbus](assets/images/codesys_modbus/25.png)
-![codesys_modbus](assets/images/codesys_modbus/26.png)
-![codesys_modbus](assets/images/codesys_modbus/27.png)
-![codesys_modbus](assets/images/codesys_modbus/28.png)
-![codesys_modbus](assets/images/codesys_modbus/29.png)
-![codesys_modbus](assets/images/codesys_modbus/30.png)
-![codesys_modbus](assets/images/codesys_modbus/31.png)
-![codesys_modbus](assets/images/codesys_modbus/32.png)
-![codesys_modbus](assets/images/codesys_modbus/33.png)
-![codesys_modbus](assets/images/codesys_modbus/34.png)
-![codesys_modbus](assets/images/codesys_modbus/35.png)
-![codesys_modbus](assets/images/codesys_modbus/36.png)
-![codesys_modbus](assets/images/codesys_modbus/37.png)
-![codesys_modbus](assets/images/codesys_modbus/38.png)
-![codesys_modbus](assets/images/codesys_modbus/39.png)
-![codesys_modbus](assets/images/codesys_modbus/40.png)
-![codesys_modbus](assets/images/codesys_modbus/41.png)
+## 1. Crear el proyecto en CODESYS
 
+Inicie CODESYS, cree un **Standard Project** con el dispositivo `CODESYS Control Win V3 x64` y el lenguaje `Ladder Logic Diagram (LD)` para el PLC_PRG, tal como se describe en la guía OPC UA.
+
+![Creación del proyecto](assets/images/codesys_modbus/01.png)
+![Selección de dispositivo y lenguaje](assets/images/codesys_modbus/02.png)
+![Proyecto estándar creado](assets/images/codesys_modbus/03.png)
+
+## 2. Configurar el PLC como esclavo Modbus TCP
+
+2.1. En el árbol del proyecto, haga clic derecho sobre el dispositivo y agregue el esclavo **Modbus TCP** desde la librería de comunicación de CODESYS.
+
+![Agregar dispositivo Modbus](assets/images/codesys_modbus/04.png)
+![Selección del esclavo Modbus TCP](assets/images/codesys_modbus/05.png)
+![Esclavo agregado al árbol](assets/images/codesys_modbus/06.png)
+
+2.2. Configure la dirección IP del esclavo (la del equipo local, por ejemplo `127.0.0.1`) y el puerto por defecto `502`. Habilite el esclavo y ajuste el número máximo de conexiones.
+
+![Configuración de IP y puerto](assets/images/codesys_modbus/07.png)
+![Habilitación del esclavo](assets/images/codesys_modbus/08.png)
+![Opciones de conexión](assets/images/codesys_modbus/09.png)
+
+2.3. En la pestaña de registros (*Modbus Slave Channel*), defina los **registros de entrada y salida** (holding registers) que se intercambiarán con Factory IO. Asocie cada registro a una variable del proyecto.
+
+![Configuración de registros](assets/images/codesys_modbus/10.png)
+![Registros de entrada](assets/images/codesys_modbus/11.png)
+![Registros de salida](assets/images/codesys_modbus/12.png)
+
+2.4. Compile el proyecto (F11) para generar el código y verificar que no hay errores.
+
+![Compilación del proyecto](assets/images/codesys_modbus/13.png)
+![Resultado de la compilación](assets/images/codesys_modbus/14.png)
+
+## 3. Arrancar el PLC y cargar el programa
+
+3.1. Inicie el PLC de simulación desde el icono de la bandeja del sistema (o con `Online → Login`) y cargue el programa.
+
+![Inicio del PLC](assets/images/codesys_modbus/15.png)
+![Login y carga del programa](assets/images/codesys_modbus/16.png)
+![PLC en modo Run](assets/images/codesys_modbus/17.png)
+
+3.2. Verifique que el esclavo Modbus está activo y escuchando en el puerto 502 (estado en la ventana de diagnóstico del dispositivo).
+
+![Esclavo Modbus activo](assets/images/codesys_modbus/18.png)
+![Diagnóstico del esclavo](assets/images/codesys_modbus/19.png)
+
+## 4. Configurar Factory IO con el driver Modbus TCP
+
+4.1. Abra Factory IO y cargue la escena deseada (por ejemplo **"1 - From A to B"**).
+
+![Selección de escena](assets/images/codesys_modbus/20.png)
+![Escena cargada](assets/images/codesys_modbus/21.png)
+
+4.2. Diríjase a la pestaña **Drivers** y seleccione el driver **Modbus TCP/IP Client** (maestro).
+
+![Selección del driver Modbus](assets/images/codesys_modbus/22.png)
+![Driver Modbus TCP seleccionado](assets/images/codesys_modbus/23.png)
+
+4.3. En la configuración del driver, indique la dirección del servidor (`127.0.0.1`), el puerto (`502`) y el tipo de datos (por ejemplo, *Holding Registers*).
+
+![Configuración de conexión](assets/images/codesys_modbus/24.png)
+![Dirección y puerto](assets/images/codesys_modbus/25.png)
+![Parámetros del driver](assets/images/codesys_modbus/26.png)
+
+4.4. **Vincule las variables:** asigne las entradas y salidas del escenario a las direcciones Modbus configuradas en CODESYS (registros de entrada/salida). Cada variable de Factory IO (sensores, actuadores) debe apuntar al registro correspondiente.
+
+![Vínculo de variables de entrada](assets/images/codesys_modbus/27.png)
+![Vínculo de variables de salida](assets/images/codesys_modbus/28.png)
+![Tabla de direcciones Modbus](assets/images/codesys_modbus/29.png)
+
+4.5. Aplique la configuración. El driver debe mostrar el estado de conexión **activo** (sin errores).
+
+![Aplicar configuración](assets/images/codesys_modbus/30.png)
+![Conexión establecida](assets/images/codesys_modbus/31.png)
+![Estado del driver](assets/images/codesys_modbus/32.png)
+
+## 5. Simulación
+
+5.1. Ejecute la simulación en Factory IO.
+
+![Inicio de la simulación](assets/images/codesys_modbus/33.png)
+![Escenario en ejecución](assets/images/codesys_modbus/34.png)
+
+5.2. Accione los sensores del escenario (botones, bandas, sensores de proximidad) y observe en CODESYS cómo cambian los registros y las variables asociadas.
+
+![Interacción con el escenario](assets/images/codesys_modbus/35.png)
+![Variables del PLC en tiempo real](assets/images/codesys_modbus/36.png)
+
+5.3. Verifique el control completo: la lógica ladder del PLC debe activar los actuadores de Factory IO a través de los registros Modbus.
+
+![Actuador controlado por el PLC](assets/images/codesys_modbus/37.png)
+![Resultado del lazo completo](assets/images/codesys_modbus/38.png)
+
+## Troubleshooting
+
+| Problema | Causa probable | Solución |
+|---|---|---|
+| Factory IO no conecta (error de driver) | El PLC no está en Run o el esclavo está deshabilitado | Arranque el PLC y verifique el estado del esclavo Modbus (paso 3) |
+| `Connection refused` | Puerto 502 ocupado o dirección incorrecta | Verifique `127.0.0.1:502` y que ningún otro servicio use el puerto |
+| Las variables no se actualizan | Registros mal mapeados | Compare la tabla de registros de CODESYS con las direcciones del driver de Factory IO |
+| Valores invertidos o erráticos | Tipo de dato incorrecto (16/32 bits) | Revise la correspondencia INT/REAL entre ambos lados |
+
+## Verificación
+
+- [ ] El driver Modbus de Factory IO muestra conexión activa.
+- [ ] Al accionar un sensor en el escenario, la variable correspondiente cambia en CODESYS.
+- [ ] La lógica ladder del PLC controla los actuadores de Factory IO en tiempo real.

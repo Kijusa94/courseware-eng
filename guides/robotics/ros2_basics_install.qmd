@@ -1,1 +1,128 @@
-# ROS2 Jazzy instalación con WSL2
+---
+title: "Instalación de ROS2 Jazzy en WSL2"
+description: "Instalación paso a paso de ROS 2 Jazzy Jalisco sobre Ubuntu 24.04 en WSL2 para Windows 11, con verificación del entorno."
+---
+
+ROS 2 Jazzy Jalisco es la distribución *Long Term Support* (LTS) de ROS 2, soportada oficialmente sobre **Ubuntu 24.04 (Noble)**. Este documento guía su instalación en **WSL2** (Subsistema de Windows para Linux), el entorno recomendado cuando el equipo de desarrollo es Windows.
+
+## Requerimientos
+
+- Windows 11 (WSL2 está disponible también en Windows 10 21H2+, pero se recomienda Windows 11).
+- Al menos 8 GB de RAM y 20 GB de espacio libre en disco.
+- Acceso a internet durante la instalación.
+
+## Paso 1: Instalar WSL2 con Ubuntu 24.04
+
+Abra **PowerShell o CMD como administrador** y ejecute:
+
+```bash
+wsl --install -d Ubuntu-24.04
+```
+
+Este comando habilita las características necesarias (Virtual Machine Platform y Subsistema de Windows para Linux), instala el kernel de WSL2 y despliega Ubuntu 24.04. **Reinicie el equipo** cuando se le indique.
+
+> **Nota:** si ya tiene WSL instalado con otra versión, asegúrese de que sea WSL2: `wsl --set-version <distro> 2`. Verifique con `wsl --status`.
+
+Al terminar, abra Ubuntu desde el menú Inicio, cree su usuario y contraseña de Linux (independientes de los de Windows) y actualice el sistema:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+## Paso 2: Configurar locale
+
+ROS 2 requiere un locale UTF-8. Si su sistema está en inglés (C.UTF-8) puede omitir este paso; si no, configúrelo:
+
+```bash
+sudo apt install -y locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
+
+## Paso 3: Habilitar los repositorios de ROS 2
+
+Agregue la clave pública y el repositorio oficial de ROS 2:
+
+```bash
+sudo apt install -y software-properties-common curl
+sudo add-apt-repository universe
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+```
+
+Actualice los índices:
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+## Paso 4: Instalar ROS 2 Jazzy
+
+Para este curso se recomienda la instalación **desktop** (incluye RViz, demos y turtlesim):
+
+```bash
+sudo apt install -y ros-jazzy-desktop
+```
+
+> Si el espacio en disco es limitado, la versión mínima `ros-jazzy-ros-base` es suficiente para los niveles 1 y 2 de este curso.
+
+Instale además las herramientas de desarrollo (colcon, rosdep y el framework de testing):
+
+```bash
+sudo apt install -y python3-rosdep python3-colcon-common-extensions ros-jazzy-rmw-cyclonedds-cpp
+```
+
+## Paso 5: Configurar el entorno
+
+Cargue el entorno de ROS 2 en cada terminal nueva añadiendo la línea al `~/.bashrc`:
+
+```bash
+echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+> **RMW (middleware):** si experimenta problemas de descubrimiento de nodos (típico en WSL2 por el adaptador virtual), fuerce Cyclone DDS:
+>
+> ```bash
+> echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc
+> ```
+
+## Paso 6: Verificar la instalación
+
+En **dos terminales** de Ubuntu:
+
+**Terminal 1:**
+
+```bash
+ros2 run demo_nodes_cpp talker
+```
+
+**Terminal 2:**
+
+```bash
+ros2 run demo_nodes_cpp listener
+```
+
+Si en la terminal 2 aparece `I heard: Hello world: N`, la instalación es correcta. También puede probar turtlesim:
+
+```bash
+ros2 run turtlesim turtlesim_node
+```
+
+La ventana de turtlesim debe abrirse (WSLg de Windows 11 muestra aplicaciones gráficas automáticamente).
+
+## Solución de problemas comunes
+
+| Problema | Causa probable | Solución |
+|---|---|---|
+| `command not found: ros2` | No se cargó el entorno | `source /opt/ros/jazzy/setup.bash` (o reinicie la terminal) |
+| Los nodos no se descubren entre sí | Middleware/red de WSL2 | Fijar `RMW_IMPLEMENTATION=rmw_cyclonedds_cpp` (paso 5) |
+| No se abre la ventana gráfica | WSLg deshabilitado | Verifique `echo $DISPLAY`; si está vacío, `wsl --update` y reinicie |
+| `rosdep` no reconoce el comando | Falta `python3-rosdep` | `sudo apt install python3-rosdep` y `sudo rosdep init && rosdep update` |
+
+## Siguientes pasos
+
+Con ROS 2 instalado y verificado, continúe con el [Nivel 1: Fundamentos](ros2_basics_level_1.qmd).

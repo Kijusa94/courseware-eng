@@ -1,0 +1,65 @@
+---
+# Plantilla de PRÁCTICA DE LABORATORIO
+# Copie este archivo a labs/<curso>/<nombre>.qmd y complete.
+# Siga la numeración del curso (p. ej. instrumentation_09_*.qmd) y registre
+# el archivo en el índice de su curso (labs/<curso>/index.qmd).
+title: "Práctica N: Título"
+description: "Resumen: qué valida el estudiante y con qué herramienta."
+---
+
+## Introducción
+
+Contexto industrial de la práctica: por qué el tema importa para la ingeniería (1-2 párrafos).
+
+## Objetivos
+
+### Objetivo General
+
+Logro global de la práctica.
+
+### Objetivos Específicos
+
+- Objetivo medible 1.
+- Objetivo medible 2.
+
+## Fundamentos Teóricos
+
+### Concepto 1
+
+Explicación con fórmulas en LaTeX:
+
+$$
+E = k \frac{|Q|}{r^2}
+$$
+
+### Concepto 2
+
+...
+
+## Materiales
+
+- Simulador / componentes / software (con enlace si aplica).
+
+## Procedimiento
+
+### Parte 1: Nombre
+
+1. Paso numerado.
+2. Paso numerado.
+
+![Texto alternativo](assets/images/mi_practica/01.png)
+
+### Parte 2: ...
+
+## Cálculos y resultados
+
+Tablas para que el estudiante registre datos:
+
+| Variable | Valor teórico | Valor medido | % Error |
+|---|---|---|---|
+|          |               |              |         |
+
+## Preguntas complementarias
+
+1. Pregunta de análisis 1.
+2. Pregunta de análisis 2.

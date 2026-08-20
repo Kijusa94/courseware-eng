@@ -1,0 +1,51 @@
+---
+# Plantilla de GUÍA (tutorial / how-to)
+# Copie este archivo a guides/<curso>/<nombre>.qmd, complete los campos
+# y elimine este comentario. Convenciones del repositorio:
+# - Un solo H1: el título va en el frontmatter (no repetir como # en el cuerpo).
+# - Jerarquía sin saltos: H2 -> H3 (nunca H2 -> H4).
+# - Imágenes en assets/images/<recurso>/ con ruta relativa y alt descriptivo.
+# - Sin sintaxis de otros ecosistemas ([TOC], !!!, etc.): el TOC lo genera
+#   Quarto automáticamente (toc: true global).
+title: "Título de la guía"
+description: "Resumen de una línea de qué logra el lector al completarla."
+---
+
+Párrafo introductorio: qué hace esta guía, para quién es y qué requisitos previos asume.
+
+## Requerimientos
+
+- Software X instalado (ver [guía de instalación](ruta_a_instalacion.qmd)).
+- Sistema operativo: Windows 11 / macOS / Linux.
+- Conexión a internet para descargas.
+
+## Paso 1: Nombre del paso
+
+Describa la acción concreta. Use ``comandos`` para elementos de interfaz y bloques para comandos:
+
+```bash
+comando --ejemplo
+```
+
+![Texto alternativo descriptivo](assets/images/mi_recurso/01.png)
+
+> **Tip:** consejo opcional para facilitar el paso.
+
+## Paso 2: ...
+
+(Repita tantos pasos como sea necesario.)
+
+## Troubleshooting
+
+| Problema | Causa probable | Solución |
+|---|---|---|
+| Mensaje de error | Causa | Cómo resolverlo |
+
+## Verificación
+
+- [ ] Criterio 1 de éxito.
+- [ ] Criterio 2 de éxito.
+
+## Siguientes pasos
+
+Enlace a la guía o práctica que continúa el flujo de aprendizaje.

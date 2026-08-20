@@ -12,17 +12,17 @@ Esta es la página principal de aspectos básicos de Róbotica con ROS2.
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Nivel 1: Fundamentos de ROS2. 🚧
+## 📚 Nivel 1: Fundamentos de ROS2.
 [Ver Guía &rarr;](ros2_basics_level_1.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Nivel 2: Nodos, tópicos y servicios. 🚧
+## 📚 Nivel 2: Nodos, tópicos y servicios.
 [Ver Guía &rarr;](ros2_basics_level_2.qmd){.btn .btn-primary role="button"}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚 Nivel 3: Proyecto guiado. 🚧
+## 📚 Nivel 3: Proyecto guiado.
 [Ver Guía &rarr;](ros2_basics_level_3.qmd){.btn .btn-primary role="button"}
 :::
 

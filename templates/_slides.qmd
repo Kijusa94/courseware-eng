@@ -1,0 +1,41 @@
+---
+# Plantilla de PRESENTACIÓN (slides RevealJS)
+# Copie este archivo a slides/<curso>/slides/<nombre>.qmd y complete.
+# El formato RevealJS (tema, TOC, footer) se hereda de slides/<curso>/slides/_metadata.yml.
+# Reglas: # = diapositiva de sección (título), ## = diapositiva de contenido.
+title: "Nombre del Curso"
+subtitle: "Tema de la presentación"
+author: "Nombre del docente"
+institute: "Institución"
+---
+
+# Sección 1
+
+## Diapositiva de contenido
+
+- Punto 1.
+- Punto 2.
+
+::: {.callout-note}
+### Concepto clave
+Resumen visual del concepto de la diapositiva.
+:::
+
+## Diapositiva con código
+
+```python
+print("Ejemplo ejecutable")
+```
+
+# Sección 2
+
+## Diapositiva con tabla
+
+| Concepto | Aplicación industrial |
+|---|---|
+|          |                       |
+
+## Diapositiva final: resumen
+
+- Ideas fuerza de la presentación.
+- Enlace a la práctica o guía asociada.

@@ -1,38 +1,88 @@
 ---
 title: "Instalación de Codesys"
-description: "Instalación de CODESYS en Windows 11."
+description: "Instalación de CODESYS en Windows 11, desde la descarga del instalador hasta la primera ejecución del entorno."
 ---
+
+CODESYS es el entorno de programación de PLC (norma IEC 61131-3) utilizado en el curso de Automatización Industrial. Esta guía cubre su instalación en Windows 11.
 
 ## Instalación en Windows 11
 
-![codesys_install](assets/images/codesys_install/01.png)
+### Descarga del instalador
 
-![codesys_install](assets/images/codesys_install/02.png)
+1. Abra el navegador y diríjase al sitio oficial de CODESYS (https://www.codesys.com/). Acceda a la sección de descargas y seleccione **CODESYS V3** para Windows.
 
-![codesys_install](assets/images/codesys_install/03.png)
+![Descarga de CODESYS](assets/images/codesys_install/01.png)
 
-![codesys_install](assets/images/codesys_install/04.png)
+2. Es posible que el sitio solicite registrarse o seleccionar la edición (CODESYS Development System). Descargue el instalador ejecutable.
 
-![codesys_install](assets/images/codesys_install/05.png)
+![Página de descarga](assets/images/codesys_install/02.png)
 
-![codesys_install](assets/images/codesys_install/06.png)
+3. Una vez finalizada la descarga, ubique el archivo en la carpeta de descargas.
 
-![codesys_install](assets/images/codesys_install/07.png)
+![Archivo descargado](assets/images/codesys_install/03.png)
 
-![codesys_install](assets/images/codesys_install/08.png)
+### Ejecución del instalador
 
-![codesys_install](assets/images/codesys_install/09.png)
+4. Ejecute el instalador. Si Windows muestra el aviso de control de cuentas de usuario (UAC), presione **Sí** para permitir la instalación.
 
-![codesys_install](assets/images/codesys_install/10.png)
+![Aviso de UAC](assets/images/codesys_install/04.png)
 
-![codesys_install](assets/images/codesys_install/11.png)
+5. El instalador prepara el entorno y muestra la ventana de bienvenida.
 
-![codesys_install](assets/images/codesys_install/12.png)
+![Bienvenida del instalador](assets/images/codesys_install/05.png)
 
-![codesys_install](assets/images/codesys_install/13.png)
+6. Acepte el acuerdo de licencia y presione **Siguiente**.
 
-![codesys_install](assets/images/codesys_install/14.png)
+![Acuerdo de licencia](assets/images/codesys_install/06.png)
 
-![codesys_install](assets/images/codesys_install/15.png)
+7. Seleccione los componentes que desea instalar. Se recomienda dejar la selección por defecto (incluye el runtime de simulación CODESYS Control Win V3 y los dispositivos de la familia CODESYS).
 
-![codesys_install](assets/images/codesys_install/16.png)
+![Selección de componentes](assets/images/codesys_install/07.png)
+
+8. En la ventana de selección de dispositivos adicionales, mantenga las opciones sugeridas y presione **Siguiente**.
+
+![Dispositivos adicionales](assets/images/codesys_install/08.png)
+
+9. Indique la ruta de instalación. Se sugiere dejar la ruta por defecto.
+
+![Ruta de instalación](assets/images/codesys_install/09.png)
+
+10. Revise el resumen de la instalación y presione **Instalar**.
+
+![Resumen e instalación](assets/images/codesys_install/10.png)
+
+11. Espere a que el instalador copie los archivos. Este proceso puede tomar varios minutos.
+
+![Progreso de instalación](assets/images/codesys_install/11.png)
+
+12. Finalice la instalación presionando **Finalizar** (Finish).
+
+![Finalización](assets/images/codesys_install/12.png)
+
+13. Si el instalador lo solicita, reinicie el equipo para completar la configuración del sistema.
+
+![Reinicio solicitado](assets/images/codesys_install/13.png)
+
+14. En el escritorio o menú de inicio aparecerá el acceso directo de CODESYS V3.5.
+
+![Acceso directo](assets/images/codesys_install/14.png)
+
+### Primera ejecución
+
+15. Al abrir CODESYS por primera vez, se despliega un cuadro de diálogo de configuración inicial. Marque la opción que considere apropiada y presione **Continuar**.
+
+![Diálogo de primera ejecución](assets/images/codesys_install/15.png)
+
+16. Esta es la ventana principal de CODESYS. Desde aquí se crean proyectos nuevos con **New Project**, tal como se describe en la [guía de conexión con Factory IO por OPC UA](codesys_factoryio_opcua.qmd).
+
+![Ventana principal de CODESYS](assets/images/codesys_install/16.png)
+
+## Verificación
+
+- [ ] CODESYS abre correctamente y muestra la ventana principal.
+- [ ] En la lista de dispositivos aparece **CODESYS Control Win V3 x64** (PLC de simulación).
+
+## Siguientes pasos
+
+- [Instalación de Factory IO](factoryio_install.qmd)
+- [Configuración de Codesys y Factory IO mediante OPC UA](codesys_factoryio_opcua.qmd)

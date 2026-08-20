@@ -1,24 +1,59 @@
 ---
 title: "Instalación de Factory IO"
-description: "Instalación de Factory IO de Siemens en Windows 11."
+description: "Instalación de Factory IO de Siemens en Windows 11, desde la descarga hasta la primera escena."
 ---
+
+Factory IO es el simulador 3D de plantas industriales de Siemens utilizado en el curso de Automatización Industrial. Se conecta con CODESYS mediante OPC UA o MODBUS para validar programas de PLC sobre escenarios virtuales.
 
 ## Instalación en Windows 11
 
-![factoryio_install](assets/images/factoryio_install/01.png)
+### Descarga
 
-![factoryio_install](assets/images/factoryio_install/02.png)
+1. Abra el navegador y diríjase al sitio de Factory IO (https://factoryio.com/). En la sección de descargas, seleccione la versión para Windows.
 
-![factoryio_install](assets/images/factoryio_install/03.png)
+![Descarga de Factory IO](assets/images/factoryio_install/01.png)
 
-![factoryio_install](assets/images/factoryio_install/04.png)
+2. Factory IO se distribuye mediante un instalador ejecutable o a través de Steam. Descargue el instalador según su preferencia.
 
-![factoryio_install](assets/images/factoryio_install/05.png)
+![Página de descarga](assets/images/factoryio_install/02.png)
 
-![factoryio_install](assets/images/factoryio_install/06.png)
+3. Una vez descargado, ubique el archivo en la carpeta de descargas.
 
-![factoryio_install](assets/images/factoryio_install/07.png)
+![Archivo descargado](assets/images/factoryio_install/03.png)
 
-![factoryio_install](assets/images/factoryio_install/08.png)
+### Ejecución del instalador
 
-![factoryio_install](assets/images/factoryio_install/09.png)
+4. Ejecute el instalador. Si Windows muestra el aviso de control de cuentas de usuario (UAC), presione **Sí**.
+
+![Aviso de UAC](assets/images/factoryio_install/04.png)
+
+5. El instalador muestra la ventana de bienvenida. Presione **Next**.
+
+![Bienvenida del instalador](assets/images/factoryio_install/05.png)
+
+6. Acepte el acuerdo de licencia y presione **Next**.
+
+![Acuerdo de licencia](assets/images/factoryio_install/06.png)
+
+7. Indique la ruta de instalación. Se sugiere dejar la ruta por defecto y presionar **Next**.
+
+![Ruta de instalación](assets/images/factoryio_install/07.png)
+
+8. Espere a que el instalador copie los archivos y presione **Finish** al finalizar.
+
+![Progreso y finalización](assets/images/factoryio_install/08.png)
+
+9. Al abrir Factory IO por primera vez verá la ventana principal con el panel de escenas (Scenes) a la derecha. Seleccione una escena, por ejemplo **"1 - From A to B"**, para verificar que todo funciona.
+
+![Ventana principal de Factory IO](assets/images/factoryio_install/09.png)
+
+## Verificación
+
+- [ ] Factory IO abre correctamente y muestra las escenas disponibles.
+- [ ] La escena "From A to B" se carga y puede ejecutarse la simulación.
+
+## Siguientes pasos
+
+- [Instalación de Codesys](codesys_install.qmd)
+- [Configuración de Codesys y Factory IO mediante OPC UA](codesys_factoryio_opcua.qmd)
+- [Configuración de Codesys con MODBUS TCP/IP](codesys_modbus.qmd)

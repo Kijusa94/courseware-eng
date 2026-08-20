@@ -1,13 +1,148 @@
-# Práctica de actuadores y diagramas industriales
+---
+title: "Práctica de actuadores y diagramas industriales"
+description: "Identificación de actuadores industriales en Factory IO y diseño de diagramas de control (esquemas ladder y P&ID) con CODESYS."
+---
 
 ## Introducción
 
+Un sistema de automatización industrial se compone de tres familias de elementos: **sensores** (captan la variable), **controladores** (procesan la información) y **actuadores** (ejecutan la acción sobre el proceso). Si los sensores son los "ojos" del sistema, los actuadores son los "músculos": transforman la señal de control (eléctrica, neumática o hidráulica) en movimiento o fuerza física.
+
+El ingeniero debe conocer las características de cada tipo de actuador —motor DC/AC, cilindro neumático, electroválvula, relé, contactor— para seleccionar el adecuado según la carga, la precisión, la velocidad y el entorno de trabajo. Igualmente, debe saber **representar** esos sistemas mediante diagramas normalizados: esquemas de control (ladder), diagramas unifilares y diagramas de tuberías e instrumentación (P&ID), que son el lenguaje común de la ingeniería de planta.
+
 ## Objetivos
+
+### Objetivo General
+
+Identificar y clasificar los actuadores industriales presentes en un entorno simulado de automatización, y representar sistemas de control mediante diagramas normalizados (ladder y P&ID).
+
+### Objetivos Específicos
+
+- Reconocer los principales tipos de actuadores (motores, cilindros, válvulas, relés y contactores) y su función en un proceso.
+- Diseñar un circuito de control ladder en CODESYS que gobierne un actuador de Factory IO.
+- Interpretar un diagrama P&ID identificando instrumentos, lazos de control y actuadores finales.
+- Relacionar la simbología eléctrica normalizada (IEC/ANSI) con los componentes reales.
+
+## Fundamentos Teóricos
+
+### Clasificación de actuadores
+
+| Tipo | Principio | Ejemplos | Aplicación típica |
+|---|---|---|---|
+| Motores eléctricos | Conversión de energía eléctrica en mecánica (giro) | Motor DC, motor AC asíncrono, motor paso a paso, servomotor | Bombas, ventiladores, cintas transportadoras, posicionamiento |
+| Cilindros | Conversión de energía neumática/hidráulica en movimiento lineal | Cilindro de simple y doble efecto | Empuje, sujeción, clasificación, expulsión de piezas |
+| Válvulas | Regulación o conmutación del flujo de un fluido | Electroválvula (solenoide), válvula proporcional, válvula de mariposa | Control de caudal, seguridad, dosificación |
+| Actuadores electromecánicos | Combinación de motor + mecanismo | Actuador lineal eléctrico, servoválvula | Posicionamiento preciso, regulación |
+
+### El relé y el contactor
+
+- **Relé**: interruptor electromecánico accionado por una bobina de baja potencia. Aísla el circuito de control del circuito de potencia. Se usa para conmutar cargas pequeñas/medianas o señales.
+- **Contactor**: relé de mayor capacidad, diseñado para conmutar **cargas de potencia** (motores, bancos de resistencias). Incluye contactos auxiliares y, en algunos casos, protección térmica (relevador de sobrecarga).
+
+### Diagramas de control (esquema ladder)
+
+El diagrama ladder (en escalera) representa la lógica de control con dos raíles verticales (fase y neutro, o L1/L2) y peldaños horizontales. Cada peldaño es una condición `IF (contactos) THEN (salida)`:
+
+- **Contactos normalmente abiertos (NO)** `--| |--`: conducen si la variable es verdadera.
+- **Contactos normalmente cerrados (NC)** `--|/|--`: conducen si la variable es falsa.
+- **Bobinas** `--( )--`: activan la salida (motor, relé, luz piloto).
+
+Es el lenguaje nativo de los PLC (CODESYS lo edita como *Ladder Logic Diagram*).
+
+### Diagramas P&ID
+
+El P&ID (*Piping and Instrumentation Diagram*) representa el proceso físico: tuberías, equipos, instrumentos y lazos de control. Elementos clave:
+
+- **Círculos**: instrumentos (con etiqueta tipo TAG, p. ej. `PT-101` = transmisor de presión 101).
+- **Líneas continuas**: tuberías de proceso.
+- **Líneas punteadas**: señales eléctricas; líneas discontinuas: señales neumáticas.
+- **Válvulas con actuador**: símbolo de la válvula + símbolo del actuador (diafragma, solenoide, motor).
 
 ## Materiales
 
+- Computador con acceso a internet.
+- Simulador Factory IO (escena "From A to B" o similar).
+- CODESYS (con el proyecto básico del curso de automatización).
+
 ## Procedimiento
+
+### Parte 1: Identificación de actuadores en Factory IO
+
+1. Abra Factory IO y cargue la escena **"1 - From A to B"** (la misma de la guía OPC-UA).
+2. Recorra el escenario con el botón derecho del ratón y **liste todos los actuadores** que encuentre. Para cada uno, registre en la Tabla 1:
+   - Nombre del componente (según el panel de la escena).
+   - Tipo de actuador (motor, cilindro, válvula, transportador...).
+   - Fuente de energía (eléctrica, neumática...).
+   - Función en el proceso.
+3. En el panel **Drivers**, revise qué entradas/salidas digitales están asociadas a los actuadores (por ejemplo, el motor de la cinta transportadora). Anote la correspondencia **variable PLC → actuador**.
+4. **Reflexión:** ¿qué actuador de la escena podría sustituirse por un cilindro de doble efecto y por qué?
+
+### Parte 2: Diseño de un circuito ladder en CODESYS
+
+1. Abra CODESYS con el proyecto estándar de la guía OPC-UA (o cree uno nuevo con PLC_PRG en *Ladder Logic Diagram*).
+2. Diseñe el siguiente sistema en ladder:
+   - **Entrada**: botón de arranque (NO) y botón de parada (NC), definidos en la lista de variables globales (GVL).
+   - **Salida**: un actuador de la escena de Factory IO (por ejemplo, el motor de la cinta).
+   - **Lógica**: el motor se activa con el botón de arranque y permanece activo (enclavamiento/self-hold) hasta que se pulse el de parada.
+3. En ladder, el enclavamiento se logra con un contacto NO del propio motor en paralelo al botón de arranque:
+
+   ```text
+   | Inicio  Motor   Parada   Motor |
+   |--| |----| |-----|/|----- ( ) --|
+   |   |      | Motor              |
+   |   |      |--| |--|            |
+   ```
+
+4. Compile, cargue el programa en el PLC simulado y verifique el comportamiento con los botones del escenario.
+
+> **Nota:** si la escena de Factory IO no está conectada por OPC-UA, puede verificar la lógica con los estados de las variables en CODESYS (ventana de *watch*).
+
+### Parte 3: Interpretación de un P&ID
+
+1. Observe el siguiente lazo de control simplificado de nivel en un tanque:
+
+   ```text
+   [Tanque T-101] --(LT-101)--> [Controlador LIC-101] --> [Válvula LV-101]
+        |                                                       |
+        +------------------ (entrada de fluido) <---------------+
+   ```
+
+2. Identifique y registre en la Tabla 2:
+   - El instrumento de medición (etiqueta, variable medida).
+   - El controlador (etiqueta, tipo de señal).
+   - El elemento final de control (actuador).
+   - El tipo de lazo: ¿abierto o cerrado? ¿por qué?
+3. **Reflexión:** ¿qué ocurre con el nivel del tanque si la válvula LV-101 falla en posición abierta? Relacione con el concepto de *fail-safe* visto en sensores.
 
 ## Cálculos y resultados
 
+### Tabla 1: Actuadores identificados en Factory IO
+
+| Actuador (nombre) | Tipo | Energía | Función en el proceso |
+|---|---|---|---|
+|                   |      |         |                       |
+|                   |      |         |                       |
+
+### Tabla 2: Elementos del lazo de control
+
+| Elemento | Etiqueta | Variable | Tipo de señal |
+|---|---|---|---|
+| Sensor/transmisor |          |          |               |
+| Controlador       |          |          |               |
+| Elemento final    |          |          |               |
+
+### Tabla 3: Circuito ladder
+
+| Elemento del peldaño | Símbolo ladder | Función lógica |
+|---|---|---|
+| Botón de arranque    |                |                |
+| Contacto de enclave  |                |                |
+| Botón de parada      |                |                |
+| Bobina del motor     |                |                |
+
 ## Preguntas complementarias
+
+1. Compare un **motor DC** con un **motor AC asíncrono** en términos de control de velocidad y aplicación industrial. ¿Cuál usaría en una cinta transportadora de larga distancia y cuál en un robot de laboratorio?
+2. ¿Por qué el enclavamiento (*self-hold*) es indispensable en un circuito de arranque/parada de un motor? ¿Qué ocurriría si se elimina?
+3. En un diagrama ladder, ¿por qué el botón de **parada** se conecta como contacto **NC**? Relaciónelo con el principio de seguridad *fail-safe*.
+4. Un cilindro de doble efecto avanza y retrocede con dos electroválvulas. Dibuje el peldaño ladder que hace avanzar el cilindro cuando un sensor de presencia se activa, y retroceder cuando el cilindro llega al final de carrera.
+5. En el P&ID de la Parte 3, ¿qué ventaja tiene cerrar el lazo de control (retroalimentación) frente a operar la válvula en forma manual?

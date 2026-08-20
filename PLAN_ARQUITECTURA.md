@@ -143,39 +143,33 @@ courseware-eng/
 - [x] Render de validación: 56/57 páginas OK (2 dependen de R), **0 enlaces rotos**, 0 imágenes faltantes.
 
 ### P1 — Reproducibilidad (hacer que el entorno funcione en máquina limpia)
-- [ ] **R**: inicializar renv real (`renv::init()`), regenerar `renv.lock`, añadir `.Rprofile` y `.gitignore` para `renv/library/`. Verificar `renv::restore()` en una máquina limpia.
-- [ ] **Python**: reducir `requirements.txt` a dependencias de ejecución: `jupyter` (o `ipykernel`), `numpy`, `pandas`, `matplotlib`, `schemdraw`. Documentar la versión de Python (`.python-version` o nota en README). Eliminar el resto del volcado de freeze.
-- [ ] **Rutas frágiles**: `use_virtualenv("../../../.venv", required = TRUE)` en `instrumentation_01_intro.qmd` depende de la ruta relativa; documentar la estructura esperada o parametrizar (p. ej. `.Renviron` con `RETICULATE_PYTHON`).
-- [ ] **Verificación**: en una máquina con R + Python, `quarto render` completo sin errores (hoy los chunks `{r}` y `{python}` de los archivos modificados re-ejecutan — correcto con freeze:auto).
+- [x] **R**: scaffolding renv creado (`renv/activate.R` v1.1.5 fijado al lock, `.Rprofile`, `renv/.gitignore`). Pendiente en máquina con R: `renv::restore()` para regenerar la librería.
+- [x] **Python**: `requirements.txt` curado a dependencias de ejecución (`ipykernel`, `numpy`, `pandas`, `matplotlib`, `schemdraw`, `xlsxwriter`, `quarto-cli`) con rangos flexibles.
+- [ ] **Rutas frágiles**: `use_virtualenv("../../../.venv", required = TRUE)` en `instrumentation_01_intro.qmd` — documentar la estructura esperada (pendiente de validar en máquina con R).
+- [ ] **Verificación**: `quarto render` completo en máquina con R + Python (pendiente; en este host no hay kernels).
 
-### P2 — CI/CD y validación automática
-- [ ] Crear `.github/workflows/render.yml`:
-  1. `quarto render` (con R + Python instalados vía `r-lib/actions/setup-r`, `renv::restore()`, y setup-python + `pip install -r requirements.txt`).
-  2. **Link check** de `docs/` (p. ej. `lychee` o `htmltest`): 0 enlaces rotos.
-  3. Deploy a `gh-pages` con `peaceiris/actions-gh-pages` (o `quarto publish gh-pages`).
-- [ ] Decidir el flujo de salida: mantener `output-dir: docs` (gh-pages branch) o cambiar a `_site` + `actions/configure-pages`. Recomendación: **gh-pages branch + workflow**, dejando `main` limpia de artefactos.
-- [ ] Añadir `.github/workflows/check.yml` para PRs: render + link check (sin deploy) como gate de revisión.
-- [ ] `.gitignore`: añadir `_freeze/site_libs/`, `.DS_Store`, `renv/library/`, `*.Rproj.user`; depurar entradas irrelevantes de la plantilla Python.
+### P2 — Validación y despliegue (SIN automatizaciones, por decisión del autor)
+- [x] Documentado el **despliegue manual a `gh-pages`** en `README.md` (worktree + commit + push).
+- [x] **NO GitHub Actions** (decisión explícita del autor: sin workflows).
+- [x] `.gitignore`: añadidos `_freeze/site_libs/`, `*_files/`, `renv/library/`, `.DS_Store`, `Thumbs.db`, `.Rproj.user`.
+- [ ] (Opcional futuro) Script local de chequeo de enlaces si se desea.
 
 ### P3 — Contenido pendiente (completar o eliminar)
-- [ ] `ros2_basics_install.qmd` (solo título) y `ros2_basics_level_1/2/3.qmd` (0 bytes): redactar contenido (el autor ya domina ROS2 Jazzy en su entorno) o marcarlas explícitamente "Próximamente" en el índice (ya enlazadas con 🚧).
-- [ ] `labs/instrumentation_08_actuators_diagrams.qmd`: redactar (esqueleto con secciones).
-- [ ] Slides de instrumentación 06 (Sensores) y 07 (Actuadores): redactar contenido bajo los títulos existentes; 08 (Diagramas Industriales): crear contenido o eliminar.
-- [ ] `templates/_*.qmd`: rellenar con plantillas funcionales (estructura de guía, práctica y slide) o eliminar la carpeta.
-- [ ] `utils/export_diagrams.py` / `export_all_diagrams.py`: parametrizar (rutas relativas, sin dependencia de Windows), eliminar el código muerto, o retirar los archivos y el `pre-render` comentado.
-- [ ] Guías solo-imagen (codesys_install, factoryio_install, codesys_modbus, vscode_git_install): añadir texto descriptivo por paso y `alt` semántico en las imágenes.
-- [ ] Eliminar imágenes duplicadas (`codesys_factoryio_opcua/01.png==codesys_install/15.png`, `02==16`) y las imágenes huérfanas de `vscode_python_install` (07–14) que quedaron sin uso tras la extracción de VSCode.
+- [x] `ros2_basics_install.qmd` + `ros2_basics_level_1/2/3.qmd`: redactadas las 4 guías completas (instalación Jazzy en WSL2, nodos/tópicos, servicios/acciones/parámetros/launch, proyecto guiado turtle_follower).
+- [x] `labs/instrumentation_08_actuators_diagrams.qmd`: redactada (actuadores en Factory IO + ladder en CODESYS + P&ID).
+- [x] Slides de instrumentación 06 (Sensores), 07 (Actuadores) y 08 (Diagramas Industriales): redactadas.
+- [x] `templates/`: `_docs.qmd`, `_lab.qmd` (renombrada desde `_books.qmd`) y `_slides.qmd` rellenadas con plantillas funcionales.
+- [x] `utils/`: scripts draw.io muertos eliminados (rutas Windows hacia archivos inexistentes) y carpeta `utils/` retirada; `pre-render`/`post-render` eliminados de `_quarto.yml`.
+- [x] Guías solo-imagen (codesys_install, factoryio_install, vscode_git_install, codesys_modbus): añadido texto descriptivo paso a paso. **Nota:** las descripciones siguen los flujos estándar de cada instalador; conviene verificar visualmente las capturas.
+- [x] Imágenes duplicadas: eliminados los 2 pares (`codesys_factoryio_opcua/01==codesys_install/15`, `02==16`) con redirección de referencias.
+- [ ] Imágenes huérfanas (~44): **decisión del autor de NO eliminarlas** (revisión manual futura).
+- [ ] Texto alternativo semántico pendiente en el resto de capturas (solo las guías reescritas lo tienen).
 
 ### P4 — Estandarización y mantenimiento
-- [ ] Política de estilo (para incluir en `CONTRIBUTING.md` o plantilla):
-  - Frontmatter YAML obligatorio: `title` + `description`.
-  - Un solo H1 por archivo (en frontmatter); jerarquía sin saltos (H2→H3, nunca H2→H4).
-  - Rutas de imagen canónicas `assets/images/<recurso>/...` (sin `../` redundantes).
-  - Sin sintaxis de otros ecosistemas (`[TOC]`, `!!!`, admoniciones de MkDocs).
-  - Idiomas: español por defecto; el inglés solo en extractos citados.
-- [ ] Renombrar `vscode_shorcuts.qmd` → `vscode_shortcuts.qmd` (typo histórico) con `git mv` y actualizar índice.
-- [ ] Revisar `search.json`/metadatos del sitio (fecha de última actualización, autor) para una página de "Acerca de" más rica.
-- [ ] Auditoría periódica (cada N meses o antes de cada convocatoria): repetir el script de chequeo de enlaces/estructura incluido en esta sesión.
+- [x] `CONTRIBUTING.md`: convenciones del repositorio (frontmatter, jerarquía, rutas, sintaxis prohibida, cómo añadir recursos).
+- [x] Renombrado `vscode_shorcuts.qmd` → `vscode_shortcuts.qmd` (git mv, historial conservado, índice actualizado).
+- [x] README: cadena de herramientas + despliegue manual + enlace a CONTRIBUTING.
+- [ ] Auditoría periódica manual: repetir los chequeos de esta sesión antes de cada publicación.
 
 ---
 

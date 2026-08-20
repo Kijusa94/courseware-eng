@@ -1,8 +1,6 @@
 project:
   type: website
   output-dir: docs
-  #pre-render: utils/export_all_diagrams.py
-  #post-render: utils/export_all_diagrams.py --clean
 
 lang: es
 

@@ -1,0 +1,233 @@
+---
+title: "ROS2 Básico — Nivel 1: Nodos y Tópicos"
+description: "Fundamentos de ROS 2: arquitectura de nodos, tópicos y mensajes, con ejercicios prácticos en turtlesim y un primer paquete en Python."
+---
+
+En este nivel aprenderá la base de ROS 2: cómo se comunican los programas (nodos) mediante **tópicos** y **mensajes**, usando las herramientas de línea de comandos y turtlesim como laboratorio.
+
+## Conceptos fundamentales
+
+### Nodos
+
+Un **nodo** es un proceso que realiza una tarea concreta en el grafo de ROS 2 (publicar, suscribirse, calcular, controlar...). Un robot con ROS 2 normalmente ejecuta decenas de nodos: uno por cada sensor, actuador o algoritmo. Los nodos se comunican entre sí **sin conocerse directamente**: solo necesitan saber el nombre del tópico o servicio.
+
+### Tópicos
+
+Un **tópico** es un canal de comunicación *publicador-suscriptor* (one-to-many, asíncrono):
+
+- El **publicador** envía mensajes al tópico (p. ej. el nodo del sensor publica datos de distancia).
+- El **suscriptor** recibe esos mensajes (p. ej. el nodo de control se suscribe para decidir la acción).
+
+El transporte no garantiza la entrega: si nadie está suscrito, el mensaje se pierde. Es el modelo ideal para **flujos continuos de datos** (telemetría, comandos de velocidad).
+
+### Mensajes
+
+Un **mensaje** es la estructura de datos que viaja por el tópico: campos tipados definidos en archivos `.msg`. Ejemplos comunes:
+
+| Tópico | Tipo de mensaje | Contenido |
+|---|---|---|
+| `/cmd_vel` | `geometry_msgs/msg/Twist` | Velocidades lineal y angular |
+| `/odom` | `nav_msgs/msg/Odometry` | Posición y velocidad del robot |
+| `/scan` | `sensor_msgs/msg/LaserScan` | Mediciones del lidar |
+
+## Herramientas de línea de comandos
+
+Todas las herramientas se invocan con el prefijo `ros2`. Las más usadas en este nivel:
+
+| Comando | Función |
+|---|---|
+| `ros2 node list` | Lista los nodos activos |
+| `ros2 node info <nodo>` | Detalla tópicos y servicios del nodo |
+| `ros2 topic list` | Lista los tópicos activos |
+| `ros2 topic info <tópico>` | Muestra el tipo de mensaje del tópico |
+| `ros2 topic echo <tópico>` | Muestra en vivo los mensajes publicados |
+| `ros2 topic pub <tópico> <tipo> '<datos>'` | Publica un mensaje manualmente |
+| `ros2 run <paquete> <ejecutable>` | Ejecuta un nodo de un paquete |
+
+> **Tip:** agregue `--help` a cualquier comando para ver sus opciones: `ros2 topic pub --help`.
+
+## Ejercicio 1: Explorar el grafo con turtlesim
+
+1. Abra tres terminales y cargue el entorno si es necesario (`source /opt/ros/jazzy/setup.bash`).
+
+2. En la terminal 1, inicie el simulador:
+
+   ```bash
+   ros2 run turtlesim turtlesim_node
+   ```
+
+3. En la terminal 2, inicie un nodo que publica comandos de velocidad:
+
+   ```bash
+   ros2 run turtlesim turtle_teleop_key
+   ```
+
+   Mueva la tortuga con las flechas del teclado.
+
+4. En la terminal 3, explore el grafo:
+
+   ```bash
+   ros2 node list
+   ```
+
+   Debe ver `/turtlesim` y `/teleop_turtle`. Ahora inspeccione el nodo del simulador:
+
+   ```bash
+   ros2 node info /turtlesim
+   ```
+
+   Observe la sección **Publishers** y **Subscribers**: el nodo publica en `/turtle1/pose` (su posición) y se suscribe a `/turtle1/cmd_vel` (lo que el teleop publica).
+
+5. Vea los mensajes de posición en vivo:
+
+   ```bash
+   ros2 topic echo /turtle1/pose
+   ```
+
+   Mueva la tortuga y observe cómo cambian `x`, `y` y `theta`. Presione `Ctrl+C` para detener.
+
+6. Ahora **publique usted mismo** un comando de velocidad (sin el teleop):
+
+   ```bash
+   ros2 topic pub -r 1 /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0}, angular: {z: 1.0}}"
+   ```
+
+   La tortuga debe moverse en círculo.
+
+> **Pregunta de análisis:** ¿qué ocurre si detiene `turtle_teleop_key` y publica con `-r 1` (1 Hz)? ¿Y si usa `--once`? ¿Por qué el movimiento se vuelve entrecortado? Relaciónelo con la naturaleza asíncrona de los tópicos.
+
+## Ejercicio 2: Ver el grafo gráficamente
+
+Con turtlesim corriendo, ejecute en otra terminal:
+
+```bash
+rqt_graph
+```
+
+Verá los nodos como cajas y los tópicos como aristas. Esta herramienta es indispensable para **diagnosticar** qué nodos se comunican y cuáles no.
+
+## Ejercicio 3: Primer paquete Python (publicador y suscriptor)
+
+### 3.1 Crear el workspace y el paquete
+
+```bash
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+cd src
+ros2 pkg create --build-type ament_python py_pubsub
+```
+
+### 3.2 Nodo publicador
+
+Cree `py_pubsub/py_pubsub/publisher.py`:
+
+```python
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+
+class Publicador(Node):
+    def __init__(self):
+        super().__init__("publicador_minimo")
+        self.publisher_ = self.create_publisher(String, "saludo", 10)
+        self.i = 0
+        self.timer = self.create_timer(0.5, self.enviar_mensaje)  # 2 Hz
+
+    def enviar_mensaje(self):
+        self.i += 1
+        msg = String()
+        msg.data = f"Hola desde ROS2 (envío {self.i})"
+        self.publisher_.publish(msg)
+        self.get_logger().info(f"Publicando: '{msg.data}'")
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = Publicador()
+    rclpy.spin(nodo)
+    nodo.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 3.3 Nodo suscriptor
+
+Cree `py_pubsub/py_pubsub/subscriber.py`:
+
+```python
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+
+
+class Suscriptor(Node):
+    def __init__(self):
+        super().__init__("suscriptor_minimo")
+        self.subscription = self.create_subscription(
+            String, "saludo", self.callback, 10
+        )
+
+    def callback(self, msg):
+        self.get_logger().info(f"Recibido: '{msg.data}'")
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = Suscriptor()
+    rclpy.spin(nodo)
+    nodo.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+### 3.4 Registrar los ejecutables
+
+Edite `py_pubsub/setup.py` para que `entry_points` quede así:
+
+```python
+entry_points={
+    "console_scripts": [
+        "publicador = py_pubsub.publisher:main",
+        "suscriptor = py_pubsub.subscriber:main",
+    ],
+},
+```
+
+### 3.5 Compilar y ejecutar
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select py_pubsub
+source install/setup.bash
+
+# Terminal A
+ros2 run py_pubsub publicador
+
+# Terminal B
+ros2 run py_pubsub suscriptor
+
+# Terminal C (opcional, para verificar)
+ros2 topic echo /saludo
+```
+
+Debe ver los mensajes del publicador en la terminal del suscriptor.
+
+## Verificación del nivel
+
+- [ ] Puede listar nodos y tópicos con `ros2 node list` y `ros2 topic list`.
+- [ ] Publica comandos de velocidad a turtlesim con `ros2 topic pub`.
+- [ ] Compila y ejecuta un paquete propio con un publicador y un suscriptor.
+- [ ] Identifica en `rqt_graph` los nodos y tópicos de su sistema.
+
+## Siguiente nivel
+
+Continúe con [Nivel 2: Servicios, acciones y parámetros](ros2_basics_level_2.qmd).

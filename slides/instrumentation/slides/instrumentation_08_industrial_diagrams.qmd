@@ -5,3 +5,59 @@ author: M.Sc. Juan Guzman
 institute: Kijusa94
 ---
 
+# Diagramas Industriales
+
+## Por qué diagramas
+
+- Lenguaje universal de la ingeniería de planta.
+- Permiten diseñar, documentar y mantener instalaciones.
+- Normalización: IEC 60617 (símbolos eléctricos), ISA-5.1 (P&ID).
+
+# Símbolos eléctricos
+
+## Básicos
+
+- Contacto NO `--| |--` y contacto NC `--|/|--`.
+- Bobina de relé/contactor `--( )--`.
+- Elementos: fusible, interruptor, pulsador, lámpara piloto.
+
+## En diagramas de control
+
+- Dos raíles (L1/L2) y peldaños horizontales (ladder).
+- Cada peldaño: condición de entrada → salida.
+- Base del lenguaje de programación de PLC.
+
+# Diagramas de control
+
+## Ladder (escalera)
+
+- Lógica de enclavamiento, arranque/parada de motores.
+- Ejemplo: arranque con self-hold y parada NC.
+
+## Unifilar y multifilar
+
+- **Unifilar**: una línea por circuito (potencia, distribución).
+- **Multifilar**: todos los conductores (control detallado).
+
+# Diagramas P&ID
+
+## Elementos
+
+- Instrumentos: círculos con TAG (PT-101, LIC-101...).
+- Tuberías de proceso y señales (eléctrica, neumática, hidráulica).
+- Válvulas y actuadores finales.
+
+## Utilidad
+
+- Muestra lazos de control completos: sensor → controlador → actuador.
+- Base para diseño de control, HAZOP y mantenimiento.
+
+# Lectura de planos
+
+## Ejercicio
+
+- Dado un P&ID de un tanque con control de nivel, identifique:
+  - Variable medida y su instrumento.
+  - Controlador y tipo de señal.
+  - Elemento final de control (válvula/actuador).
+- Dado un ladder de arranque de motor, explique qué hace cada peldaño.

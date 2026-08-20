@@ -1,0 +1,229 @@
+---
+title: "ROS2 Básico — Nivel 2: Servicios, Acciones y Parámetros"
+description: "Comunicación síncrona en ROS 2: servicios cliente-servidor, acciones de larga duración, parámetros y archivos de lanzamiento (launch)."
+---
+
+En el nivel 1 los tópicos cubrieron la comunicación *asíncrona* (flujos de datos). Este nivel cubre los patrones restantes de ROS 2: **servicios** (petición/respuesta), **acciones** (tareas de larga duración con retroalimentación), **parámetros** (configuración en caliente) y **launch files** (arranque coordinado de varios nodos).
+
+## Servicios
+
+Un **servicio** es comunicación *cliente-servidor* (síncrona, one-to-one): el cliente envía una **petición** y espera la **respuesta**. Es el patrón adecuado para tareas puntuales: consultar el estado, activar algo, realizar un cálculo.
+
+El tipo de un servicio se define con archivos `.srv` que contienen `Request---Response`.
+
+### Ejercicio 1: Servicios con la CLI
+
+1. Inicie turtlesim:
+
+   ```bash
+   ros2 run turtlesim turtlesim_node
+   ```
+
+2. Liste los servicios disponibles y sus tipos:
+
+   ```bash
+   ros2 service list
+   ros2 service list -t
+   ```
+
+3. Llame al servicio de limpieza de pantalla:
+
+   ```bash
+   ros2 service call /clear std_srvs/srv/Empty
+   ```
+
+4. Llame al servicio que genera una nueva tortuga:
+
+   ```bash
+   ros2 service call /spawn turtlesim/srv/Spawn "{x: 4.0, y: 4.0, theta: 0.0, name: 'tortuga2'}"
+   ```
+
+5. Consulte el tipo y la estructura de un servicio:
+
+   ```bash
+   ros2 service type /spawn
+   ros2 interface show turtlesim/srv/Spawn
+   ```
+
+> **Pregunta de análisis:** ¿qué diferencia observa entre un tópico y un servicio en la CLI? ¿En qué situaciones usaría cada uno en una celda de manufactura (p. ej. consultar la posición de un eje vs. recibir el flujo continuo de un encoder)?
+
+### Ejercicio 2: Servicio propio en Python
+
+Cree el paquete y el nodo:
+
+```bash
+cd ~/ros2_ws/src
+ros2 pkg create --build-type ament_python py_srvcli
+```
+
+Nodo servidor (`py_srvcli/py_srvcli/server.py`):
+
+```python
+import rclpy
+from rclpy.node import Node
+from example_interfaces.srv import AddTwoInts
+
+
+class ServidorSuma(Node):
+    def __init__(self):
+        super().__init__("servidor_suma")
+        self.srv = self.create_service(AddTwoInts, "sumar", self.sumar)
+
+    def sumar(self, request, response):
+        response.sum = request.a + request.b
+        self.get_logger().info(f"{request.a} + {request.b} = {response.sum}")
+        return response
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = ServidorSuma()
+    rclpy.spin(nodo)
+    nodo.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Nodo cliente (`py_srvcli/py_srvcli/client.py`):
+
+```python
+import sys
+import rclpy
+from rclpy.node import Node
+from example_interfaces.srv import AddTwoInts
+
+
+class ClienteSuma(Node):
+    def __init__(self, a, b):
+        super().__init__("cliente_suma")
+        self.cli = self.create_client(AddTwoInts, "sumar")
+        while not self.cli.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info("Esperando al servicio 'sumar'...")
+        req = AddTwoInts.Request()
+        req.a = a
+        req.b = b
+        self.future = self.cli.call_async(req)
+
+    def resultado(self):
+        rclpy.spin_until_future_complete(self, self.future)
+        if self.future.result() is not None:
+            return self.future.result().sum
+        return None
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    a, b = int(sys.argv[1]), int(sys.argv[2])
+    cliente = ClienteSuma(a, b)
+    print(f"Resultado: {cliente.resultado()}")
+    cliente.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Registre los ejecutables en `setup.py` y compile:
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select py_srvcli
+source install/setup.bash
+
+# Terminal A
+ros2 run py_srvcli servidor
+
+# Terminal B
+ros2 run py_srvcli cliente 4 6
+```
+
+La terminal B debe imprimir `Resultado: 10`.
+
+## Acciones
+
+Una **acción** es una tarea de **larga duración** que combina un servicio (objetivo) con retroalimentación continua y la posibilidad de cancelación: mover un brazo a una posición, ejecutar una receta, navegar a un punto.
+
+Componentes de una acción (archivos `.action`): `Goal --- Result` + `Feedback`.
+
+### Ejercicio 3: Acciones con turtlesim
+
+1. Inicie el simulador y verifique la acción de rotación:
+
+   ```bash
+   ros2 run turtlesim turtlesim_node
+   ros2 action list -t
+   ```
+
+2. Envíe un objetivo de rotación:
+
+   ```bash
+   ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 3.14}"
+   ```
+
+   Observe la retroalimentación en vivo (ángulo restante). Con `--feedback` puede verla sin pausar.
+
+> **Pregunta de análisis:** ¿por qué la rotación se modela como *acción* y no como tópico ni servicio? Piense en la duración, la retroalimentación y la cancelación.
+
+## Parámetros
+
+Un **parámetro** es una configuración del nodo que puede leerse y modificarse en caliente (sin recompilar ni reiniciar).
+
+```bash
+# Ver parámetros de un nodo
+ros2 param list /turtlesim
+
+# Leer un parámetro
+ros2 param get /turtlesim background_r
+
+# Modificar en caliente
+ros2 param set /turtlesim background_r 150
+
+# Guardar/cargar todos los parámetros de un nodo
+ros2 param dump /turtlesim
+ros2 param load /turtlesim turtlesim.yaml
+```
+
+En Python, declare parámetros con `declare_parameter` y léalos con `get_parameter`; puede pasarlos en el arranque con `ros2 run mi_paquete nodo --ros-args -p nombre: valor`.
+
+## Launch files
+
+Un **launch file** arranca varios nodos (y configura parámetros) con un solo comando. En ROS 2 se escriben en Python.
+
+Cree `py_pubsub/launch/demo_launch.py`:
+
+```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(package="turtlesim", executable="turtlesim_node", name="sim"),
+        Node(package="turtlesim", executable="turtle_teleop_key",
+             name="teleop", output="screen"),
+    ])
+```
+
+Ejecute:
+
+```bash
+ros2 launch py_pubsub demo_launch.py
+```
+
+> **Tip:** los launch files también permiten `DeclareLaunchArgument` para hacerlos parametrizables (p. ej. elegir el robot o la velocidad máxima al arrancar).
+
+## Verificación del nivel
+
+- [ ] Llama servicios con `ros2 service call` y consulta su tipo con `ros2 service type`.
+- [ ] Implementa un servicio cliente-servidor propio en Python.
+- [ ] Envía objetivos de acción y observa la retroalimentación.
+- [ ] Lee, modifica y guarda parámetros con `ros2 param`.
+- [ ] Lanza múltiples nodos con un launch file.
+
+## Siguiente nivel
+
+Continúe con [Nivel 3: Proyecto guiado](ros2_basics_level_3.qmd).

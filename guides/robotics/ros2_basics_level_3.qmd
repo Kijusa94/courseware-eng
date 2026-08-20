@@ -1,0 +1,243 @@
+---
+title: "ROS2 Básico — Nivel 3: Proyecto Guiado"
+description: "Proyecto integrador: robot seguidor con turtlesim que combina tópicos, servicios, parámetros y launch files en un paquete ROS 2 completo."
+---
+
+Este nivel integra todo lo aprendido en un **proyecto completo**: un robot seguidor en turtlesim. El sistema tendrá dos nodos:
+
+- **`seguidor`**: se suscribe a la pose de `turtle1` y publica velocidad en `/turtle2/cmd_vel` para perseguirla.
+- **`control_seguimiento`**: un servicio para **pausar/reanudar** el seguimiento y un parámetro para ajustar la **velocidad máxima**.
+
+## Objetivos del proyecto
+
+1. Crear un paquete ROS 2 con dos nodos en Python.
+2. Usar tópicos (`/turtle1/pose`, `/turtle2/cmd_vel`) para el control.
+3. Exponer un servicio para detener/reanudar el robot.
+4. Configurar el comportamiento con un parámetro.
+5. Lanzar todo el sistema con un launch file.
+
+## Paso 1: Crear el paquete
+
+```bash
+cd ~/ros2_ws/src
+ros2 pkg create --build-type ament_python turtle_follower
+```
+
+## Paso 2: Nodo seguidor
+
+Cree `turtle_follower/turtle_follower/follower.py`:
+
+```python
+import math
+
+import rclpy
+from rclpy.node import Node
+from geometry_msgs.msg import Twist
+from turtlesim.msg import Pose
+
+
+class Seguidor(Node):
+    """Hace que turtle2 siga a turtle1."""
+
+    def __init__(self):
+        super().__init__("seguidor")
+        self.pose_obj = None  # pose de turtle1 (objetivo)
+        self.pose_robot = None  # pose de turtle2 (yo)
+
+        self.publisher_ = self.create_publisher(Twist, "/turtle2/cmd_vel", 10)
+        self.sub_obj = self.create_subscription(
+            Pose, "/turtle1/pose", self.callback_objetivo, 10)
+        self.sub_robot = self.create_subscription(
+            Pose, "/turtle2/pose", self.callback_robot, 10)
+
+        # Parámetro de velocidad máxima (configurable en caliente)
+        self.declare_parameter("velocidad_max", 3.0)
+        self.timer = self.create_timer(0.1, self.control)  # 10 Hz
+
+    def callback_objetivo(self, msg):
+        self.pose_obj = msg
+
+    def callback_robot(self, msg):
+        self.pose_robot = msg
+
+    def control(self):
+        if self.pose_obj is None or self.pose_robot is None:
+            return  # aún no hay poses
+
+        vmax = self.get_parameter("velocidad_max").value
+
+        # Distancia y ángulo hacia el objetivo
+        dx = self.pose_obj.x - self.pose_robot.x
+        dy = self.pose_obj.y - self.pose_robot.y
+        distancia = math.hypot(dx, dy)
+        angulo_deseado = math.atan2(dy, dx)
+
+        # Error angular (envuelto a [-pi, pi])
+        error_angulo = self._wrap(angulo_deseado - self.pose_robot.theta)
+
+        twist = Twist()
+        if distancia > 0.5:  # zona muerta para evitar oscilación
+            twist.linear.x = min(vmax * distancia, vmax)
+            twist.angular.z = 2.0 * error_angulo
+        self.publisher_.publish(twist)
+
+    @staticmethod
+    def _wrap(angulo):
+        while angulo > math.pi:
+            angulo -= 2 * math.pi
+        while angulo < -math.pi:
+            angulo += 2 * math.pi
+        return angulo
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = Seguidor()
+    rclpy.spin(nodo)
+    nodo.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## Paso 3: Nodo de control (servicio + parámetro)
+
+Cree `turtle_follower/turtle_follower/control.py`:
+
+```python
+import rclpy
+from rclpy.node import Node
+from std_srvs.srv import Empty
+
+
+class ControlSeguimiento(Node):
+    """Servicio para pausar/reanudar el nodo seguidor."""
+
+    def __init__(self):
+        super().__init__("control_seguimiento")
+        self.srv = self.create_service(Empty, "toggle_seguimiento", self.toggle)
+        self.activo = True
+
+    def toggle(self, request, response):
+        self.activo = not self.activo
+        self.get_logger().info(
+            f"Seguimiento {'REANUDADO' if self.activo else 'PAUSADO'}")
+        return response
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    nodo = ControlSeguimiento()
+    rclpy.spin(nodo)
+    nodo.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Para que la pausa tenga efecto, el nodo `seguidor` debe consultar el estado compartido. La forma sencilla para este proyecto: el nodo `seguidor` se suscribe al servicio y publica velocidad cero cuando está pausado. Puede lograrlo consultando un parámetro compartido o, más simple, combinando ambos nodos en uno solo. **Variante recomendada:** integre el servicio directamente en `follower.py` (un solo nodo con tópicos + servicio + parámetro) y omita `control.py`:
+
+```python
+def toggle(self, request, response):
+    self.activo = not self.activo
+    self.get_logger().info(
+        f"Seguimiento {'REANUDADO' if self.activo else 'PAUSADO'}")
+    return response
+```
+
+Y en `control()`:
+
+```python
+def control(self):
+    if not self.activo:
+        self.publisher_.publish(Twist())  # velocidad cero
+        return
+    ...
+```
+
+## Paso 4: Launch file
+
+Cree `turtle_follower/launch/follower_launch.py`:
+
+```python
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+    return LaunchDescription([
+        Node(package="turtlesim", executable="turtlesim_node", name="sim"),
+        Node(package="turtle_follower", executable="follower",
+             name="seguidor", parameters=[{"velocidad_max": 2.5}]),
+    ])
+```
+
+## Paso 5: Registrar y compilar
+
+Edite `setup.py`:
+
+```python
+entry_points={
+    "console_scripts": [
+        "follower = turtle_follower.follower:main",
+    ],
+},
+```
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select turtle_follower
+source install/setup.bash
+```
+
+## Paso 6: Ejecutar y probar
+
+```bash
+ros2 launch turtle_follower follower_launch.py
+```
+
+En otra terminal, genere la segunda tortuga (la que seguirá):
+
+```bash
+ros2 service call /spawn turtlesim/srv/Spawn "{x: 2.0, y: 2.0, theta: 0.0, name: 'turtle2'}"
+```
+
+Y en una tercera, controle a la tortuga objetivo:
+
+```bash
+ros2 run turtlesim turtle_teleop_key
+```
+
+Al mover `turtle1` con las flechas, `turtle2` debe perseguirla. Pruebe ahora:
+
+1. **Ajuste en caliente** la velocidad máxima:
+
+   ```bash
+   ros2 param set /seguidor velocidad_max 1.0
+   ```
+
+2. **Visualice el grafo** y verifique que todo está conectado:
+
+   ```bash
+   rqt_graph
+   ```
+
+## Actividades de profundización
+
+1. **Zona muerta:** explique qué ocurre si elimina la condición `if distancia > 0.5` y por qué la tortuga oscila alrededor del objetivo.
+2. **Límite de giro:** ¿por qué la ganancia angular está fija en `2.0`? ¿Qué ocurre si la sube a `8.0`? Proponga una mejora que limite el giro máximo.
+3. **Servicio de pausa:** implemente la variante con el servicio `toggle_seguimiento` (un solo nodo) y verifíquela con `ros2 service call /toggle_seguimiento std_srvs/srv/Empty`.
+4. **Reto:** agregue una acción (por ejemplo, `ros2 action` con el patrón `Goal/Feedback/Result`) que haga que la tortuga dibuje un cuadrado antes de empezar a seguir.
+
+## Criterios de evaluación del proyecto
+
+- [ ] El paquete compila sin errores con `colcon build`.
+- [ ] `turtle2` sigue a `turtle1` suavemente (sin oscilaciones fuertes).
+- [ ] El parámetro `velocidad_max` cambia el comportamiento en caliente.
+- [ ] (Reto) El servicio de pausa detiene y reanuda el seguimiento.
+- [ ] El launch file arranca todo el sistema con un solo comando.
+- [ ] El estudiante explica el funcionamiento de cada comunicación (tópico/servicio/parámetro) usada.

@@ -7,18 +7,75 @@ institute: Kijusa94
 
 # Actuadores
 
+## Qué son
+
+- Elementos finales de control: ejecutan la acción sobre el proceso.
+- Reciben la señal del controlador (PLC, relé, tarjeta de potencia) y la convierten en **movimiento o fuerza**.
+- Clasificación por energía: eléctricos, neumáticos, hidráulicos.
+
 # Motores eléctricos
+
+## Motor DC
+
+- Velocidad proporcional al voltaje aplicado; control por **PWM**.
+- Uso: robótica, pequeños transportadores, servos.
+- Requiere puente H para invertir el giro.
+
+## Motor AC (asíncrono)
+
+- Robusto, económico, bajo mantenimiento.
+- Arranque directo, estrella-triángulo o variador de frecuencia (VFD).
+- Uso: bombas, ventiladores, cintas de larga distancia.
+
+## Motor paso a paso y servomotor
+
+- **Paso a paso**: giro por pasos discretos; posicionamiento sin encoder (lazo abierto).
+- **Servo**: lazo cerrado con encoder; precisión y torque a alta velocidad.
 
 # Válvulas
 
-# Actuadores neumaticos y electricos
+## Válvulas de control
+
+- Modulan el caudal según la señal (4-20 mA, 0-10 V).
+- Tipos: globo, mariposa, bola, diafragma.
+- Actuador: neumático (posicionador), eléctrico (motor), electrohidráulico.
+
+## Electroválvulas (solenoides)
+
+- Dos estados: abierta/cerrada (on-off).
+- Base del control neumático: gobiernan los cilindros.
+
+# Actuadores neumáticos y eléctricos
+
+## Cilindros neumáticos
+
+- Simple efecto: retorno por resorte.
+- Doble efecto: avance y retroceso por aire.
+- Controlados con electroválvulas 5/2 (5 vías, 2 posiciones).
+
+## Actuadores lineales eléctricos
+
+- Husillo + motor; posicionamiento preciso.
+- Uso: válvulas de regulación, compuertas, mesas de coordenadas.
 
 # Otros componentes
 
 ## Relé
 
+- Conmutación de cargas por una bobina de baja potencia.
+- Aislamiento entre control y potencia.
+
 ## Contactor
+
+- Relé de potencia para motores y cargas grandes.
+- Con relevador térmico de sobrecarga.
 
 ## Transformadores
 
+- Adecuación de niveles de tensión (p. ej. 480V → 120V para control).
+- Aislamiento galvánico para seguridad.
+
 ## Compresores
+
+- Fuente de energía neumática de la planta.
+- Requieren tratamiento de aire: filtro, regulador, lubricador (FRL).

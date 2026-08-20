@@ -1,24 +1,95 @@
 ---
 title: "Instalación de Git en VSCode"
-description: "Instalación de Git y su integración con Visual Studio Code."
+description: "Instalación de Git para Windows y su integración con Visual Studio Code."
 ---
+
+Git es el sistema de control de versiones utilizado en los cursos de programación y documentación por código. Esta guía cubre la instalación de Git para Windows y su verificación dentro de Visual Studio Code.
 
 ## Instalar Git
 
-![vscode_git_install](assets/images/vscode_git_install/01.png)
-![vscode_git_install](assets/images/vscode_git_install/02.png)
-![vscode_git_install](assets/images/vscode_git_install/03.png)
-![vscode_git_install](assets/images/vscode_git_install/04.png)
-![vscode_git_install](assets/images/vscode_git_install/05.png)
-![vscode_git_install](assets/images/vscode_git_install/06.png)
-![vscode_git_install](assets/images/vscode_git_install/07.png)
-![vscode_git_install](assets/images/vscode_git_install/08.png)
-![vscode_git_install](assets/images/vscode_git_install/09.png)
-![vscode_git_install](assets/images/vscode_git_install/10.png)
-![vscode_git_install](assets/images/vscode_git_install/11.png)
-![vscode_git_install](assets/images/vscode_git_install/12.png)
-![vscode_git_install](assets/images/vscode_git_install/13.png)
-![vscode_git_install](assets/images/vscode_git_install/14.png)
-![vscode_git_install](assets/images/vscode_git_install/15.png)
-![vscode_git_install](assets/images/vscode_git_install/16.png)
-![vscode_git_install](assets/images/vscode_git_install/17.png)
+### Descarga e instalación
+
+1. Abra el navegador y diríjase a https://git-scm.com/. Presione el botón de **Descargar** para la versión de Windows.
+
+![Descarga de Git](assets/images/vscode_git_install/01.png)
+
+2. Se descargará el instalador ejecutable (por ejemplo, `Git-2.x.x-64-bit.exe`). Ejecútelo.
+
+![Archivo descargado](assets/images/vscode_git_install/02.png)
+
+3. El instalador muestra la información de la licencia GNU. Presione **Next**.
+
+![Licencia](assets/images/vscode_git_install/03.png)
+
+4. Indique la ruta de instalación. Se sugiere dejar la ruta por defecto y presionar **Next**.
+
+![Ruta de instalación](assets/images/vscode_git_install/04.png)
+
+5. En la selección de componentes, mantenga las opciones por defecto (incluye Git Bash y Git GUI) y presione **Next**.
+
+![Componentes](assets/images/vscode_git_install/05.png)
+
+6. Seleccione la carpeta del menú Inicio para los accesos directos y presione **Next**.
+
+![Menú de inicio](assets/images/vscode_git_install/06.png)
+
+7. Elija el editor por defecto para los mensajes de Git. Se recomienda **Visual Studio Code** (si ya está instalado) o **Notepad++**.
+
+![Editor por defecto](assets/images/vscode_git_install/07.png)
+
+8. En el ajuste del PATH, seleccione **Git from the command line and also from 3rd-party software** (recomendado) y presione **Next**.
+
+![Ajuste del PATH](assets/images/vscode_git_install/08.png)
+
+9. Seleccione el cliente HTTPS. Se recomienda **Use the OpenSSL library** y presione **Next**.
+
+![HTTPS/OpenSSL](assets/images/vscode_git_install/09.png)
+
+10. En la configuración de fin de línea, seleccione **Checkout Windows-style, commit Unix-style line endings** (opción por defecto) y presione **Next**.
+
+![Fin de línea](assets/images/vscode_git_install/10.png)
+
+11. Elija el emulador de terminal para Git Bash. Se recomienda **Use MinTTY** y presione **Next**.
+
+![Terminal de Git Bash](assets/images/vscode_git_install/11.png)
+
+12. Seleccione el comportamiento de `git pull` (**Default (fast-forward or merge)**) y presione **Next**.
+
+![Comportamiento de git pull](assets/images/vscode_git_install/12.png)
+
+13. En las opciones adicionales, deje las opciones por defecto (cache de credenciales, símbolos, etc.) y presione **Next**.
+
+![Opciones adicionales](assets/images/vscode_git_install/13.png)
+
+14. Si el instalador ofrece opciones experimentales, déjelas desactivadas y presione **Install**.
+
+![Opciones experimentales](assets/images/vscode_git_install/14.png)
+
+15. Espere a que el instalador complete la copia de archivos.
+
+![Progreso de instalación](assets/images/vscode_git_install/15.png)
+
+16. Finalice la instalación. Puede dejar marcada la opción de ver las notas de la versión y presionar **Finish**.
+
+![Finalización](assets/images/vscode_git_install/16.png)
+
+17. Para verificar la instalación, abra una terminal (PowerShell, CMD o Git Bash) y ejecute:
+
+    ```bash
+    git --version
+    ```
+
+    Debe mostrar la versión instalada, por ejemplo `git version 2.4x.x.windows.1`.
+
+![Verificación en terminal](assets/images/vscode_git_install/17.png)
+
+## Uso en Visual Studio Code
+
+- Abra VSCode y presione `Ctrl + Shift + G` para ver el panel de **Control de código fuente**.
+- Inicialice un repositorio con el botón **Inicializar repositorio** o clonando desde la URL (`Ctrl + Shift + P` → *Git: Clone*).
+- Para autenticarse con GitHub desde WSL2 o Windows, consulte la [guía de autenticación de GitHub](../programming/git_ros_wsl2.qmd).
+
+## Verificación
+
+- [ ] `git --version` responde correctamente en la terminal.
+- [ ] VSCode muestra el panel de Control de código fuente (`Ctrl + Shift + G`).

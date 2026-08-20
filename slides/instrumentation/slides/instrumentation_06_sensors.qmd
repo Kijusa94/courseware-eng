@@ -9,14 +9,77 @@ institute: Kijusa94
 
 ## Propiedades
 
+- **Magnitud medida**: la variable física que detecta (presión, temperatura, nivel, caudal...).
+- **Señal de salida**: forma en que entrega la medida (4-20 mA, 0-10 V, digital, bus de campo...).
+- **Precisión y exactitud**: qué tan cerca está la lectura del valor real y qué tan repetible es.
+- **Tiempo de respuesta**: cuánto tarda en reflejar un cambio de la variable.
+- **Rango y alcance**: valores mínimos y máximos que puede medir.
+
 ## Tipos de sensores
+
+- **Analógicos**: entregan una señal continua proporcional a la variable (termopar, celda de carga).
+- **Digitales/discretos**: entregan un estado binario (interruptor de límite, sensor inductivo de presencia).
+- **De posición**: encoders, potenciómetros, sensores inductivos/capacitivos.
+- **De proceso**: presión, caudal, nivel, temperatura (los 4 grandes de la instrumentación).
 
 # Sensores de presión
 
+## Principio y tipos
+
+- **Manómetro**: indicación local (Bourdon).
+- **Transmisor de presión**: convierte la presión en señal estándar 4-20 mA.
+- **Tipos**: extensiométricos (galgas), capacitivos, piezoeléctricos, resonantes.
+
+## Aplicaciones
+
+- Monitoreo de líneas de vapor y aire comprimido.
+- Protección de bombas y compresores.
+- Medición indirecta de nivel (presión hidrostática en el fondo del tanque).
+
 # Sensores de caudal
+
+## Principio y tipos
+
+- **Presión diferencial**: placas de orificio, tubos Venturi.
+- **Velocidad**: turbinas, ultrasónicos, electromagnéticos (Faraday).
+- **Desplazamiento positivo**: engranajes, pistones.
+
+## Aplicaciones
+
+- Facturación y control de consumo de fluidos.
+- Dosificación en procesos químicos y alimentarios.
+- Verificación de fugas en redes.
 
 # Sensores de nivel
 
+## Principio y tipos
+
+- **Continuos**: radar, ultrasónico, capacitivo, presión hidrostática.
+- **Discretos (interruptores)**: flotador, conductivo, vibrador (diapasón).
+
+## Aplicaciones
+
+- Control de inventario en silos y tanques.
+- Protección de rebose y de bomba en seco.
+- Medición de interfases (agua/aceite).
+
 # Sensores de temperatura
 
+## Principio y tipos
+
+- **Termopares (TC)**: dos metales distintos, efecto Seebeck. Amplio rango, menor precisión.
+- **RTD (Pt100)**: resistencia variable con la temperatura. Preciso y estable.
+- **Termistores NTC/PTC**: muy sensibles, rango corto.
+- **Infrarrojos**: medición sin contacto.
+
+## Aplicaciones
+
+- Control de hornos, reactores y extrusoras.
+- Monitoreo de motores y rodamientos (mantenimiento predictivo).
+- Cadenas de frío y calidad de producto.
+
 ## Práctica de sensores
+
+- Simulación en Tinkercad: potenciómetro como sensor analógico + sensor ultrasónico HC-SR04 (ver práctica de laboratorio).
+- Verificación de la relación **señal analógica → ADC → valor digital**.
+- Diseño de un lazo simple: medir distancia → ajustar velocidad del motor (PWM).

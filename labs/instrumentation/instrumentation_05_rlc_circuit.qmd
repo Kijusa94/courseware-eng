@@ -1,4 +1,7 @@
-# Practica de Circuitos DC
+---
+title: "Práctica de Circuitos RLC"
+description: "Análisis de la respuesta transitoria de los circuitos RC, RL y RLC en corriente continua mediante el simulador Falstad."
+---
 
 ## Introducción
 En el ámbito de la ingeniería industrial, el conocimiento de los circuitos eléctricos va más allá del análisis estático de la corriente continua. El estudio de los componentes que almacenan energía, como los capacitores e inductores, es fundamental para comprender el comportamiento dinámico y transitorio de los sistemas de control y los instrumentos de medición. Esta guía de laboratorio tiene como objetivo analizar la respuesta de estos elementos en circuitos de corriente continua (DC), un paso crucial para abordar la complejidad inherente a la corriente alterna (AC) y su impacto en la eficiencia y la seguridad industrial.
@@ -46,7 +49,7 @@ $$
 $$
 
 ### Capacitor
-Un capacitor es un componente electrónico pasivo que almacena energía en un campo eléctrico. Se compone de dos placas conductoras separadas por un material aislante o dieléctrico. Su capacidad para almacenar carga es proporcional al voltaje a traves de sus terminales, siendo la constante de proporcionalidad la capacitancia $C$ medida en Faradios.
+Un capacitor es un componente electrónico pasivo que almacena energía en un campo eléctrico. Se compone de dos placas conductoras separadas por un material aislante o dieléctrico. Su capacidad para almacenar carga es proporcional al voltaje a través de sus terminales, siendo la constante de proporcionalidad la capacitancia $C$ medida en Faradios.
 $$
 C = \frac{Q}{V}
 $$
@@ -91,9 +94,9 @@ $$
 ### Circuitos Transitorios en DC: RC, RL, y RLC
 Un circuito transitorio es aquel en el que el voltaje y la corriente cambian con el tiempo después de un evento de conmutación, como el encendido o apagado de una fuente de energía.
 
-- **CIRCUITO RC:** La carga y descarga de un capacitor en un circuito RC siguen una curva exponencial. La velocidad de este proceso está determinada por la constante de tiempo  que se calcula como $ \tau = R C $. Despues de un periodo de $ 5 \tau $ el capacitor se considera completamente cargado o descargado.
+- **CIRCUITO RC:** La carga y descarga de un capacitor en un circuito RC siguen una curva exponencial. La velocidad de este proceso está determinada por la constante de tiempo que se calcula como $ \tau = R C $. Después de un periodo de $ 5 \tau $ el capacitor se considera completamente cargado o descargado.
 
-- **Circuitos RL:** El crecimiento y decrecimiento de la corriente en un inductor en un circuito RL también sigue una curva exponencial. La constante de tiempo para un circuito RL es $ \tau = \frac  {L}{R} $.
+- **Circuitos RL:** El crecimiento y decrecimiento de la corriente en un inductor en un circuito RL también sigue una curva exponencial. La constante de tiempo para un circuito RL es $ \tau = \frac{L}{R} $.
 
 - **Circuitos RLC:** Un circuito RLC en DC exhibe un comportamiento transitorio que puede ser oscilatorio o no oscilatorio. La naturaleza de la respuesta depende de los valores de R, L y C, que determinan el tipo de amortiguamiento.
   - Respuesta Subamortiguada: Ocurre cuando la resistencia es baja, resultando en un comportamiento oscilatorio que se desvanece con el tiempo.
@@ -124,8 +127,8 @@ Para esta práctica, utilizaremos los ejemplos predefinidos en el simulador Fals
   - ¿Cuál es la corriente inicial?
   - ¿Qué sucede con estos valores a medida que transcurre el tiempo?
 - Identifique el valor de la resistencia y del capacitor.
-- Calcule teóricamente la constante de tiempo .
-- En la simulación, active la opción de "Gráficos de Onda" para visualizar el voltaje en el capacitor o la corriente. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. Este tiempo corresponde a la constante de tiempo experimental. ¿Coincide el valor experimental de  con el valor teórico? ¿A qué porcentaje de su valor final se considera el capacitor cargado en un tiempo igual a cinco constantes de tiempo?
+- Calcule teóricamente la constante de tiempo $\tau = R \cdot C$.
+- En la simulación, active la opción de "Gráficos de Onda" para visualizar el voltaje en el capacitor o la corriente. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. Este tiempo corresponde a la constante de tiempo experimental. ¿Coincide el valor experimental de $\tau$ con el valor teórico? ¿A qué porcentaje de su valor final se considera el capacitor cargado en un tiempo igual a cinco constantes de tiempo?
 - Duplique el valor de la resistencia y observe cómo cambia el tiempo de carga del capacitor. ¿La constante de tiempo aumenta o disminuye? Explique por qué.
 - Restaure el valor de la resistencia a su valor original. Ahora, duplique el valor de la capacitancia. ¿Cómo afecta este cambio a la velocidad de carga? Compare este resultado con el de la Actividad anterior.
 
@@ -136,8 +139,8 @@ Para esta práctica, utilizaremos los ejemplos predefinidos en el simulador Fals
   - ¿Cuál es el voltaje inicial en la resistencia?
   - ¿Qué sucede con estos valores a medida que transcurre el tiempo?
 - Identifique los valores de la resistencia y del inductor.
-- Calcule teóricamente la constante de tiempo 
-- En la simulación, active la opción de "Gráficos de Onda" para visualizar la corriente en el inductor. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. ¿Coincide el valor experimental de  con el valor teórico? ¿A qué porcentaje de su valor final se considera la corriente establecida en un tiempo igual a cinco constantes de tiempo?
+- Calcule teóricamente la constante de tiempo $\tau = L / R$.
+- En la simulación, active la opción de "Gráficos de Onda" para visualizar la corriente en el inductor. Mida el tiempo que le toma a la variable alcanzar aproximadamente el 63.2% de su valor final. ¿Coincide el valor experimental de $\tau$ con el valor teórico? ¿A qué porcentaje de su valor final se considera la corriente establecida en un tiempo igual a cinco constantes de tiempo?
 - Duplique el valor de la resistencia y observe cómo cambia el tiempo de crecimiento de la corriente. ¿La constante de tiempo aumenta o disminuye? Explique por qué.
 - Restaure el valor de la resistencia a su valor original. Ahora, duplique el valor de la inductancia. ¿Cómo afecta este cambio a la velocidad de crecimiento de la corriente? Compare este resultado con el de la actividad anterior.
 

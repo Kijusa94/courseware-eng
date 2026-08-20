@@ -1,8 +1,9 @@
-# Workflow de transferencia de proyectos Python
+---
+title: "Workflow de transferencia de proyectos Python"
+description: "Cómo exportar e importar las dependencias de un proyecto Python entre diferentes ordenadores usando entornos virtuales."
+---
 
 Sigue estos pasos para exportar e importar las dependencias de un proyecto entre diferentes ordenadores utilizando un entorno virtual.
-
-[TOC]
 
 ---
 

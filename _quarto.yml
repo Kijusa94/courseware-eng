@@ -4,9 +4,11 @@ project:
   #pre-render: utils/export_all_diagrams.py
   #post-render: utils/export_all_diagrams.py --clean
 
+lang: es
+
 website:
-  title: "Mi Documentación"
-  description: "Sitio con guías y slides"
+  title: "Courseware Eng"
+  description: "Guías, presentaciones y prácticas de laboratorio para cursos de ingeniería: programación, instrumentación, automatización industrial y documentación por código."
   
   # Barra superior (Menú principal)
   navbar:
@@ -14,11 +16,14 @@ website:
       - href: index.qmd
         text: Inicio
       - href: guides/index.qmd
-        text: "Ir a Guías"
+        text: "Guías"
       - href: slides/index.qmd
-        text: "Ir a Presentaciones"             
+        text: "Presentaciones"             
       - href: labs/index.qmd
-        text: "Ir a Prácticas"             
+        text: "Prácticas"
+    right:
+      - href: info/about.qmd
+        text: "Acerca de"
 
   # Barra lateral
   sidebar:

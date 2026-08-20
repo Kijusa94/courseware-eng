@@ -1,11 +1,13 @@
-# Guía de configuración de Latex
+---
+title: "Guía de configuración de LaTeX"
+description: "Instalación y configuración del entorno LaTeX (Strawberry Perl, MiKTeX y LaTeX Workshop) para la elaboración de documentos técnicos."
+---
 
-El siguiente documento tiene por objetivo documentar el proceso de instalacion de los software Strawberry Perl, Miktex y Visual Studio Code, para la elaboración de documentos en el editor de texto LATEX en un ordenador.
-
-[TOC]
+El siguiente documento tiene por objetivo documentar el proceso de instalación de los software Strawberry Perl y MiKTeX, para la elaboración de documentos en el editor de texto LaTeX en un ordenador.
 
 ## Requerimientos
-- Sistema operativo Windows 11 o MacOS.
+- Sistema operativo Windows 11 o macOS.
+- Tener instalado Visual Studio Code. Si aún no lo tiene, siga la [guía de instalación de Visual Studio Code](vscode_install.qmd).
 
 ## Instalación de Strawberry Perl.
 
@@ -29,7 +31,7 @@ En la siguiente ventana, indique la ruta de instalación del programa. Se sugier
 
 ![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/06.png)
 
-Presione Ïnstalar".
+Presione "Instalar".
 
 ![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/07.png)
 
@@ -37,7 +39,7 @@ Finalmente, puede presionar sobre la opción "Finalizar". Ha instalado satisfact
 
 ![StrawberryPerl](../documentation/assets/images/vscode_latex_setup/strawberry/09.png)
 
-## Instalación de Miktex.
+## Instalación de MiKTeX.
 
 Buscar en el navegador web de preferencia el software ''Miktex''. Acceder al primer enlace y dirigirse a la pestaña de ''Descargas''.
 
@@ -91,48 +93,23 @@ Una vez cargados los paquetes desactualizados, puede proceder a actualizarlos/in
 
 ![Miktex](../documentation/assets/images/vscode_latex_setup/miktex/15.png)
 
-Ha finalizado satisfactoriamente el proceso de instalación y configuración de MIKTeX. No se requiere configuraci[on adicional.
+Ha finalizado satisfactoriamente el proceso de instalación y configuración de MiKTeX. No se requiere configuración adicional.
 
 ## Instalación de Visual Studio Code.
-Buscar en el navegador web de preferencia el software "Visual Studio Code". Acceder al primer enlace, y busque la opción de "Descargar".
 
-![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/01.png)
+Visual Studio Code es el editor de código sobre el cual se trabajará con LaTeX. Su proceso de instalación se documenta en la [guía de instalación de Visual Studio Code](vscode_install.qmd).
 
-Descargue la versión de Visual Studio Code segun corresponda con su sistema operativo. En el caso de Windows, se descargará un archivo de instalación ejecutable.
-
-![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/02.png)
-
-Ejecute el archivo descargado. Acepte el acuerdo de licencia y presione ''Siguiente''.
-
-![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/03.png)
-
-Indique la ruta de instalación del programa, se sugiere dejar la ruta por defecto.
-
-![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/04.png)
-
-En la Siguiente ventana indique el nombre del acceso rapido. Se sugiere dejar la opción por defecto. Presione ''Siguiente'' para continuar.
- 
-![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/05.png)
-
-Seleccione las preferencias segun sea de su interes, se sugiere dejar la configuración por defecto. Presione ''Siguiente''.
-
-![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/06.png)
-
-Inicie el proceso de instalación con la opción ''Instalar''.
-
-![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/07.png)
-
-Una vez finalice la instalación, puede proceder a cerrar la ventana de instalación. A continuación, proceda a abrir la aplicación. En la ventana de la aplicación, presione sobre la opción resaltada en la imagen para dirijirse al gestor de extensiones.
+Una vez instalado, abra la aplicación. En la ventana de la aplicación, presione sobre la opción resaltada en la imagen para dirigirse al gestor de extensiones.
 
 ![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/08.png)
 
-En la barra de busqueda, ingrese ''latex workshop'' para filtrar el paquete de latex. Presione sobre la extensión ''Latex Workshop¿¿ del autor James Yu. y presione sobre el botón instalar.
+En la barra de búsqueda, ingrese "latex workshop" para filtrar el paquete de LaTeX. Presione sobre la extensión "Latex Workshop" del autor James Yu y presione sobre el botón instalar.
 
 ![VSCode](../documentation/assets/images/vscode_latex_setup/vscode/09.png)
 
-Ha instalado satisfactoriamente VSCode con Latex. FELICIDADES! Puede empezar su proyecto de latex. 
+Ha instalado satisfactoriamente VSCode con LaTeX. ¡Felicidades! Puede empezar su proyecto de LaTeX.
 
-**NOTA: Cuando realice su primera compilación, será necesario instalar los paquetes adicionales que sugiere el entorno de VSCODE**
+**NOTA: Cuando realice su primera compilación, será necesario instalar los paquetes adicionales que sugiere el entorno de VSCode.**
 
 ## Recomendaciones para VSCode-Latex.
 Para ajustar la ventana de edición de codigo y la presentación de su PDF, puede presionar sobre la opción de la parte superior derecha ''Dividir Editor'' (Split Editor). Puede presionar sobre el archivo PDF de su proyecto para que este se despliegue en esta nueva ventana. Recuerde que el archivo se abre en la ventana activa, por lo que se sugiere editar en la parte central, y visualizar el PDF en la parte derecha, tal y como lo muetra la siguiente imagen.

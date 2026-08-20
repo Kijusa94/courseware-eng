@@ -1,21 +1,24 @@
-# Instalación de Factory IO  de Siemens
+---
+title: "Instalación de Factory IO"
+description: "Instalación de Factory IO de Siemens en Windows 11."
+---
 
 ## Instalación en Windows 11
 
-![factoryio_install](../automation/assets/images/factoryio_install/01.png)
+![factoryio_install](assets/images/factoryio_install/01.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/02.png)
+![factoryio_install](assets/images/factoryio_install/02.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/03.png)
+![factoryio_install](assets/images/factoryio_install/03.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/04.png)
+![factoryio_install](assets/images/factoryio_install/04.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/05.png)
+![factoryio_install](assets/images/factoryio_install/05.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/06.png)
+![factoryio_install](assets/images/factoryio_install/06.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/07.png)
+![factoryio_install](assets/images/factoryio_install/07.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/08.png)
+![factoryio_install](assets/images/factoryio_install/08.png)
 
-![factoryio_install](../automation/assets/images/factoryio_install/09.png)
+![factoryio_install](assets/images/factoryio_install/09.png)

@@ -33,6 +33,16 @@ Esta es la página principal de Guías para configurar entornos para la document
 [Ver Guía &rarr;](vscode_git_install.qmd){.btn .btn-primary role="button"}
 :::
 
+::: {.g-col-12 .g-col-md-6}
+## 📚 Instalación de Visual Studio Code.
+[Ver Guía &rarr;](vscode_install.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚 Instalación de Slidev.
+[Ver Guía &rarr;](vscode_slidev_install.qmd){.btn .btn-primary role="button"}
+:::
+
 ::::
 
 ---

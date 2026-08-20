@@ -1,4 +1,7 @@
-# Práctica de microcontroladores (Digital)
+---
+title: "Práctica de microcontroladores (Digital)"
+description: "Manejo de puertos digitales (GPIO) de un Arduino Uno: señales discretas, sensores digitales y actuadores con Tinkercad."
+---
 
 ## Introducción
 
@@ -96,8 +99,7 @@ Para interactuar con los pines GPIO, el lenguaje de Arduino proporciona funcione
 La combinación de estas funciones dentro de la estructura de control permite crear sistemas inteligentes capaces de responder en milisegundos a los cambios en el entorno productivo, sentando las bases de la automatización industrial moderna.
 
 ## Procedimiento
-1.  **Ingreso a la plataforma:** 
-- Acceda a [Tinkercad](https://www.tinkercad.com/), inicie sesión y cree un nuevo proyecto haciendo clic en **"Diseños"** > **"Crear"** > **"Circuito"**.
+1.  **Ingreso a la plataforma:** acceda a [Tinkercad](https://www.tinkercad.com/), inicie sesión y cree un nuevo proyecto haciendo clic en **"Diseños"** > **"Crear"** > **"Circuito"**.
 
 2.  **Selección de componentes:** En el panel de componentes a la derecha, busque y arrastre al lienzo los siguientes elementos:
     *   1 Arduino Uno R3.
@@ -118,7 +120,7 @@ La combinación de estas funciones dentro de la estructura de control permite cr
 
 El circuito debe asemejarse al mostrado en la siguiente imagen.
 
-![Circuito](../instrumentation/assets/images/instrumentation_07_sensors_digitalWrite.png)
+![Circuito](assets/images/instrumentation_07_sensors_digitalWrite.png)
 
 El código correspondiente para la simulación es el siguiente:
 

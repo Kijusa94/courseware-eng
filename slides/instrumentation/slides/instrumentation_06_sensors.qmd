@@ -1,6 +1,6 @@
 ---
-title: Instrumentación Industrial    
-subtitle: "Atuadores"
+title: Instrumentación Industrial
+subtitle: "Sensores"
 author: M.Sc. Juan Guzman
 institute: Kijusa94
 ---

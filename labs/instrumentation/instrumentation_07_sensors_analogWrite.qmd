@@ -1,4 +1,7 @@
-# Práctica de microcontroladores (Analog)
+---
+title: "Práctica de microcontroladores (Analógico)"
+description: "Adquisición de señales analógicas (ADC), control PWM y manejo de motores DC con puente H y sensor ultrasónico en Arduino Uno."
+---
 
 ## Introducción
 La evolución de la tecnología industrial ha estado marcada por la transición de sistemas mecánicos puros a sistemas electrónicos altamente integrados y automatizados. En el corazón de esta transformación se encuentran los microcontroladores, dispositivos semiconductores que integran en un solo chip las funciones principales de una computadora: unidad central de procesamiento (CPU), memoria y periféricos de entrada/salida. En el ámbito de la ingeniería industrial, la automatización y el control de procesos no son simplemente herramientas adicionales, sino pilares fundamentales que definen la competitividad, la rentabilidad y la eficiencia de las organizaciones modernas en un mercado globalizado.
@@ -66,8 +69,8 @@ $$\text{Valor Digital} = \frac{V_{in} \times 1023}{V_{ref}}$$
 Donde $V_{ref}$ es usualmente 5V. Así, un valor de 512 representaría aproximadamente 2.5V.
 
 ::: {.callout-note}
-### Placeholder: Diagrama de Tiempos de analogRead()
-Descripción: Un diagrama que muestra una señal analógica senoidal suave superpuesta con una señal escalonada que representa la cuantización del ADC a 10 bits. Se debe observar el tiempo de conversión (aproximadamente 100 microsegundos en Arduino) como pequeños intervalos donde la señal se mantiene constante antes de actualizarse.
+### Diagrama de Tiempos de analogRead() *(pendiente de incluir)*
+Un diagrama que muestra una señal analógica senoidal suave superpuesta con una señal escalonada que representa la cuantización del ADC a 10 bits. Se debe observar el tiempo de conversión (aproximadamente 100 microsegundos en Arduino) como pequeños intervalos donde la señal se mantiene constante antes de actualizarse.
 :::
 
 ### Modulación por Ancho de Pulso (PWM) y la función `analogWrite()`
@@ -77,8 +80,8 @@ Aunque el microcontrolador no puede generar un voltaje analógico real en sus sa
 El parámetro crítico aquí es el **Ciclo de Trabajo (Duty Cycle)**, que es el porcentaje de tiempo que la señal permanece en ALTO durante un periodo completo. Si el ciclo de trabajo es del 50%, el dispositivo conectado "percibe" un promedio de 2.5V. La función `analogWrite(pin, valor)` acepta valores de 0 (0% duty cycle) a 255 (100% duty cycle), proporcionando una resolución de 8 bits para el control de potencia.
 
 ::: {.callout-note}
-### Placeholder: Diagrama de Tiempos de analogWrite() (PWM)
-Descripción: Un diagrama de tiempos que muestre tres señales cuadradas:
+### Diagrama de Tiempos de analogWrite() (PWM) *(pendiente de incluir)*
+Un diagrama de tiempos que muestre tres señales cuadradas:
 1. Duty Cycle 25% (Valor 64): Pulso corto en alto, largo en bajo.
 2. Duty Cycle 50% (Valor 127): Tiempo igual en alto y bajo.
 3. Duty Cycle 75% (Valor 191): Pulso largo en alto, corto en bajo.
@@ -139,11 +142,12 @@ La interconexión de estos elementos forma un lazo de control completo. El senso
 1. Inserte el sensor **HC-SR04** en la protoboard. Conecte los pines VCC a 5V y GND a tierra.
 2. Conecte el pin **Trigger** al pin digital **12** y el pin **Echo** al pin digital **11**.
 3. El procedimiento de lectura consiste en enviar un pulso en alto de 10 $\mu s$ por el Trigger y medir el tiempo de respuesta del Echo con `pulseIn()`.
+   > **Nota:** en Tinkercad el sensor HC-SR04 se simula con un único pin (en el código, el pin 13). En una placa física real deberá usar dos pines: Trigger y Echo, tal como se indica en los pasos 1 y 2.
 4. Integre los datos para que el sistema reaccione a la distancia medida (por ejemplo, deteniendo el motor si la distancia es menor a un umbral de seguridad), simulando un sistema de frenado automático industrial.
 
 Diagrama de circuito resultante:
 
-![Circuito](../instrumentation/assets/images/instrumentation_07_sensors_analogWrite.png)
+![Circuito](assets/images/instrumentation_07_sensors_analogWrite.png)
 
 Codigo:
 

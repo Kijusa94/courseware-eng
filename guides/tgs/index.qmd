@@ -7,8 +7,13 @@ Esta es la página principal de documentos academicos de su interés.
 :::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
-## 📚  Procedimiento de Trabajo de Grado.
+## 📚  Procedimiento de Trabajo de Grado (v1).
 [Ir a la Guía &rarr;](tgs_procedure_v01.qmd){.btn .btn-primary role="button"}
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## 📚  Procedimiento de Trabajo de Grado (v2 - con alternativas).
+[Ir a la Guía &rarr;](tgs_procedure_v02.qmd){.btn .btn-primary role="button"}
 :::
 
 ::::

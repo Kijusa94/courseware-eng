@@ -1,6 +1,7 @@
-# Workspace migration tutorial
-
-[TOC]
+---
+title: "Extensiones recomendadas del Workspace en VSCode"
+description: "Cómo configurar extensiones recomendadas a nivel de proyecto (workspace) en Visual Studio Code."
+---
 
 ## Crear carpeta y archivo JSON
 
@@ -13,7 +14,6 @@
 ![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/02.png)
 
 3. ¡Listo! VSCode creará automáticamente la carpeta .vscode y el archivo extensions.json con la estructura correcta y lo abrirá en el editor.
-
 
 ## Agregar extensiones de forma automática al JSON
 
@@ -43,7 +43,7 @@ Esto creará un archivo de texto nuevo, en donde encontrará todas las extension
 
 ![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/04.png)
 
-8. Pega la lista dentro de los corchetes [] y ajuste la identación.
+8. Pega la lista dentro de los corchetes [] y ajusta la indentación.
 
 ![vscode_workspace_extensions](../documentation/assets/images/vscode_workspace_extensions/05.png)
 
@@ -79,8 +79,9 @@ Esta es la forma estándar de ver qué pide el proyecto:
 
 5. Si haces clic ahí, instalará todas de golpe.
 
-!!! Nota
-    Puedes ir una por una haciendo clic en el botón de instalar de cada lista.
+::: {.callout-note}
+Puede ir una por una haciendo clic en el botón de instalar de cada lista.
+:::
 
 ### Desde la Paleta de Comandos (La forma rápida)
 Si no quieres escribir en el buscador:

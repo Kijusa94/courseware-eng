@@ -1,5 +1,5 @@
 ---
-title: Instrumentación Industrial  
+title: Instrumentación Industrial
 subtitle: "Fundamentos"
 author: M.Sc. Juan Guzman
 institute: Kijusa94
@@ -164,7 +164,7 @@ La fuerza $\vec{F}_{32}$ tiene sólo componente $y$ (vertical hacia arriba en el
 
 *   $F_x = F_{31x} = 120 \, \text{N}$
 *   $F_y = F_{32} + F_{31y} = 330 \, \text{N} - 70 \, \text{N} = 260 \, \text{N}$
-​
+
 
 La magnitud de la fuerza neta es:
 

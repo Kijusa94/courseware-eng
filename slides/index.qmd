@@ -4,7 +4,7 @@ title: "Índice de Presentaciones"
 
 Esta es la página principal para las presentaciones de los cursos.
 
-::: {.grid}
+:::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
 ## 📊 Presentaciones de Programación
@@ -18,6 +18,6 @@ Consulta nuestra documentación del curso de Instrumentación Industrial.
 [Ir a las presentaciones &rarr;](instrumentation/index.qmd){.btn .btn-primary role="button"}
 :::
 
-:::
+::::
 
 ---

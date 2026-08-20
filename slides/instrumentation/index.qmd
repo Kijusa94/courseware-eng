@@ -42,6 +42,11 @@ Esta es la página principal del proyecto. Aquí centralizamos todo el conocimie
 [Ver Presentación &rarr;](slides/instrumentation_07_actuators.qmd){.btn .btn-primary role="button"}
 :::
 
+::: {.g-col-12 .g-col-md-6}
+## 📊 Diagramas Industriales 🚧
+[Ver Presentación &rarr;](slides/instrumentation_08_industrial_diagrams.qmd){.btn .btn-primary role="button"}
+:::
+
 ::::
 
 ---

@@ -1,4 +1,11 @@
-### 1. Inicializar el proyecto
+---
+title: "Instalación de Slidev con DaisyUI"
+description: "Guía para inicializar un proyecto Slidev y configurar la interfaz de usuario con DaisyUI y UnoCSS."
+---
+
+Esta guía muestra cómo crear una presentación interactiva con [Slidev](https://sli.dev/) y estilizarla con **DaisyUI** (componentes de Tailwind CSS) y **UnoCSS**.
+
+## 1. Inicializar el proyecto
 Abre tu terminal en VS Code y ejecuta el comando de inicio de Slidev. Esto creará la estructura base:
 
 ```bash
@@ -8,7 +15,7 @@ npm init slidev@latest
 
 ---
 
-### 2. Instalar dependencias de UI
+## 2. Instalar dependencias de UI
 Para que DaisyUI funcione dentro del motor de Slidev (UnoCSS), necesitamos instalar el paquete de DaisyUI y su preset para UnoCSS:
 
 ```bash
@@ -17,7 +24,7 @@ npm install -D daisyui unocss-preset-daisy
 
 ---
 
-### 3. Configurar UnoCSS
+## 3. Configurar UnoCSS
 Crea (o edita) un archivo llamado `uno.config.ts` en la raíz de tu proyecto. Aquí es donde ocurre la magia para que Slidev reconozca las clases de DaisyUI (como `btn`, `card`, etc.):
 
 ```typescript
@@ -40,7 +47,7 @@ export default defineConfig({
 
 ---
 
-### 4. Tu primera diapositiva interactiva
+## 4. Tu primera diapositiva interactiva
 Ahora abre tu archivo `slides.md` y pega este ejemplo para probar que todo funciona. Verás que puedes usar componentes de DaisyUI y clases de Tailwind mezcladas:
 
 ```markdown
@@ -82,6 +89,6 @@ Usa el "Card" de DaisyUI directamente en Markdown
 
 ### Herramientas complementarias.
 - Meraki UI
-- Daysi UI
+- DaisyUI
 - Hyper UI
 - Flowbite

@@ -61,7 +61,7 @@ Este fenómeno es la base de la **Generación de Energía Eléctrica**. En una c
 
 ## Procedimiento
 
-###  Parte 3: Inducción Electromagnética (Bobina de Captación)
+### Parte 3: Inducción Electromagnética (Bobina de Captación)
 
 #### **El Fenómeno del Cambio**
 1.  Seleccione la pestaña **"Bobina de captación"** (Pickup Coil).
@@ -169,7 +169,7 @@ Este fenómeno es la base de la **Generación de Energía Eléctrica**. En una c
 
 
 
-## Parte 5: El Generador (Conversión de Energía Mecánica a Eléctrica)
+### Parte 5: El Generador (Conversión de Energía Mecánica a Eléctrica)
 ### Procedimiento
 
 #### **Operación Básica (Puesta en Marcha)**

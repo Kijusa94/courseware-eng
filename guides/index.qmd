@@ -30,6 +30,12 @@ Consulta nuestra documentación detallada para aprender algunos fundamentos sobr
 [Ir a las Guías &rarr;](robotics/index.qmd){.btn .btn-primary role="button"}
 :::
 
+::: {.g-col-12 .g-col-md-6}
+## 📚 Procedimientos académicos.
+Documentos de procedimientos académicos, como el de Trabajo de Grado.
+[Ir a los Procedimientos &rarr;](tgs/index.qmd){.btn .btn-primary role="button"}
+:::
+
 ::::
 
 ---

@@ -1,6 +1,9 @@
-## 🚀 Atajos de Teclado Esenciales en VS Code
+---
+title: "Atajos de Teclado Esenciales en VS Code"
+description: "Referencia rápida de los atajos de teclado más útiles de Visual Studio Code para Windows/Linux."
+---
 
-### 1. Edición de Texto y Líneas (Core Editing)
+## 1. Edición de Texto y Líneas (Core Editing)
 
 | Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
 | :--- | :--- | :--- |
@@ -14,7 +17,7 @@
 
 ---
 
-### 2. Multi-Cursor y Selección (Selección Inteligente)
+## 2. Multi-Cursor y Selección (Selección Inteligente)
 
 | Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
 | :--- | :--- | :--- |
@@ -26,7 +29,7 @@
 
 ---
 
-### 3. Buscar y Reemplazar
+## 3. Buscar y Reemplazar
 
 | Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
 | :--- | :--- | :--- |
@@ -37,7 +40,7 @@
 
 ---
 
-### 4. Navegación y Vistas (Paneles y Archivos)
+## 4. Navegación y Vistas (Paneles y Archivos)
 
 | Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
 | :--- | :--- | :--- |
@@ -51,7 +54,7 @@
 
 ---
 
-### 5. Depuración (Debugging)
+## 5. Depuración (Debugging)
 
 | Tarea | Atajo de Teclado (Windows/Linux) | Descripción |
 | :--- | :--- | :--- |

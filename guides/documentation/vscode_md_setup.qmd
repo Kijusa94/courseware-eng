@@ -1,8 +1,9 @@
-# Guía de configuración de Markdown.
+---
+title: "Guía de configuración de Markdown"
+description: "Instalación y configuración de las extensiones de Visual Studio Code para la elaboración de documentos técnicos en Markdown."
+---
 
 El siguiente documento tiene por objetivo documentar el proceso de instalación y configuración de las extensiones necesarias en Visual Studio Code para la elaboración de guías de laboratorio y documentos técnicos utilizando el lenguaje de marcado ligero Markdown.
-
-[TOC]
 
 ## Requerimientos
 - Tener instalado Visual Studio Code.
@@ -89,7 +90,7 @@ Las tablas se dibujan usando barras verticales | y guiones -.
 ```
 
 #### F. Tabla de Contenidos (TOC)
-Gracias a la extensión Markdown All in One, no es necesario crear el índice manualmente. Puede usar el comando [TOC] para agregar la tabla de contenido de forma automática, o en su defecto, puede seguir los siguientes pasos.
+Gracias a la extensión Markdown All in One, no es necesario crear el índice manualmente. Puede usar el comando ``[TOC]`` para agregar la tabla de contenido de forma automática, o en su defecto, puede seguir los siguientes pasos.
 
 1. Ubique el cursor donde desea el índice (usualmente al inicio, después del título).
 2. Abra la paleta de comandos (Ctrl + Shift + P).
@@ -104,7 +105,7 @@ Para agregar codigo a un archivo .md utilice tres comillas invertidas (`) para l
 ![Markdown](../documentation/assets/images/vscode_md_setup/04.png)
 
 **Resultado:**
-```
+```mermaid
 graph TD;
     A[Inicio] --> B{¿Lectura Correcta?};
     B -- Si --> C[Registrar Dato];
@@ -126,7 +127,8 @@ Esta extensión permite visualizar diagramas de ingeniería (flujo, Gantt, secue
 Busque la extensión Markdown Preview Mermaid Support creada por Matt Bierner. Presione "Instalar".
 
 Para crear un diagrama, utilice un bloque de código especificando el lenguaje mermaid.
-```
+
+```mermaid
 graph TD;
     A[Inicio] --> B{¿Lectura Correcta?};
     B -- Si --> C[Registrar Dato];
@@ -135,7 +137,6 @@ graph TD;
 ```
 
 ![Markdown](../documentation/assets/images/vscode_md_setup/04.png)
-
 
 ```mermaid
 graph TD;
@@ -155,7 +156,6 @@ Busque Markdown PDF creada por yzane y proceda a instalarla.
 Para generar el PDF, haga clic derecho en cualquier parte del editor de texto y seleccione la opción Markdown PDF: Export (pdf). El archivo se creará automáticamente en la carpeta de su proyecto.
 
 ![Markdown](../documentation/assets/images/vscode_md_setup/05.png)
-
 
 ## Estructura de Proyecto y Buenas Prácticas
 Para garantizar que sus proyectos sean portables (que funcionen en cualquier computador) y escalables, se debe mantener un orden estricto en los directorios. A continuación, se presenta el estándar sugerido para la entrega de laboratorios.

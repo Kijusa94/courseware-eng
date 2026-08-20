@@ -1,8 +1,8 @@
 ---
-title: "Mi Documentación"
+title: "Courseware Eng"
 ---
 
-Esta es la página principal del proyecto. Aquí centralizamos todo el conocimiento y los recursos visuales disponibles.
+Esta es la página principal del proyecto. Aquí centralizamos todo el conocimiento y los recursos visuales disponibles para los cursos de ingeniería: programación en Python, instrumentación industrial, automatización y documentación por código.
 
 :::: {.grid}
 

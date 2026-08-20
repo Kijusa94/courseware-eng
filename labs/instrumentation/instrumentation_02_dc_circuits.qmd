@@ -1,18 +1,21 @@
+---
+title: "Práctica de Circuitos DC"
+description: "Validación de la Ley de Ohm y las Leyes de Kirchhoff mediante simulación de circuitos en serie y paralelo."
+---
+
 ```{python}
 #| echo: false
 %run assets/scripts/instrumentation_dc_circuits.py
 ```
-
-# Practica de Circuitos DC
 
 ## Introducción
 La comprensión y aplicación de los fundamentos de la electricidad de corriente continua (DC) son esenciales para la formación del ingeniero industrial, particularmente en el campo de la instrumentación y automatización. Si bien la disciplina se centra en la optimización de procesos y la gestión de sistemas productivos, la base tecnológica de estos sistemas es inherentemente eléctrica y electrónica. El conocimiento de los principios que rigen el comportamiento de la energía eléctrica no es un mero requisito curricular, sino una necesidad operativa y estratégica.
 
 La ingeniería industrial se apoya en sistemas de control y medición que dependen directamente de circuitos eléctricos. Sensores de temperatura, presión, flujo o nivel, así como actuadores como motores, relés y válvulas solenoides, funcionan con señales eléctricas y responden a comandos que viajan a través de circuitos. Ignorar estos fundamentos implica una limitación significativa en la capacidad de un ingeniero para diagnosticar fallas, diseñar soluciones de control, seleccionar componentes adecuados y garantizar la fiabilidad del equipo. La eficiencia y la seguridad de un proceso automatizado están directamente ligadas al correcto funcionamiento de su infraestructura eléctrica.
 
-Esta práctica de laboratorio se enfoca en la validación de la Ley de Ohm y las Leyes de Kirchhoff a través de la experimentación controlada.  La Ley de Ohm establece la relación fundamental entre el voltaje, la corriente y la resistencia, que es la base para el análisis de cualquier circuito. V=I⋅R
+Esta práctica de laboratorio se enfoca en la validación de la Ley de Ohm y las Leyes de Kirchhoff a través de la experimentación controlada. La Ley de Ohm establece la relación fundamental entre el voltaje, la corriente y la resistencia, que es la base para el análisis de cualquier circuito. $V = I \cdot R$
 
-Las Leyes de Kirchhoff, por su parte, permiten analizar sistemas más complejos, describiendo cómo se distribuyen la corriente y el voltaje en nodos y mallas. La Ley de Corrientes de Kirchhoff (LKC) afirma que la suma de las corrientes que entran en un nodo es igual a la suma de las que salen ∑Ientrada=∑Isalida. Pro su parte. La Ley de Voltajes de Kirchhoff (LKV) establece que la suma algebraica de los voltajes en una malla cerrada es cero ∑Vmalla=0.
+Las Leyes de Kirchhoff, por su parte, permiten analizar sistemas más complejos, describiendo cómo se distribuyen la corriente y el voltaje en nodos y mallas. La Ley de Corrientes de Kirchhoff (LKC) afirma que la suma de las corrientes que entran en un nodo es igual a la suma de las que salen $\sum I_{entrada} = \sum I_{salida}$. Por su parte, la Ley de Voltajes de Kirchhoff (LKV) establece que la suma algebraica de los voltajes en una malla cerrada es cero $\sum V_{malla} = 0$.
 
 En el ámbito industrial, los circuitos en serie y en paralelo tienen aplicaciones directas. Los circuitos en serie se utilizan para la interconexión de sensores de seguridad, donde la interrupción de un único componente desactiva el circuito completo, garantizando la detención de una máquina. Los circuitos en paralelo son comunes en la distribución de energía a múltiples cargas, como motores o luminarias, asegurando que cada carga reciba el mismo voltaje nominal de la fuente. La comprensión de estas configuraciones es indispensable para el diseño de sistemas de control eficientes y robustos, donde la capacidad de un ingeniero para resolver problemas eléctricos impacta directamente en la productividad y la seguridad de la operación.
 
@@ -53,7 +56,7 @@ El concepto de potencia eléctrica es tan importante como la Ley de Ohm, ya que 
 La potencia (P) se define como el producto del voltaje (V) y la corriente (I). La unidad de medida de la potencia es el vatio (W). A partir de la Ley de Ohm, la fórmula de potencia se puede expresar de otras dos formas, lo que permite su cálculo incluso si no se conocen el voltaje o la corriente, siempre que se conozcan dos de las tres variables (V, I, R):
 
 $$
-P = I V \qquad P=I^2R \qquad P=V2/R
+P = I V \qquad P=I^2R \qquad P=\frac{V^2}{R}
 $$
 
 ### Instrumento de medición
@@ -103,7 +106,8 @@ Las Leyes de Kirchhoff y la Ley de Ohm se aplican de manera específica a las do
 dc_circuits_series()
 ```
 
-### 
+**Fórmulas del circuito en serie:**
+
 $$
 V_{TOTAL} = V_1 + V_2 + V_3 + \dots + V_n 
 $$
@@ -124,7 +128,8 @@ $$
 dc_circuits_parallel()
 ```
 
-### 
+**Fórmulas del circuito en paralelo:**
+
 $$
 V_{TOTAL} = V_1 = V_2 = V_3 = \dots = V_n \\
 $$

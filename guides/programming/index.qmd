@@ -27,6 +27,11 @@ Esta es la página principal de Guías para configurar entornos de programación
 [Ver Guía &rarr;](vscode_python_install.qmd){.btn .btn-primary role="button"}
 :::
 
+::: {.g-col-12 .g-col-md-6}
+## 📚 Autenticación de GitHub en WSL2.
+[Ver Guía &rarr;](git_ros_wsl2.qmd){.btn .btn-primary role="button"}
+:::
+
 ::::
 
 ---

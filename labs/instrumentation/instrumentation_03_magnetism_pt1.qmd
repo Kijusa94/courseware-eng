@@ -99,7 +99,7 @@ Con los datos anteriores, ¿el campo disminuye de forma lineal (como una rampa s
 #### **Preguntas Complementarias (Introductores)**
 1.  **Paradoja de la Brújula:** Si los polos opuestos se atraen (Norte atrae a Sur), ¿por qué el polo "Norte" de una brújula apunta hacia el Norte Geográfico de la Tierra (Ártico)? ¿Qué tipo de polo magnético debe haber en realidad en el Ártico terrestre?
 2.  **Sensores Industriales:** El "Medidor de Campo" que usó en la simulación funciona bajo el mismo principio que los **sensores de Efecto Hall**. En una fábrica, estos sensores se usan para detectar si una puerta de seguridad está cerrada o para contar las vueltas de un motor. Si usted pega un imán a un eje rotatorio y coloca el sensor fijo cerca, ¿qué lectura esperaría ver en el medidor cada vez que el imán pasa frente a él?
-3.  **Seguridad:** Los campos magnéticos muy intensos pueden borrar datos de tarjetas de crédito o discos duros antiguos. Basado en su Tabla 0.1, ¿la zona de peligro es muy extensa o se limita a la proximidad inmediata del imán?
+3.  **Seguridad:** Los campos magnéticos muy intensos pueden borrar datos de tarjetas de crédito o discos duros antiguos. Basado en su Tabla 1.1, ¿la zona de peligro es muy extensa o se limita a la proximidad inmediata del imán?
 
 
 

@@ -212,3 +212,15 @@ __marimo__/
 /docs
 /.luarc.json
 **/*.quarto_ipynb
+
+# Artefactos de build de Quarto (no versionar)
+_freeze/site_libs/
+**/*_files/
+
+# R / renv
+renv/library/
+.Rproj.user
+
+# Sistema
+.DS_Store
+Thumbs.db

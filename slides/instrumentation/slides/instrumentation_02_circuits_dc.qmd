@@ -1,5 +1,5 @@
 ---
-title: Instrumentación Industrial    
+title: Instrumentación Industrial
 subtitle: "Circuitos DC y AC"
 author: M.Sc. Juan Guzman
 institute: Kijusa94
@@ -44,7 +44,7 @@ Si se tiene un circuito con una fuente de voltaje de $12V$ y una resistencia de 
 
 {{< placeholder 300 200 format=svg >}}
 
-### Solucion
+### Solución
 
 $$
 I = \frac{V}{R} = \frac{12V}{6\Omega} = 2A
@@ -52,7 +52,7 @@ $$
 
 
 
-## Ejercicios de la Ley de Ohm
+## Ejercicio 2 de la Ley de Ohm
 
 ### Enunciado
 

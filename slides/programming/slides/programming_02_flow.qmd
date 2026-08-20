@@ -1,5 +1,5 @@
 ---
-title: Programación  
+title: Programación
 subtitle: "Fundamentos"
 author: M.Sc. Juan Guzman
 institute: Kijusa94
